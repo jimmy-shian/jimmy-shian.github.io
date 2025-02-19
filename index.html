@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jimmy Shian's Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="app">
+        <nav>
+            <a href="personal.html" target="_blank">個人學經歷</a>
+        </nav>
+        <header>
+            <h1>Jimmy Shian's Portfolio</h1>
+            <p>歡迎來到我的專案展示頁面！以下是我在GitHub上的一些專案。</p>
+        </header>
+        <div class="projects-grid">
+            <div v-for="repo in repos" :key="repo.id" class="project-card">
+                <h2>{{ repo.name }}</h2>
+                <p>{{ repo.description }}</p>
+                <a :href="repo.html_url" target="_blank">查看專案</a>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+    <script src="app.js"></script>
+</body>
+</html>

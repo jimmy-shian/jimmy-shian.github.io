@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jimmy Shian - 個人介紹</title>
+    <style>
+        /* 基本樣式 */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+
+        /* 導覽列 */
+        nav {
+            background-color: #333;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            margin-left: 15px;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        nav .home-link {
+            margin-right: auto;
+        }
+
+        /* 標題區 */
+        header {
+            text-align: center;
+            padding: 40px 20px;
+            background-color: #fff;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+            color: #333;
+        }
+
+        header p {
+            margin: 10px 0 0;
+            font-size: 1.2em;
+            color: #666;
+        }
+
+        /* 內容區 */
+        .content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .content h2 {
+            font-size: 1.8em;
+            color: #444;
+            border-bottom: 2px solid #333;
+            padding-bottom: 5px;
+        }
+
+        .content p {
+            font-size: 1.1em;
+            line-height: 1.6;
+            color: #555;
+        }
+
+        .content ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .content ul li {
+            background-color: #fff;
+            margin: 10px 0;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .content ul li strong {
+            color: #333;
+        }
+
+        /* 圓形圖片 */
+        .circle {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-color: #00aaff;
+            margin: 10px;
+            display: inline-block;
+            position: absolute;
+            transition: all 0.3s ease;
+        }
+
+        .circle img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+        }
+
+        /* 動態大小 */
+        .circle.size-50 { width: 50px; height: 50px; }
+        .circle.size-70 { width: 70px; height: 70px; }
+        .circle.size-90 { width: 90px; height: 90px; }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <!-- 導覽列 -->
+        <nav>
+            <a href="index.html" class="home-link" target="_blank">Home</a>
+            <a href="#about">關於我</a>
+            <a href="#experience">學經歷</a>
+        </nav>
+
+        <!-- 標題區 -->
+        <header>
+            <h1>Jimmy Shian</h1>
+            <p>軟體工程師 | 技術愛好者 | 持續學習中</p>
+        </header>
+
+        <!-- 內容區 -->
+        <div class="content">
+            <!-- 關於我 -->
+            <section id="about">
+                <h2>關於我</h2>
+                <p>
+                    你好！我是 Jimmy Shian，一名熱愛技術的軟體工程師。我專注於前端開發，並對後端技術也有深入的了解。
+                    我喜歡解決問題並創造有意義的產品，持續學習新技術是我生活的一部分。
+                </p>
+            </section>
+
+            <!-- 學經歷 -->
+            <section id="experience">
+                <h2>學經歷</h2>
+                <ul>
+                    <li v-for="item in experience" v-if="item.id !== 3" :key="item.id">
+                        <strong>{{ item.title }}</strong> - {{ item.organization }} ({{ item.duration }})<br>
+                        {{ item.description }}
+                    </li>
+
+                    <li v-if="experience[2].id === 3"> 
+                        <h3>{{ experience[2].title }} - {{ experience[2].organization }}</h3>
+                        <p>{{ experience[2].description }}</p>
+                        <div v-for="subject in subjects" :key="subject.name" :class="['circle', 'size-' + subject.percent]" :style="getStyle(subject)">
+                            <img :src="subject.img" :alt="subject.name" />
+                        </div>
+                    </li>
+                </ul>
+            </section>
+        </div>
+    </div>
+
+    <!-- Vue.js -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                experience: [
+                    {
+                        id: 1,
+                        title: '大學生',
+                        organization: '台灣的國立科技大學',
+                        duration: '2020 - 至今',
+                        description: '基礎程式語言邏輯 & AI溝通師 & ....'
+                    },
+                    {
+                        id: 2,
+                        title: '研究生',
+                        organization: '實驗室LAB',
+                        duration: '2023 - 至今',
+                        description: '參與專案維護 & 聚餐'
+                    },
+                    {
+                        id: 3,
+                        title: '學士學位',
+                        organization: '某大學 - 資訊工程系',
+                        duration: '2016 - 2020',
+                        description: '主修資訊工程，學習資料結構、演算法、網路安全等課程。'
+                    }
+                ],
+                subjects: [
+                    { name: 'Python', percent: 80, img: '/img/python.png' },
+                    { name: 'C#', percent: 40, img: '/img/C.png' },
+                    { name: 'JS,Vue', percent: 20, img: '/img/vue.png' },
+                    { name: 'Java', percent: 65, img: '/img/java.png' }
+                ]
+            },
+            mounted() {
+                    // 每秒更新位置
+                    setInterval(() => {
+                        this.subjects.forEach(subject => {
+                            this.updatePosition(subject);
+                        });
+                    }, 1000 / 60); // 60 FPS
+                },
+                methods: {
+                    updatePosition(subject) {
+                        const containerWidth = window.innerWidth;
+                        const containerHeight = window.innerHeight;
+
+                        subject.x += subject.dx;
+                        subject.y += subject.dy;
+
+                        // 碰撞邏輯
+                        if (subject.x <= 0 || subject.x >= containerWidth - 100) {
+                            subject.dx = -subject.dx;
+                        }
+
+                        if (subject.y <= 0 || subject.y >= containerHeight - 100) {
+                            subject.dy = -subject.dy;
+                        }
+                    },
+                    getStyle(subject) {
+                        return {
+                            left: `${subject.x}px`,
+                            top: `${subject.y}px`,
+                            transition: 'transform 0.1s ease-in-out'
+                        };
+                    }
+                }
+        });
+    </script>
+</body>
+</html>
