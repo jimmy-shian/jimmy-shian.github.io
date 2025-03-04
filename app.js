@@ -14,6 +14,6 @@ new Vue({
             } catch (error) {
                 console.error('Error fetching repos:', error);
             }
-        }ASFAF
+        }
     }
-});841949849
+});
