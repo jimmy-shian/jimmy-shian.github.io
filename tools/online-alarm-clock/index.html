@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>線上鬧鐘 - 工具庫</title>
+    <link rel="stylesheet" href="../../components/global.css">
+    <link rel="stylesheet" href="../../components/navigation.css">
+    <link rel="stylesheet" href="../../components/footer.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <script src="../../components/navigation.js"></script>
+
+    <header class="tool-header">
+        <h1>線上鬧鐘</h1>
+        <p>設定提醒時間，準時提醒您重要事項</p>
+    </header>
+    <main>
+
+        <div class="alarm-container">
+            <div class="time-display">
+                <div class="current-time">
+                    <h3>當前時間</h3>
+                    <div id="current-time-display" class="time">00:00:00</div>
+                </div>
+                
+                <div class="alarm-time">
+                    <h3>鬧鐘時間</h3>
+                    <div id="alarm-time-display" class="time">未設定</div>
+                </div>
+            </div>
+
+            <div class="alarm-controls">
+                <div class="time-inputs">
+                    <div class="input-group">
+                        <input type="number" id="hour" min="0" max="23" placeholder="時" value="">
+                        <label for="hour">時</label>
+                    </div>
+                    <div class="input-group">
+                        <input type="number" id="minute" min="0" max="59" placeholder="分" value="">
+                        <label for="minute">分</label>
+                    </div>
+                    <div class="input-group">
+                        <input type="number" id="second" min="0" max="59" placeholder="秒" value="">
+                        <label for="second">秒</label>
+                    </div>
+                </div>
+
+                <div class="quick-buttons">
+                    <button class="quick-add" data-type="hour">+1小時</button>
+                    <button class="quick-add" data-type="minute">+10分鐘</button>
+                    <button class="quick-add" data-type="second">+30秒</button>
+                </div>
+
+                <div class="action-buttons">
+                    <button id="set-alarm" class="primary-button">設定鬧鐘</button>
+                    <button id="stop-alarm" class="secondary-button" disabled>停止鬧鐘</button>
+                </div>
+            </div>
+
+            <div class="alarm-list" id="alarm-list">
+                <h3>已設定的鬧鐘</h3>
+                <div id="alarms-container" class="alarms-container">
+                    <div class="empty-message">尚未設定任何鬧鐘</div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="../../components/footer.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

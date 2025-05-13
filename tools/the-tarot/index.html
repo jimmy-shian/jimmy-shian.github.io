@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Tarot</title>
+    <link rel="stylesheet" href="../../components/global.css">
+    <link rel="stylesheet" href="../../components/navigation.css">
+    <link rel="stylesheet" href="../../components/footer.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <script src="../../components/navigation.js"></script>
+    <header>
+        <h1>The Tarot</h1>
+    </header>
+    <main>
+        <p>提供隨機抽取一張或三張塔羅牌的功能，適合快速占卜。</p>
+        <div class="tarot-grid">
+            <!-- 塔羅牌將由 JavaScript 動態生成 -->
+        </div>
+        <div id="card-modal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2 id="card-name"></h2>
+                <p id="card-meaning"></p>
+            </div>
+        </div>
+    </main>
+    <script src="script.js"></script>
+    <script src="../../components/footer.js"></script>
+</body>
+</html>

@@ -1,54 +1,107 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
+    /* padding: 0; */
+    background-color: var(--background-color);
+    color: var(--text-color);
 }
 
-nav {
-    background-color: #333;
-    padding: 10px 20px;
-    text-align: right;
-}
-
-nav a {
-    color: white;
-    text-decoration: none;
-    font-size: 16px;
-}
-
-header {
+.page-header {
     text-align: center;
-    padding: 20px;
-    background-color: #fff;
-    margin-bottom: 20px;
+    padding: 4rem 2rem 2rem;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    margin-bottom: 3rem;
 }
 
-.projects-grid {
+.page-header h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.page-header p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+.tool-categories {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.tool-category {
+    margin-bottom: 4rem;
+}
+
+.tool-category h2 {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.tool-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 20px;
-    padding: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 0 1rem;
 }
 
-.project-card {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+.tool-card {
+    background: white;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.project-card h2 {
-    margin-top: 0;
+.tool-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1);
 }
 
-.project-card a {
-    display: inline-block;
-    margin-top: 10px;
-    color: #007bff;
+.tool-card a {
+    display: block;
     text-decoration: none;
+    color: inherit;
 }
 
-.project-card a:hover {
-    text-decoration: underline;
+.tool-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+}
+
+.tool-card p {
+    font-size: 1rem;
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .page-header h1 {
+        font-size: 2rem;
+    }
+
+    .tool-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .tool-card {
+        padding: 1.5rem;
+    }
+}
+
+/* Ads */
+.ads {
+    margin: 2rem 0;
+    text-align: center;
+}
+
+.ads iframe {
+    width: 100%;
+    max-width: 728px;
+    margin: 0 auto;
 }

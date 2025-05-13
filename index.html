@@ -1,31 +1,87 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-TW">
 <head>
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2415998114933157"
-     crossorigin="anonymous"></script>
-	 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jimmy Shian's Portfolio</title>
+    <title>工具庫 - Jimmy Shian</title>
+    <link rel="stylesheet" href="components/global.css">
+    <link rel="stylesheet" href="components/navigation.css">
+    <link rel="stylesheet" href="components/footer.css">
     <link rel="stylesheet" href="styles.css">
+    
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2415998114933157"
+     crossorigin="anonymous"></script>
 </head>
 <body>
-    <div id="app">
-        <nav>
-            <a href="personal.html" target="_blank">個人學經歷</a>
-        </nav>
-        <header>
-            <h1>Jimmy Shian's Portfolio</h1>
-            <p>歡迎來到我的專案展示頁面！以下是我在GitHub上的一些專案。</p>
+    <script src="components/navigation.js"></script>
+
+    <main>
+        <header class="page-header">
+            <h1>工具庫</h1>
+            <p>歡迎來到我的工具庫！這裡收集了各種實用的小工具。</p>
         </header>
-        <div class="projects-grid">
-            <div v-for="repo in repos" :key="repo.id" class="project-card">
-                <h2>{{ repo.name }}</h2>
-                <p>{{ repo.description }}</p>
-                <a :href="repo.html_url" target="_blank">查看專案</a>
-            </div>
+
+        <div class="tool-categories">
+            <!-- 塔羅牌工具 -->
+            <section class="tool-category">
+                <h2>塔羅牌工具</h2>
+                <div class="tool-grid">
+                    <article class="tool-card">
+                        <a href="tools/random-tarot-randomoutputs/index.html">
+                            <h3>完整塔羅牌工具</h3>
+                            <p>支援完整牌組與 AI 深度解讀的塔羅牌抽牌工具。</p>
+                        </a>
+                    </article>
+                    <article class="tool-card">
+                        <a href="tools/3-card-tarot-spread-generator/index.html">
+                            <h3>三張牌塔羅佈陣</h3>
+                            <p>提供三張牌的塔羅佈陣，適合快速占卜。</p>
+                        </a>
+                    </article>
+                    <article class="tool-card">
+                        <a href="tools/the-tarot/index.html">
+                            <h3>塔羅牌展示</h3>
+                            <p>互動式塔羅牌展示，支援翻牌效果。</p>
+                        </a>
+                    </article>
+                </div>
+            </section>
+
+            <!-- 時間工具 -->
+            <section class="tool-category">
+                <h2>時間工具</h2>
+                <div class="tool-grid">
+                    <article class="tool-card">
+                        <a href="tools/universal-timer/index.html">
+                            <h3>通用計時器</h3>
+                            <p>整合秒錶、計時器和倒數計時功能。</p>
+                        </a>
+                    </article>
+                    <article class="tool-card">
+                        <a href="tools/online-alarm-clock/index.html">
+                            <h3>線上鬧鐘</h3>
+                            <p>提供可自定義的鬧鐘功能。</p>
+                        </a>
+                    </article>
+                </div>
+            </section>
+
+            <!-- 其他工具 -->
+            <section class="tool-category">
+                <h2>其他工具</h2>
+                <div class="tool-grid">
+                    <article class="tool-card">
+                        <a href="tools/drink-selector/index.html">
+                            <h3>飲料選擇器</h3>
+                            <p>幫您選擇飲料並自訂甜度冰塊。</p>
+                        </a>
+                    </article>
+                </div>
+            </section>
         </div>
-    </div>
+    </main>
+
+    <script src="components/footer.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
     <script src="app.js"></script>
 </body>

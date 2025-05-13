@@ -1,0 +1,359 @@
+/* Online Alarm Clock styles */
+
+body {
+    font-family: sans-serif;
+    display: flex;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+}
+
+header {
+    color: white;
+    padding: 1em;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+}
+
+.back-button {
+    color: white;
+    text-decoration: none;
+    position: absolute;
+    top: 1em;
+    left: 1em;
+}
+
+main {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    text-align: center; /* Center content like "Tool specific content" */
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1em;
+    width: 100%;
+}
+
+/* 主要容器 */
+.alarm-container {
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 2rem;
+    background: var(--card-bg, #ffffff);
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* 工具標題 */
+.tool-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.tool-header h1 {
+    color: var(--primary-color, #4a6fa5);
+    margin-bottom: 0.5rem;
+}
+
+.tool-header p {
+    color: var(--text-secondary, #666);
+    margin: 0;
+}
+
+/* 時間顯示區域 */
+.time-display {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 2rem;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.current-time, .alarm-time {
+    text-align: center;
+    padding: 1.5rem;
+    background: var(--bg-secondary, #f8f9fa);
+    border-radius: 8px;
+    flex: 1;
+    min-width: 200px;
+}
+
+.time {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: var(--primary-color, #4a6fa5);
+    margin-top: 0.5rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* 時間輸入區域 */
+.alarm-controls {
+    background: var(--bg-secondary, #f8f9fa);
+    padding: 2rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+}
+
+.time-inputs {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.input-group {
+    text-align: center;
+    flex: 1;
+    min-width: 80px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 0.75rem;
+    font-size: 1.25rem;
+    text-align: center;
+    border: 2px solid var(--border-color, #ced4da);
+    border-radius: 6px;
+    background: var(--bg-primary, #ffffff);
+    color: var(--text-primary, #333);
+    box-sizing: border-box;
+}
+
+.input-group label {
+    display: block;
+    margin-top: 0.5rem;
+    color: var(--text-secondary, #666);
+}
+
+/* 快速按鈕 */
+.quick-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.quick-add {
+    padding: 0.5rem 1rem;
+    background: var(--bg-primary, #ffffff);
+    border: 1px solid var(--border-color, #ced4da);
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s;
+    color: var(--text-primary, #333);
+}
+
+.quick-add:hover {
+    background: var(--bg-hover, #e9ecef);
+}
+
+/* 動作按鈕 */
+.action-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.primary-button, .secondary-button {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+    min-width: 120px;
+}
+
+.primary-button {
+    background: var(--primary-color, #4a6fa5);
+    color: white;
+}
+
+.primary-button:hover {
+    background: var(--primary-dark, #3a5a80);
+}
+
+.secondary-button {
+    background: var(--bg-primary, #ffffff);
+    border: 1px solid var(--border-color, #ced4da);
+    color: var(--text-primary, #333);
+}
+
+.secondary-button:hover {
+    background: var(--bg-hover, #e9ecef);
+}
+
+.secondary-button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* 鬧鐘列表 */
+.alarm-list {
+    background: var(--bg-secondary, #f8f9fa);
+    padding: 1.5rem;
+    border-radius: 8px;
+}
+
+.alarm-list h3 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    color: var(--text-primary, #333);
+}
+
+.alarms-container {
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.alarm-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 1rem;
+    background: var(--bg-primary, #ffffff);
+    border-radius: 6px;
+    margin-bottom: 0.5rem;
+    border-left: 4px solid var(--primary-color, #4a6fa5);
+}
+
+.alarm-item .time {
+    font-size: 1.25rem;
+    margin: 0;
+}
+
+.alarm-actions {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.alarm-actions button {
+    background: none;
+    border: none;
+    color: var(--danger, #dc3545);
+    cursor: pointer;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.alarm-actions button:hover {
+    background: var(--bg-hover, #e9ecef);
+}
+
+.empty-message {
+    text-align: center;
+    color: var(--text-secondary, #666);
+    padding: 1rem;
+    font-style: italic;
+}
+
+/* 響鈴樣式 */
+.ringing {
+    animation: ring 0.5s infinite alternate;
+}
+
+@keyframes ring {
+    from {
+        background-color: var(--bg-primary, #ffffff);
+    }
+    to {
+        background-color: rgba(255, 0, 0, 0.1);
+    }
+}
+
+/* 通知樣式 */
+.notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 15px 25px;
+    border-radius: 5px;
+    color: white;
+    font-weight: 500;
+    opacity: 0;
+    transform: translateX(100%);
+    transition: all 0.3s ease-in-out;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.notification.show {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.notification.info {
+    background-color: #4a6fa5;
+}
+
+.notification.error {
+    background-color: #dc3545;
+}
+
+.notification.success {
+    background-color: #28a745;
+}
+
+.notification.alarm {
+    background-color: #ffc107;
+    color: #212529;
+    animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1) translateX(0); }
+    50% { transform: scale(1.05) translateX(0); }
+    100% { transform: scale(1) translateX(0); }
+}
+
+/* 響應式設計 */
+@media (max-width: 768px) {
+    .time-display {
+        flex-direction: column;
+    }
+    
+    .time-inputs {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .input-group {
+        width: 100%;
+        max-width: 200px;
+    }
+    
+    .quick-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .quick-add {
+        width: 100%;
+        max-width: 200px;
+    }
+    
+    .action-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .action-buttons button {
+        width: 100%;
+        max-width: 200px;
+    }
+}

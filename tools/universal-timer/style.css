@@ -1,0 +1,329 @@
+/* Timer Header */
+.tool-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.tool-header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+}
+
+.tool-header p {
+    color: var(--text-color);
+    font-size: 1.1rem;
+}
+
+/* Timer Switcher */
+.timer-switcher {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.timer-mode {
+    padding: 0.8rem 1.5rem;
+    font-size: 1.1rem;
+    background-color: #f0f0f0;
+    color: #333;
+    border: 2px solid var(--primary-color);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-weight: 500;
+}
+
+.timer-mode:hover {
+    background-color: #e0e0e0;
+}
+
+.timer-mode.active {
+    background-color: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+}
+
+/* Timer Container */
+.timer-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.timer-section {
+    display: none;
+    padding: 2rem;
+    background-color: var(--card-bg);
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border: 2px solid transparent;
+    transition: border-color 0.3s;
+}
+
+.timer-section.active {
+    display: block;
+    border-color: var(--primary-color);
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0.7; transform: translateY(5px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Timer Display */
+.timer-display {
+    text-align: center;
+    font-size: 3rem;
+    font-family: monospace;
+    margin-bottom: 2rem;
+    color: var(--primary-color);
+}
+
+/* Timer Controls */
+.timer-controls {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.timer-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.timer-button {
+    padding: 0.8rem 2rem;
+    font-size: 1.1rem;
+    background-color: var(--primary-color);
+    color: white;
+    border: 2px solid var(--primary-color);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-weight: 500;
+}
+
+.timer-button:hover:not(:disabled) {
+    background-color: var(--primary-dark);
+    border-color: var(--primary-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.timer-button:active:not(:disabled) {
+    transform: translateY(1px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.timer-button:disabled {
+    background-color: #e0e0e0;
+    border-color: #ccc;
+    color: #999;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+/* Time Inputs */
+.time-inputs {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.time-inputs input {
+    width: 80px;
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    text-align: center;
+}
+
+/* Quick Add Buttons */
+.quick-add-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.quick-add {
+    padding: 0.5rem 1rem;
+    background-color: #f0f0f0;
+    color: #333;
+    border: 2px solid var(--primary-color);
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-weight: 500;
+}
+
+.quick-add:hover {
+    background-color: var(--primary-color);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.quick-add:active {
+    transform: translateY(1px);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* Laps Container */
+.laps-container {
+    margin: 2rem 0;
+    padding: 1rem;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.laps-container h3 {
+    margin: 0 0 1rem 0;
+    color: var(--primary-color);
+    border-bottom: 2px solid #eee;
+    padding-bottom: 0.5rem;
+}
+
+.laps-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.lap-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 1rem;
+    background-color: white;
+    border-radius: 6px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    transition: all 0.2s;
+}
+
+.lap-item:hover {
+    transform: translateX(4px);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.lap-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.lap-number {
+    font-weight: bold;
+    color: #333;
+    margin-right: 1rem;
+    min-width: 2rem;
+}
+
+.lap-time {
+    font-family: monospace;
+    font-size: 1.1rem;
+    color: var(--primary-color);
+}
+
+.lap-total {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.lap-actions {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.lap-button {
+    background: none;
+    border: none;
+    color: #666;
+    cursor: pointer;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    transition: all 0.2s;
+}
+
+.lap-button:hover {
+    background-color: #f0f0f0;
+    color: var(--primary-color);
+}
+
+.lap-button.copy {
+    color: #4CAF50;
+}
+
+.lap-button.delete {
+    color: #f44336;
+}
+
+/* 複製通知 */
+.copy-notification {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%) translateY(100%);
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 4px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    opacity: 0;
+    transition: all 0.3s ease;
+    pointer-events: none;
+}
+
+.copy-notification.show {
+    transform: translateX(-50%) translateY(0);
+    opacity: 1;
+}
+
+/* 空狀態提示 */
+.empty-message {
+    color: #666;
+    text-align: center;
+    padding: 1rem;
+    font-style: italic;
+}
+
+/* Timer Description */
+.timer-description {
+    text-align: center;
+    color: var(--text-color);
+    font-size: 0.9rem;
+    margin-top: 2rem;
+}
+
+.timer-description p {
+    margin-bottom: 0.5rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .tool-header h1 {
+        font-size: 2rem;
+    }
+
+    .timer-display {
+        font-size: 2.5rem;
+    }
+
+    .timer-switcher {
+        flex-wrap: wrap;
+    }
+
+    .timer-button {
+        padding: 0.6rem 1.5rem;
+    }
+}

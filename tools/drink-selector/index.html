@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>飲料與速食訂購工具</title>
+    <link rel="stylesheet" href="../../components/global.css">
+    <link rel="stylesheet" href="../../components/navigation.css">
+    <link rel="stylesheet" href="../../components/footer.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <script src="../../components/navigation.js"></script>
+    <main>
+        <style>
+        .status-notification {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 4px;
+            display: none;
+            z-index: 1000;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        </style>
+        <header>
+            <h1>辦公室飲料速食訂購工具</h1>
+            <p>快速統計、隨機選擇、網址共單功能</p>
+        </header>
+        <section id="order-section">
+            <div class="form-group">
+                <label for="shop">選擇店家：</label>
+                <select id="shop"></select>
+            </div>
+            <div class="form-group">
+                <label for="item">選擇品項：</label>
+                <select id="item"></select>
+            </div>
+            <div class="form-group">
+                <label for="name">訂購人：</label>
+                <input type="text" id="name" placeholder="選填">
+                <span style="margin-left: 10px;">單價：</span>
+                <input type="number" id="price" min="0" step="1" value="" style="width: 60px;">
+                <span>元</span>
+            </div>
+            <div class="form-group">
+                <label>冰塊：</label>
+                <div class="slider-container">
+                    <input type="range" id="ice-level" min="0" max="10" value="0" class="slider">
+                    <span id="ice-level-text">去冰</span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>甜度：</label>
+                <div class="slider-container">
+                    <input type="range" id="sugar-level" min="0" max="10" value="7" class="slider">
+                    <span id="sugar-level-text">3分糖</span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="note">備註：</label>
+                <input type="text" id="note" placeholder="例如：加珍珠、少冰塊">
+            </div>
+            <div class="form-group">
+                <label for="quantity">杯數/份數：</label>
+                <input type="number" id="quantity" min="1" value="1" style="width:60px;">
+            </div>
+            <div class="form-group">
+                <button id="add-btn">加入訂單</button>
+                <button id="random-btn">隨機選擇</button>
+            </div>
+        </section>
+        <section id="order-list-section">
+            <h2>訂單明細</h2>
+            <ul id="order-list"></ul>
+            <div id="order-summary"></div>
+            <div class="form-group">
+                <button id="copy-order-btn">複製訂單</button>
+                <button id="clear-btn">清空訂單</button>
+            </div>
+        </section>
+    </main>
+    <div id="status-notification" class="status-notification"></div>
+    <script src="script.js"></script>
+    <script src="../../components/footer.js"></script>
+</body>
+</html>

@@ -1,0 +1,104 @@
+/* navigation.css */
+.main-navigation {
+  background: #222;
+  color: #fff;
+  padding: 0;
+  margin-bottom: 24px;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  position: relative;
+}
+
+.main-navigation .menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.main-navigation li {
+  margin: 0;
+  padding: 0;
+}
+
+.main-navigation a {
+  display: block;
+  color: #fff;
+  text-decoration: none;
+  padding: 16px 20px;
+  transition: all 0.3s ease;
+}
+
+.main-navigation a:hover, 
+.main-navigation a:focus {
+  background: #444;
+  color: #ffd700;
+}
+
+/* 手機選單按鈕 */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  padding: 15px;
+  cursor: pointer;
+  position: absolute;
+  right: 10px;
+  top: 5px;
+  z-index: 1000;
+}
+
+.menu-toggle span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background: #fff;
+  margin: 5px 0;
+  transition: all 0.3s ease;
+}
+
+/* 手機樣式 */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+  
+  .main-navigation .menu {
+    display: none;
+    width: 100%;
+    background: #333;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 999;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  }
+  
+  .main-navigation .menu.active {
+    display: block;
+  }
+  
+  .main-navigation .menu li {
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px solid #444;
+  }
+  
+  .main-navigation .menu a {
+    padding: 15px 20px;
+  }
+  
+  /* 漢堡選單動畫 */
+  .menu-toggle.active span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+  
+  .menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+  }
+  
+  .menu-toggle.active span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+}

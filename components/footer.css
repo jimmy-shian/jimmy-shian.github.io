@@ -1,0 +1,28 @@
+body{
+    position : relative;
+    padding-bottom: 150px;
+}
+
+.site-footer {
+    position: absolute;
+    bottom: 0;
+
+    background-color: #5b5b5b;
+    padding: 20px 0;
+    margin-top: auto;
+    width: 100%;
+    text-align: center;
+    border-top: 1px solid #ddd;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.site-footer p {
+    margin: 5px 0;
+    color: #cacaca;
+    font-size: 14px;
+}
