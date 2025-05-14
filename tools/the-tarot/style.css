@@ -21,7 +21,14 @@
     transform-style: preserve-3d;
 }
 
+/* 桌面版懸停翻轉 */
 .tarot-card:hover .card-inner {
+    transform: rotateY(180deg);
+    transition: transform 0.8s;
+}
+
+/* 手機版點擊翻轉 */
+.card-inner.is-flipped {
     transform: rotateY(180deg);
     transition: transform 0.8s;
 }

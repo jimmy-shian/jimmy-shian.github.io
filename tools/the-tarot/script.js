@@ -120,10 +120,20 @@ document.addEventListener('DOMContentLoaded', () => {
         cardInner.appendChild(cardBack);
         cardElement.appendChild(cardInner);
         
-        cardElement.addEventListener('click', () => {
-            cardName.textContent = card.name;
-            cardMeaning.textContent = card.meaning;
-            modal.style.display = 'block';
+        cardElement.addEventListener('click', (e) => {
+            // 檢查是否為移動設備
+            const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+            
+            if (isMobile) {
+                // 手機裝置：點擊翻轉牌面
+                e.stopPropagation(); // 防止事件冒泡
+                cardInner.classList.toggle('is-flipped');
+            } else {
+                // 桌面裝置：顯示提示框
+                cardName.textContent = card.name;
+                cardMeaning.textContent = card.meaning;
+                modal.style.display = 'block';
+            }
         });
         
         tarotGrid.appendChild(cardElement);

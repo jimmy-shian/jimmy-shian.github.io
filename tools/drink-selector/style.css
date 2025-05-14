@@ -52,7 +52,7 @@ header p {
     min-width: 200px;
 }
 
-button {
+.btn {
     margin-right: 10px;
     padding: 8px 20px;
     border-radius: 6px;
@@ -68,13 +68,13 @@ button {
     justify-content: center;
 }
 
-button:hover {
+.btn:hover {
     background: #1a5dcc;
     transform: translateY(-1px);
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
-button:active {
+.btn:active {
     transform: translateY(0);
 }
 
@@ -252,7 +252,7 @@ button#copy-order-btn:hover {
         margin-left: 0;
     }
     
-    button {
+    .btn {
         width: 100%;
         margin: 5px 0;
     }
@@ -264,21 +264,21 @@ button#copy-order-btn:hover {
     .item-total {
         margin-left: auto;
     }
-}
-}
-#order-summary {
-    margin-top: 1rem;
-    font-weight: bold;
-}
-#share-tip {
-    position: fixed;
-    top: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: #222;
-    color: #fff;
-    padding: 12px 24px;
-    border-radius: 8px;
-    z-index: 1000;
-    font-size: 1rem;
+
+    #order-summary {
+        margin-top: 1rem;
+        font-weight: bold;
+    }
+    #share-tip {
+        position: fixed;
+        top: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: #222;
+        color: #fff;
+        padding: 12px 24px;
+        border-radius: 8px;
+        z-index: 1000;
+        font-size: 1rem;
+    }
 }
