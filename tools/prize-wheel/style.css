@@ -1,0 +1,343 @@
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 30px;
+}
+
+.setup-section {
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+h3 {
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+/* 色系選擇器 */
+.color-scheme {
+    margin-bottom: 20px;
+}
+
+.color-scheme h4 {
+    margin: 0 0 10px 0;
+    color: #2c3e50;
+}
+
+.color-options {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.color-option {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+}
+
+.color-option input[type="radio"] {
+    display: none;
+}
+
+.color-option input[type="radio"]:checked + .color-preview {
+    transform: scale(1.1);
+    box-shadow: 0 0 0 2px #3498db;
+}
+
+.color-preview {
+    width: 50px;
+    height: 30px;
+    border-radius: 15px;
+    margin-bottom: 5px;
+    transition: all 0.3s ease;
+    border: 2px solid #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.prize-header {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+    padding: 8px 10px;
+    background-color: #f5f5f5;
+    border-radius: 4px;
+    font-weight: bold;
+    color: #555;
+}
+
+.prize-header span {
+    flex: 1;
+}
+
+.prize-name-header {
+    flex: 2 !important;
+}
+
+.prize-actions-header {
+    width: 60px;
+    flex: none !important;
+}
+
+.prize-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+    align-items: center;
+    padding: 5px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.prize-item input[type="text"],
+.prize-item input[type="number"] {
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.prize-item .prize-name {
+    flex: 2;
+}
+
+.prize-item .prize-quantity {
+    flex: 1;
+    max-width: 80px;
+}
+
+.prize-item .remove-prize {
+    width: 60px;
+    flex: none;
+    background: #ff6b6b;
+    color: white;
+    border: none;
+    padding: 8px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.prize-item .remove-prize:hover {
+    background: #ff5252;
+}
+
+.prize-item input[type="text"],
+.prize-item input[type="number"] {
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    flex: 1;
+}
+
+.prize-item input[type="color"] {
+    width: 50px;
+    height: 40px;
+    padding: 0;
+    border: none;
+    background: none;
+}
+
+.remove-prize {
+    background: #ff6b6b;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.remove-prize:hover {
+    background: #ff5252;
+}
+
+#add-prize {
+    background: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background 0.3s;
+}
+
+#add-prize:hover {
+    background: #45a049;
+}
+
+/* 參與者設定樣式 */
+.input-option {
+    margin-bottom: 15px;
+    display: flex;
+    gap: 20px;
+}
+
+.input-option label {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.auto-options {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin: 15px 0;
+}
+
+.auto-options > div {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.small-input {
+    padding: 8px 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    width: 80px;
+}
+
+#participants, #manual-participants h4 {
+    width: 100%;
+    height: 150px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    resize: vertical;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #3498db;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s;
+    text-decoration: none;
+    margin-top: 10px;
+}
+
+.btn.primary {
+    background: #e74c3c;
+    width: 100%;
+    padding: 12px;
+    font-size: 18px;
+}
+
+.btn.primary:hover {
+    background: #c0392b;
+}
+
+.wheel-container {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    margin: 40px auto;
+    aspect-ratio: 1/1;
+}
+
+#wheel {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    box-shadow: 0 0 20px rgba(0,0,0,0.2);
+}
+
+.wheel-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 30px;
+    height: 30px;
+    background: white;
+    border: 4px solid #2c3e50;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+}
+
+.pointer {
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-top: 30px solid #e74c3c;
+    z-index: 1;
+}
+
+.result-section {
+    margin-top: 40px;
+    padding: 20px;
+    background: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+#winners {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.winner-card {
+    background: white;
+    padding: 15px;
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.winner-card h4 {
+    margin: 0 0 5px 0;
+    color: #2c3e50;
+}
+
+.winner-card p {
+    margin: 0;
+    font-size: 14px;
+    color: #7f8c8d;
+}
+
+@media (max-width: 768px) {
+    .prize-item {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .wheel-container {
+        max-width: 300px;
+    }
+}

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>輪盤抽獎工具</title>
+    <link rel="stylesheet" href="../../components/global.css">
+    <link rel="stylesheet" href="../../components/navigation.css">
+    <link rel="stylesheet" href="../../components/footer.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <script src="../../components/navigation.js"></script>
+
+    <main>
+        <div class="container">
+            <h1>輪盤抽獎工具</h1>
+            
+            <div class="setup-section">
+                <div class="input-group">
+                    <h3>獎項設置</h3>
+                    <div class="color-scheme">
+                        <h4>色系選擇</h4>
+                        <div class="color-options">
+                            <label class="color-option">
+                                <input type="radio" name="color-scheme" value="default" checked>
+                                <span class="color-preview" style="background: linear-gradient(135deg, #FF9A9E 0%, #FAD0C4 100%);"></span>
+                                <span>暖色系</span>
+                            </label>
+                            <label class="color-option">
+                                <input type="radio" name="color-scheme" value="cool">
+                                <span class="color-preview" style="background: linear-gradient(135deg, #A1C4FD 0%, #C2E9FB 100%);"></span>
+                                <span>冷色系</span>
+                            </label>
+                            <label class="color-option">
+                                <input type="radio" name="color-scheme" value="pastel">
+                                <span class="color-preview" style="background: linear-gradient(135deg, #D4FC79 0%, #96E6A1 100%);"></span>
+                                <span>粉彩系</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div id="prize-inputs">
+                        <div class="prize-header">
+                            <span class="prize-name-header">獎項名稱</span>
+                            <span class="prize-quantity-header">數量</span>
+                            <span class="prize-actions-header">操作</span>
+                        </div>
+                        <div class="prize-item">
+                            <input type="text" placeholder="例如：頭獎" class="prize-name" required>
+                            <input type="number" placeholder="1" min="1" value="1" class="prize-quantity">
+                            <button class="remove-prize">刪除</button>
+                        </div>
+                    </div>
+                    <button id="add-prize" class="btn">+ 添加獎項</button>
+                </div>
+
+                <div class="input-group">
+                    <h3>參與者設定</h3>
+                    <div class="input-option">
+                        <label>
+                            <input type="radio" name="participant-type" value="manual" checked>
+                            手動輸入名單
+                        </label>
+                        <label>
+                            <input type="radio" name="participant-type" value="auto">
+                            自動產生序號
+                        </label>
+                    </div>
+                    
+                    <div id="manual-participants">
+                        <h4>參與者名單</h4>
+                        <textarea id="participants" placeholder="每行輸入一個名字"></textarea>
+                    </div>
+                    
+                    <div id="auto-participants" style="display: none;">
+                        <div class="auto-options">
+                            <div>
+                                <label for="start-number">起始編號：</label>
+                                <input type="number" id="start-number" min="1" value="1" class="small-input">
+                            </div>
+                            <div>
+                                <label for="participant-count">參與者數量：</label>
+                                <input type="number" id="participant-count" min="1" value="10" class="small-input">
+                            </div>
+                            <div>
+                                <label for="prefix">前綴（選填）：</label>
+                                <input type="text" id="prefix" placeholder="例如：員工" class="small-input">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button id="start-draw" class="btn primary">開始抽獎</button>
+            </div>
+
+            <div class="wheel-container">
+                <canvas id="wheel"></canvas>
+                <div class="wheel-center"></div>
+                <div class="pointer"></div>
+            </div>
+
+            <div id="result" class="result-section">
+                <h2>抽獎結果</h2>
+                <div id="winners"></div>
+            </div>
+        </div>
+    </main>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+    <script src="../../components/footer.js"></script>
+</body>
+</html>
