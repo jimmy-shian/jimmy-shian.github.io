@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>密碼產生器</title>
+    <link rel="stylesheet" href="../../components/global.css">
+    <link rel="stylesheet" href="../../components/navigation.css">
+    <link rel="stylesheet" href="../../components/footer.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <script src="../../components/navigation.js"></script>
+
+    <main class="password-generator">
+        <h1>🔐 密碼產生器</h1>
+        
+        <div class="password-display">
+            <input type="text" id="password" readonly>
+            <button id="copy-btn" title="複製密碼">📋</button>
+            <button id="generate-btn">產生密碼</button>
+        </div>
+        
+        
+        <div class="controls">
+            <div class="control-group">
+                <label for="length">密碼長度: <span id="length-value">12</span></label>
+                <input type="range" id="length" min="4" max="50" value="12">
+            </div>
+            <div id="warning-message" class="warning-message"></div>
+
+            <div class="control-group">
+                <label><input type="checkbox" id="uppercase" checked> 大寫字母 (A-Z)</label>
+                <label><input type="checkbox" id="lowercase" checked> 小寫字母 (a-z)</label>
+                <label><input type="checkbox" id="numbers" checked> 數字 (0-9)</label>
+                <label><input type="checkbox" id="symbols" checked> 特殊符號 (!@#$#.*)</label>
+            </div>
+
+            <div class="control-group">
+                <label for="custom-chars">自訂字元：</label>
+                <input type="text" id="custom-chars" placeholder="輸入想要包含的特殊字元">
+            </div>
+
+            <div class="control-group">
+                <button id="save-prefs">儲存設定</button>
+            </div>
+        </div>
+    </main>
+
+
+    <script src="script.js"></script>
+    <script src="../../components/footer.js"></script>
+</body>
+</html>

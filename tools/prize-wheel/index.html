@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div id="toast-container"></div>
     <script src="../../components/navigation.js"></script>
 
     <main>
@@ -46,8 +47,8 @@
                             <span class="prize-actions-header">操作</span>
                         </div>
                         <div class="prize-item">
-                            <input type="text" placeholder="例如：頭獎" class="prize-name" required>
-                            <input type="number" placeholder="1" min="1" value="1" class="prize-quantity">
+                            <input type="text" placeholder="例如：頭獎" class="prize-name" value="" onchange="resetDraw()" >
+                            <input type="number" placeholder="1" min="1" value="1" class="prize-quantity" onchange="resetDraw()">
                             <button class="remove-prize">刪除</button>
                         </div>
                     </div>
@@ -58,12 +59,12 @@
                     <h3>參與者設定</h3>
                     <div class="input-option">
                         <label>
-                            <input type="radio" name="participant-type" value="manual" checked>
-                            手動輸入名單
+                            <input type="radio" name="participant-type" value="auto" checked>
+                            自動產生序號
                         </label>
                         <label>
-                            <input type="radio" name="participant-type" value="auto">
-                            自動產生序號
+                            <input type="radio" name="participant-type" value="manual">
+                            手動輸入名單
                         </label>
                     </div>
                     
@@ -89,7 +90,16 @@
                         </div>
                     </div>
                 </div>
-                <button id="start-draw" class="btn primary">開始抽獎</button>
+                <div style="margin: 1em 0;">
+                    <label style="font-weight:normal;">
+                        <input type="checkbox" id="allow-repeat-winner" style="margin-right:4px;">
+                        允許重複中獎
+                    </label>
+                </div>
+                <div style="display:flex;gap:10px;">
+                    <button id="start-draw" class="btn primary">開始抽獎</button>
+                    <button id="reset-draw" class="btn">重設抽獎</button>
+                </div>
             </div>
 
             <div class="wheel-container">
