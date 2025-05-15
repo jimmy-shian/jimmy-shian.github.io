@@ -37,6 +37,7 @@
         <ul class="dropdown-menu">
           <li><a href="${basePath}drink-selector/index.html">飲料選擇器</a></li>
           <li><a href="${basePath}prize-wheel/index.html">獎品轉盤</a></li>
+          <li><a href="${basePath}password-generator/index.html">密碼產生器</a></li>
         </ul>
       </li>
       <li><a href="${isToolsPage ? '../../index.html' : 'index.html'}">回主站</a></li>

@@ -95,6 +95,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const closeBtn = document.querySelector('.close');
     const cardName = document.getElementById('card-name');
     const cardMeaning = document.getElementById('card-meaning');
+    let flippedCard = null;
 
     // 生成所有塔羅牌
     const allCards = [...tarotCards.major, ...tarotCards.minor];
@@ -121,15 +122,26 @@ document.addEventListener('DOMContentLoaded', () => {
         cardElement.appendChild(cardInner);
         
         cardElement.addEventListener('click', (e) => {
-            // 檢查是否為移動設備
             const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-            
+        
             if (isMobile) {
-                // 手機裝置：點擊翻轉牌面
-                e.stopPropagation(); // 防止事件冒泡
-                cardInner.classList.toggle('is-flipped');
+                e.stopPropagation(); // 防止冒泡
+        
+                // 如果已經翻了某張卡，而且是這張卡，再次點擊時翻回來
+                if (flippedCard && flippedCard === cardInner) {
+                    cardInner.classList.remove('is-flipped');
+                    flippedCard = null;
+                } else {
+                    // 若已有其他牌翻開，先把那張翻回來
+                    if (flippedCard) {
+                        flippedCard.classList.remove('is-flipped');
+                    }
+                    // 翻新的一張牌
+                    cardInner.classList.add('is-flipped');
+                    flippedCard = cardInner;
+                }
             } else {
-                // 桌面裝置：顯示提示框
+                // 桌面顯示 modal
                 cardName.textContent = card.name;
                 cardMeaning.textContent = card.meaning;
                 modal.style.display = 'block';
@@ -140,13 +152,21 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Modal 關閉功能
-closeBtn.addEventListener('click', () => {
-    modal.style.display = 'none';
-});
-
-window.addEventListener('click', (event) => {
-    if (event.target === modal) {
+    closeBtn.addEventListener('click', () => {
         modal.style.display = 'none';
-    }
-});
+    });
+
+    window.addEventListener('click', (event) => {
+        // 點擊 modal 背景時關閉 modal（桌機用）
+        if (event.target === modal) {
+            modal.style.display = 'none';
+        }
+
+        // 手機裝置點空白區，讓翻牌恢復原狀
+        const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+        if (isMobile && flippedCard) {
+            flippedCard.classList.remove('is-flipped');
+            flippedCard = null;
+        }
+    });
 });
