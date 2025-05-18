@@ -71,6 +71,8 @@
     justify-content: center;
     gap: 20px;
     margin-top: 20px;
+    flex-wrap: wrap;
+    row-gap: 65px;
 }
 
 .card {
@@ -110,7 +112,7 @@
 }
 
 .card-front {
-    background-image: url('../../images/card-back.png');
+    background-image: url('../../images/card_back.png');
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;

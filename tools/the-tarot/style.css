@@ -47,13 +47,35 @@
 }
 
 .card-back {
-    background-color: #f8f9fa;
+    position: relative; /* 讓偽元素定位正確 */
+    background-color: #ffffff; /* 背景色（不透明） */
     transform: rotateY(180deg);
     display: flex;
     flex-direction: column;
     justify-content: center;
     font-size: 14px;
     line-height: 1.4;
+    color: #000000; /* 確保文字清晰 */
+    overflow: hidden; /* 防止偽元素超出邊界 */
+}
+
+/* 背景圖片（單獨控制透明度） */
+.card-back::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url(../../images/card_back.png) center / cover no-repeat;
+    opacity: 0.15; /* 圖片透明度 50% */
+    z-index: 0; /* 確保在背景色下方 */
+}
+
+/* 確保文字在圖片上方 */
+.card-back > * {
+    position: relative;
+    z-index: 1;
 }
 
 /* Modal 樣式 */
