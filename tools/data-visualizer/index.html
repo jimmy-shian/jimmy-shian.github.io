@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>數據可視化工具 | Jimmy's Tools</title>
+    <link rel="stylesheet" href="../../components/global.css">
+    <link rel="stylesheet" href="../../components/navigation.css">
+    <link rel="stylesheet" href="../../components/footer.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <!-- 添加 jQuery 和相關插件 -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-loading-overlay/2.1.7/loadingoverlay.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-loading-overlay/2.1.7/loadingoverlay.min.js"></script>
+</head>
+<body>
+    <script src="../../components/navigation.js"></script>
+
+    <main class="data-visualizer">
+        <header class="tool-header">
+            <h1>數據可視化工具</h1>
+            <p>上傳您的數據文件或手動輸入數據，快速生成專業的圖表和統計分析</p>
+        </header>
+
+        <div class="container">
+            <!-- 數據輸入區域 -->
+            <section class="input-section">
+                <div class="upload-box">
+                    <h2><i class="fas fa-file-upload"></i> 上傳數據</h2>
+                    <div class="drop-zone" id="dropZone">
+                        <i class="fas fa-cloud-upload-alt"></i>
+                        <p>拖放文件到這裡或點擊上傳</p>
+                        <input type="file" id="fileInput" accept=".csv, .xlsx, .xls" hidden>
+                        <button class="btn" id="browseBtn">選擇文件</button>
+                    
+                    </div>
+                    <div class="file-info-container">
+                        <div class="file-info-message" id="fileInfo">未選擇文件</div>
+                        <div class="file-info-hint">支持 CSV 或 Excel 文件</div>
+                    </div>
+
+                    <div class="example-buttons" style="margin-top: 15px;">
+                        <p style="margin: 10px 0 5px 0; font-size: 0.9rem; color: #666;">下載範例：</p>
+                        <button class="btn btn-outline" id="downloadSingleExample" style="margin-right: 5px;">
+                            <i class="fas fa-download"></i> 單一數據集
+                        </button>
+                        <button class="btn btn-outline" id="downloadMultipleExample">
+                            <i class="fas fa-download"></i> 多數據集
+                        </button>
+                    </div>
+                </div>
+
+                <div class="manual-input-wrapper">
+                    <!-- 數據集切換器 -->
+                    <div class="dataset-tabs">
+                        <button class="dataset-tab active" data-dataset="0">數據集 1</button>
+                        <button class="dataset-tab-add" id="addDataset"><i class="fas fa-plus"></i></button>
+                    </div>
+                    
+                    <div class="manual-input">
+                    <div class="input-grid">
+                        <div class="input-row">
+                            <input type="text" class="input-x" placeholder="X 值" data-row="0">
+                            <input type="text" class="input-y" placeholder="Y 值" data-row="0">
+                            <button class="btn-remove" data-row="0"><i class="fas fa-times"></i></button>
+                        </div>
+                    </div>
+                    <div class="btn-group">
+                        <button class="btn" id="addRow"><i class="fas fa-plus"></i> 添加行</button>
+                        <button class="btn" id="clearData"><i class="fas fa-trash"></i> 清除數據</button>
+                        <button class="btn btn-primary" id="generateChart"><i class="fas fa-chart-line"></i> 生成圖表</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 圖表和表格區域 -->
+            <section class="output-section">
+                <div class="tabs">
+                    <button class="tab-btn active" data-tab="chart">圖表</button>
+                    <button class="tab-btn" data-tab="table">數據表</button>
+                    <button class="tab-btn" data-tab="stats">統計</button>
+                </div>
+
+                <div class="tab-content">
+                    <div class="tab-pane active" id="chart-pane">
+                        <div class="chart-controls">
+                            <select id="chartType">
+                                <option value="line">折線圖</option>
+                                <option value="bar">柱狀圖</option>
+                                <option value="scatter">散點圖</option>
+                            </select>
+                            <div class="chart-options">
+                                <label><input type="checkbox" id="showPoints" checked> 顯示數據點</label>
+                                <label><input type="checkbox" id="smoothLine" checked> 平滑曲線</label>
+                                <label><input type="checkbox" id="showLegend" checked> 顯示圖例</label>
+                            </div>
+                        </div>
+                        <div class="chart-container">
+                            <canvas id="dataChart"></canvas>
+                        </div>
+                    </div>
+
+                    <div class="tab-pane" id="table-pane">
+                        <div class="table-responsive">
+                            <table id="dataTable">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>X 值</th>
+                                        <th>Y 值</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <!-- 數據將通過JavaScript動態生成 -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+
+
+                    <div class="tab-pane" id="stats-pane">
+                        <div class="stats-grid">
+                            <!-- X 值統計 -->
+                            <div class="stat-card">
+                                <h3 class="x-stats-title">X 值統計
+                                    <span class="tooltip">
+                                        <i class="fas fa-info-circle info-icon"></i>
+                                        <span class="tooltiptext">X 軸數據的統計分析，包括集中趨勢、離散程度和分佈特徵。</span>
+                                    </span>
+                                </h3>
+                                <div class="stat-item">
+                                    <span class="stat-label">
+                                        平均值
+                                        <span class="tooltip">
+                                            <i class="fas fa-question-circle"></i>
+                                            <span class="tooltiptext">所有數據的算術平均值，反映數據的集中趨勢。</span>
+                                        </span>
+                                    </span>
+                                    <span class="stat-value" id="x-mean">-</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-label">
+                                        標準差
+                                        <span class="tooltip">
+                                            <i class="fas fa-question-circle"></i>
+                                            <span class="tooltiptext">數據的離散程度，值越大表示數據越分散。</span>
+                                        </span>
+                                    </span>
+                                    <span class="stat-value" id="x-std">-</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-label">
+                                        最小值
+                                        <span class="tooltip">
+                                            <i class="fas fa-question-circle"></i>
+                                            <span class="tooltiptext">數據集中的最小值。</span>
+                                        </span>
+                                    </span>
+                                    <span class="stat-value" id="x-min">-</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-label">
+                                        最大值
+                                        <span class="tooltip">
+                                            <i class="fas fa-question-circle"></i>
+                                            <span class="tooltiptext">數據集中的最大值。</span>
+                                        </span>
+                                    </span>
+                                    <span class="stat-value" id="x-max">-</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-label">
+                                        第一四分位數 (Q1)
+                                        <span class="tooltip">
+                                            <i class="fas fa-question-circle"></i>
+                                            <span class="tooltiptext">將數據分為四等份，25% 的數據小於此值。</span>
+                                        </span>
+                                    </span>
+                                    <span class="stat-value" id="x-q1">-</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-label">
+                                        中位數 (Q2)
+                                        <span class="tooltip">
+                                            <i class="fas fa-question-circle"></i>
+                                            <span class="tooltiptext">將數據分為兩半的中間值，50% 的數據小於此值。</span>
+                                        </span>
+                                    </span>
+                                    <span class="stat-value" id="x-median">-</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-label">
+                                        第三四分位數 (Q3)
+                                        <span class="tooltip">
+                                            <i class="fas fa-question-circle"></i>
+                                            <span class="tooltiptext">將數據分為四等份，75% 的數據小於此值。</span>
+                                        </span>
+                                    </span>
+                                    <span class="stat-value" id="x-q3">-</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-label">
+                                        四分位距 (IQR)
+                                        <span class="tooltip">
+                                            <i class="fas fa-question-circle"></i>
+                                            <span class="tooltiptext">Q3 減去 Q1，反映中間 50% 數據的離散程度。</span>
+                                        </span>
+                                    </span>
+                                    <span class="stat-value" id="x-iqr">-</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-label">
+                                        偏度
+                                        <span class="tooltip">
+                                            <i class="fas fa-question-circle"></i>
+                                            <span class="tooltiptext">數據分佈的不對稱性。正值表示右偏，負值表示左偏。</span>
+                                        </span>
+                                    </span>
+                                    <span class="stat-value" id="x-skewness">-</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-label">
+                                        峰度
+                                        <span class="tooltip">
+                                            <i class="fas fa-question-circle"></i>
+                                            <span class="tooltiptext">數據分佈的尖峰程度。正值表示尖峰，負值表示平峰。</span>
+                                        </span>
+                                    </span>
+                                    <span class="stat-value" id="x-kurtosis">-</span>
+                                </div>
+                            </div>
+
+                            <!-- Y 值統計 -->
+                            <div class="stat-card">
+                                <h3 class="y-stats-title">Y 值統計
+                                    <span class="tooltip">
+                                        <i class="fas fa-info-circle info-icon"></i>
+                                        <span class="tooltiptext">Y 軸數據的統計分析，包括集中趨勢、離散程度和分佈特徵。</span>
+                                    </span>
+                                </h3>
+                                <div class="stat-item">
+                                    <span class="stat-label">
+                                        平均值
+                                        <span class="tooltip">
+                                            <i class="fas fa-question-circle"></i>
+                                            <span class="tooltiptext">所有數據的算術平均值，反映數據的集中趨勢。</span>
+                                        </span>
+                                    </span>
+                                    <span class="stat-value" id="y-mean">-</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-label">
+                                        標準差
+                                        <span class="tooltip">
+                                            <i class="fas fa-question-circle"></i>
+                                            <span class="tooltiptext">數據的離散程度，值越大表示數據越分散。</span>
+                                        </span>
+                                    </span>
+                                    <span class="stat-value" id="y-std">-</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-label">
+                                        最小值
+                                        <span class="tooltip">
+                                            <i class="fas fa-question-circle"></i>
+                                            <span class="tooltiptext">數據集中的最小值。</span>
+                                        </span>
+                                    </span>
+                                    <span class="stat-value" id="y-min">-</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-label">
+                                        最大值
+                                        <span class="tooltip">
+                                            <i class="fas fa-question-circle"></i>
+                                            <span class="tooltiptext">數據集中的最大值。</span>
+                                        </span>
+                                    </span>
+                                    <span class="stat-value" id="y-max">-</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-label">
+                                        第一四分位數 (Q1)
+                                        <span class="tooltip">
+                                            <i class="fas fa-question-circle"></i>
+                                            <span class="tooltiptext">將數據分為四等份，25% 的數據小於此值。</span>
+                                        </span>
+                                    </span>
+                                    <span class="stat-value" id="y-q1">-</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-label">
+                                        中位數 (Q2)
+                                        <span class="tooltip">
+                                            <i class="fas fa-question-circle"></i>
+                                            <span class="tooltiptext">將數據分為兩半的中間值，50% 的數據小於此值。</span>
+                                        </span>
+                                    </span>
+                                    <span class="stat-value" id="y-median">-</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-label">
+                                        第三四分位數 (Q3)
+                                        <span class="tooltip">
+                                            <i class="fas fa-question-circle"></i>
+                                            <span class="tooltiptext">將數據分為四等份，75% 的數據小於此值。</span>
+                                        </span>
+                                    </span>
+                                    <span class="stat-value" id="y-q3">-</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-label">
+                                        四分位距 (IQR)
+                                        <span class="tooltip">
+                                            <i class="fas fa-question-circle"></i>
+                                            <span class="tooltiptext">Q3 減去 Q1，反映中間 50% 數據的離散程度。</span>
+                                        </span>
+                                    </span>
+                                    <span class="stat-value" id="y-iqr">-</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-label">
+                                        偏度
+                                        <span class="tooltip">
+                                            <i class="fas fa-question-circle"></i>
+                                            <span class="tooltiptext">數據分佈的不對稱性。正值表示右偏，負值表示左偏。</span>
+                                        </span>
+                                    </span>
+                                    <span class="stat-value" id="y-skewness">-</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-label">
+                                        峰度
+                                        <span class="tooltip">
+                                            <i class="fas fa-question-circle"></i>
+                                            <span class="tooltiptext">數據分佈的尖峰程度。正值表示尖峰，負值表示平峰。</span>
+                                        </span>
+                                    </span>
+                                    <span class="stat-value" id="y-kurtosis">-</span>
+                                </div>
+                            </div>
+
+                        </div>
+                        <!-- 相關性分析 - 單獨的容器 -->
+                        <div class="correlation-container">
+                            <div class="correlation-card">
+                                <h3 class="correlation-title">相關性分析
+                                    <span class="tooltip">
+                                        <i class="fas fa-info-circle info-icon"></i>
+                                        <span class="tooltiptext">
+    分析 X 和 Y 變量之間的線性關係強度和方向。
+    <br><br>
+    <strong>相關係數說明：</strong>
+    <ul style="text-align: left; margin: 5px 0 0 0; padding-left: 20px;">
+        <li><strong>正相關</strong>（+）：X 增加時，Y 也傾向增加</li>
+        <li><strong>負相關</strong>（-）：X 增加時，Y 傾向減少</li>
+        <br>
+        <li><strong>強相關</strong>：變量關係密切</li>
+        <li><strong>中等相關</strong>：變量有明顯關係</li>
+        <li><strong>弱相關</strong>：變量幾乎無關</li>
+    </ul>
+    注意：相關不等於因果關係
+</span>
+                                    </span>
+                                </h3>
+                                <div class="correlation-coefficient" id="correlation">-</div>
+                                <div class="correlation-hint">
+                                    <p>相關係數範圍: -1 到 1</p>
+                                    <div style="display: flex; justify-content: center; gap: 20px; margin: 10px 0;">
+                                        <span>• |r| ≥ 0.7: 強相關</span>
+                                        <span>• 0.3 ≤ |r| < 0.7: 中等相關</span>
+                                        <span>• |r| < 0.3: 弱相關或無相關</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- 使用Chart.js進行圖表繪製 -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- 使用xlsx庫處理Excel文件 -->
+    <script src="https://cdn.jsdelivr.net/npm/xlsx/dist/xlsx.full.min.js"></script>
+    <!-- 自定義JavaScript -->
+    <script src="script.js"></script>
+    <script src="../../components/footer.js"></script>
+</body>
+</html>

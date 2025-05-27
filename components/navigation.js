@@ -40,6 +40,13 @@
           <li><a href="${basePath}password-generator/index.html">密碼產生器</a></li>
         </ul>
       </li>
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle">圖表 <span class="arrow">▼</span></a>
+        <ul class="dropdown-menu">
+          <li><a href="${basePath}data-visualizer/index.html">圖表繪製器</a></li>
+        </ul>
+      </li>
+      
       <li><a href="${isToolsPage ? '../../index.html' : 'index.html'}">回主站</a></li>
     </ul>
   `;
