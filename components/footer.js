@@ -2,14 +2,13 @@
 document.addEventListener('DOMContentLoaded', () => {
     const footer = document.createElement('div');
     footer.innerHTML = `
+    <div id="ad-container-1" class="ad-wrapper"></div>
         <footer class="site-footer">
             <div class="footer-content">
                 <p>&copy; 2025 Jimmy Shian. All rights reserved.</p>
                 <p>Powered by AI and Love</p>
             </div>
             <!-- Google AdSense Slots -->
-            <div id="ad-container-1" class="ad-wrapper"></div>
-            <div id="ad-container-2" class="ad-wrapper"></div>
         </footer>
     `;
     
@@ -54,7 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         adSettings.forEach(({ containerId, attrs }) => {
-            const container = footer.querySelector(`#${containerId}`);
+            const container = document.getElementById(containerId);
             if (!container) return;
 
             const ins = document.createElement('ins');

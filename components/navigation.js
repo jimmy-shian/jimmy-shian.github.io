@@ -54,6 +54,12 @@
   // 插入到<body>最前面
   document.addEventListener('DOMContentLoaded', function() {
     document.body.insertBefore(nav, document.body.firstChild);
+
+        // Insert container for second AdSense slot (auto responsive)
+        const ad2 = document.createElement('div');
+        ad2.id = 'ad-container-2';
+        ad2.className = 'ad-wrapper';
+        document.body.insertBefore(ad2, nav.nextSibling);
     
     // 手機選單切換
     const menuToggle = document.querySelector('.menu-toggle');
