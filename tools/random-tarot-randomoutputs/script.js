@@ -38,7 +38,7 @@ const tarotCards = {
             '面對重要選擇時，跟隨內心的聲音。',
             '真誠的連結建立在相互尊重與理解的基礎上。'
         ] },
-        { name: '戰車VIII', meaning: '意志力、勝利與前進', ai: [
+        { name: '戰車VIII', meaning: '勝利、意志力與前進', ai: [
             '戰車象徵通過意志力克服障礙。',
             '保持專注與決心，你將取得成功。',
             '平衡對立的力量，找到前進的方向。'
@@ -183,7 +183,7 @@ const tarotCards = {
         ] },
         { name: '權杖國王', meaning: '領導、遠見與企業家精神', ai: [
             '權杖國王代表強大的領導力。',
-            '以遠見和熱情引導他人。',
+            '以遠見 and 熱情引導他人。',
             '你的經驗與智慧是指引他人的明燈。'
         ] },
 
@@ -235,7 +235,7 @@ const tarotCards = {
         ] },
         { name: '聖杯十', meaning: '和諧、家庭與情感圓滿', ai: [
             '聖杯十代表情感上的圓滿。',
-            '家庭和諧與情感滿足的時刻。',
+            '家庭和諧與情感滿足 the 時刻。',
             '慶祝愛與連結的喜悅。'
         ] },
         { name: '聖杯侍者', meaning: '敏感、直覺與新情感', ai: [
@@ -409,28 +409,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const cardContainer = document.getElementById('card-container');
     const generateButton = document.getElementById('generate-card');
     const majorOnlyCheckbox = document.getElementById('major-only');
-    const cardImage = document.getElementById('card-image');
-    const cardName = document.getElementById('card-name');
-    const cardMeaning = document.getElementById('card-meaning');
-
-    // 動態新增 AI 解讀切換
-    let aiInsightCheckbox = document.getElementById('ai-insight-enable');
-    if (!aiInsightCheckbox) {
-        aiInsightCheckbox = document.createElement('input');
-        aiInsightCheckbox.type = 'checkbox';
-        aiInsightCheckbox.id = 'ai-insight-enable';
-        const label = document.createElement('label');
-        label.appendChild(aiInsightCheckbox);
-        label.appendChild(document.createTextNode(' 顯示 AI 深度解讀'));
-        generateButton.parentNode.insertBefore(label, generateButton.nextSibling);
-    }
 
     // AI 解讀顯示區
     let aiText = document.getElementById('ai-text');
     if (!aiText) {
         aiText = document.createElement('div');
         aiText.id = 'ai-text';
-        aiText.style = 'margin-top:1em;color:#444;font-size:1.1em;max-width:500px;margin-left:auto;margin-right:auto;';
+        aiText.style = 'margin-top:1.5em;color:#ffd700;font-size:1.1em;max-width:500px;margin-left:auto;margin-right:auto;text-shadow: 0 0 5px rgba(0,0,0,0.5);line-height:1.6;';
         cardContainer.appendChild(aiText);
     }
 
@@ -440,174 +425,161 @@ document.addEventListener('DOMContentLoaded', () => {
         return cards[randomIndex];
     }
 
+    function getCardImageFileName(name) {
+        const mapping = {
+            '愚者I': 'Fool_I',
+            '魔術師II': 'Magician_II',
+            '女祭司III': 'High_Priestess_III',
+            '皇后IV': 'Empress_IV',
+            '皇帝V': 'Emperor_V',
+            '教皇VI': 'Hierophant_VI',
+            '戀人VII': 'Lovers_VII',
+            '戰車VIII': 'Chariot_VIII',
+            '力量IX': 'Strength_IX',
+            '隱者X': 'Hermit_X',
+            '命運之輪XI': 'Wheel_of_Fortune_XI',
+            '正義XII': 'Justice_XII',
+            '倒吊人XIII': 'Hanged_Man_XIII',
+            '死神XIV': 'Death_XIV',
+            '節制XV': 'Temperance_XV',
+            '惡魔XVI': 'Devil_XVI',
+            '高塔XVII': 'Tower_XVII',
+            '星星XVIII': 'Star_XVIII',
+            '月亮XIX': 'Moon_XIX',
+            '太陽XX': 'Sun_XX',
+            '審判XXI': 'Judgement_XXI',
+            '世界': 'World',
+            
+            // Wands
+            '權杖一': 'Wand_1',
+            '權杖二': 'Wand_2',
+            '權杖三': 'Wand_3',
+            '權杖四': 'Wand_4',
+            '權杖五': 'Wand_5',
+            '權杖六': 'Wand_6',
+            '權杖七': 'Wand_7',
+            '權杖八': 'Wand_8',
+            '權杖九': 'Wand_9'
+        };
+        return mapping[name] || null;
+    }
+
     function showCard(card) {
-        cardContainer.style.opacity = '0';
-        cardContainer.style.display = 'block';
-        
-        // 獲取新的 DOM 元素
         const cardTitle = document.querySelector('.card-title');
         const cardMeaning = document.querySelector('.card-meaning');
         const cardImage = document.querySelector('.card-image');
         
-        // 設置卡牌資訊
-        cardTitle.textContent = card.name;
-        cardMeaning.textContent = card.meaning;
+        if (cardTitle) cardTitle.textContent = card.name;
+        if (cardMeaning) cardMeaning.textContent = card.meaning;
         
-        // 設置牌圖（指向根目錄的 images 資料夾）
-        cardImage.style.backgroundImage = `url('../../images/${card.name}.png')`;
+        if (cardImage) {
+            const imgName = getCardImageFileName(card.name);
+            if (imgName) {
+                cardImage.style.backgroundImage = `url('../../images/${imgName}.webp')`;
+            } else {
+                cardImage.style.backgroundImage = `url('../../images/card_frame.webp')`;
+            }
+        }
         
-        // AI 解讀
-        if (aiInsightCheckbox.checked && card.ai) {
-            aiText.innerHTML = card.ai.map(line => `<p>${line}</p>`).join('');
+        // AI 解讀 (打字機效果)
+        if (card.ai) {
+            runTypeWriter(aiText, card.ai, 80);
         } else {
             aiText.innerHTML = '';
         }
+    }
+
+    let typeWriterInterval = null;
+
+    function runTypeWriter(element, lines, speed = 30) {
+        if (typeWriterInterval) {
+            clearInterval(typeWriterInterval);
+            typeWriterInterval = null;
+        }
         
-        setTimeout(() => {
-            cardContainer.style.opacity = '1';
-        }, 100);
+        element.innerHTML = '';
+        
+        const paragraphs = lines.map(() => {
+            const p = document.createElement('p');
+            p.style.marginBottom = '10px';
+            element.appendChild(p);
+            return p;
+        });
+        
+        let pIndex = 0;
+        let charIndex = 0;
+        
+        typeWriterInterval = setInterval(() => {
+            if (pIndex >= lines.length) {
+                clearInterval(typeWriterInterval);
+                typeWriterInterval = null;
+                return;
+            }
+            
+            const currentLine = lines[pIndex];
+            if (currentLine && currentLine[charIndex]) {
+                paragraphs[pIndex].textContent += currentLine[charIndex];
+            }
+            charIndex++;
+            
+            if (charIndex >= currentLine.length) {
+                pIndex++;
+                charIndex = 0;
+            }
+        }, speed);
     }
 
     function generateCard() {
         const card = getRandomCard(majorOnlyCheckbox.checked);
-        showCard(card);
-    }
-
-    generateButton.addEventListener('click', generateCard);
-    aiInsightCheckbox.addEventListener('change', () => {
-        const card = cardName.textContent ? tarotCards.major.concat(tarotCards.minor).find(c => c.name === cardName.textContent) : null;
-        if (card) showCard(card);
-    });
-    generateCard();
-});
-
-document.addEventListener('DOMContentLoaded', () => {
-    console.log('Random Tarot Card Generator script loaded');
-    
-    const cardContainer = document.getElementById('card-container');
-    const generateButton = document.getElementById('generate-card');
-    const majorOnlyCheckbox = document.getElementById('major-only');
-    const cardImage = document.getElementById('card-image');
-    const cardName = document.getElementById('card-name');
-    const cardMeaning = document.getElementById('card-meaning');
-
-    // 塔羅牌資料
-    const tarotCards = {
-        major: [
-    { name: '愚者I', meaning: '新的冒險、自由、無限可能' },
-    { name: '魔術師II', meaning: '創造力、行動力、資源運用' },
-    { name: '女祭司III', meaning: '直覺、潛意識、神秘' },
-    { name: '皇后IV', meaning: '豐盛、滋養、母性' },
-    { name: '皇帝V', meaning: '權威、秩序、掌控' },
-    { name: '教皇VI', meaning: '傳統、信仰、精神指引' },
-    { name: '戀人VII', meaning: '愛情、和諧、選擇' },
-    { name: '戰車VIII', meaning: '勝利、意志力、掌控' },
-    { name: '力量IX', meaning: '勇氣、堅持、內在力量' },
-    { name: '隱者X', meaning: '尋求真理、內省、指引' },
-    { name: '命運之輪XI', meaning: '命運、循環、轉變' },
-    { name: '正義XII', meaning: '公平、平衡、因果' },
-    { name: '倒吊人XIII', meaning: '等待、犧牲、新觀點' },
-    { name: '死神XIV', meaning: '結束、轉變、新生' },
-    { name: '節制XV', meaning: '平衡、節制、整合' },
-    { name: '惡魔XVI', meaning: '束縛、誘惑、陰影' },
-    { name: '高塔XVII', meaning: '突變、瓦解、覺醒' },
-    { name: '星星XVIII', meaning: '希望、療癒、靈感' },
-    { name: '月亮XIX', meaning: '潛意識、幻象、直覺' },
-    { name: '太陽XX', meaning: '成功、快樂、成長' },
-    { name: '審判XXI', meaning: '覺醒、救贖、新生' },
-    { name: '世界', meaning: '完成、圓滿、成就' }
-],
-minor: [
-    // 權杖
-    { name: '權杖一', meaning: '新計畫、動力、開始' },
-    { name: '權杖二', meaning: '規劃、遠見、選擇' },
-    { name: '權杖三', meaning: '拓展、合作、前進' },
-    { name: '權杖四', meaning: '慶祝、穩定、團結' },
-    { name: '權杖五', meaning: '競爭、衝突、挑戰' },
-    { name: '權杖六', meaning: '勝利、認可、成就' },
-    { name: '權杖七', meaning: '防衛、堅持、立場' },
-    { name: '權杖八', meaning: '迅速、訊息、行動' },
-    { name: '權杖九', meaning: '堅持、考驗、準備' },
-    { name: '權杖十', meaning: '負擔、壓力、責任' },
-    { name: '權杖侍從', meaning: '熱情、冒險、消息' },
-    { name: '權杖騎士', meaning: '衝勁、行動、變動' },
-    { name: '權杖皇后', meaning: '自信、獨立、魅力' },
-    { name: '權杖國王', meaning: '領導、遠見、權威' },
-    // 聖杯
-    { name: '聖杯一', meaning: '新感情、靈感、喜悅' },
-    { name: '聖杯二', meaning: '夥伴、結合、吸引' },
-    { name: '聖杯三', meaning: '友誼、慶祝、社交' },
-    { name: '聖杯四', meaning: '冷淡、沉思、無聊' },
-    { name: '聖杯五', meaning: '失落、遺憾、悲傷' },
-    { name: '聖杯六', meaning: '回憶、童年、懷舊' },
-    { name: '聖杯七', meaning: '幻想、選擇、誘惑' },
-    { name: '聖杯八', meaning: '離開、尋找、失望' },
-    { name: '聖杯九', meaning: '滿足、願望、成就' },
-    { name: '聖杯十', meaning: '幸福、和諧、家庭' },
-    { name: '聖杯侍從', meaning: '浪漫、消息、創意' },
-    { name: '聖杯騎士', meaning: '追求、邀請、理想' },
-    { name: '聖杯皇后', meaning: '體貼、直覺、溫柔' },
-    { name: '聖杯國王', meaning: '成熟、智慧、情感平衡' },
-    // 寶劍
-    { name: '寶劍一', meaning: '新想法、決心、真理' },
-    { name: '寶劍二', meaning: '抉擇、平衡、猶豫' },
-    { name: '寶劍三', meaning: '心碎、分離、療癒' },
-    { name: '寶劍四', meaning: '休息、沉澱、恢復' },
-    { name: '寶劍五', meaning: '衝突、競爭、爭執' },
-    { name: '寶劍六', meaning: '過渡、旅行、釋放' },
-    { name: '寶劍七', meaning: '謀略、欺瞞、逃避' },
-    { name: '寶劍八', meaning: '束縛、限制、困境' },
-    { name: '寶劍九', meaning: '焦慮、擔憂、失眠' },
-    { name: '寶劍十', meaning: '結束、背叛、痛苦' },
-    { name: '寶劍侍從', meaning: '警覺、觀察、學習' },
-    { name: '寶劍騎士', meaning: '果斷、行動、衝動' },
-    { name: '寶劍皇后', meaning: '理性、獨立、誠實' },
-    { name: '寶劍國王', meaning: '權威、邏輯、公正' },
-    // 錢幣
-    { name: '錢幣一', meaning: '新機會、財富、實現' },
-    { name: '錢幣二', meaning: '平衡、適應、調整' },
-    { name: '錢幣三', meaning: '合作、技能、成長' },
-    { name: '錢幣四', meaning: '保守、控制、積蓄' },
-    { name: '錢幣五', meaning: '貧困、失落、支持' },
-    { name: '錢幣六', meaning: '施予、分享、幫助' },
-    { name: '錢幣七', meaning: '等待、評估、耐心' },
-    { name: '錢幣八', meaning: '努力、專注、學習' },
-    { name: '錢幣九', meaning: '獨立、豐盛、享受' },
-    { name: '錢幣十', meaning: '財富、家族、成就' },
-    { name: '錢幣侍從', meaning: '計畫、學習、機會' },
-    { name: '錢幣騎士', meaning: '勤奮、實在、責任' },
-    { name: '錢幣皇后', meaning: '實際、溫暖、照顧' },
-    { name: '錢幣國王', meaning: '穩定、富有、領導' }
-]
-    };
-
-    function getRandomCard(majorOnly) {
-        const cards = majorOnly ? tarotCards.major : [...tarotCards.major, ...tarotCards.minor];
-        const randomIndex = Math.floor(Math.random() * cards.length);
-        return cards[randomIndex];
-    }
-
-    function showCard(card) {
-        // 顯示轉場效果
-        cardContainer.style.opacity = '0';
-        cardContainer.style.display = 'block';
         
-        // 更新牌面資料
-        cardName.textContent = card.name;
-        cardMeaning.textContent = card.meaning;
+        const cardEl = document.querySelector('.tarot-card');
+        const cardInner = document.querySelector('.card-inner');
         
-        // 模擬翻牌效果
-        setTimeout(() => {
-            cardContainer.style.opacity = '1';
-        }, 100);
+        if (cardContainer && cardEl && cardInner) {
+            cardContainer.style.display = 'block';
+            
+            // 瞬間回到背面
+            cardInner.style.transition = 'none';
+            cardInner.classList.remove('is-flipped');
+            
+            // 清空舊字樣與圖片以避免殘影
+            const cardTitle = document.querySelector('.card-title');
+            const cardMeaning = document.querySelector('.card-meaning');
+            const cardImage = document.querySelector('.card-image');
+            if (cardTitle) cardTitle.textContent = '';
+            if (cardMeaning) cardMeaning.textContent = '';
+            if (cardImage) cardImage.style.backgroundImage = '';
+            if (aiText) {
+                aiText.innerHTML = '';
+                if (typeWriterInterval) {
+                    clearInterval(typeWriterInterval);
+                    typeWriterInterval = null;
+                }
+            }
+            
+            // 移除原有發牌動畫
+            cardEl.classList.remove('card-deal-animation');
+            
+            // 重繪
+            void cardEl.offsetWidth;
+            void cardInner.offsetWidth;
+            
+            // 恢復 transition
+            cardInner.style.transition = '';
+            
+            // 加上發牌飛入動畫
+            cardEl.classList.add('card-deal-animation');
+            
+            // 400ms 後卡片飛到一半就定位時，更新牌面資料並自動翻面
+            setTimeout(() => {
+                showCard(card);
+                cardInner.classList.add('is-flipped');
+            }, 400);
+        } else {
+            showCard(card);
+        }
     }
 
-    function generateCard() {
-        const card = getRandomCard(majorOnlyCheckbox.checked);
-        showCard(card);
-    }
-
-    // 初始化
     generateButton.addEventListener('click', generateCard);
     
     // 第一次載入時自動生成一張牌

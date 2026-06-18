@@ -88,9 +88,89 @@ const tarotCards = {
     ]
 };
 
+function getCardDisplayName(name) {
+    const majorMap = {
+        'Fool_I': '愚者 (The Fool)',
+        'Magician_II': '魔術師 (The Magician)',
+        'High_Priestess_III': '女祭司 (The High Priestess)',
+        'Empress_IV': '女皇 (The Empress)',
+        'Emperor_V': '皇帝 (The Emperor)',
+        'Hierophant_VI': '教皇 (The Hierophant)',
+        'Lovers_VII': '戀人 (The Lovers)',
+        'Chariot_VIII': '戰車 (The Chariot)',
+        'Strength_IX': '力量 (Strength)',
+        'Hermit_X': '隱者 (The Hermit)',
+        'Wheel_of_Fortune_XI': '命運之輪 (Wheel of Fortune)',
+        'Justice_XII': '正義 (Justice)',
+        'Hanged_Man_XIII': '倒吊人 (The Hanged Man)',
+        'Death_XIV': '死神 (Death)',
+        'Temperance_XV': '節制 (Temperance)',
+        'Devil_XVI': '惡魔 (The Devil)',
+        'Tower_XVII': '高塔 (The Tower)',
+        'Star_XVIII': '星星 (The Star)',
+        'Moon_XIX': '月亮 (The Moon)',
+        'Sun_XX': '太陽 (The Sun)',
+        'Judgement_XXI': '審判 (Judgement)',
+        'World': '世界 (The World)'
+    };
+    if (majorMap[name]) {
+        return majorMap[name];
+    }
+    
+    const parts = name.split('_');
+    const suit = parts[0];
+    const rank = parts[1];
+    
+    let suitZh = '';
+    let suitEn = '';
+    if (suit === 'Wand') {
+        suitZh = '權杖';
+        suitEn = 'Wands';
+    } else if (suit === 'Cup') {
+        suitZh = '聖杯';
+        suitEn = 'Cups';
+    } else if (suit === 'Sword') {
+        suitZh = '寶劍';
+        suitEn = 'Swords';
+    } else if (suit === 'Pentacle') {
+        suitZh = '錢幣';
+        suitEn = 'Pentacles';
+    }
+    
+    const rankMap = {
+        '1': { zh: '一', en: 'Ace' },
+        '2': { zh: '二', en: 'Two' },
+        '3': { zh: '三', en: 'Three' },
+        '4': { zh: '四', en: 'Four' },
+        '5': { zh: '五', en: 'Five' },
+        '6': { zh: '六', en: 'Six' },
+        '7': { zh: '七', en: 'Seven' },
+        '8': { zh: '八', en: 'Eight' },
+        '9': { zh: '九', en: 'Nine' },
+        '10': { zh: '十', en: 'Ten' },
+        'Page': { zh: '侍者', en: 'Page' },
+        'Knight': { zh: '騎士', en: 'Knight' },
+        'Queen': { zh: '皇后', en: 'Queen' },
+        'King': { zh: '國王', en: 'King' }
+    };
+    
+    if (rankMap[rank]) {
+        const isCourt = ['Page', 'Knight', 'Queen', 'King'].includes(rank);
+        const enName = isCourt ? `${rankMap[rank].en} of ${suitEn}` : `${rankMap[rank].en} of ${suitEn}`;
+        return `${suitZh}${rankMap[rank].zh} (${enName})`;
+    }
+    
+    return name;
+}
+
 // 初始化頁面
 document.addEventListener('DOMContentLoaded', () => {
-    const tarotGrid = document.querySelector('.tarot-grid');
+    const gridMajor = document.getElementById('grid-major');
+    const gridWands = document.getElementById('grid-wands');
+    const gridCups = document.getElementById('grid-cups');
+    const gridSwords = document.getElementById('grid-swords');
+    const gridPentacles = document.getElementById('grid-pentacles');
+
     const modal = document.getElementById('card-modal');
     const closeBtn = document.querySelector('.close');
     const cardName = document.getElementById('card-name');
@@ -108,18 +188,60 @@ document.addEventListener('DOMContentLoaded', () => {
         
         const cardFront = document.createElement('div');
         cardFront.className = 'card-front';
-        cardFront.style.backgroundImage = `url('../../images/${card.name}.png')`;
+        
+        const imgNum = parseInt(card.name.split('_')[1]);
+        const hasImg = (card.name === 'World') || 
+                       (card.name.startsWith('Wand_') && !isNaN(imgNum) && imgNum <= 9) || 
+                       ['Fool_I', 'Magician_II', 'High_Priestess_III', 'Empress_IV', 'Emperor_V', 'Hierophant_VI', 'Lovers_VII', 'Chariot_VIII', 'Strength_IX', 'Hermit_X', 'Wheel_of_Fortune_XI', 'Justice_XII', 'Hanged_Man_XIII', 'Death_XIV', 'Temperance_XV', 'Devil_XVI', 'Tower_XVII', 'Star_XVIII', 'Moon_XIX', 'Sun_XX', 'Judgement_XXI'].includes(card.name);
+        
+        if (hasImg) {
+            cardFront.style.backgroundImage = `url('../../images/${card.name}.webp')`;
+        } else {
+            cardFront.style.backgroundImage = `url('../../images/card_frame.webp')`;
+            const textOverlay = document.createElement('div');
+            textOverlay.style.position = 'absolute';
+            textOverlay.style.top = '50%';
+            textOverlay.style.left = '50%';
+            textOverlay.style.transform = 'translate(-50%, -50%)';
+            textOverlay.style.fontSize = '14px';
+            textOverlay.style.fontWeight = 'bold';
+            textOverlay.style.color = '#555';
+            textOverlay.style.textAlign = 'center';
+            textOverlay.style.padding = '10px';
+            textOverlay.textContent = card.name.replace('_', ' ');
+            cardFront.appendChild(textOverlay);
+        }
         cardFront.style.backgroundSize = 'contain';
         cardFront.style.backgroundRepeat = 'no-repeat';
         cardFront.style.backgroundPosition = 'center';
         
         const cardBack = document.createElement('div');
         cardBack.className = 'card-back';
-        cardBack.textContent = card.meaning;
+        
+        const cardBackContent = document.createElement('div');
+        cardBackContent.style.padding = '15px';
+        cardBackContent.textContent = card.meaning;
+        cardBack.appendChild(cardBackContent);
         
         cardInner.appendChild(cardFront);
         cardInner.appendChild(cardBack);
         cardElement.appendChild(cardInner);
+        
+        // 加上卡牌小標
+        const cardTitleLabel = document.createElement('div');
+        cardTitleLabel.className = 'card-title-label';
+        
+        const cardNameText = document.createElement('div');
+        cardNameText.className = 'card-name-text';
+        cardNameText.textContent = getCardDisplayName(card.name);
+        
+        const cardMeaningText = document.createElement('div');
+        cardMeaningText.className = 'card-meaning-text';
+        cardMeaningText.textContent = card.meaning;
+        
+        cardTitleLabel.appendChild(cardNameText);
+        cardTitleLabel.appendChild(cardMeaningText);
+        cardElement.appendChild(cardTitleLabel);
         
         cardElement.addEventListener('click', (e) => {
             const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
@@ -142,13 +264,59 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             } else {
                 // 桌面顯示 modal
-                cardName.textContent = card.name;
+                cardName.textContent = getCardDisplayName(card.name);
                 cardMeaning.textContent = card.meaning;
                 modal.style.display = 'block';
             }
         });
         
-        tarotGrid.appendChild(cardElement);
+        // 判斷分發到哪一個 grid 容器
+        let targetGrid = gridMajor;
+        if (card.name.startsWith('Wand')) {
+            targetGrid = gridWands;
+        } else if (card.name.startsWith('Cup')) {
+            targetGrid = gridCups;
+        } else if (card.name.startsWith('Sword')) {
+            targetGrid = gridSwords;
+        } else if (card.name.startsWith('Pentacle')) {
+            targetGrid = gridPentacles;
+        }
+        
+        if (targetGrid) {
+            targetGrid.appendChild(cardElement);
+        }
+    });
+
+    // 分類過濾切換功能
+    const categoryButtons = document.querySelectorAll('.category-btn');
+    const sections = document.querySelectorAll('.tarot-section');
+
+    categoryButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            // 更新 active class
+            categoryButtons.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+
+            const category = btn.getAttribute('data-category');
+
+            sections.forEach(sec => {
+                if (category === 'all') {
+                    sec.style.display = 'block';
+                } else if (category === 'major' && sec.id === 'sec-major') {
+                    sec.style.display = 'block';
+                } else if (category === 'wands' && sec.id === 'sec-wands') {
+                    sec.style.display = 'block';
+                } else if (category === 'cups' && sec.id === 'sec-cups') {
+                    sec.style.display = 'block';
+                } else if (category === 'swords' && sec.id === 'sec-swords') {
+                    sec.style.display = 'block';
+                } else if (category === 'pentacles' && sec.id === 'sec-pentacles') {
+                    sec.style.display = 'block';
+                } else {
+                    sec.style.display = 'none';
+                }
+            });
+        });
     });
 
     // Modal 關閉功能

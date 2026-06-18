@@ -15,10 +15,44 @@
         <h1>The Tarot</h1>
     </header>
     <main>
-        <p>提供隨機抽取一張或三張塔羅牌的功能，適合快速占卜。</p>
-        <div class="tarot-grid">
-            <!-- 塔羅牌將由 JavaScript 動態生成 -->
+        <p>互動式塔羅牌百科。支援翻牌效果，點選卡牌可查看詳細解析。</p>
+        
+        <!-- 分類切換按鈕列 -->
+        <div class="category-menu">
+            <button class="category-btn active" data-category="all">全部牌組</button>
+            <button class="category-btn" data-category="major">大阿爾克那</button>
+            <button class="category-btn" data-category="wands">權杖組 (Wands)</button>
+            <button class="category-btn" data-category="cups">聖杯組 (Cups)</button>
+            <button class="category-btn" data-category="swords">寶劍組 (Swords)</button>
+            <button class="category-btn" data-category="pentacles">錢幣組 (Pentacles)</button>
         </div>
+
+        <!-- 分類區塊 -->
+        <div class="tarot-section" id="sec-major">
+            <h2>大阿爾克那 (Major Arcana)</h2>
+            <div class="tarot-grid" id="grid-major"></div>
+        </div>
+        
+        <div class="tarot-section" id="sec-wands">
+            <h2>權杖組 (Wands)</h2>
+            <div class="tarot-grid" id="grid-wands"></div>
+        </div>
+        
+        <div class="tarot-section" id="sec-cups">
+            <h2>聖杯組 (Cups)</h2>
+            <div class="tarot-grid" id="grid-cups"></div>
+        </div>
+        
+        <div class="tarot-section" id="sec-swords">
+            <h2>寶劍組 (Swords)</h2>
+            <div class="tarot-grid" id="grid-swords"></div>
+        </div>
+        
+        <div class="tarot-section" id="sec-pentacles">
+            <h2>錢幣組 (Pentacles)</h2>
+            <div class="tarot-grid" id="grid-pentacles"></div>
+        </div>
+
         <div id="card-modal" class="modal">
             <div class="modal-content">
                 <span class="close">&times;</span>

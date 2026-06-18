@@ -1,12 +1,13 @@
 /* navigation.css */
 .main-navigation {
-  background: #222;
-  color: #fff;
+  background: #1e1e24; /* Premium dark shade */
+  color: #f5f5f7;
   padding: 0;
   margin-bottom: 24px;
-  font-family: 'Segoe UI', Arial, sans-serif;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.15);
   position: relative;
+  z-index: 1000;
 }
 
 .main-navigation .menu {
@@ -15,68 +16,111 @@
   padding: 0;
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
 }
 
 /* 下拉選單樣式 */
 .main-navigation .dropdown {
   position: relative;
 }
+
 .main-navigation .dropdown-toggle {
   cursor: pointer;
-  padding-right: 26px;
+  padding-right: 28px !important;
 }
+
 .main-navigation .arrow {
-  margin-left: 4px;
-  font-size: 0.8em;
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 0.7em;
+  transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  pointer-events: none; /* Let clicks pass through to toggle */
 }
+
 .main-navigation .dropdown-menu {
-  display: none;
   position: absolute;
   left: 0;
   top: 100%;
-  background: #222;
-  min-width: 180px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.13);
-  z-index: 100;
-  border-radius: 0 0 8px 8px;
-  padding: 0;
+  background: #2a2a35;
+  min-width: 200px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+  z-index: 1001;
+  border-radius: 0 0 12px 12px;
+  padding: 8px 0;
+  margin: 0;
+  list-style: none;
+  border: 1px solid rgba(255,255,255,0.05);
+  
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(8px);
+  transition: opacity 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+              transform 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+              visibility 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
+
 .main-navigation .dropdown-menu li {
   width: 100%;
+  margin-bottom: 4px; /* Ensure spacing between options */
 }
-.main-navigation .dropdown:hover > .dropdown-menu,
-.main-navigation .dropdown:focus-within > .dropdown-menu {
-  display: block;
-  animation: fadeIn 0.18s;
+
+.main-navigation .dropdown-menu li:last-child {
+  margin-bottom: 0;
 }
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(-8px); }
+
+.main-navigation .dropdown-menu a {
+  padding: 12px 20px;
+  font-size: 0.95rem;
+  border-radius: 0;
+}
+
+/* 電腦版 (Hover 展開) */
+@media (min-width: 769px) {
+  .main-navigation .dropdown:hover > .dropdown-menu,
+  .main-navigation .dropdown:focus-within > .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+  
+  .main-navigation .dropdown:hover .dropdown-toggle .arrow {
+    transform: translateY(-50%) rotate(180deg);
+    color: #ffd700;
+  }
+}
+
+@keyframes navFadeIn {
+  from { opacity: 0; transform: translateY(6px); }
   to { opacity: 1; transform: translateY(0); }
 }
 
 /* 下拉選單項目 hover */
 .main-navigation .dropdown-menu a:hover {
-  background: #333;
+  background: rgba(255,255,255,0.08);
   color: #ffeb3b;
 }
 
 .main-navigation li {
   margin: 0;
   padding: 0;
-  position: relative;
 }
 
 .main-navigation a {
-  display: block;
-  color: #fff;
+  display: flex;
+  align-items: center;
+  color: #f5f5f7;
   text-decoration: none;
-  padding: 16px 20px;
-  transition: all 0.3s ease;
+  padding: 18px 24px;
+  font-weight: 500;
+  transition: background 0.2s ease, color 0.2s ease;
+  min-height: 44px; /* Touch target minimum height */
 }
 
 .main-navigation a:hover, 
 .main-navigation a:focus {
-  background: #444;
+  background: rgba(255, 255, 255, 0.05);
   color: #ffd700;
 }
 
@@ -85,52 +129,116 @@
   display: none;
   background: none;
   border: none;
-  padding: 15px;
+  padding: 12px;
   cursor: pointer;
   position: absolute;
-  right: 10px;
-  top: 5px;
-  z-index: 1000;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1010;
+  width: 44px;
+  height: 44px; /* Meets 44x44px touch target requirement */
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .menu-toggle span {
   display: block;
-  width: 25px;
-  height: 3px;
+  width: 24px;
+  height: 2px;
   background: #309bff;
-  margin: 5px 0;
-  transition: all 0.3s ease;
+  margin: 3px 0;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* 手機樣式 */
 @media (max-width: 768px) {
+  .main-navigation {
+    min-height: 56px; /* Explicit height for header bar */
+  }
+
   .menu-toggle {
-    display: block;
+    display: flex;
   }
   
   .main-navigation .menu {
-    display: none;
+    display: flex;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-20px);
+    transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1), 
+                transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), 
+                visibility 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    
     width: 100%;
-    background: #333;
+    background: #1e1e24;
     position: absolute;
     top: 100%;
     left: 0;
     z-index: 999;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+    flex-direction: column;
+    align-items: stretch;
+    padding: 12px 0;
+    max-height: calc(100vh - 56px);
+    overflow-y: auto;
   }
   
   .main-navigation .menu.active {
-    display: block;
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
   }
   
-  .main-navigation .menu li {
+  .main-navigation .menu > li {
     width: 100%;
-    text-align: center;
-    border-bottom: 1px solid #444;
+    margin-bottom: 8px; /* Minimum 8px spacing gap */
   }
   
   .main-navigation .menu a {
-    padding: 15px 20px;
+    padding: 14px 24px;
+    font-size: 1.05rem;
+    min-height: 48px; /* Touch target size */
+  }
+  
+  .main-navigation .dropdown-menu {
+    position: static;
+    display: block;
+    width: 100%;
+    box-shadow: none;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 0;
+    border: none;
+    padding: 0;
+    max-height: 0;
+    opacity: 0;
+    visibility: hidden;
+    overflow: hidden;
+    transform: translateY(-10px);
+    transition: max-height 0.3s cubic-bezier(0.4, 0, 0.2, 1), 
+                opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+                transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+                padding 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* 行動版展開下拉 */
+  .main-navigation .dropdown.open > .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    max-height: 300px;
+    padding: 6px 0;
+  }
+
+  .main-navigation .dropdown.open .dropdown-toggle {
+    background: rgba(255,255,255,0.03);
+    color: #ffd700;
+  }
+
+  .main-navigation .dropdown.open .arrow {
+    transform: translateY(-50%) rotate(180deg);
+    color: #ffd700;
   }
   
   /* 漢堡選單動畫 */
@@ -145,4 +253,9 @@
   .menu-toggle.active span:nth-child(3) {
     transform: translateY(-8px) rotate(-45deg);
   }
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
 }

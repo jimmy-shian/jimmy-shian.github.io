@@ -94,6 +94,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const resultSection = document.querySelector('.result-section');
     const gptPrompt = document.getElementById('gptPrompt');
     const copyPrompt = document.getElementById('copyPrompt');
+    let currentCards = [];
     
     // 抽牌按鈕點擊事件
     generateButton.addEventListener('click', () => {
@@ -104,20 +105,76 @@ document.addEventListener('DOMContentLoaded', () => {
         
         // 生成三張牌
         const cards = generateThreeCards();
+        currentCards = cards; // 保存當前牌組
         
-        // 更新牌陣顯示
-        updateCardDisplay(cards);
+        // 顯示結果區
+        resultSection.style.display = 'block';
+        
+        // 對每一張卡牌進行動畫與延遲顯示處理
+        cards.forEach((card, index) => {
+            const cardElement = document.getElementById(`card${index + 1}`);
+            const cardInner = cardElement.querySelector('.card-inner');
+            
+            // 設置 data 屬性供 AI 聊天泡泡隨時偵測讀取
+            cardElement.setAttribute('data-card-name', card.name);
+            cardElement.setAttribute('data-card-meaning', card.meaning);
+            
+            // 暫時取消 transition，讓它瞬間回到背面 (牌背朝上)
+            cardInner.style.transition = 'none';
+            cardInner.classList.remove('is-flipped');
+            
+            // 清空卡牌面板上的舊文字與圖片以避免殘影
+            const cardImage = cardElement.querySelector('.card-image');
+            const cardTitle = cardElement.querySelector('.card-title');
+            const cardMeaning = cardElement.querySelector('.card-meaning');
+            if (cardTitle) cardTitle.textContent = '';
+            if (cardMeaning) cardMeaning.textContent = '';
+            if (cardImage) cardImage.style.backgroundImage = '';
+            
+            // 移除原有飛入動畫
+            cardElement.classList.remove('card-deal-animation');
+            cardElement.style.animationDelay = '';
+            
+            // 強制瀏覽器重繪
+            void cardElement.offsetWidth;
+            void cardInner.offsetWidth;
+            
+            // 恢復 transition
+            cardInner.style.transition = '';
+            
+            // 加上延遲與飛入動畫，但保持背面朝上不自動翻開
+            cardElement.style.animationDelay = `${index * 200}ms`;
+            cardElement.classList.add('card-deal-animation');
+        });
         
         // 產生三張牌各自的說明
         const explanations = generateFakeAIExplanations(cards);
-        let explanationText = explanations.map((exp, idx) => `【第${idx+1}張】${cards[idx].name}\n${exp}\n`).join('\n');
+        let explanationText = explanations.map((exp, idx) => `【第${idx+1}張】${cards[idx].name.split('_')[0]}\n${exp}\n`).join('\n');
         gptPrompt.value = explanationText;
         
         // 僅console記錄組合（如需可再擴充）
         logCombination(cards, explanations);
-        
-        // 顯示結果區
-        resultSection.style.display = 'block';
+    });
+    
+    // 綁定三張卡牌的點擊事件，點選時才更新資料並翻牌
+    const cardElements = [
+        document.getElementById('card1'),
+        document.getElementById('card2'),
+        document.getElementById('card3')
+    ];
+
+    cardElements.forEach((cardElement, index) => {
+        cardElement.addEventListener('click', () => {
+            if (currentCards && currentCards[index]) {
+                const cardInner = cardElement.querySelector('.card-inner');
+                if (!cardInner.classList.contains('is-flipped')) {
+                    // 點選後才載入數據
+                    updateSingleCardDisplay(currentCards[index], index);
+                    // 播放 3D 翻轉動畫
+                    cardInner.classList.add('is-flipped');
+                }
+            }
+        });
     });
     
     // 複製 prompt 到剪貼簿
@@ -152,21 +209,29 @@ function generateThreeCards() {
 }
 
 // 更新牌陣顯示，支援滑鼠懸停翻轉
-function updateCardDisplay(cards) {
-    cards.forEach((card, index) => {
-        const cardElement = document.getElementById(`card${index + 1}`);
-        const cardImage = cardElement.querySelector('.card-image');
-        const cardTitle = cardElement.querySelector('.card-title');
-        const cardMeaning = cardElement.querySelector('.card-meaning');
-        
-        // 設置卡牌資訊
-        const cardName = card.name.split('_')[0]; // 獲取卡牌名稱（去掉後綴）
-        cardTitle.textContent = cardName;
-        cardMeaning.textContent = card.meaning;
-        
-        // 設置卡牌圖片
-        cardImage.style.backgroundImage = `url('../../images/${card.name}.png')`;
-    });
+// 更新單張牌的顯示
+function updateSingleCardDisplay(card, index) {
+    const cardElement = document.getElementById(`card${index + 1}`);
+    const cardImage = cardElement.querySelector('.card-image');
+    const cardTitle = cardElement.querySelector('.card-title');
+    const cardMeaning = cardElement.querySelector('.card-meaning');
+    
+    // 設置卡牌資訊
+    const cardName = card.name.split('_')[0]; // 獲取卡牌名稱（去掉後綴）
+    cardTitle.textContent = cardName;
+    cardMeaning.textContent = card.meaning;
+    
+    // 設置卡牌圖片
+    const imgNum = parseInt(card.name.split('_')[1]);
+    const hasImg = (card.name === 'World') || 
+                   (card.name.startsWith('Wand_') && !isNaN(imgNum) && imgNum <= 9) || 
+                   ['Fool_I', 'Magician_II', 'High_Priestess_III', 'Empress_IV', 'Emperor_V', 'Hierophant_VI', 'Lovers_VII', 'Chariot_VIII', 'Strength_IX', 'Hermit_X', 'Wheel_of_Fortune_XI', 'Justice_XII', 'Hanged_Man_XIII', 'Death_XIV', 'Temperance_XV', 'Devil_XVI', 'Tower_XVII', 'Star_XVIII', 'Moon_XIX', 'Sun_XX', 'Judgement_XXI'].includes(card.name);
+    
+    if (hasImg) {
+        cardImage.style.backgroundImage = `url('../../images/${card.name}.webp')`;
+    } else {
+        cardImage.style.backgroundImage = `url('../../images/card_frame.webp')`;
+    }
 }
 
 // 每張卡牌三種說明（積極、消極、中立）

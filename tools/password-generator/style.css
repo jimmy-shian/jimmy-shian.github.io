@@ -8,7 +8,6 @@
 }
 
 .password-generator {
-    width: 90%;
     margin: 2rem auto;
     padding: 2rem;
     background: white;
@@ -32,10 +31,14 @@ h1 {
     flex: 1;
     padding: 0.75rem;
     font-size: 1.1rem;
-    border: 1px solid var(--border-color);
+    border: 1px solid transparent;
+    background-image: linear-gradient(#fff, #fff), linear-gradient(135deg, #ddd 0%, #ddd 100%);
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
     border-radius: 5px;
     text-align: center;
     font-family: monospace;
+    transition: background-image 0.3s ease, box-shadow 0.3s ease;
 }
 
 button {
@@ -83,9 +86,25 @@ input[type="range"] {
 
 #custom-chars {
     padding: 0.5rem;
-    border: 1px solid var(--border-color);
+    border: 1px solid transparent;
+    background-image: linear-gradient(#fff, #fff), linear-gradient(135deg, #ddd 0%, #ddd 100%);
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
     border-radius: 5px;
     margin-top: 0.5rem;
+    transition: background-image 0.3s ease, box-shadow 0.3s ease;
+}
+
+#password:hover,
+#custom-chars:hover {
+    background-image: linear-gradient(#fff, #fff), linear-gradient(135deg, #b0b0b0 0%, #b0b0b0 100%);
+}
+
+#password:focus,
+#custom-chars:focus {
+    outline: none;
+    background-image: linear-gradient(#fff, #fff), linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    box-shadow: 0 0 8px rgba(74, 111, 165, 0.25);
 }
 
 #save-prefs {

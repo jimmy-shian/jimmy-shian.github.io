@@ -43,13 +43,29 @@ header p {
 }
 
 .form-group select, 
-.form-group input {
+.form-group input:not([type="range"]) {
     padding: 8px 12px;
     border-radius: 6px;
-    border: 1px solid #ddd;
+    border: 1px solid transparent;
+    background-image: linear-gradient(#fff, #fff), linear-gradient(135deg, #ddd 0%, #ddd 100%);
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
     font-size: 1rem;
     flex: 1;
     min-width: 200px;
+    transition: background-image 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group select:hover,
+.form-group input:not([type="range"]):hover {
+    background-image: linear-gradient(#fff, #fff), linear-gradient(135deg, #b0b0b0 0%, #b0b0b0 100%);
+}
+
+.form-group select:focus,
+.form-group input:not([type="range"]):focus {
+    outline: none;
+    background-image: linear-gradient(#fff, #fff), linear-gradient(135deg, #2b7cff 0%, #1ad1cc 100%);
+    box-shadow: 0 0 8px rgba(43, 124, 255, 0.25);
 }
 
 .btn {
