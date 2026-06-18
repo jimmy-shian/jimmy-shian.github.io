@@ -3,535 +3,1237 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jimmy Shian - 個人介紹</title>
+    <title>Jimmy Shian — 個人履歷</title>
+    <meta name="description" content="Jimmy Shian — 軟體工程師、開源探索者、偶爾讓後端爆掉的人。">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <style>
-        /* 基本樣式 */
+        /* ── CSS Variables ── */
+        :root {
+            --bg-deep:     #0e1525;
+            --bg-panel:    #182030;
+            --bg-card:     #1e2d44;
+            --accent-cyan: #00e5ff;
+            --accent-blue: #2979ff;
+            --accent-pur:  #7c4dff;
+            --accent-glow: rgba(0,229,255,0.18);
+            --text-pri:    #ddeeff;
+            --text-sec:    #8ab4cc;
+            --text-dim:    #4a6e88;
+            --border:      rgba(0,229,255,0.18);
+            --grid-line:   rgba(0,229,255,0.06);
+            --radius:      12px;
+            --font-head:   'Orbitron', sans-serif;
+            --font-body:   'Inter', sans-serif;
+            --font-mono:   'JetBrains Mono', monospace;
+        }
+
+        /* ── Reset & Base ── */
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: auto; }  /* we handle smooth scroll manually */
         body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f9;
-            color: #333;
+            font-family: var(--font-body);
+            background: var(--bg-deep);
+            color: var(--text-pri);
+            overflow-x: hidden;
+            line-height: 1.65;
         }
 
-        /* 導覽列 */
+        /* ── Grid overlay ── */
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            background-image:
+                linear-gradient(var(--grid-line) 1px, transparent 1px),
+                linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
+            background-size: 50px 50px;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        /* ── Antigravity Canvas ── */
+        #antigravity-canvas {
+            position: fixed;
+            inset: 0;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        /* ── Ambient glow blobs ── */
+        .blob {
+            position: fixed;
+            border-radius: 50%;
+            filter: blur(110px);
+            opacity: 0.16;
+            pointer-events: none;
+            z-index: 0;
+            animation: blob-drift 18s ease-in-out infinite alternate;
+        }
+        .blob-1 { width: 480px; height: 480px; background: var(--accent-blue); top: -80px; left: -80px; animation-duration: 20s; }
+        .blob-2 { width: 380px; height: 380px; background: var(--accent-pur); bottom: 15%; right: -60px; animation-duration: 15s; animation-delay: -5s; }
+        .blob-3 { width: 280px; height: 280px; background: var(--accent-cyan); top: 45%; left: 32%; animation-duration: 12s; animation-delay: -3s; }
+        @keyframes blob-drift {
+            0%   { transform: translate(0, 0) scale(1); }
+            33%  { transform: translate(30px, -20px) scale(1.05); }
+            66%  { transform: translate(-20px, 30px) scale(0.97); }
+            100% { transform: translate(15px, 10px) scale(1.02); }
+        }
+
+        /* ── Navigation ── */
         nav {
-            background-color: #333;
-            padding: 10px 20px;
+            position: sticky;
+            top: 0;
+            z-index: 200;
             display: flex;
-            justify-content: space-between;
             align-items: center;
+            justify-content: space-between;
+            padding: 14px 40px;
+            background: rgba(14,21,37,0.88);
+            backdrop-filter: blur(22px);
+            -webkit-backdrop-filter: blur(22px);
+            border-bottom: 1px solid var(--border);
         }
-
-        nav a {
-            color: white;
+        .nav-brand {
+            font-family: var(--font-head);
+            font-size: 1rem;
+            font-weight: 800;
+            color: var(--accent-cyan);
             text-decoration: none;
-            font-size: 16px;
-            margin-left: 15px;
+            letter-spacing: 3px;
+            text-shadow: 0 0 14px rgba(0,229,255,0.5);
+        }
+        .nav-links { display: flex; gap: 28px; list-style: none; }
+        .nav-links a {
+            color: var(--text-sec);
+            text-decoration: none;
+            font-size: 0.82rem;
+            font-weight: 500;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: color 0.3s, text-shadow 0.3s;
+            position: relative;
+            padding-bottom: 4px;
+        }
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0; left: 0;
+            width: 0; height: 1px;
+            background: var(--accent-cyan);
+            transition: width 0.3s ease;
+        }
+        .nav-links a:hover::after, .nav-links a.active::after { width: 100%; }
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--accent-cyan);
+            text-shadow: 0 0 10px rgba(0,229,255,0.55);
         }
 
-        nav a:hover {
-            text-decoration: underline;
-        }
-
-        nav .home-link {
-            margin-right: auto;
-        }
-
-        /* 標題區 */
-        header {
+        /* ── Hero ── */
+        .hero {
+            position: relative;
+            z-index: 1;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
             text-align: center;
-            padding: 40px 20px;
-            background-color: #fff;
-            margin-bottom: 20px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 80px 20px 60px;
+        }
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            color: var(--accent-cyan);
+            border: 1px solid var(--accent-cyan);
+            border-radius: 999px;
+            padding: 6px 20px;
+            margin-bottom: 28px;
+            background: rgba(0,229,255,0.07);
+            animation: pulse-border 3s ease-in-out infinite;
+        }
+        @keyframes pulse-border {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(0,229,255,0.3); }
+            50%       { box-shadow: 0 0 0 6px rgba(0,229,255,0); }
+        }
+        .hero-badge::before { content: '●'; animation: blink 1.5s step-end infinite; }
+        @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.2} }
+
+        .hero h1 {
+            font-family: var(--font-head);
+            font-size: clamp(2.6rem, 8vw, 5.8rem);
+            font-weight: 800;
+            letter-spacing: 4px;
+            background: linear-gradient(135deg, #ffffff 0%, var(--accent-cyan) 48%, var(--accent-blue) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1.1;
+            margin-bottom: 18px;
+            filter: drop-shadow(0 0 30px rgba(0,229,255,0.22));
+        }
+        .hero-sub {
+            font-family: var(--font-mono);
+            font-size: clamp(0.85rem, 2.5vw, 1.1rem);
+            color: var(--text-sec);
+            margin-bottom: 24px;
+        }
+        .hero-sub span { color: var(--accent-cyan); }
+        .hero-bio {
+            max-width: 600px;
+            font-size: 0.98rem;
+            color: var(--text-sec);
+            line-height: 1.85;
+            margin-bottom: 40px;
+        }
+        .hero-stats {
+            display: flex;
+            gap: 36px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 42px;
+        }
+        .stat-item { text-align: center; }
+        .stat-num {
+            font-family: var(--font-head);
+            font-size: 1.9rem;
+            font-weight: 800;
+            color: var(--accent-cyan);
+            display: block;
+            text-shadow: 0 0 20px rgba(0,229,255,0.5);
+        }
+        .stat-label { font-size: 0.72rem; color: var(--text-dim); letter-spacing: 1px; text-transform: uppercase; }
+        .hero-cta { display: flex; gap: 14px; flex-wrap: wrap; justify-content: center; }
+        .btn {
+            padding: 12px 30px;
+            border-radius: 8px;
+            font-family: var(--font-mono);
+            font-size: 0.83rem;
+            font-weight: 500;
+            letter-spacing: 1px;
+            text-decoration: none;
+            cursor: pointer;
+            border: none;
+            transition: all 0.28s;
+        }
+        .btn-primary {
+            background: linear-gradient(135deg, var(--accent-cyan), var(--accent-blue));
+            color: #000d1a;
+            box-shadow: 0 0 28px rgba(0,229,255,0.32);
+        }
+        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 0 50px rgba(0,229,255,0.55); }
+        .btn-outline {
+            background: transparent;
+            color: var(--accent-cyan);
+            border: 1px solid var(--accent-cyan);
+        }
+        .btn-outline:hover { background: rgba(0,229,255,0.1); transform: translateY(-2px); }
+
+        /* Scroll indicator */
+        .scroll-indicator {
+            position: absolute;
+            bottom: 28px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 6px;
+            color: var(--text-dim);
+            font-size: 0.7rem;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            animation: float 2.4s ease-in-out infinite;
+        }
+        @keyframes float { 0%,100%{transform:translateX(-50%) translateY(0)} 50%{transform:translateX(-50%) translateY(-8px)} }
+        .scroll-arrow {
+            width: 18px; height: 18px;
+            border-right: 2px solid var(--text-dim);
+            border-bottom: 2px solid var(--text-dim);
+            transform: rotate(45deg);
         }
 
-        header h1 {
-            margin: 0;
-            font-size: 2.5em;
-            color: #333;
+        /* ── Page transition overlay ── */
+        #page-transition {
+            position: fixed;
+            inset: 0;
+            z-index: 9999;
+            pointer-events: none;
+            overflow: hidden;
+        }
+        .pt-bar {
+            position: absolute;
+            left: 0; right: 0;
+            height: 0;
+            background: linear-gradient(90deg, var(--accent-pur), var(--accent-cyan), var(--accent-blue));
+            transition: height 0s;
+        }
+        .pt-bar-top    { top: 0; transform-origin: top; }
+        .pt-bar-bottom { bottom: 0; transform-origin: bottom; }
+
+        /* ── Section transitions (scroll reveal) ── */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.75s cubic-bezier(0.4,0,0.2,1),
+                        transform 0.75s cubic-bezier(0.4,0,0.2,1);
+        }
+        .reveal.visible { opacity: 1; transform: translateY(0); }
+        .reveal-delay-1 { transition-delay: 0.1s; }
+        .reveal-delay-2 { transition-delay: 0.2s; }
+        .reveal-delay-3 { transition-delay: 0.3s; }
+        .reveal-delay-4 { transition-delay: 0.4s; }
+
+        /* ── Sections ── */
+        section { position: relative; z-index: 1; }
+        .section-inner { max-width: 960px; margin: 0 auto; padding: 88px 24px; }
+        .section-label {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            font-family: var(--font-mono);
+            font-size: 0.76rem;
+            color: var(--accent-cyan);
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+        }
+        .section-label::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+        .section-title {
+            font-family: var(--font-head);
+            font-size: clamp(1.5rem, 4vw, 2.3rem);
+            font-weight: 600;
+            margin-bottom: 48px;
+            color: var(--text-pri);
         }
 
-        header p {
-            margin: 10px 0 0;
-            font-size: 1.2em;
-            color: #666;
+        /* ── About cards ── */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
         }
-
-        /* 內容區 */
-        .content {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
+        @media (max-width: 620px) { .about-grid { grid-template-columns: 1fr; } }
+        .info-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 26px;
+            position: relative;
+            overflow: hidden;
+            transition: border-color 0.35s, transform 0.35s, box-shadow 0.35s;
         }
-
-        .content h2 {
-            font-size: 1.8em;
-            color: #444;
-            border-bottom: 2px solid #333;
-            padding-bottom: 5px;
+        .info-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--accent-cyan), var(--accent-blue));
+            transform: scaleX(0);
+            transition: transform 0.4s;
+            transform-origin: left;
         }
+        .info-card:hover { border-color: rgba(0,229,255,0.45); transform: translateY(-5px); box-shadow: 0 16px 40px rgba(0,0,0,0.35); }
+        .info-card:hover::before { transform: scaleX(1); }
+        .card-icon { font-size: 1.7rem; margin-bottom: 12px; }
+        .card-title { font-family: var(--font-head); font-size: 0.8rem; color: var(--accent-cyan); letter-spacing: 2px; margin-bottom: 10px; }
+        .card-text { font-size: 0.9rem; color: var(--text-sec); line-height: 1.75; }
 
-        .content p {
-            font-size: 1.1em;
-            line-height: 1.6;
-            color: #555;
+        /* ── Timeline ── */
+        .timeline { position: relative; }
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 20px; top: 0; bottom: 0;
+            width: 2px;
+            background: linear-gradient(to bottom, var(--accent-cyan), var(--accent-blue), transparent);
         }
-
-        .content ul {
-            list-style-type: none;
-            padding: 0;
+        .tl-item { display: flex; gap: 28px; margin-bottom: 40px; padding-left: 56px; position: relative; }
+        .tl-dot {
+            position: absolute;
+            left: 11px; top: 8px;
+            width: 20px; height: 20px;
+            border-radius: 50%;
+            background: var(--bg-deep);
+            border: 2px solid var(--accent-cyan);
+            box-shadow: 0 0 14px rgba(0,229,255,0.5);
         }
-
-        .content ul li {
-            background-color: #fff;
-            margin: 10px 0;
-            padding: 15px;
-            border-radius: 5px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        .tl-content {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 22px 26px;
+            flex: 1;
+            transition: border-color 0.3s, transform 0.3s;
         }
+        .tl-content:hover { border-color: rgba(0,229,255,0.38); transform: translateX(4px); }
+        .tl-period { font-family: var(--font-mono); font-size: 0.72rem; color: var(--accent-cyan); margin-bottom: 5px; letter-spacing: 1px; }
+        .tl-title { font-size: 1.02rem; font-weight: 600; color: var(--text-pri); margin-bottom: 4px; }
+        .tl-org { font-size: 0.86rem; color: var(--text-sec); margin-bottom: 9px; }
+        .tl-desc { font-size: 0.86rem; color: var(--text-dim); line-height: 1.75; }
 
-        .content ul li strong {
-            color: #333;
-        }
-
-        /* 圓形圖片 */
+        /* ── Skills canvas ── */
         .skills-container {
             position: relative;
             width: 100%;
-            min-height: 400px;
-            border: 1px solid #ccc;
-            border-radius: 10px;
+            height: 380px;
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
             overflow: hidden;
-            margin: 20px 0;
-            background-color: #f9f9f9;
+            background: var(--bg-card);
             touch-action: none;
         }
-
-        .circle {
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            background-color: #4a90e2;
-            display: inline-block;
+        .skills-container::after {
+            content: 'DRAG TO INTERACT';
             position: absolute;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            bottom: 12px; right: 16px;
+            font-family: var(--font-mono);
+            font-size: 0.63rem;
+            color: var(--text-dim);
+            letter-spacing: 2px;
+            z-index: 5;
+            pointer-events: none;
+        }
+        .circle {
+            border-radius: 50%;
+            background: transparent;
+            border: 2px solid var(--accent-cyan);
+            box-shadow: 0 0 18px rgba(0,229,255,0.28), inset 0 0 18px rgba(0,229,255,0.06);
+            position: absolute;
             cursor: move;
             user-select: none;
-            transition: transform 0.1s ease-out, box-shadow 0.1s ease-out;
+            transition: box-shadow 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
+        .circle:hover { box-shadow: 0 0 30px rgba(0,229,255,0.5), inset 0 0 30px rgba(0,229,255,0.12); }
+        .circle:active { cursor: grabbing; }
+        .circle img { width: 55%; height: 55%; object-fit: contain; pointer-events: none; filter: drop-shadow(0 0 6px rgba(0,229,255,0.45)); }
 
-        .circle:hover {
-            box-shadow: 0 6px 12px rgba(0,0,0,0.3);
-            transform: scale(1.05);
+        /* ── Projects grid ── */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
         }
-
-        .circle:active {
-            cursor: grabbing;
+        .project-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 22px;
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            transition: all 0.32s;
+            position: relative;
+            overflow: hidden;
         }
-
-        .circle img {
-            width: 100%;
-            height: 100%;
-            border-radius: 50%;
+        .project-card::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(0,229,255,0.04) 0%, transparent 60%);
+            opacity: 0;
+            transition: opacity 0.3s;
         }
+        .project-card:hover { border-color: rgba(0,229,255,0.42); transform: translateY(-5px); box-shadow: 0 14px 40px rgba(0,0,0,0.35); }
+        .project-card:hover::after { opacity: 1; }
+        .project-name { font-family: var(--font-mono); font-size: 0.98rem; color: var(--accent-cyan); font-weight: 500; }
+        .project-desc { font-size: 0.84rem; color: var(--text-sec); flex: 1; }
+        .project-lang { display: inline-flex; align-items: center; gap: 6px; font-family: var(--font-mono); font-size: 0.73rem; color: var(--text-dim); }
+        .lang-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+        .lang-ts   { background: #3178c6; }
+        .lang-py   { background: #3572A5; }
+        .lang-js   { background: #f1e05a; }
+        .lang-html { background: #e34c26; }
 
-        /* 動態大小 */
-        .circle.size-50 { width: 50px; height: 50px; }
-        .circle.size-70 { width: 70px; height: 70px; }
-        .circle.size-90 { width: 90px; height: 90px; }
+        /* ── Divider ── */
+        .divider { height: 1px; background: linear-gradient(90deg, transparent, var(--border), transparent); margin: 0 24px; }
+
+        /* ═══════════════════════════════════════
+           MEMORY GAME
+        ═══════════════════════════════════════ */
+        #memory-game-section { padding-bottom: 100px; }
+        .game-wrapper {
+            background: var(--bg-panel);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 34px 26px;
+            position: relative;
+            overflow: hidden;
+        }
+        .game-wrapper::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--accent-pur), var(--accent-cyan), var(--accent-blue));
+        }
+        .game-hud {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 14px;
+            margin-bottom: 26px;
+        }
+        .hud-stat {
+            text-align: center;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 12px 24px;
+            min-width: 100px;
+        }
+        .hud-value { font-family: var(--font-head); font-size: 1.5rem; font-weight: 700; color: var(--accent-cyan); display: block; }
+        .hud-key { font-size: 0.68rem; color: var(--text-dim); letter-spacing: 2px; text-transform: uppercase; }
+        #game-board {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 10px;
+            max-width: 520px;
+            margin: 0 auto 28px;
+        }
+        .mem-card { aspect-ratio: 1; perspective: 1000px; cursor: pointer; }
+        .mem-card-inner {
+            position: relative;
+            width: 100%; height: 100%;
+            transform-style: preserve-3d;
+            transition: transform 0.52s cubic-bezier(0.4,0,0.2,1);
+            border-radius: 10px;
+        }
+        .mem-card.flipped .mem-card-inner,
+        .mem-card.matched .mem-card-inner { transform: rotateY(180deg); }
+        .mem-front, .mem-back {
+            position: absolute;
+            inset: 0;
+            backface-visibility: hidden;
+            -webkit-backface-visibility: hidden;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.6rem;
+        }
+        .mem-front {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            color: var(--text-dim);
+            font-family: var(--font-head);
+            font-size: 0.68rem;
+            letter-spacing: 1px;
+            transition: background 0.2s, border-color 0.2s;
+        }
+        .mem-front:hover { background: rgba(0,229,255,0.07); border-color: rgba(0,229,255,0.3); }
+        .mem-back {
+            background: linear-gradient(135deg, #152038, #102040);
+            border: 1px solid rgba(0,229,255,0.32);
+            transform: rotateY(180deg);
+            box-shadow: 0 0 18px rgba(0,229,255,0.1);
+        }
+        .mem-card.matched .mem-back {
+            background: linear-gradient(135deg, #0a2a1a, #0b3a25);
+            border-color: rgba(0,255,150,0.42);
+            box-shadow: 0 0 22px rgba(0,255,150,0.2);
+            animation: match-pulse 0.5s ease;
+        }
+        @keyframes match-pulse {
+            0%   { transform: rotateY(180deg) scale(1); }
+            50%  { transform: rotateY(180deg) scale(1.12); }
+            100% { transform: rotateY(180deg) scale(1); }
+        }
+        .mem-card.shake .mem-card-inner { animation: shake 0.4s ease; }
+        @keyframes shake {
+            0%,100%{transform:rotateY(180deg) translateX(0)}
+            25%    {transform:rotateY(180deg) translateX(-7px)}
+            75%    {transform:rotateY(180deg) translateX(7px)}
+        }
+        .game-controls { display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; }
+        .btn-game {
+            padding: 11px 28px;
+            border-radius: 8px;
+            font-family: var(--font-mono);
+            font-size: 0.8rem;
+            font-weight: 500;
+            letter-spacing: 1px;
+            cursor: pointer;
+            border: 1px solid var(--accent-cyan);
+            background: transparent;
+            color: var(--accent-cyan);
+            transition: all 0.25s;
+        }
+        .btn-game:hover { background: rgba(0,229,255,0.12); transform: translateY(-2px); }
+        .btn-game.primary { background: linear-gradient(135deg, var(--accent-cyan), var(--accent-blue)); color: #000d1a; border-color: transparent; }
+        .btn-game.primary:hover { box-shadow: 0 0 30px rgba(0,229,255,0.42); }
+        #game-win {
+            display: none;
+            position: absolute;
+            inset: 0;
+            background: rgba(14,21,37,0.93);
+            backdrop-filter: blur(10px);
+            z-index: 50;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 18px;
+            border-radius: 16px;
+        }
+        #game-win.show { display: flex; }
+        .win-title {
+            font-family: var(--font-head);
+            font-size: 2.1rem;
+            background: linear-gradient(135deg, var(--accent-cyan), var(--accent-blue));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: glow-text 2s ease-in-out infinite;
+        }
+        @keyframes glow-text {
+            0%,100%{filter:drop-shadow(0 0 8px rgba(0,229,255,0.5))}
+            50%    {filter:drop-shadow(0 0 22px rgba(0,229,255,0.9))}
+        }
+        .win-sub { color: var(--text-sec); font-size: 1rem; }
+        .win-score { font-family: var(--font-mono); color: var(--accent-cyan); font-size: 0.88rem; }
+
+        /* ── Footer ── */
+        footer {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            padding: 34px 24px;
+            border-top: 1px solid var(--border);
+            color: var(--text-dim);
+            font-size: 0.8rem;
+            font-family: var(--font-mono);
+            letter-spacing: 1px;
+        }
+        footer a { color: var(--accent-cyan); text-decoration: none; }
+        footer a:hover { text-decoration: underline; }
+
+        /* Scanline */
+        @keyframes scanline { 0%{transform:translateY(-100%)} 100%{transform:translateY(100vh)} }
+        .scanline { position:fixed; top:0; left:0; right:0; height:2px; background:linear-gradient(transparent,rgba(0,229,255,0.035),transparent); pointer-events:none; z-index:999; animation:scanline 9s linear infinite; }
+
+        /* Responsive nav */
+        @media (max-width: 600px) {
+            nav { padding: 12px 16px; }
+            .nav-links { gap: 14px; }
+            .nav-links a { font-size: 0.72rem; letter-spacing: 0.5px; }
+        }
     </style>
 </head>
 <body>
-    <div id="app">
-        <!-- 導覽列 -->
-        <nav>
-            <a href="index.html" class="home-link" target="_blank">Home</a>
-            <a href="#about">關於我</a>
-            <a href="#experience">學經歷</a>
-        </nav>
 
-        <!-- 標題區 -->
-        <header>
-            <h1>Jimmy Shian</h1>
-            <p>軟體工程師 | 技術愛好者 | 持續學習中</p>
-        </header>
-
-        <!-- 內容區 -->
-        <div class="content">
-            <!-- 關於我 -->
-            <section id="about">
-                <h2>關於我</h2>
-                <p>
-                    你好！我是 Jimmy Shian，一名熱愛技術的軟體工程師。我專注於前端開發，並對後端技術也有深入的了解。
-                    我喜歡解決問題並創造有意義的產品，持續學習新技術是我生活的一部分。
-                </p>
-            </section>
-
-            <!-- 學經歷 -->
-            <section id="experience">
-                <h2>學經歷</h2>
-                <ul>
-                    <li v-for="item in experience" :key="item.id">
-                        <template v-if="item.id !== 3">
-                            <strong>{{ item.title }}</strong> - {{ item.organization }} ({{ item.duration }})<br>
-                            {{ item.description }}
-                        </template>
-                        <template v-else>
-                            <h3>{{ item.title }} - {{ item.organization }}</h3>
-                            <p>{{ item.description }}</p>
-                            <div class="skills-container" 
-                                 @mousemove="dragMove" 
-                                 @mouseup="endDrag" 
-                                 @mouseleave="endDrag">
-                                <div v-for="subject in subjects" 
-                                     :key="subject.id" 
-                                     class="circle" 
-                                     :style="getStyle(subject)"
-                                     @mousedown="startDrag(subject, $event)"
-                                     @mousemove="recordDragPos($event)">
-                                    <img :src="subject.img" :alt="subject.name" style="width: 100%; height: 100%; object-fit: contain; pointer-events: none;" />
-                                </div>
-                            </div>
-                        </template>
-                    </li>
-                </ul>
-            </section>
-        </div>
+    <!-- Page transition bars -->
+    <div id="page-transition">
+        <div class="pt-bar pt-bar-top" id="pt-top"></div>
+        <div class="pt-bar pt-bar-bottom" id="pt-bottom"></div>
     </div>
 
-    <!-- Vue.js -->
+    <!-- Antigravity particle canvas -->
+    <canvas id="antigravity-canvas"></canvas>
+
+    <!-- Ambient blobs -->
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+    <div class="scanline"></div>
+
+    <!-- ── Navigation ── -->
+    <nav>
+        <a href="index.html" class="nav-brand" target="_blank">JS//</a>
+        <ul class="nav-links">
+            <li><a data-target="home"               id="nav-home">首頁</a></li>
+            <li><a data-target="about"              id="nav-about">關於我</a></li>
+            <li><a data-target="experience"         id="nav-exp">學經歷</a></li>
+            <li><a data-target="skills"             id="nav-skills">技能</a></li>
+            <li><a data-target="projects"           id="nav-proj">專案</a></li>
+            <li><a data-target="memory-game-section" id="nav-game">小遊戲</a></li>
+        </ul>
+    </nav>
+
+    <!-- ── Hero ── -->
+    <section class="hero" id="home">
+        <div class="hero-badge">OPEN-SOURCE ENGINEER &nbsp;|&nbsp; ONLINE</div>
+        <h1>JIMMY SHIAN</h1>
+        <p class="hero-sub">
+            軟體工程師 &nbsp;/&nbsp; <span>開源探索者</span> &nbsp;/&nbsp; 偶爾讓後端爆掉的人
+        </p>
+        <p class="hero-bio">
+            歡迎來到我的世界。這裡記錄著我的開源旅程與奇怪的文件。<br>
+            喜歡開發廢物工具、爆掉的後端與自動失敗流程。<br>
+            用程式碼解決問題，用食物解決有故障的腦袋。
+        </p>
+        <div class="hero-stats">
+            <div class="stat-item">
+                <span class="stat-num">36</span>
+                <span class="stat-label">Repositories</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-num">4+</span>
+                <span class="stat-label">Languages</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-num">∞</span>
+                <span class="stat-label">咖啡因</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-num">0.01%</span>
+                <span class="stat-label">AI幽默感</span>
+            </div>
+        </div>
+        <div class="hero-cta">
+            <a href="https://github.com/jimmy-shian" target="_blank" class="btn btn-primary">GitHub Profile</a>
+            <a class="btn btn-outline" data-target="about" style="cursor:pointer;">了解更多</a>
+        </div>
+        <div class="scroll-indicator">
+            <span>Scroll</span>
+            <div class="scroll-arrow"></div>
+        </div>
+    </section>
+
+    <!-- ── About ── -->
+    <section id="about">
+        <div class="section-inner">
+            <div class="section-label reveal">01 — About</div>
+            <h2 class="section-title reveal">關於我</h2>
+            <div class="about-grid">
+                <div class="info-card reveal reveal-delay-1">
+                    <div class="card-icon">🎓</div>
+                    <div class="card-title">Education</div>
+                    <div class="card-text">國立高雄科技大學研究生，主攻資訊工程。學士來自電機工程系（資通組），副修「期末考前如何存活」。</div>
+                </div>
+                <div class="info-card reveal reveal-delay-2">
+                    <div class="card-icon">🔬</div>
+                    <div class="card-title">Research</div>
+                    <div class="card-text">實驗室LAB研究生兼專案維護者，同時擔任下午茶點心長。研究領域橫跨系統開發與「如何用食物恢復腦力」。</div>
+                </div>
+                <div class="info-card reveal reveal-delay-3">
+                    <div class="card-icon">⚡</div>
+                    <div class="card-title">Specialty</div>
+                    <div class="card-text">專精於「最後一刻完成作業」與「咖啡因轉換程式碼」。目前研究如何讓 AI 理解人類的幽默感（進度：0.01%）。</div>
+                </div>
+                <div class="info-card reveal reveal-delay-4">
+                    <div class="card-icon">🚀</div>
+                    <div class="card-title">Open Source</div>
+                    <div class="card-text">GitHub 上擁有 36 個公開 Repo，內容包含廢物工具、爆掉的後端系統，以及文件詳細但功能神秘的自動失敗流程。</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- ── Experience ── -->
+    <section id="experience">
+        <div class="section-inner">
+            <div class="section-label reveal">02 — Experience</div>
+            <h2 class="section-title reveal">學經歷</h2>
+            <div class="timeline">
+                <div class="tl-item reveal reveal-delay-1">
+                    <div class="tl-dot"></div>
+                    <div class="tl-content">
+                        <div class="tl-period">2023 — PRESENT</div>
+                        <div class="tl-title">研究生</div>
+                        <div class="tl-org">實驗室 LAB &nbsp;·&nbsp; 國立高雄科技大學</div>
+                        <div class="tl-desc">專案維護者兼下午茶點心長。用程式碼解決問題，以及用食物解決有故障的腦袋。負責系統設計、後端維護與實驗室零食補貨。</div>
+                    </div>
+                </div>
+                <div class="tl-item reveal reveal-delay-2">
+                    <div class="tl-dot"></div>
+                    <div class="tl-content">
+                        <div class="tl-period">2020 — PRESENT</div>
+                        <div class="tl-title">大學生 → 研究生</div>
+                        <div class="tl-org">國立高雄科技大學 &nbsp;·&nbsp; 資訊工程</div>
+                        <div class="tl-desc">專精於「如何在最後一刻完成作業」，副修「咖啡因轉換程式碼」。最近在學習如何讓 AI 理解人類的幽默感（進度：0.01%）。</div>
+                    </div>
+                </div>
+                <div class="tl-item reveal reveal-delay-3">
+                    <div class="tl-dot"></div>
+                    <div class="tl-content">
+                        <div class="tl-period">2016 — 2020</div>
+                        <div class="tl-title">學士學位</div>
+                        <div class="tl-org">某大學 &nbsp;·&nbsp; 電機工程系（資通組）</div>
+                        <div class="tl-desc">主修電機工程，副修「如何在期末考前存活」。不擅長資料結構與演算法，喜歡用 GPT 解決 99% 的程式問題，開啟了對開源開發的熱情。</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- ── Skills ── -->
+    <section id="skills">
+        <div class="section-inner">
+            <div class="section-label reveal">03 — Skills</div>
+            <h2 class="section-title reveal">技術棧</h2>
+            <div id="app" class="">
+                <div class="skills-container"
+                     @mousemove="dragMove"
+                     @mouseup="endDrag"
+                     @mouseleave="endDrag">
+                    <div v-for="subject in subjects"
+                         :key="subject.id"
+                         class="circle"
+                         :style="getStyle(subject)"
+                         @mousedown="startDrag(subject, $event)"
+                         @mousemove="recordDragPos($event)">
+                        <img :src="subject.img" :alt="subject.name" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- ── GitHub Projects ── -->
+    <section id="projects">
+        <div class="section-inner">
+            <div class="section-label reveal">04 — Projects</div>
+            <h2 class="section-title reveal">精選專案</h2>
+            <div class="projects-grid">
+                <a class="project-card reveal reveal-delay-1" href="https://github.com/jimmy-shian/Runic" target="_blank">
+                    <div class="project-name">📁 Runic</div>
+                    <div class="project-desc">練成小遊戲 — 用 TypeScript 打造的符文練習遊戲，邊玩邊學，沉浸式體驗。</div>
+                    <div class="project-lang"><span class="lang-dot lang-ts"></span>TypeScript</div>
+                </a>
+                <a class="project-card reveal reveal-delay-2" href="https://github.com/jimmy-shian/Write_Novel" target="_blank">
+                    <div class="project-name">📁 Write_Novel</div>
+                    <div class="project-desc">用 Python 驅動的小說寫作輔助工具，讓靈感不再因懶惰而消失。</div>
+                    <div class="project-lang"><span class="lang-dot lang-py"></span>Python</div>
+                </a>
+                <a class="project-card reveal reveal-delay-3" href="https://github.com/jimmy-shian/SocialAssistance" target="_blank">
+                    <div class="project-name">📁 SocialAssistance</div>
+                    <div class="project-desc">JavaScript 社群輔助工具，幫助你在社交場合不那麼尷尬（功能神秘）。</div>
+                    <div class="project-lang"><span class="lang-dot lang-js"></span>JavaScript</div>
+                </a>
+                <a class="project-card reveal reveal-delay-4" href="https://github.com/jimmy-shian/novel" target="_blank">
+                    <div class="project-name">📁 novel</div>
+                    <div class="project-desc">HTML 小說展示頁面，把故事變成瀏覽器就能讀的電子書形式。</div>
+                    <div class="project-lang"><span class="lang-dot lang-html"></span>HTML</div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- ═══════════════════════════════════
+         MEMORY GAME (5×5)
+    ═══════════════════════════════════ -->
+    <section id="memory-game-section">
+        <div class="section-inner">
+            <div class="section-label reveal">05 — Mini Game</div>
+            <h2 class="section-title reveal">記憶配對挑戰</h2>
+            <div class="game-wrapper reveal">
+                <div id="game-win">
+                    <div class="win-title">SYSTEM COMPLETE</div>
+                    <div class="win-sub">所有配對已完成！神經網路同步成功 🧠</div>
+                    <div class="win-score" id="win-score-text"></div>
+                    <button class="btn-game primary" onclick="initGame()">重新挑戰</button>
+                </div>
+                <div class="game-hud">
+                    <div class="hud-stat"><span class="hud-value" id="hud-moves">0</span><span class="hud-key">Moves</span></div>
+                    <div class="hud-stat"><span class="hud-value" id="hud-pairs">0/12</span><span class="hud-key">Pairs</span></div>
+                    <div class="hud-stat"><span class="hud-value" id="hud-timer">00:00</span><span class="hud-key">Time</span></div>
+                </div>
+                <div id="game-board"></div>
+                <div class="game-controls">
+                    <button class="btn-game primary" onclick="initGame()">新遊戲</button>
+                    <button class="btn-game" onclick="revealAll()">提示（一次性）</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── Footer ── -->
+    <footer>
+        <p>© 2026 Jimmy Shian &nbsp;|&nbsp;
+           <a href="https://github.com/jimmy-shian" target="_blank">github.com/jimmy-shian</a>
+           &nbsp;|&nbsp; 國立高雄科技大學 &nbsp;|&nbsp; Built with ☕ &amp; 💻
+        </p>
+    </footer>
+
+    <!-- ════════════════════════════════════════
+         SCRIPTS
+    ════════════════════════════════════════ -->
     <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+
     <script>
-        new Vue({
-            el: '#app',
-            data() {
-                return {
-                    experience: [
-                        {
-                            id: 1,
-                            title: '大學生',
-                            organization: '台灣的國立科技大學',
-                            duration: '2020 - 至今',
-                            description: '專精於「如何在最後一刻完成作業」，副修「咖啡因轉換程式碼」。最近在學習如何讓AI理解人類的幽默感（進度：0.01%）'
-                        },
-                        {
-                            id: 2,
-                            title: '研究生',
-                            organization: '實驗室LAB',
-                            duration: '2023 - 至今',
-                            description: '專案維護者兼下午茶點心長。專長：用程式碼解決問題，以及用食物解決有故障的腦袋'
-                        },
-                        {
-                            id: 3,
-                            title: '學士學位',
-                            organization: '某大學 - 電機工程系(資通組)',
-                            duration: '2016 - 2020',
-                            description: '主修電機工程，副修「如何在期末考前存活」。不擅長資料結構、演算法，喜歡用GPT解決99%的程式問題'
-                        }
-                    ],
-                    subjects: [
-                        { 
-                            id: 1,
-                            name: 'Python', 
-                            percent: 80, 
-                            img: './img/python.png',
-                            x: 100,
-                            y: 100,
-                            vx: (Math.random() - 0.5) * 2 * (50 + Math.random() * 150),
-                            vy: (Math.random() - 0.5) * 2 * (50 + Math.random() * 150),
-                            radius: 30,
-                            mass: 1,
-                            accelerationCount: 0,
-                            lastAccelerationTime: 0,
-                            wallAccelerationCount: 0,
-                            lastWallAccelerationTime: 0
-                        },
-                        { 
-                            id: 2,
-                            name: 'C#', 
-                            percent: 40, 
-                            img: './img/C.png',
-                            x: 300,
-                            y: 200,
-                            vx: (Math.random() - 0.5) * 2 * (50 + Math.random() * 150),
-                            vy: (Math.random() - 0.5) * 2 * (50 + Math.random() * 150),
-                            radius: 30,
-                            mass: 1,
-                            accelerationCount: 0,
-                            lastAccelerationTime: 0,
-                            wallAccelerationCount: 0,
-                            lastWallAccelerationTime: 0
-                        },
-                        { 
-                            id: 3,
-                            name: 'JS,Vue', 
-                            percent: 20, 
-                            img: './img/vue.png',
-                            x: 200,
-                            y: 300,
-                            vx: (Math.random() - 0.5) * 2 * (50 + Math.random() * 150),
-                            vy: (Math.random() - 0.5) * 2 * (50 + Math.random() * 150),
-                            radius: 30,
-                            mass: 1,
-                            accelerationCount: 0,
-                            lastAccelerationTime: 0,
-                            wallAccelerationCount: 0,
-                            lastWallAccelerationTime: 0
-                        },
-                        { 
-                            id: 4,
-                            name: 'Java', 
-                            percent: 65, 
-                            img: './img/java.png',
-                            x: 400,
-                            y: 150,
-                            vx: (Math.random() - 0.5) * 2 * (50 + Math.random() * 150),
-                            vy: (Math.random() - 0.5) * 2 * (50 + Math.random() * 150),
-                            radius: 30,
-                            mass: 1,
-                            accelerationCount: 0,
-                            lastAccelerationTime: 0,
-                            wallAccelerationCount: 0,
-                            lastWallAccelerationTime: 0
-                        }
-                    ],
-                    container: null,
-                    isDragging: false,
-                    dragBall: null,
-                    dragOffsetX: 0,
-                    dragOffsetY: 0,
-                    lastTime: 0,
-                    animationFrame: null,
-                    lastDragPos: null,
-                    containerRect: null
-                };
-            },
-            mounted() {
-                this.$nextTick(() => {
-                    this.container = this.$el.querySelector('.skills-container');
-                    if (this.container) {
-                        this.containerRect = this.container.getBoundingClientRect();
-                        this.startAnimation();
-                        window.addEventListener('resize', this.updateContainerRect);
-                    }
-                });
-            },
-            beforeDestroy() {
-                window.removeEventListener('resize', this.updateContainerRect);
-                cancelAnimationFrame(this.animationFrame);
-            },
-            methods: {
-                updateContainerRect() {
-                    this.containerRect = this.container.getBoundingClientRect();
-                },
-                startAnimation() {
-                    this.lastTime = performance.now();
-                    this.animationFrame = requestAnimationFrame(this.animate);
-                },
-                animate(timestamp) {
-                    const deltaTime = timestamp - this.lastTime;
-                    this.lastTime = timestamp;
-                    
-                    // 更新位置
-                    this.updateBalls(deltaTime);
-                    
-                    // 檢查碰撞
-                    this.checkCollisions();
-                    
-                    this.animationFrame = requestAnimationFrame(this.animate);
-                },
-                updateBalls(deltaTime) {
-                    const friction = 0.99; // 摩擦係數
-                    const now = Date.now();
-                    this.subjects.forEach(ball => {
-                        if (ball === this.dragBall) return;
-                        // 更新位置
-                        ball.x += ball.vx * (deltaTime / 16);
-                        ball.y += ball.vy * (deltaTime / 16);
-                        let collided = false, wallType = '';
-                        // 邊界碰撞檢測
-                        if (ball.x - ball.radius < 0) {
-                            ball.x = ball.radius;
-                            ball.vx = -ball.vx * 0.8;
-                            collided = true; wallType = 'x';
-                        } else if (ball.x + ball.radius > this.containerRect.width) {
-                            ball.x = this.containerRect.width - ball.radius;
-                            ball.vx = -ball.vx * 0.8;
-                            collided = true; wallType = 'x';
-                        }
-                        if (ball.y - ball.radius < 0) {
-                            ball.y = ball.radius;
-                            ball.vy = -ball.vy * 0.8;
-                            collided = true; wallType = 'y';
-                        } else if (ball.y + ball.radius > this.containerRect.height) {
-                            ball.y = this.containerRect.height - ball.radius;
-                            ball.vy = -ball.vy * 0.8;
-                            collided = true; wallType = 'y';
-                        }
-                        // 牆壁碰撞加速邏輯
-                        if (collided) {
-                            if (!ball.lastWallAccelerationTime || now - ball.lastWallAccelerationTime > 2500) {
-                                ball.wallAccelerationCount = 0;
-                                ball.lastWallAccelerationTime = now;
-                            }
-                            if (ball.wallAccelerationCount < 2) {
-                                let v = Math.sqrt(ball.vx * ball.vx + ball.vy * ball.vy);
-                                v += 5;
-                                const maxSpeed = 50;
-                                if (v > maxSpeed) v = maxSpeed;
-                                const theta = Math.atan2(ball.vy, ball.vx);
-                                ball.vx = v * Math.cos(theta);
-                                ball.vy = v * Math.sin(theta);
-                                ball.wallAccelerationCount++;
-                                ball.lastWallAccelerationTime = now;
-                            }
-                        }
-                        // 應用摩擦力
-                        ball.vx *= friction;
-                        ball.vy *= friction;
-                        // 速度下限限制
-                        let speed = Math.sqrt(ball.vx * ball.vx + ball.vy * ball.vy);
-                        if (speed < 5 && speed > 0) {
-                            const theta = Math.atan2(ball.vy, ball.vx);
-                            ball.vx = 5 * Math.cos(theta);
-                            ball.vy = 5 * Math.sin(theta);
-                        }
-                    });
-                },
-                checkCollisions() {
-                    for (let i = 0; i < this.subjects.length; i++) {
-                        for (let j = i + 1; j < this.subjects.length; j++) {
-                            const ball1 = this.subjects[i];
-                            const ball2 = this.subjects[j];
-                            
-                            if (ball1 === this.dragBall || ball2 === this.dragBall) continue;
-                            
-                            const dx = ball2.x - ball1.x;
-                            const dy = ball2.y - ball1.y;
-                            const distance = Math.sqrt(dx * dx + dy * dy);
-                            const minDistance = ball1.radius + ball2.radius;
-                            
-                            if (distance < minDistance) {
-                                // 碰撞發生
-                                const angle = Math.atan2(dy, dx);
-                                const sin = Math.sin(angle);
-                                const cos = Math.cos(angle);
-                                
-                                // 旋轉速度
-                                const vx1 = ball1.vx * cos + ball1.vy * sin;
-                                const vy1 = ball1.vy * cos - ball1.vx * sin;
-                                const vx2 = ball2.vx * cos + ball2.vy * sin;
-                                const vy2 = ball2.vy * cos - ball2.vx * sin;
-                                
-                                // 碰撞後的速度
-                                const v1Final = ((ball1.mass - ball2.mass) * vx1 + 2 * ball2.mass * vx2) / (ball1.mass + ball2.mass);
-                                const v2Final = ((ball2.mass - ball1.mass) * vx2 + 2 * ball1.mass * vx1) / (ball1.mass + ball2.mass);
-                                
-                                // 更新速度
-                                ball1.vx = v1Final * cos - vy1 * sin;
-                                ball1.vy = vy1 * cos + v1Final * sin;
-                                ball2.vx = v2Final * cos - vy2 * sin;
-                                ball2.vy = vy2 * cos + v2Final * sin;
-                                
-                                // 防止球體重疊
-                                const overlap = minDistance - distance;
-                                ball1.x -= overlap * Math.cos(angle) * 0.5;
-                                ball1.y -= overlap * Math.sin(angle) * 0.5;
-                                ball2.x += overlap * Math.cos(angle) * 0.5;
-                                ball2.y += overlap * Math.sin(angle) * 0.5;
-                                
-                                // 加速邏輯
-                                const now = Date.now();
-                                [ball1, ball2].forEach(ball => {
-                                    if (!ball.lastAccelerationTime || now - ball.lastAccelerationTime > 5000) {
-                                        ball.accelerationCount = 0;
-                                        ball.lastAccelerationTime = now;
-                                    }
-                                    if (ball.accelerationCount < 2) {
-                                        let v = Math.sqrt(ball.vx * ball.vx + ball.vy * ball.vy);
-                                        v = Math.max(v, 20) + 5;
-                                        const maxSpeed = 20;
-                                        if (v > maxSpeed) v = maxSpeed;
-                                        const theta = Math.atan2(ball.vy, ball.vx);
-                                        ball.vx = v * Math.cos(theta);
-                                        ball.vy = v * Math.sin(theta);
-                                        ball.accelerationCount++;
-                                        ball.lastAccelerationTime = now;
-                                    }
-                                });
-                            }
-                        }
-                    }
-                },
-                startDrag(ball, event) {
-                    this.isDragging = true;
-                    this.dragBall = ball;
-                    
-                    // 計算鼠標位置與球心的偏移
-                    const rect = event.target.getBoundingClientRect();
-                    this.dragOffsetX = event.clientX - rect.left - ball.radius;
-                    this.dragOffsetY = event.clientY - rect.top - ball.radius;
-                    
-                    // 停止球的運動
-                    ball.vx = 0;
-                    ball.vy = 0;
-                    
-                    // 重置加速計數
-                    ball.accelerationCount = 0;
-                    
-                    // 防止選中文本
-                    event.preventDefault();
-                },
-                dragMove(event) {
-                    if (!this.isDragging || !this.dragBall) return;
-                    
-                    // 更新球的位置
-                    const containerRect = this.container.getBoundingClientRect();
-                    let x = event.clientX - containerRect.left - this.dragOffsetX;
-                    let y = event.clientY - containerRect.top - this.dragOffsetY;
-                    
-                    // 確保球不會移出容器
-                    x = Math.max(this.dragBall.radius, Math.min(containerRect.width - this.dragBall.radius, x));
-                    y = Math.max(this.dragBall.radius, Math.min(containerRect.height - this.dragBall.radius, y));
-                    
-                    this.dragBall.x = x;
-                    this.dragBall.y = y;
-                },
-                endDrag(event) {
-                    if (!this.isDragging || !this.dragBall) return;
-                    
-                    // 計算投擲速度
-                    if (this.lastDragPos) {
-                        const dx = event.clientX - this.lastDragPos.x;
-                        const dy = event.clientY - this.lastDragPos.y;
-                        const speed = 0.2; // 速度縮放因子
-                        
-                        this.dragBall.vx = dx * speed;
-                        this.dragBall.vy = dy * speed;
-                    }
-                    
-                    this.isDragging = false;
-                    this.dragBall = null;
-                    this.lastDragPos = null;
-                },
-                recordDragPos(event) {
-                    this.lastDragPos = { x: event.clientX, y: event.clientY };
-                },
-                getStyle(ball) {
-                    return {
-                        left: (ball.x - ball.radius) + 'px',
-                        top: (ball.y - ball.radius) + 'px',
-                        width: (ball.radius * 2) + 'px',
-                        height: (ball.radius * 2) + 'px',
-                        backgroundColor: ball === this.dragBall ? '#3a7bd5' : '#4a90e2',
-                        transform: ball === this.dragBall ? 'scale(1.1)' : 'none',
-                        zIndex: ball === this.dragBall ? 100 : 10
-                    };
+    /* ════════════════════════════════════════
+       1. SMOOTH SCROLL with easing
+    ════════════════════════════════════════ */
+    function easeInOutCubic(t) {
+        return t < 0.5 ? 4*t*t*t : 1 - Math.pow(-2*t+2, 3)/2;
+    }
+
+    function smoothScrollTo(targetId, duration) {
+        const el = document.getElementById(targetId);
+        if (!el) return;
+        const navH = document.querySelector('nav').offsetHeight;
+        const startY = window.scrollY;
+        const endY = el.getBoundingClientRect().top + window.scrollY - navH - 10;
+        const dist = endY - startY;
+        let startTime = null;
+
+        function step(ts) {
+            if (!startTime) startTime = ts;
+            const elapsed = ts - startTime;
+            const progress = Math.min(elapsed / duration, 1);
+            window.scrollTo(0, startY + dist * easeInOutCubic(progress));
+            if (progress < 1) requestAnimationFrame(step);
+        }
+        requestAnimationFrame(step);
+    }
+
+    // Bind nav links
+    document.querySelectorAll('[data-target]').forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const target = link.dataset.target;
+            smoothScrollTo(target, 900);
+        });
+    });
+
+    // Active nav highlight on scroll
+    const sections = ['home','about','experience','skills','projects','memory-game-section'];
+    const navMap = { home:'nav-home', about:'nav-about', experience:'nav-exp', skills:'nav-skills', projects:'nav-proj', 'memory-game-section':'nav-game' };
+
+    function updateActiveNav() {
+        const scrollY = window.scrollY + 120;
+        let current = 'home';
+        sections.forEach(id => {
+            const el = document.getElementById(id);
+            if (el && el.offsetTop <= scrollY) current = id;
+        });
+        document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
+        const activeEl = document.getElementById(navMap[current]);
+        if (activeEl) activeEl.classList.add('active');
+    }
+    window.addEventListener('scroll', updateActiveNav, { passive: true });
+    updateActiveNav();
+
+    /* ════════════════════════════════════════
+       2. SCROLL REVEAL
+    ════════════════════════════════════════ */
+    const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+            if (e.isIntersecting) {
+                e.target.classList.add('visible');
+                revealObserver.unobserve(e.target);
+            }
+        });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+    /* ════════════════════════════════════════
+       3. ANTIGRAVITY PARTICLE CANVAS
+       Particles repel from cursor (zero-gravity repulsion field)
+    ════════════════════════════════════════ */
+    (function () {
+        const canvas = document.getElementById('antigravity-canvas');
+        const ctx = canvas.getContext('2d');
+        let W, H, mouse = { x: -9999, y: -9999 };
+        const PARTICLE_COUNT = 120;
+        const REPEL_RADIUS   = 140;
+        const REPEL_STRENGTH = 0.9;
+        const ATTRACT_HOME   = 0.012;
+        const FRICTION       = 0.88;
+
+        function resize() {
+            W = canvas.width  = window.innerWidth;
+            H = canvas.height = window.innerHeight;
+        }
+        resize();
+        window.addEventListener('resize', resize);
+
+        window.addEventListener('mousemove', e => { mouse.x = e.clientX; mouse.y = e.clientY; });
+        window.addEventListener('mouseleave', () => { mouse.x = -9999; mouse.y = -9999; });
+
+        // Color palette: cyan / blue / purple tones
+        const COLORS = [
+            'rgba(0,229,255,',
+            'rgba(41,121,255,',
+            'rgba(124,77,255,',
+            'rgba(0,200,220,',
+            'rgba(80,160,255,',
+        ];
+
+        class Particle {
+            constructor() { this.reset(true); }
+            reset(init) {
+                this.ox = Math.random() * window.innerWidth;
+                this.oy = Math.random() * window.innerHeight;
+                this.x  = init ? this.ox : Math.random() * window.innerWidth;
+                this.y  = init ? this.oy : Math.random() * window.innerHeight;
+                this.vx = 0; this.vy = 0;
+                this.r  = Math.random() * 2.2 + 0.6;
+                this.alpha = Math.random() * 0.55 + 0.2;
+                this.color = COLORS[Math.floor(Math.random() * COLORS.length)];
+                // drift constants
+                this.driftAmp   = Math.random() * 18 + 4;
+                this.driftSpeed = Math.random() * 0.0008 + 0.0003;
+                this.driftOff   = Math.random() * Math.PI * 2;
+                this.baseAlpha  = this.alpha;
+            }
+            update(t) {
+                // Natural slow drift around home
+                const driftX = Math.sin(t * this.driftSpeed + this.driftOff) * this.driftAmp;
+                const driftY = Math.cos(t * this.driftSpeed * 0.7 + this.driftOff) * this.driftAmp;
+                const homeX = this.ox + driftX;
+                const homeY = this.oy + driftY;
+
+                // Attract back to home
+                this.vx += (homeX - this.x) * ATTRACT_HOME;
+                this.vy += (homeY - this.y) * ATTRACT_HOME;
+
+                // Repel from cursor
+                const dx = this.x - mouse.x;
+                const dy = this.y - mouse.y;
+                const dist = Math.sqrt(dx*dx + dy*dy);
+                if (dist < REPEL_RADIUS && dist > 0) {
+                    const force = (REPEL_RADIUS - dist) / REPEL_RADIUS;
+                    const strength = REPEL_STRENGTH * force * force;
+                    this.vx += (dx / dist) * strength * 8;
+                    this.vy += (dy / dist) * strength * 8;
+                    this.alpha = Math.min(this.baseAlpha + force * 0.5, 0.9);
+                } else {
+                    this.alpha += (this.baseAlpha - this.alpha) * 0.04;
+                }
+
+                // Friction + integrate
+                this.vx *= FRICTION;
+                this.vy *= FRICTION;
+                this.x += this.vx;
+                this.y += this.vy;
+
+                // Keep in bounds
+                if (this.x < 0) this.x = 0;
+                if (this.x > W) this.x = W;
+                if (this.y < 0) this.y = 0;
+                if (this.y > H) this.y = H;
+            }
+            draw() {
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.r, 0, Math.PI * 2);
+                ctx.fillStyle = this.color + this.alpha + ')';
+                ctx.fill();
+            }
+        }
+
+        // Connection lines between nearby particles
+        function drawConnections(particles) {
+            const MAX_DIST = 90;
+            for (let i = 0; i < particles.length; i++) {
+                for (let j = i + 1; j < particles.length; j++) {
+                    const dx = particles[i].x - particles[j].x;
+                    const dy = particles[i].y - particles[j].y;
+                    const d  = Math.sqrt(dx*dx + dy*dy);
+                    if (d < MAX_DIST) {
+                        const alpha = (1 - d / MAX_DIST) * 0.13;
+                        ctx.beginPath();
+                        ctx.moveTo(particles[i].x, particles[i].y);
+                        ctx.lineTo(particles[j].x, particles[j].y);
+                        ctx.strokeStyle = `rgba(0,229,255,${alpha})`;
+                        ctx.lineWidth = 0.7;
+                        ctx.stroke();
                     }
                 }
+            }
+        }
+
+        const particles = Array.from({ length: PARTICLE_COUNT }, () => new Particle());
+
+        function loop(t) {
+            ctx.clearRect(0, 0, W, H);
+            drawConnections(particles);
+            particles.forEach(p => { p.update(t); p.draw(); });
+            requestAnimationFrame(loop);
+        }
+        requestAnimationFrame(loop);
+    })();
+
+    /* ════════════════════════════════════════
+       4. VUE – SKILLS BALLS
+    ════════════════════════════════════════ */
+    new Vue({
+        el: '#app',
+        data() {
+            return {
+                subjects: [
+                    { id:1, name:'Python', img:'./img/python.webp', x:100, y:100, vx:(Math.random()-0.5)*200, vy:(Math.random()-0.5)*200, radius:35, mass:1, accelerationCount:0, lastAccelerationTime:0, wallAccelerationCount:0, lastWallAccelerationTime:0 },
+                    { id:2, name:'C#',     img:'./img/C.webp',      x:280, y:180, vx:(Math.random()-0.5)*200, vy:(Math.random()-0.5)*200, radius:35, mass:1, accelerationCount:0, lastAccelerationTime:0, wallAccelerationCount:0, lastWallAccelerationTime:0 },
+                    { id:3, name:'Vue.js', img:'./img/vue.webp',    x:180, y:280, vx:(Math.random()-0.5)*200, vy:(Math.random()-0.5)*200, radius:35, mass:1, accelerationCount:0, lastAccelerationTime:0, wallAccelerationCount:0, lastWallAccelerationTime:0 },
+                    { id:4, name:'Java',   img:'./img/java.webp',   x:400, y:120, vx:(Math.random()-0.5)*200, vy:(Math.random()-0.5)*200, radius:35, mass:1, accelerationCount:0, lastAccelerationTime:0, wallAccelerationCount:0, lastWallAccelerationTime:0 },
+                ],
+                container:null, isDragging:false, dragBall:null,
+                dragOffsetX:0, dragOffsetY:0, lastTime:0,
+                animationFrame:null, lastDragPos:null, containerRect:null
+            };
+        },
+        mounted() {
+            this.$nextTick(() => {
+                this.container = this.$el.querySelector('.skills-container');
+                if (this.container) {
+                    this.startAnimation();
+                }
+            });
+        },
+        beforeDestroy() {
+            cancelAnimationFrame(this.animationFrame);
+        },
+        methods: {
+            startAnimation() { this.lastTime = performance.now(); this.animationFrame = requestAnimationFrame(this.animate); },
+            animate(ts) {
+                const dt = ts - this.lastTime; this.lastTime = ts;
+                this.updateBalls(dt); this.checkCollisions();
+                this.animationFrame = requestAnimationFrame(this.animate);
+            },
+            updateBalls(dt) {
+                if (!this.container) return;
+                const width = this.container.clientWidth;
+                const height = this.container.clientHeight;
+                if (width <= 0 || height <= 0) return;
+
+                const friction=0.99, now=Date.now();
+                this.subjects.forEach(ball => {
+                    if (ball===this.dragBall) return;
+                    ball.x += ball.vx*(dt/16);
+                    ball.y += ball.vy*(dt/16);
+                    let collided=false;
+                    if (ball.x-ball.radius<0)          { ball.x=ball.radius;          ball.vx=-ball.vx*0.8; collided=true; }
+                    else if (ball.x+ball.radius>width) { ball.x=width-ball.radius;    ball.vx=-ball.vx*0.8; collided=true; }
+                    if (ball.y-ball.radius<0)          { ball.y=ball.radius;          ball.vy=-ball.vy*0.8; collided=true; }
+                    else if (ball.y+ball.radius>height){ ball.y=height-ball.radius;   ball.vy=-ball.vy*0.8; collided=true; }
+                    if (collided) {
+                        if (!ball.lastWallAccelerationTime||now-ball.lastWallAccelerationTime>2500) { ball.wallAccelerationCount=0; ball.lastWallAccelerationTime=now; }
+                        if (ball.wallAccelerationCount<2) { let v=Math.min(Math.sqrt(ball.vx*ball.vx+ball.vy*ball.vy)+5,50); const th=Math.atan2(ball.vy,ball.vx); ball.vx=v*Math.cos(th); ball.vy=v*Math.sin(th); ball.wallAccelerationCount++; ball.lastWallAccelerationTime=now; }
+                    }
+                    ball.vx*=friction; ball.vy*=friction;
+                    let sp=Math.sqrt(ball.vx*ball.vx+ball.vy*ball.vy);
+                    if (sp<5&&sp>0) { const th=Math.atan2(ball.vy,ball.vx); ball.vx=5*Math.cos(th); ball.vy=5*Math.sin(th); }
+                });
+            },
+            checkCollisions() {
+                for (let i=0;i<this.subjects.length;i++) for (let j=i+1;j<this.subjects.length;j++) {
+                    const b1=this.subjects[i], b2=this.subjects[j];
+                    if (b1===this.dragBall||b2===this.dragBall) continue;
+                    const dx=b2.x-b1.x, dy=b2.y-b1.y, dist=Math.sqrt(dx*dx+dy*dy), min=b1.radius+b2.radius;
+                    if (dist<min) {
+                        const ang=Math.atan2(dy,dx), sin=Math.sin(ang), cos=Math.cos(ang);
+                        const vx1=b1.vx*cos+b1.vy*sin, vy1=b1.vy*cos-b1.vx*sin;
+                        const vx2=b2.vx*cos+b2.vy*sin, vy2=b2.vy*cos-b2.vx*sin;
+                        const v1f=((b1.mass-b2.mass)*vx1+2*b2.mass*vx2)/(b1.mass+b2.mass);
+                        const v2f=((b2.mass-b1.mass)*vx2+2*b1.mass*vx1)/(b1.mass+b2.mass);
+                        b1.vx=v1f*cos-vy1*sin; b1.vy=vy1*cos+v1f*sin;
+                        b2.vx=v2f*cos-vy2*sin; b2.vy=vy2*cos+v2f*sin;
+                        const ov=min-dist;
+                        b1.x-=ov*Math.cos(ang)*0.5; b1.y-=ov*Math.sin(ang)*0.5;
+                        b2.x+=ov*Math.cos(ang)*0.5; b2.y+=ov*Math.sin(ang)*0.5;
+                    }
+                }
+            },
+            startDrag(ball,e) { this.isDragging=true; this.dragBall=ball; const r=e.target.getBoundingClientRect(); this.dragOffsetX=e.clientX-r.left-ball.radius; this.dragOffsetY=e.clientY-r.top-ball.radius; ball.vx=0; ball.vy=0; ball.accelerationCount=0; e.preventDefault(); },
+            dragMove(e) {
+                if (!this.isDragging||!this.dragBall) return;
+                const cr=this.container.getBoundingClientRect();
+                let x=e.clientX-cr.left-this.dragOffsetX, y=e.clientY-cr.top-this.dragOffsetY;
+                x=Math.max(this.dragBall.radius,Math.min(cr.width-this.dragBall.radius,x));
+                y=Math.max(this.dragBall.radius,Math.min(cr.height-this.dragBall.radius,y));
+                this.dragBall.x=x; this.dragBall.y=y;
+            },
+            endDrag(e) {
+                if (!this.isDragging||!this.dragBall) return;
+                if (this.lastDragPos) { const dx=e.clientX-this.lastDragPos.x, dy=e.clientY-this.lastDragPos.y; this.dragBall.vx=dx*0.2; this.dragBall.vy=dy*0.2; }
+                this.isDragging=false; this.dragBall=null; this.lastDragPos=null;
+            },
+            recordDragPos(e) { this.lastDragPos={x:e.clientX,y:e.clientY}; },
+            getStyle(ball) {
+                return {
+                    left:(ball.x-ball.radius)+'px', top:(ball.y-ball.radius)+'px',
+                    width:(ball.radius*2)+'px', height:(ball.radius*2)+'px',
+                    borderColor: ball===this.dragBall ? '#7c4dff' : 'var(--accent-cyan)',
+                    boxShadow: ball===this.dragBall ? '0 0 30px rgba(124,77,255,0.6)' : '0 0 18px rgba(0,229,255,0.28)',
+                    zIndex: ball===this.dragBall ? 100 : 10
+                };
+            }
+        }
+    });
+
+    /* ════════════════════════════════════════
+       5. MEMORY GAME
+    ════════════════════════════════════════ */
+    const EMOJIS = ['🐉','⚡','🔮','🛸','🤖','🌌','💎','🔭','🧬','🎮','🦾','🌐'];
+    let cards=[],flipped=[],matched=[],moves=0,pairs=0,timerSec=0,timerInterval=null,canFlip=true,hintUsed=false;
+
+    function shuffle(arr) { for(let i=arr.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[arr[i],arr[j]]=[arr[j],arr[i]];} return arr; }
+    function pad(n) { return String(n).padStart(2,'0'); }
+    function updateHUD() { document.getElementById('hud-moves').textContent=moves; document.getElementById('hud-pairs').textContent=pairs+'/12'; }
+    function startTimer() {
+        clearInterval(timerInterval); timerSec=0;
+        timerInterval=setInterval(()=>{ timerSec++; const m=Math.floor(timerSec/60),s=timerSec%60; document.getElementById('hud-timer').textContent=pad(m)+':'+pad(s); },1000);
+    }
+    function stopTimer() { clearInterval(timerInterval); }
+
+    function initGame() {
+        cards=[]; flipped=[]; matched=[]; moves=0; pairs=0; timerSec=0; canFlip=true; hintUsed=false;
+        stopTimer(); startTimer();
+        document.getElementById('game-win').classList.remove('show');
+        updateHUD();
+        const pool=shuffle([...EMOJIS,...EMOJIS].concat(['⭐']));
+        const board=document.getElementById('game-board');
+        board.innerHTML='';
+        pool.forEach((emoji,idx)=>{
+            const isFree=(emoji==='⭐');
+            const card=document.createElement('div');
+            card.className='mem-card'+(isFree?' matched':'');
+            card.dataset.index=idx; card.dataset.emoji=emoji; card.dataset.free=isFree?'1':'0';
+            card.innerHTML=`<div class="mem-card-inner"><div class="mem-front">?</div><div class="mem-back">${emoji}</div></div>`;
+            if(isFree) matched.push(idx);
+            else card.addEventListener('click',()=>flipCard(card));
+            board.appendChild(card);
+            cards.push(card);
         });
+    }
+
+    function flipCard(card) {
+        if(!canFlip||card.classList.contains('flipped')||card.classList.contains('matched')||card.dataset.free==='1') return;
+        card.classList.add('flipped');
+        flipped.push(card);
+        if(flipped.length===2){
+            moves++; updateHUD(); canFlip=false;
+            const [a,b]=flipped;
+            if(a.dataset.emoji===b.dataset.emoji){
+                setTimeout(()=>{ a.classList.add('matched'); b.classList.add('matched'); pairs++; updateHUD(); flipped=[]; canFlip=true; if(pairs===12){stopTimer();showWin();} },500);
+            } else {
+                setTimeout(()=>{ a.classList.add('shake'); b.classList.add('shake'); },300);
+                setTimeout(()=>{ a.classList.remove('flipped','shake'); b.classList.remove('flipped','shake'); flipped=[]; canFlip=true; },920);
+            }
+        }
+    }
+
+    function showWin() {
+        const m=Math.floor(timerSec/60),s=timerSec%60;
+        document.getElementById('win-score-text').textContent='完成時間：'+pad(m)+':'+pad(s)+'  |  翻牌次數：'+moves;
+        document.getElementById('game-win').classList.add('show');
+    }
+
+    function revealAll() {
+        if(hintUsed) return; hintUsed=true;
+        cards.forEach(c=>{ if(!c.classList.contains('matched')) c.classList.add('flipped'); });
+        setTimeout(()=>{ cards.forEach(c=>{ if(!c.classList.contains('matched')) c.classList.remove('flipped'); }); },2000);
+    }
+
+    window.addEventListener('DOMContentLoaded', initGame);
     </script>
 </body>
 </html>
