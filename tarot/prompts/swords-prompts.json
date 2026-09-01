@@ -1,0 +1,86 @@
+[
+  {
+    "id": "swords_01",
+    "nameZh": "寶劍一",
+    "nameEn": "Ace of Swords",
+    "prompt": "Ace of Swords tarot card, showing 神手擎劍, 橄欖與棕櫚桂冠, 山巔破雲, stained glass cathedral style, Stormy sky blue, steel grey, radiant white, silver, intricate black leaded lines, gothic golden arch frame."
+  },
+  {
+    "id": "swords_02",
+    "nameZh": "寶劍二",
+    "nameEn": "Two of Swords",
+    "prompt": "Two of Swords tarot card, showing 蒙眼女子, 雙劍交叉, 平靜海面, stained glass cathedral style, Stormy sky blue, steel grey, radiant white, silver, intricate black leaded lines, gothic golden arch frame."
+  },
+  {
+    "id": "swords_03",
+    "nameZh": "寶劍三",
+    "nameEn": "Three of Swords",
+    "prompt": "Three of Swords tarot card, showing 三劍穿心, 風雨暴雲, 心碎療癒, stained glass cathedral style, Stormy sky blue, steel grey, radiant white, silver, intricate black leaded lines, gothic golden arch frame."
+  },
+  {
+    "id": "swords_04",
+    "nameZh": "寶劍四",
+    "nameEn": "Four of Swords",
+    "prompt": "Four of Swords tarot card, showing 教堂騎士雕像, 三劍懸牆一劍在側, 彩繪玻璃窗, stained glass cathedral style, Stormy sky blue, steel grey, radiant white, silver, intricate black leaded lines, gothic golden arch frame."
+  },
+  {
+    "id": "swords_05",
+    "nameZh": "寶劍五",
+    "nameEn": "Five of Swords",
+    "prompt": "Five of Swords tarot card, showing 狡黠男子, 手攬三劍, 敗者遠去, stained glass cathedral style, Stormy sky blue, steel grey, radiant white, silver, intricate black leaded lines, gothic golden arch frame."
+  },
+  {
+    "id": "swords_06",
+    "nameZh": "寶劍六",
+    "nameEn": "Six of Swords",
+    "prompt": "Six of Swords tarot card, showing 擺渡舟子, 載運六劍母子, 航向平靜水域, stained glass cathedral style, Stormy sky blue, steel grey, radiant white, silver, intricate black leaded lines, gothic golden arch frame."
+  },
+  {
+    "id": "swords_07",
+    "nameZh": "寶劍七",
+    "nameEn": "Seven of Swords",
+    "prompt": "Seven of Swords tarot card, showing 躡足男子, 偷抱五劍, 回望敵營, stained glass cathedral style, Stormy sky blue, steel grey, radiant white, silver, intricate black leaded lines, gothic golden arch frame."
+  },
+  {
+    "id": "swords_08",
+    "nameZh": "寶劍八",
+    "nameEn": "Eight of Swords",
+    "prompt": "Eight of Swords tarot card, showing 蒙眼綁縛女子, 八劍圍繞, 泥濘水窪, stained glass cathedral style, Stormy sky blue, steel grey, radiant white, silver, intricate black leaded lines, gothic golden arch frame."
+  },
+  {
+    "id": "swords_09",
+    "nameZh": "寶劍九",
+    "nameEn": "Nine of Swords",
+    "prompt": "Nine of Swords tarot card, showing 深夜掩面, 九劍橫空, 惡夢焦慮, stained glass cathedral style, Stormy sky blue, steel grey, radiant white, silver, intricate black leaded lines, gothic golden arch frame."
+  },
+  {
+    "id": "swords_10",
+    "nameZh": "寶劍十",
+    "nameEn": "Ten of Swords",
+    "prompt": "Ten of Swords tarot card, showing 倒臥十劍, 黑雲壓境, 遠方晨曦, stained glass cathedral style, Stormy sky blue, steel grey, radiant white, silver, intricate black leaded lines, gothic golden arch frame."
+  },
+  {
+    "id": "swords_page",
+    "nameZh": "寶劍侍從",
+    "nameEn": "Page of Swords",
+    "prompt": "Page of Swords tarot card, showing 機敏青年, 持劍回望, 狂風綠原, stained glass cathedral style, Stormy sky blue, steel grey, radiant white, silver, intricate black leaded lines, gothic golden arch frame."
+  },
+  {
+    "id": "swords_knight",
+    "nameZh": "寶劍騎士",
+    "nameEn": "Knight of Swords",
+    "prompt": "Knight of Swords tarot card, showing 衝鋒騎士, 拔劍策馬, 狂風驟雨, stained glass cathedral style, Stormy sky blue, steel grey, radiant white, silver, intricate black leaded lines, gothic golden arch frame."
+  },
+  {
+    "id": "swords_queen",
+    "nameZh": "寶劍皇后",
+    "nameEn": "Queen of Swords",
+    "prompt": "Queen of Swords tarot card, showing 肅穆女王, 手持利劍, 雲端石座, stained glass cathedral style, Stormy sky blue, steel grey, radiant white, silver, intricate black leaded lines, gothic golden arch frame."
+  },
+  {
+    "id": "swords_king",
+    "nameZh": "寶劍國王",
+    "nameEn": "King of Swords",
+    "prompt": "King of Swords tarot card, showing 嚴肅國王, 裁決之劍, 天使雕飾王座, stained glass cathedral style, Stormy sky blue, steel grey, radiant white, silver, intricate black leaded lines, gothic golden arch frame."
+  }
+]

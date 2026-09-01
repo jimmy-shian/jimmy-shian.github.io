@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Random Tarot Card Generator by randomoutputs - 工具</title>
+    <title>完整塔羅牌抽牌占卜 - 工具庫</title>
+    <link rel="icon" type="image/x-icon" href="../../favicon.ico">
     <link rel="stylesheet" href="../../components/global.css">
     <link rel="stylesheet" href="../../components/navigation.css">
     <link rel="stylesheet" href="../../components/footer.css">
@@ -12,12 +13,24 @@
 <body>
     <script src="../../components/navigation.js"></script>
 
-    <header>
-        <h1>完整塔羅牌工具</h1>
-    </header>
     <main>
-        <p>本頁整合所有主要塔羅牌工具，支援完整牌組與 AI 深度解讀。</p>
-        <div style="text-align: center; margin-top: 2em;">
+        <header class="tool-header">
+            <div class="header-badge">SINGLE DRAW</div>
+            <h1>完整塔羅占卜</h1>
+            <p>隨機抽取單張塔羅牌，獲取直覺啟發。支援 78 張完整牌組與大阿爾克那抽牌篩選。</p>
+        </header>
+
+        <div class="single-draw-container">
+            <div class="controls-card card">
+                <div class="options-row">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="major-only">
+                        <span>僅抽取大阿爾克那 (Major Arcana)</span>
+                    </label>
+                </div>
+                <button id="generate-card" class="btn primary" style="width: 100%; margin-top: 12px;">抽取單張塔羅牌</button>
+            </div>
+
             <div id="card-container" style="display: none;">
                 <div class="tarot-card">
                     <div class="card-inner">
@@ -29,11 +42,7 @@
                         </div>
                     </div>
                 </div>
-                <div id="ai-text"></div>
-            </div>
-            <button id="generate-card" class="tarot-btn" style="margin-top: 1em;">🔮 抽取塔羅牌</button>
-            <div style="margin-top: 1em;">
-                <label><input type="checkbox" id="major-only"> 只顯示大阿爾卡那</label>
+                <div id="ai-text" class="card"></div>
             </div>
         </div>
     </main>

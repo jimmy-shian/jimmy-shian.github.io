@@ -1,0 +1,400 @@
+{
+  "card_back": {
+    "web": "images/tarot/web/card_back.webp",
+    "thumb": "images/tarot/thumb/card_back.webp",
+    "master": "images/tarot/master/card_back.png",
+    "legacy": "images/card_back.png"
+  },
+  "cards": {
+    "major_00": {
+      "web": "images/tarot/web/major_00.webp",
+      "thumb": "images/tarot/thumb/major_00.webp",
+      "master": "images/tarot/master/major_00.png"
+    },
+    "major_01": {
+      "web": "images/tarot/web/major_01.webp",
+      "thumb": "images/tarot/thumb/major_01.webp",
+      "master": "images/tarot/master/major_01.png"
+    },
+    "major_02": {
+      "web": "images/tarot/web/major_02.webp",
+      "thumb": "images/tarot/thumb/major_02.webp",
+      "master": "images/tarot/master/major_02.png"
+    },
+    "major_03": {
+      "web": "images/tarot/web/major_03.webp",
+      "thumb": "images/tarot/thumb/major_03.webp",
+      "master": "images/tarot/master/major_03.png"
+    },
+    "major_04": {
+      "web": "images/tarot/web/major_04.webp",
+      "thumb": "images/tarot/thumb/major_04.webp",
+      "master": "images/tarot/master/major_04.png"
+    },
+    "major_05": {
+      "web": "images/tarot/web/major_05.webp",
+      "thumb": "images/tarot/thumb/major_05.webp",
+      "master": "images/tarot/master/major_05.png"
+    },
+    "major_06": {
+      "web": "images/tarot/web/major_06.webp",
+      "thumb": "images/tarot/thumb/major_06.webp",
+      "master": "images/tarot/master/major_06.png"
+    },
+    "major_07": {
+      "web": "images/tarot/web/major_07.webp",
+      "thumb": "images/tarot/thumb/major_07.webp",
+      "master": "images/tarot/master/major_07.png"
+    },
+    "major_08": {
+      "web": "images/tarot/web/major_08.webp",
+      "thumb": "images/tarot/thumb/major_08.webp",
+      "master": "images/tarot/master/major_08.png"
+    },
+    "major_09": {
+      "web": "images/tarot/web/major_09.webp",
+      "thumb": "images/tarot/thumb/major_09.webp",
+      "master": "images/tarot/master/major_09.png"
+    },
+    "major_10": {
+      "web": "images/tarot/web/major_10.webp",
+      "thumb": "images/tarot/thumb/major_10.webp",
+      "master": "images/tarot/master/major_10.png"
+    },
+    "major_11": {
+      "web": "images/tarot/web/major_11.webp",
+      "thumb": "images/tarot/thumb/major_11.webp",
+      "master": "images/tarot/master/major_11.png"
+    },
+    "major_12": {
+      "web": "images/tarot/web/major_12.webp",
+      "thumb": "images/tarot/thumb/major_12.webp",
+      "master": "images/tarot/master/major_12.png"
+    },
+    "major_13": {
+      "web": "images/tarot/web/major_13.webp",
+      "thumb": "images/tarot/thumb/major_13.webp",
+      "master": "images/tarot/master/major_13.png"
+    },
+    "major_14": {
+      "web": "images/tarot/web/major_14.webp",
+      "thumb": "images/tarot/thumb/major_14.webp",
+      "master": "images/tarot/master/major_14.png"
+    },
+    "major_15": {
+      "web": "images/tarot/web/major_15.webp",
+      "thumb": "images/tarot/thumb/major_15.webp",
+      "master": "images/tarot/master/major_15.png"
+    },
+    "major_16": {
+      "web": "images/tarot/web/major_16.webp",
+      "thumb": "images/tarot/thumb/major_16.webp",
+      "master": "images/tarot/master/major_16.png"
+    },
+    "major_17": {
+      "web": "images/tarot/web/major_17.webp",
+      "thumb": "images/tarot/thumb/major_17.webp",
+      "master": "images/tarot/master/major_17.png"
+    },
+    "major_18": {
+      "web": "images/tarot/web/major_18.webp",
+      "thumb": "images/tarot/thumb/major_18.webp",
+      "master": "images/tarot/master/major_18.png"
+    },
+    "major_19": {
+      "web": "images/tarot/web/major_19.webp",
+      "thumb": "images/tarot/thumb/major_19.webp",
+      "master": "images/tarot/master/major_19.png"
+    },
+    "major_20": {
+      "web": "images/tarot/web/major_20.webp",
+      "thumb": "images/tarot/thumb/major_20.webp",
+      "master": "images/tarot/master/major_20.png"
+    },
+    "major_21": {
+      "web": "images/tarot/web/major_21.webp",
+      "thumb": "images/tarot/thumb/major_21.webp",
+      "master": "images/tarot/master/major_21.png"
+    },
+    "wands_01": {
+      "web": "images/tarot/web/wands_01.webp",
+      "thumb": "images/tarot/thumb/wands_01.webp",
+      "master": "images/tarot/master/wands_01.png"
+    },
+    "wands_02": {
+      "web": "images/tarot/web/wands_02.webp",
+      "thumb": "images/tarot/thumb/wands_02.webp",
+      "master": "images/tarot/master/wands_02.png"
+    },
+    "wands_03": {
+      "web": "images/tarot/web/wands_03.webp",
+      "thumb": "images/tarot/thumb/wands_03.webp",
+      "master": "images/tarot/master/wands_03.png"
+    },
+    "wands_04": {
+      "web": "images/tarot/web/wands_04.webp",
+      "thumb": "images/tarot/thumb/wands_04.webp",
+      "master": "images/tarot/master/wands_04.png"
+    },
+    "wands_05": {
+      "web": "images/tarot/web/wands_05.webp",
+      "thumb": "images/tarot/thumb/wands_05.webp",
+      "master": "images/tarot/master/wands_05.png"
+    },
+    "wands_06": {
+      "web": "images/tarot/web/wands_06.webp",
+      "thumb": "images/tarot/thumb/wands_06.webp",
+      "master": "images/tarot/master/wands_06.png"
+    },
+    "wands_07": {
+      "web": "images/tarot/web/wands_07.webp",
+      "thumb": "images/tarot/thumb/wands_07.webp",
+      "master": "images/tarot/master/wands_07.png"
+    },
+    "wands_08": {
+      "web": "images/tarot/web/wands_08.webp",
+      "thumb": "images/tarot/thumb/wands_08.webp",
+      "master": "images/tarot/master/wands_08.png"
+    },
+    "wands_09": {
+      "web": "images/tarot/web/wands_09.webp",
+      "thumb": "images/tarot/thumb/wands_09.webp",
+      "master": "images/tarot/master/wands_09.png"
+    },
+    "wands_10": {
+      "web": "images/tarot/web/wands_10.webp",
+      "thumb": "images/tarot/thumb/wands_10.webp",
+      "master": "images/tarot/master/wands_10.png"
+    },
+    "wands_page": {
+      "web": "images/tarot/web/wands_page.webp",
+      "thumb": "images/tarot/thumb/wands_page.webp",
+      "master": "images/tarot/master/wands_page.png"
+    },
+    "wands_knight": {
+      "web": "images/tarot/web/wands_knight.webp",
+      "thumb": "images/tarot/thumb/wands_knight.webp",
+      "master": "images/tarot/master/wands_knight.png"
+    },
+    "wands_queen": {
+      "web": "images/tarot/web/wands_queen.webp",
+      "thumb": "images/tarot/thumb/wands_queen.webp",
+      "master": "images/tarot/master/wands_queen.png"
+    },
+    "wands_king": {
+      "web": "images/tarot/web/wands_king.webp",
+      "thumb": "images/tarot/thumb/wands_king.webp",
+      "master": "images/tarot/master/wands_king.png"
+    },
+    "cups_01": {
+      "web": "images/tarot/web/cups_01.webp",
+      "thumb": "images/tarot/thumb/cups_01.webp",
+      "master": "images/tarot/master/cups_01.png"
+    },
+    "cups_02": {
+      "web": "images/tarot/web/cups_02.webp",
+      "thumb": "images/tarot/thumb/cups_02.webp",
+      "master": "images/tarot/master/cups_02.png"
+    },
+    "cups_03": {
+      "web": "images/tarot/web/cups_03.webp",
+      "thumb": "images/tarot/thumb/cups_03.webp",
+      "master": "images/tarot/master/cups_03.png"
+    },
+    "cups_04": {
+      "web": "images/tarot/web/cups_04.webp",
+      "thumb": "images/tarot/thumb/cups_04.webp",
+      "master": "images/tarot/master/cups_04.png"
+    },
+    "cups_05": {
+      "web": "images/tarot/web/cups_05.webp",
+      "thumb": "images/tarot/thumb/cups_05.webp",
+      "master": "images/tarot/master/cups_05.png"
+    },
+    "cups_06": {
+      "web": "images/tarot/web/cups_06.webp",
+      "thumb": "images/tarot/thumb/cups_06.webp",
+      "master": "images/tarot/master/cups_06.png"
+    },
+    "cups_07": {
+      "web": "images/tarot/web/cups_07.webp",
+      "thumb": "images/tarot/thumb/cups_07.webp",
+      "master": "images/tarot/master/cups_07.png"
+    },
+    "cups_08": {
+      "web": "images/tarot/web/cups_08.webp",
+      "thumb": "images/tarot/thumb/cups_08.webp",
+      "master": "images/tarot/master/cups_08.png"
+    },
+    "cups_09": {
+      "web": "images/tarot/web/cups_09.webp",
+      "thumb": "images/tarot/thumb/cups_09.webp",
+      "master": "images/tarot/master/cups_09.png"
+    },
+    "cups_10": {
+      "web": "images/tarot/web/cups_10.webp",
+      "thumb": "images/tarot/thumb/cups_10.webp",
+      "master": "images/tarot/master/cups_10.png"
+    },
+    "cups_page": {
+      "web": "images/tarot/web/cups_page.webp",
+      "thumb": "images/tarot/thumb/cups_page.webp",
+      "master": "images/tarot/master/cups_page.png"
+    },
+    "cups_knight": {
+      "web": "images/tarot/web/cups_knight.webp",
+      "thumb": "images/tarot/thumb/cups_knight.webp",
+      "master": "images/tarot/master/cups_knight.png"
+    },
+    "cups_queen": {
+      "web": "images/tarot/web/cups_queen.webp",
+      "thumb": "images/tarot/thumb/cups_queen.webp",
+      "master": "images/tarot/master/cups_queen.png"
+    },
+    "cups_king": {
+      "web": "images/tarot/web/cups_king.webp",
+      "thumb": "images/tarot/thumb/cups_king.webp",
+      "master": "images/tarot/master/cups_king.png"
+    },
+    "swords_01": {
+      "web": "images/tarot/web/swords_01.webp",
+      "thumb": "images/tarot/thumb/swords_01.webp",
+      "master": "images/tarot/master/swords_01.png"
+    },
+    "swords_02": {
+      "web": "images/tarot/web/swords_02.webp",
+      "thumb": "images/tarot/thumb/swords_02.webp",
+      "master": "images/tarot/master/swords_02.png"
+    },
+    "swords_03": {
+      "web": "images/tarot/web/swords_03.webp",
+      "thumb": "images/tarot/thumb/swords_03.webp",
+      "master": "images/tarot/master/swords_03.png"
+    },
+    "swords_04": {
+      "web": "images/tarot/web/swords_04.webp",
+      "thumb": "images/tarot/thumb/swords_04.webp",
+      "master": "images/tarot/master/swords_04.png"
+    },
+    "swords_05": {
+      "web": "images/tarot/web/swords_05.webp",
+      "thumb": "images/tarot/thumb/swords_05.webp",
+      "master": "images/tarot/master/swords_05.png"
+    },
+    "swords_06": {
+      "web": "images/tarot/web/swords_06.webp",
+      "thumb": "images/tarot/thumb/swords_06.webp",
+      "master": "images/tarot/master/swords_06.png"
+    },
+    "swords_07": {
+      "web": "images/tarot/web/swords_07.webp",
+      "thumb": "images/tarot/thumb/swords_07.webp",
+      "master": "images/tarot/master/swords_07.png"
+    },
+    "swords_08": {
+      "web": "images/tarot/web/swords_08.webp",
+      "thumb": "images/tarot/thumb/swords_08.webp",
+      "master": "images/tarot/master/swords_08.png"
+    },
+    "swords_09": {
+      "web": "images/tarot/web/swords_09.webp",
+      "thumb": "images/tarot/thumb/swords_09.webp",
+      "master": "images/tarot/master/swords_09.png"
+    },
+    "swords_10": {
+      "web": "images/tarot/web/swords_10.webp",
+      "thumb": "images/tarot/thumb/swords_10.webp",
+      "master": "images/tarot/master/swords_10.png"
+    },
+    "swords_page": {
+      "web": "images/tarot/web/swords_page.webp",
+      "thumb": "images/tarot/thumb/swords_page.webp",
+      "master": "images/tarot/master/swords_page.png"
+    },
+    "swords_knight": {
+      "web": "images/tarot/web/swords_knight.webp",
+      "thumb": "images/tarot/thumb/swords_knight.webp",
+      "master": "images/tarot/master/swords_knight.png"
+    },
+    "swords_queen": {
+      "web": "images/tarot/web/swords_queen.webp",
+      "thumb": "images/tarot/thumb/swords_queen.webp",
+      "master": "images/tarot/master/swords_queen.png"
+    },
+    "swords_king": {
+      "web": "images/tarot/web/swords_king.webp",
+      "thumb": "images/tarot/thumb/swords_king.webp",
+      "master": "images/tarot/master/swords_king.png"
+    },
+    "pentacles_01": {
+      "web": "images/tarot/web/pentacles_01.webp",
+      "thumb": "images/tarot/thumb/pentacles_01.webp",
+      "master": "images/tarot/master/pentacles_01.png"
+    },
+    "pentacles_02": {
+      "web": "images/tarot/web/pentacles_02.webp",
+      "thumb": "images/tarot/thumb/pentacles_02.webp",
+      "master": "images/tarot/master/pentacles_02.png"
+    },
+    "pentacles_03": {
+      "web": "images/tarot/web/pentacles_03.webp",
+      "thumb": "images/tarot/thumb/pentacles_03.webp",
+      "master": "images/tarot/master/pentacles_03.png"
+    },
+    "pentacles_04": {
+      "web": "images/tarot/web/pentacles_04.webp",
+      "thumb": "images/tarot/thumb/pentacles_04.webp",
+      "master": "images/tarot/master/pentacles_04.png"
+    },
+    "pentacles_05": {
+      "web": "images/tarot/web/pentacles_05.webp",
+      "thumb": "images/tarot/thumb/pentacles_05.webp",
+      "master": "images/tarot/master/pentacles_05.png"
+    },
+    "pentacles_06": {
+      "web": "images/tarot/web/pentacles_06.webp",
+      "thumb": "images/tarot/thumb/pentacles_06.webp",
+      "master": "images/tarot/master/pentacles_06.png"
+    },
+    "pentacles_07": {
+      "web": "images/tarot/web/pentacles_07.webp",
+      "thumb": "images/tarot/thumb/pentacles_07.webp",
+      "master": "images/tarot/master/pentacles_07.png"
+    },
+    "pentacles_08": {
+      "web": "images/tarot/web/pentacles_08.webp",
+      "thumb": "images/tarot/thumb/pentacles_08.webp",
+      "master": "images/tarot/master/pentacles_08.png"
+    },
+    "pentacles_09": {
+      "web": "images/tarot/web/pentacles_09.webp",
+      "thumb": "images/tarot/thumb/pentacles_09.webp",
+      "master": "images/tarot/master/pentacles_09.png"
+    },
+    "pentacles_10": {
+      "web": "images/tarot/web/pentacles_10.webp",
+      "thumb": "images/tarot/thumb/pentacles_10.webp",
+      "master": "images/tarot/master/pentacles_10.png"
+    },
+    "pentacles_page": {
+      "web": "images/tarot/web/pentacles_page.webp",
+      "thumb": "images/tarot/thumb/pentacles_page.webp",
+      "master": "images/tarot/master/pentacles_page.png"
+    },
+    "pentacles_knight": {
+      "web": "images/tarot/web/pentacles_knight.webp",
+      "thumb": "images/tarot/thumb/pentacles_knight.webp",
+      "master": "images/tarot/master/pentacles_knight.png"
+    },
+    "pentacles_queen": {
+      "web": "images/tarot/web/pentacles_queen.webp",
+      "thumb": "images/tarot/thumb/pentacles_queen.webp",
+      "master": "images/tarot/master/pentacles_queen.png"
+    },
+    "pentacles_king": {
+      "web": "images/tarot/web/pentacles_king.webp",
+      "thumb": "images/tarot/thumb/pentacles_king.webp",
+      "master": "images/tarot/master/pentacles_king.png"
+    }
+  }
+}

@@ -1,0 +1,86 @@
+[
+  {
+    "id": "cups_01",
+    "nameZh": "聖杯一",
+    "nameEn": "Ace of Cups",
+    "prompt": "Ace of Cups tarot card, showing 神手托金杯, 五道甘泉, 含聖餅和平鴿, stained glass cathedral style, Deep ocean sapphire, azure, silver, turquoise, intricate black leaded lines, gothic golden arch frame."
+  },
+  {
+    "id": "cups_02",
+    "nameZh": "聖杯二",
+    "nameEn": "Two of Cups",
+    "prompt": "Two of Cups tarot card, showing 男女互敬, 雙蛇杖Caduceus, 帶翼獅頭, stained glass cathedral style, Deep ocean sapphire, azure, silver, turquoise, intricate black leaded lines, gothic golden arch frame."
+  },
+  {
+    "id": "cups_03",
+    "nameZh": "聖杯三",
+    "nameEn": "Three of Cups",
+    "prompt": "Three of Cups tarot card, showing 三位少女, 高舉聖杯, 豐收花果, stained glass cathedral style, Deep ocean sapphire, azure, silver, turquoise, intricate black leaded lines, gothic golden arch frame."
+  },
+  {
+    "id": "cups_04",
+    "nameZh": "聖杯四",
+    "nameEn": "Four of Cups",
+    "prompt": "Four of Cups tarot card, showing 樹下青年, 抱胸沉思, 雲中第四杯, stained glass cathedral style, Deep ocean sapphire, azure, silver, turquoise, intricate black leaded lines, gothic golden arch frame."
+  },
+  {
+    "id": "cups_05",
+    "nameZh": "聖杯五",
+    "nameEn": "Five of Cups",
+    "prompt": "Five of Cups tarot card, showing 黑袍背影, 傾倒三杯, 背後兩杯依然佇立, stained glass cathedral style, Deep ocean sapphire, azure, silver, turquoise, intricate black leaded lines, gothic golden arch frame."
+  },
+  {
+    "id": "cups_06",
+    "nameZh": "聖杯六",
+    "nameEn": "Six of Cups",
+    "prompt": "Six of Cups tarot card, showing 古堡庭院, 贈花孩童, 純真回憶, stained glass cathedral style, Deep ocean sapphire, azure, silver, turquoise, intricate black leaded lines, gothic golden arch frame."
+  },
+  {
+    "id": "cups_07",
+    "nameZh": "聖杯七",
+    "nameEn": "Seven of Cups",
+    "prompt": "Seven of Cups tarot card, showing 雲中七杯, 浮現幻象, 面臨誘惑, stained glass cathedral style, Deep ocean sapphire, azure, silver, turquoise, intricate black leaded lines, gothic golden arch frame."
+  },
+  {
+    "id": "cups_08",
+    "nameZh": "聖杯八",
+    "nameEn": "Eight of Cups",
+    "prompt": "Eight of Cups tarot card, showing 月夜旅人, 八杯佇立, 背向走向山峰, stained glass cathedral style, Deep ocean sapphire, azure, silver, turquoise, intricate black leaded lines, gothic golden arch frame."
+  },
+  {
+    "id": "cups_09",
+    "nameZh": "聖杯九",
+    "nameEn": "Nine of Cups",
+    "prompt": "Nine of Cups tarot card, showing 富足男子, 九杯排列, 滿足微笑, stained glass cathedral style, Deep ocean sapphire, azure, silver, turquoise, intricate black leaded lines, gothic golden arch frame."
+  },
+  {
+    "id": "cups_10",
+    "nameZh": "聖杯十",
+    "nameEn": "Ten of Cups",
+    "prompt": "Ten of Cups tarot card, showing 彩虹十杯, 幸福家庭, 綠意家園, stained glass cathedral style, Deep ocean sapphire, azure, silver, turquoise, intricate black leaded lines, gothic golden arch frame."
+  },
+  {
+    "id": "cups_page",
+    "nameZh": "聖杯侍從",
+    "nameEn": "Page of Cups",
+    "prompt": "Page of Cups tarot card, showing 溫柔侍從, 杯中金魚, 粉藍長袍, stained glass cathedral style, Deep ocean sapphire, azure, silver, turquoise, intricate black leaded lines, gothic golden arch frame."
+  },
+  {
+    "id": "cups_knight",
+    "nameZh": "聖杯騎士",
+    "nameEn": "Knight of Cups",
+    "prompt": "Knight of Cups tarot card, showing 優雅騎士, 白馬漫步, 高捧聖杯, stained glass cathedral style, Deep ocean sapphire, azure, silver, turquoise, intricate black leaded lines, gothic golden arch frame."
+  },
+  {
+    "id": "cups_queen",
+    "nameZh": "聖杯皇后",
+    "nameEn": "Queen of Cups",
+    "prompt": "Queen of Cups tarot card, showing 海邊王座, 華麗密閉聖杯, 慈愛溫柔, stained glass cathedral style, Deep ocean sapphire, azure, silver, turquoise, intricate black leaded lines, gothic golden arch frame."
+  },
+  {
+    "id": "cups_king",
+    "nameZh": "聖杯國王",
+    "nameEn": "King of Cups",
+    "prompt": "King of Cups tarot card, showing 海中石座, 聖杯權杖, 波浪起伏, stained glass cathedral style, Deep ocean sapphire, azure, silver, turquoise, intricate black leaded lines, gothic golden arch frame."
+  }
+]

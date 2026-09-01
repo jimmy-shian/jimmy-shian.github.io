@@ -1,0 +1,2530 @@
+{
+  "major_00": {
+    "nameZh": "愚者",
+    "nameEn": "The Fool",
+    "arcana": "major",
+    "suit": null,
+    "element": "air",
+    "astrology": "天王星",
+    "uprightKeywords": [
+      "純真",
+      "新開始",
+      "冒險",
+      "自由",
+      "無限潛能",
+      "自發性"
+    ],
+    "reversedKeywords": [
+      "魯莽",
+      "輕率",
+      "冒失",
+      "猶豫不決",
+      "盲目冒險",
+      "逃避責任"
+    ],
+    "symbols": [
+      "懸崖邊緣",
+      "白狗",
+      "包袱手杖",
+      "白色太陽",
+      "白玫瑰"
+    ],
+    "uprightMeaning": "愚者代表一段全新旅程的啟程。懷抱著純真與對未來的期盼，勇敢踏出第一步，信任直覺，宇宙將為你敞開無限可能性。",
+    "reversedMeaning": "可能過於衝動盲目，或因恐懼而裹足不前。提醒你在冒險之餘需兼顧現實評估，切忌草率行事。",
+    "loveMeaning": "一段純粹、充滿新鮮感的新戀情，放下既定成見享受當下；逆位提醒勿對承諾漫不經心。",
+    "careerMeaning": "新的工作機會或創業嘗試，勇於打破常規發揮創意；逆位注意缺乏周詳規劃與準備。",
+    "financeMeaning": "抱持樂觀的心態看待財務，可能有意料之外的支出；逆位注意過度揮霍或投機風險。"
+  },
+  "major_01": {
+    "nameZh": "魔術師",
+    "nameEn": "The Magician",
+    "arcana": "major",
+    "suit": null,
+    "element": "air",
+    "astrology": "水星",
+    "uprightKeywords": [
+      "創造力",
+      "顯化",
+      "行動力",
+      "技能專精",
+      "資源整合",
+      "自信"
+    ],
+    "reversedKeywords": [
+      "欺瞞",
+      "眼高手低",
+      "才能未展",
+      "濫用技巧",
+      "溝通受阻",
+      "幻滅"
+    ],
+    "symbols": [
+      "右手指天左手指地",
+      "無限符號∞",
+      "四要素法器（杖杯劍幣）",
+      "紅白長袍",
+      "玫瑰與百合"
+    ],
+    "uprightMeaning": "魔術師代表將想法化為現實的強大力量。你已具備所需的所有資源與天賦，是主動採取行動、開創新局面的最佳時刻。",
+    "reversedMeaning": "可能有才能被埋沒、注意力分散，或過於仰賴小聰明而缺乏真誠。提醒你腳踏實地，真誠溝通。",
+    "loveMeaning": "充滿魅力與主動出擊的戀情，溝通順暢且互相吸引；逆位防範甜言蜜語與不實承諾。",
+    "careerMeaning": "展現卓越專業能力與領導手腕，項目進展順遂；逆位警惕規劃不切實際或溝通誤解。",
+    "financeMeaning": "多元化理財與良好投資敏銳度，靈活運用資源獲利；逆位注意財務陷阱或過度自信。"
+  },
+  "major_02": {
+    "nameZh": "女祭司",
+    "nameEn": "The High Priestess",
+    "arcana": "major",
+    "suit": null,
+    "element": "water",
+    "astrology": "月亮",
+    "uprightKeywords": [
+      "直覺",
+      "潛意識",
+      "深層智慧",
+      "神秘",
+      "寧靜內省",
+      "靈性"
+    ],
+    "reversedKeywords": [
+      "情緒壓抑",
+      "直覺受阻",
+      "秘密洩漏",
+      "冷漠孤立",
+      "逃避現實",
+      "浮躁"
+    ],
+    "symbols": [
+      "黑白二柱(B與J)",
+      "石榴帷幕",
+      "腳下新月",
+      "胸前十字",
+      "神秘經卷TORA"
+    ],
+    "uprightMeaning": "女祭司守護著潛意識的大門，象徵內在的靈性智慧與敏銳直覺。此時不宜急於行動，靜心聆聽內在聲音能看清真相。",
+    "reversedMeaning": "可能與自己的內在直覺失去連結，或因情緒波動而感到迷茫。給自己獨處沉澱的時間，理清思緒。",
+    "loveMeaning": "心靈契合的深刻連結，彼此保有神秘與尊重；逆位注意缺乏溝通或過於被動封閉。",
+    "careerMeaning": "適合研究、規劃、洞察市場深層脈動，保持冷靜判斷；逆位注意缺乏實質行動力。",
+    "financeMeaning": "保守穩健的理財策略，相信自己的財務敏銳度；逆位避免輕信未經驗證的私密消息。"
+  },
+  "major_03": {
+    "nameZh": "皇后",
+    "nameEn": "The Empress",
+    "arcana": "major",
+    "suit": null,
+    "element": "earth",
+    "astrology": "金星",
+    "uprightKeywords": [
+      "豐饒",
+      "滋養",
+      "創造力",
+      "母性",
+      "美與和諧",
+      "繁榮"
+    ],
+    "reversedKeywords": [
+      "過度依賴",
+      "過度溺愛",
+      "創造力枯竭",
+      "忽視自我",
+      "物質浪費",
+      "虛榮"
+    ],
+    "symbols": [
+      "金黃麥田",
+      "十二星冠",
+      "金星之盾",
+      "繁花長袍",
+      "流動瀑布"
+    ],
+    "uprightMeaning": "皇后象徵大地之母的豐收與滋養，代表愛、美感與源源不絕的創造力。生活正處於充滿恩賜與溫暖的繁榮期。",
+    "reversedMeaning": "可能過於勞心勞力照顧他人而忽略了自身需求，或在物質享受中迷失。學習重拾內在自我滋養。",
+    "loveMeaning": "充滿溫情與包容的甜美關係，家庭和諧與孕育新生；逆位注意控制慾或情緒勒索。",
+    "careerMeaning": "創意與產能達到高峰，團隊氛圍融洽且成果豐碩；逆位注意拖延或缺乏執行紀律。",
+    "financeMeaning": "物質生活豐裕，財務收成良好；逆位注意過度消費與奢華浪費。"
+  },
+  "major_04": {
+    "nameZh": "皇帝",
+    "nameEn": "The Emperor",
+    "arcana": "major",
+    "suit": null,
+    "element": "fire",
+    "astrology": "白羊座",
+    "uprightKeywords": [
+      "權威",
+      "秩序",
+      "結構",
+      "穩固基石",
+      "領導力",
+      "紀律"
+    ],
+    "reversedKeywords": [
+      "專制跋扈",
+      "過度控制",
+      "僵化固執",
+      "缺乏彈性",
+      "權力鬥爭",
+      "無序"
+    ],
+    "symbols": [
+      "石刻王座",
+      "四公羊頭浮雕",
+      "紅袍披甲",
+      "生命權杖Ankh",
+      "寶球"
+    ],
+    "uprightMeaning": "皇帝代表強大的意志、秩序與建立長治久安的體系。具備卓越的決斷力與統率力，能為目標奠定無可撼動的基礎。",
+    "reversedMeaning": "可能顯得過於嚴苛、專制或抗拒彈性變通。提醒你在維護原則的同時，也需懂得傾聽與同理。",
+    "loveMeaning": "成熟穩重且富有保護欲的關係，給予安全感；逆位注意大男人/強勢控制引發爭執。",
+    "careerMeaning": "晉升主管、主導大型專案或建立完善流程，具領導威信；逆位防範官僚僵化與權力糾紛。",
+    "financeMeaning": "穩健的財務管控與長線資產佈局，極具掌控力；逆位避免因剛愎自用而導致投資失誤。"
+  },
+  "major_05": {
+    "nameZh": "教皇",
+    "nameEn": "The Hierophant",
+    "arcana": "major",
+    "suit": null,
+    "element": "earth",
+    "astrology": "金牛座",
+    "uprightKeywords": [
+      "精神指引",
+      "傳統",
+      "道德倫理",
+      "學習傳承",
+      "導師",
+      "信仰"
+    ],
+    "reversedKeywords": [
+      "盲從教條",
+      "打破常規",
+      "反叛傳統",
+      "錯誤指引",
+      "思想禁錮",
+      "偽善"
+    ],
+    "symbols": [
+      "三重冠",
+      "三重十字杖",
+      "交錯雙鑰匙",
+      "兩位僧侶跪拜",
+      "神殿立柱"
+    ],
+    "uprightMeaning": "教皇代表智慧的傳承與精神指引。尋求有經驗的導師或回歸傳統價值觀，將能為你目前的疑惑提供明確方向。",
+    "reversedMeaning": "受到傳統束縛或僵化規範壓迫，是時候質疑現狀、打破盲從，尋找屬於自己的獨立信念。",
+    "loveMeaning": "以結婚或長期承諾為目標的傳統良緣，受長輩祝福；逆位可能面臨觀念差異或家庭阻礙。",
+    "careerMeaning": "在大機構、體制內穩健發展，獲前輩提攜或考取專業證照；逆位適合尋求創新突破體制。",
+    "financeMeaning": "遵循正規傳統的投資管道，避免旁門左道；逆位當心不良理財顧問或過時資訊。"
+  },
+  "major_06": {
+    "nameZh": "戀人",
+    "nameEn": "The Lovers",
+    "arcana": "major",
+    "suit": null,
+    "element": "air",
+    "astrology": "雙子座",
+    "uprightKeywords": [
+      "真摯愛情",
+      "和諧和鳴",
+      "重要抉擇",
+      "價值契合",
+      "夥伴關係",
+      "信任"
+    ],
+    "reversedKeywords": [
+      "感情裂痕",
+      "價值觀衝突",
+      "猶豫不決",
+      "不負責任",
+      "誘惑出軌",
+      "溝通斷裂"
+    ],
+    "symbols": [
+      "天使拉斐爾",
+      "伊甸園男女",
+      "生命樹十二果",
+      "善惡樹與蛇",
+      "遠方火山"
+    ],
+    "uprightMeaning": "戀人牌代表心靈與情感的深刻共鳴，同時象徵面臨人生重大道德或價值的抉擇。跟隨真心，做出對彼此皆誠實的選擇。",
+    "reversedMeaning": "關係面臨價值觀考驗或信任危機，內心可能在不同選項間掙扎。需坦誠面對真實感受以化解衝突。",
+    "loveMeaning": "強烈吸引、靈魂共鳴與美好承諾；逆位需重新審視溝通模式與彼此期望。",
+    "careerMeaning": "絕佳的事業夥伴關係，合作無間；逆位注意合約細節歧見或合作理念不合。",
+    "financeMeaning": "與夥伴共同投資理財，取得雙贏平衡；逆位慎防因感情用事而做出不理智決策。"
+  },
+  "major_07": {
+    "nameZh": "戰車",
+    "nameEn": "The Chariot",
+    "arcana": "major",
+    "suit": null,
+    "element": "water",
+    "astrology": "巨蟹座",
+    "uprightKeywords": [
+      "意志力",
+      "勝利凱旋",
+      "自我控制",
+      "克服障礙",
+      "前進衝刺",
+      "專注"
+    ],
+    "reversedKeywords": [
+      "失去控制",
+      "橫衝直撞",
+      "方向迷失",
+      "遭遇阻礙",
+      "挫敗放棄",
+      "侵略性"
+    ],
+    "symbols": [
+      "星光華蓋",
+      "黑白雙斯芬克斯",
+      "鎧甲勇士",
+      "城牆城堡",
+      "金色輪圈"
+    ],
+    "uprightMeaning": "戰車象徵憑藉鋼鐵般的意志力與專注度克服內外衝突，勇往直前。只要掌握好方向盤，勝利終將屬於你。",
+    "reversedMeaning": "可能因情緒失控或目標分歧而感到力不從心，甚至橫衝直撞導致反效果。暫停腳步重新校準方向。",
+    "loveMeaning": "主動積極追求，排除困難推進關係；逆位需注意過於強勢或缺乏彈性引發衝突。",
+    "careerMeaning": "克服事業難關、擊敗競爭對手取得關鍵進展；逆位注意缺乏統籌協調導致專案脫軌。",
+    "financeMeaning": "目標明確的財務衝刺，獲取可觀回報；逆位避免衝動投機或無節制的開銷。"
+  },
+  "major_08": {
+    "nameZh": "力量",
+    "nameEn": "The Strength",
+    "arcana": "major",
+    "suit": null,
+    "element": "fire",
+    "astrology": "獅子座",
+    "uprightKeywords": [
+      "內在勇氣",
+      "柔克剛",
+      "慈悲包容",
+      "耐心耐性",
+      "自我接納",
+      "堅定信念"
+    ],
+    "reversedKeywords": [
+      "自我懷疑",
+      "軟弱退縮",
+      "情緒失控",
+      "暴躁易怒",
+      "傲慢霸道",
+      "信心喪失"
+    ],
+    "symbols": [
+      "白袍女子",
+      "溫馴雄獅",
+      "頭頂無限符號∞",
+      "花環腰帶",
+      "金色背景"
+    ],
+    "uprightMeaning": "真正的力量並非來自暴力或強權，而是源自內在的溫柔、包容與堅定。以耐心和愛撫平內心的恐懼與獸性。",
+    "reversedMeaning": "感到疲憊、自信心低落或被內在負面情緒淹沒。提醒你重拾對自我的信心，善待自己的脆弱。",
+    "loveMeaning": "以溫柔與同理心化解矛盾，深刻且持久的陪伴；逆位容易因情緒失控而傷害彼此。",
+    "careerMeaning": "面對高壓環境保持冷靜沉著，展現優雅的抗壓性；逆位需防範自暴自棄或過度急躁。",
+    "financeMeaning": "長期穩健的財務紀律，具備良好的自我克制力；逆位注意恐慌性拋售或衝動購物。"
+  },
+  "major_09": {
+    "nameZh": "隱者",
+    "nameEn": "The Hermit",
+    "arcana": "major",
+    "suit": null,
+    "element": "earth",
+    "astrology": "處女座",
+    "uprightKeywords": [
+      "內省",
+      "尋求真理",
+      "心靈指引",
+      "獨處深思",
+      "智慧",
+      "自省照明"
+    ],
+    "reversedKeywords": [
+      "孤立自閉",
+      "過度孤僻",
+      "拒絕求助",
+      "迷失方向",
+      "頑固偏執",
+      "社交恐懼"
+    ],
+    "symbols": [
+      "雪山之巔",
+      "灰色兜帽長袍",
+      "六芒星提燈",
+      "引路手杖",
+      "皚皚白雪"
+    ],
+    "uprightMeaning": "隱士高居雪峰，提著真理之燈照亮前路。這是一個暫時遠離喧囂、回歸內心深處探索自我與汲取智慧的時刻。",
+    "reversedMeaning": "過度封閉自我導致與現實脫節，或盲目抗拒外界的善意協助。打開心扉，適時與信任之人交流。",
+    "loveMeaning": "享受個人獨立空間，或需先了解自己才能經營好關係；逆位需防冷戰或孤芳自賞。",
+    "careerMeaning": "適合獨立作業、深度研究、專業深造與諮詢規劃；逆位提醒勿閉門造車，需適度團隊合作。",
+    "financeMeaning": "崇尚簡單簡樸的財務哲學，不盲從市場炒作；逆位注意過於保守而錯失合理理財時機。"
+  },
+  "major_10": {
+    "nameZh": "命運之輪",
+    "nameEn": "Wheel of Fortune",
+    "arcana": "major",
+    "suit": null,
+    "element": "fire",
+    "astrology": "木星",
+    "uprightKeywords": [
+      "轉機",
+      "命運循環",
+      "好運機遇",
+      "順應變化",
+      "宿命",
+      "新的週期"
+    ],
+    "reversedKeywords": [
+      "運勢低潮",
+      "抗拒改變",
+      "暫時阻礙",
+      "惡性循環",
+      "挫折連連",
+      "無法掌控"
+    ],
+    "symbols": [
+      "命運神輪",
+      "斯芬克斯",
+      "阿努比斯與蛇",
+      "四活物（人、鷹、獅、牛）",
+      "希伯來文字TARO"
+    ],
+    "uprightMeaning": "命運之輪永不停息地轉動，代表生命的起伏週期與突如其來的轉機。保持豁達的心胸，順應變化乘勢而上。",
+    "reversedMeaning": "正面臨暫時的低谷或計劃趕不上變化。記住低谷亦是上升週期的起點，保持耐心度過考驗。",
+    "loveMeaning": "命中注定的奇妙邂逅或關係迎來重大轉折契機；逆位需學會接受磨合期，勿急於定論。",
+    "careerMeaning": "事業迎來順風期，抓住偶然出現的重要良機；逆位需穩住陣腳，等待風向好轉。",
+    "financeMeaning": "財運亨通，投資獲利或意外之財；逆位應緊縮開支，避免風險性高的投機行為。"
+  },
+  "major_11": {
+    "nameZh": "正義",
+    "nameEn": "The Justice",
+    "arcana": "major",
+    "suit": null,
+    "element": "air",
+    "astrology": "天秤座",
+    "uprightKeywords": [
+      "公平公正",
+      "真理客觀",
+      "因果法則",
+      "法律責任",
+      "平衡裁決",
+      "誠實"
+    ],
+    "reversedKeywords": [
+      "不公不義",
+      "偏頗武斷",
+      "逃避責任",
+      "法律糾紛",
+      "失去平衡",
+      "自欺欺人"
+    ],
+    "symbols": [
+      "雙刃劍",
+      "正義天平",
+      "紫色帷幕",
+      "石座雙柱",
+      "四方王冠"
+    ],
+    "uprightMeaning": "正義女神手持天平與雙刃劍，代表客觀、誠實與對自己行為承擔完全責任。以理智平衡感性，追求真理與公平。",
+    "reversedMeaning": "可能遭遇不公對待，或自身存在偏見與逃避後果的心態。審視自身行為，尋求公正合理的解決方案。",
+    "loveMeaning": "平等尊重、真誠相待且彼此權責分明的成熟關係；逆位需注意失衡付出或互相指責。",
+    "careerMeaning": "合約簽署順利、考核公正、是非分明；逆位防範合約糾紛或不透明的職場政治。",
+    "financeMeaning": "收支平衡、清楚明白每一筆開銷與帳目；逆位需謹防合約漏洞或法律稅務爭議。"
+  },
+  "major_12": {
+    "nameZh": "倒吊人",
+    "nameEn": "The Hanged Man",
+    "arcana": "major",
+    "suit": null,
+    "element": "water",
+    "astrology": "海王星",
+    "uprightKeywords": [
+      "臣服",
+      "換位思考",
+      "暫停等待",
+      "靈性昇華",
+      "自我犧牲",
+      "新視角"
+    ],
+    "reversedKeywords": [
+      "無謂犧牲",
+      "停滯不前",
+      "執迷不悟",
+      "抗拒放手",
+      "怨天尤人",
+      "視野狹隘"
+    ],
+    "symbols": [
+      "生命之樹T型十字",
+      "倒懸一足",
+      "頭部金色聖光",
+      "平靜安詳面容",
+      "綠色嫩芽"
+    ],
+    "uprightMeaning": "倒吊人自願倒懸於生命之樹，面容安詳。換個完全不同的角度看世界，放慢腳步，在暫停中獲得更高層次的智慧。",
+    "reversedMeaning": "為了錯誤的人事物進行無意義的妥協與犧牲，或因害怕改變而陷入原地踏步。勇敢打破僵局。",
+    "loveMeaning": "願意為對方體諒退讓，換位思考能化解僵局；逆位需警惕過度委屈求全失去自我。",
+    "careerMeaning": "專案處於沉澱等待期，利用這段時間調整策略；逆位注意缺乏進展帶來的焦慮與內耗。",
+    "financeMeaning": "財務暫時處於停滯期，適合檢討財務體質而非急於投資；逆位避免被套牢或盲目死守。"
+  },
+  "major_13": {
+    "nameZh": "死神",
+    "nameEn": "Death",
+    "arcana": "major",
+    "suit": null,
+    "element": "water",
+    "astrology": "天蠍座",
+    "uprightKeywords": [
+      "徹底轉變",
+      "舊有結束",
+      "新生起點",
+      "斷捨離",
+      "向死而生",
+      "蛻變重塑"
+    ],
+    "reversedKeywords": [
+      "抗拒改變",
+      "執著過去",
+      "苟延殘喘",
+      "害怕未知",
+      "拖泥帶水",
+      "停滯不前"
+    ],
+    "symbols": [
+      "黑甲骷髏騎士",
+      "白玫瑰旗幟",
+      "倒下國王與祈求者",
+      "遠方雙塔朝陽",
+      "生命之河"
+    ],
+    "uprightMeaning": "死神象徵必然的告別與終結。結束不再適合你的舊生活、舊思維，唯有勇敢掃除枯木，嶄新的生命契機才能破土而出。",
+    "reversedMeaning": "死守著早已腐朽的人事物不放，抗拒必經的生命轉變。學會放手，接納變革才能迎來新生。",
+    "loveMeaning": "一段不合適關係的結束，或關係經歷根本性蛻變迎來新生；逆位拖延痛苦無法走出來。",
+    "careerMeaning": "告別舊職位/舊行業，轉型迎向新領域；逆位容易因恐懼改變而在不適合的環境中消磨。",
+    "financeMeaning": "斷絕不良財務習慣，重組資產架構；逆位注意抗拒停損導致虧損擴大。"
+  },
+  "major_14": {
+    "nameZh": "節制",
+    "nameEn": "The Temperance",
+    "arcana": "major",
+    "suit": null,
+    "element": "fire",
+    "astrology": "射手座",
+    "uprightKeywords": [
+      "平衡調和",
+      "耐心流動",
+      "身心療癒",
+      "中庸之道",
+      "整合融合",
+      "自我節制"
+    ],
+    "reversedKeywords": [
+      "失衡極端",
+      "過度放縱",
+      "急躁缺乏耐心",
+      "衝突不和",
+      "能量耗竭",
+      "缺乏節制"
+    ],
+    "symbols": [
+      "大天使雙翼",
+      "雙金杯水流",
+      "一足在水一足在陸",
+      "遠方晨曦山峰",
+      "胸前三角四方徽記"
+    ],
+    "uprightMeaning": "大天使專注地在兩杯之間調和水流，象徵平衡、和諧與耐心的煉金術。融合對立觀點，尋求中庸之道能達成最高境界。",
+    "reversedMeaning": "生活節奏或情緒處於失衡狀態，可能飲食過度、作息紊亂或在極端間搖擺。需要重新找回內心平靜。",
+    "loveMeaning": "細水長流、互相磨合包容的溫潤感情；逆位注意溝通不良或一方過度索取導致失衡。",
+    "careerMeaning": "跨部門協調、資源整合順暢，團隊協作和諧；逆位注意溝通摩擦與步調不一。",
+    "financeMeaning": "量入為出、理性穩定的財務規劃；逆位當心過度消費或收支失去平衡。"
+  },
+  "major_15": {
+    "nameZh": "惡魔",
+    "nameEn": "The Devil",
+    "arcana": "major",
+    "suit": null,
+    "element": "earth",
+    "astrology": "摩羯座",
+    "uprightKeywords": [
+      "物質束縛",
+      "慾望誘惑",
+      "執念成癮",
+      "陰影面",
+      "自我設限",
+      "金錢權力"
+    ],
+    "reversedKeywords": [
+      "打破枷鎖",
+      "覺醒解脫",
+      "戒除成癮",
+      "看清幻象",
+      "重獲自由",
+      "克服誘惑"
+    ],
+    "symbols": [
+      "羊頭惡魔Baphomet",
+      "倒五角星",
+      "點燃火炬",
+      "被鬆縛鐵鍊的男女",
+      "黑石基座"
+    ],
+    "uprightMeaning": "惡魔象徵被物質慾望、恐懼或不良習慣所禁錮。男女頸上的鐵鍊實則寬鬆可自行脫下，審視內心，重獲自主意識。",
+    "reversedMeaning": "看破虛妄的誘惑與執念，開始採取行動打破不良關係或習慣的束縛，逐步迎向自由新生。",
+    "loveMeaning": "強烈佔有慾、肉體吸引或不健康依賴；逆位意識到問題根源，開始解脫與療癒。",
+    "careerMeaning": "過度追求權力地位或處於高壓受壓迫環境；逆位決定跳脫有毒職場重新出發。",
+    "financeMeaning": "過度追求金錢物質、貪婪或陷入債務危機；逆位開始重整債務、拒絕過度消費。"
+  },
+  "major_16": {
+    "nameZh": "高塔",
+    "nameEn": "The Tower",
+    "arcana": "major",
+    "suit": null,
+    "element": "fire",
+    "astrology": "火星",
+    "uprightKeywords": [
+      "突變瓦解",
+      "打破虛妄",
+      "震撼覺醒",
+      "舊有崩塌",
+      "解放突破",
+      "危機轉機"
+    ],
+    "reversedKeywords": [
+      "恐懼崩潰",
+      "逃避必然",
+      "內在動盪",
+      "勉強支撐",
+      "災難餘波",
+      "延遲爆發"
+    ],
+    "symbols": [
+      "高聳石塔",
+      "天降雷霆",
+      "皇冠被擊落",
+      "火焰自窗噴湧",
+      "墜落人物",
+      "二十二道火星"
+    ],
+    "uprightMeaning": "閃電擊中建立在傲慢與虛幻之上的高塔，瞬間崩解。突如其來的改變雖令人震撼，但唯有破除虛妄，真正的真理方能顯露。",
+    "reversedMeaning": "明知體系已搖搖欲墜卻仍勉強苦撐，或內心經歷深層的無聲劇變。接納現實才能從廢墟中重建。",
+    "loveMeaning": "突然爆發的劇烈爭執或關係瓦解；逆位勉強維持表面和平，需誠實面對核心問題。",
+    "careerMeaning": "公司架構重整、專案突然喊停或重大突發事件；逆位需提早準備後路，勿心存僥倖。",
+    "financeMeaning": "意料之外的財務衝擊或投資失利；逆位加強風險控管，避免連鎖崩盤。"
+  },
+  "major_17": {
+    "nameZh": "星星",
+    "nameEn": "The Star",
+    "arcana": "major",
+    "suit": null,
+    "element": "air",
+    "astrology": "水瓶座",
+    "uprightKeywords": [
+      "希望",
+      "靈感啟發",
+      "心靈療癒",
+      "寧靜祥和",
+      "願景",
+      "宇宙祝福"
+    ],
+    "reversedKeywords": [
+      "失去希望",
+      "信心動搖",
+      "悲觀消極",
+      "靈感阻滯",
+      "自我懷疑",
+      "失望落空"
+    ],
+    "symbols": [
+      "八角主星與七小星",
+      "裸身仙女",
+      "雙壺傾倒甘露",
+      "綠地與清池",
+      "聖鳥朱鷺"
+    ],
+    "uprightMeaning": "在暴風雨過後，星星為心靈帶來寧靜、希望與療癒之光。信任宇宙的指引，你的願景正受到無條件的祝福與呵護。",
+    "reversedMeaning": "暫時陷入迷惘與悲觀，懷疑自己的未來前景。提醒你抬起頭仰望星空，希望之光從未熄滅。",
+    "loveMeaning": "純潔無瑕、互相信任與充滿希望的美好戀情；逆位需重建對愛情的信心與安全感。",
+    "careerMeaning": "靈感湧現、創意滿點，對未來職業藍圖充滿憧憬；逆位需注意理想過高而缺乏實踐步驟。",
+    "financeMeaning": "財務狀況平穩轉好，對未來持樂觀預期；逆位避免過於理想化預期收益。"
+  },
+  "major_18": {
+    "nameZh": "月亮",
+    "nameEn": "The Moon",
+    "arcana": "major",
+    "suit": null,
+    "element": "water",
+    "astrology": "雙魚座",
+    "uprightKeywords": [
+      "潛意識",
+      "直覺夢境",
+      "迷茫不安",
+      "隱藏真相",
+      "幻象恐懼",
+      "情緒波瀾"
+    ],
+    "reversedKeywords": [
+      "撥雲見日",
+      "走出恐懼",
+      "真相大白",
+      "直覺清晰",
+      "克服焦慮",
+      "釋懷解惑"
+    ],
+    "symbols": [
+      "滴落金色露珠之月",
+      "雙石塔",
+      "嚎叫之狼與狗",
+      "池中爬出之龍蝦",
+      "蜿蜒小徑"
+    ],
+    "uprightMeaning": "月光映照出潛意識的迷霧與隱秘恐懼。事情可能不如表面看起來那般明確，信任內在直覺，穿透迷霧尋找真實。",
+    "reversedMeaning": "迷霧逐漸消散，隱藏的真相浮出水面，內心的焦慮與不安開始獲得釋懷與平息。",
+    "loveMeaning": "充滿不確定感、猜忌或情緒化波動；逆位彼此坦白心中疑慮，誤會冰釋。",
+    "careerMeaning": "形勢不明朗、存在隱藏資訊或方向不清；逆位局勢逐漸清晰，看清真實走向。",
+    "financeMeaning": "存在看不見的財務風險或投資盲點；逆位理清混亂帳目，避免受騙上當。"
+  },
+  "major_19": {
+    "nameZh": "太陽",
+    "nameEn": "The Sun",
+    "arcana": "major",
+    "suit": null,
+    "element": "fire",
+    "astrology": "太陽",
+    "uprightKeywords": [
+      "成功勝利",
+      "喜悅快樂",
+      "生命活力",
+      "光明坦蕩",
+      "自信榮耀",
+      "豐收繁榮"
+    ],
+    "reversedKeywords": [
+      "暫時陰霾",
+      "延遲成功",
+      "過度樂觀",
+      "精力耗損",
+      "驕傲自滿",
+      "缺乏熱情"
+    ],
+    "symbols": [
+      "燦爛神日",
+      "騎白馬赤子",
+      "向日葵花牆",
+      "紅色勝利旗幟",
+      "羽毛花冠"
+    ],
+    "uprightMeaning": "太陽帶來至高無上的光明、溫暖與勝利。你正處於能量充沛、成就斐然且充滿純粹快樂的黃金時刻，盡情閃耀！",
+    "reversedMeaning": "雖然成功稍有延遲或偶有陰霾，但光明本質不變。保持熱情與自信，烏雲終將散去。",
+    "loveMeaning": "充滿熱情、真誠透明且備受祝福的幸福戀情；逆位注意偶爾的小任性或過於自我中心。",
+    "careerMeaning": "項目大獲成功、能力備受肯定與讚譽；逆位即使遇到小挫折亦能順利克服。",
+    "financeMeaning": "財運大吉、收入豐厚、投資回報亮眼；逆位注意避免過度樂觀造成不必要支出。"
+  },
+  "major_20": {
+    "nameZh": "審判",
+    "nameEn": "Judgement",
+    "arcana": "major",
+    "suit": null,
+    "element": "fire",
+    "astrology": "冥王星",
+    "uprightKeywords": [
+      "覺醒召喚",
+      "重大決定",
+      "重生救贖",
+      "回顧省察",
+      "因果結清",
+      "靈性復甦"
+    ],
+    "reversedKeywords": [
+      "猶豫不決",
+      "拒絕召喚",
+      "自我否定",
+      "悔恨自責",
+      "重複犯錯",
+      "延誤決策"
+    ],
+    "symbols": [
+      "大天使加百列",
+      "金色末日號角",
+      "聖十字白旗",
+      "石棺甦醒之人群",
+      "崇山峻嶺"
+    ],
+    "uprightMeaning": "號角吹響，象徵重大覺醒與重生的時刻已至。總結過去的經驗教訓，勇敢回應內心的天命召喚，開啟全新生命階段。",
+    "reversedMeaning": "面對重大抉擇猶豫不決，或過度沉溺於過去的錯誤自責中。給予自己寬恕，才能邁步向前。",
+    "loveMeaning": "關係迎來關鍵重大決定（復合、定局或昇華）；逆位需放下過去舊怨才能重獲新生。",
+    "careerMeaning": "事業轉捩點，迎來關鍵轉型或升遷機會；逆位切忌拖延做決定的時機。",
+    "financeMeaning": "結清舊債、重組資產、做出重大財務決定；逆位避免重蹈過去不良投資覆轍。"
+  },
+  "major_21": {
+    "nameZh": "世界",
+    "nameEn": "The World",
+    "arcana": "major",
+    "suit": null,
+    "element": "earth",
+    "astrology": "土星",
+    "uprightKeywords": [
+      "圓滿達成",
+      "整合統一",
+      "成功完結",
+      "環遊世界",
+      "全面勝利",
+      "全新循環"
+    ],
+    "reversedKeywords": [
+      "未竟之志",
+      "臨門一腳",
+      "拖延未結",
+      "缺乏收尾",
+      "完美主義阻礙",
+      "封閉不前"
+    ],
+    "symbols": [
+      "綠色月桂花環",
+      "曼妙舞者手持雙權杖",
+      "紅色彩帶",
+      "四活物（人、鷹、獅、牛）"
+    ],
+    "uprightMeaning": "世界牌是大阿爾克那的最終圓滿。代表一個重大週期的完美收官，所有要素整合為一，獲得全然的自由、成就與喜悅。",
+    "reversedMeaning": "事情已接近終點但仍差臨門一腳，或因缺乏收尾而感到留有遺憾。集中精力完成最後一哩路。",
+    "loveMeaning": "靈魂伴侶般的圓滿和諧，關係迎來美好修成正果；逆位需化解最後的芥蒂方能圓滿。",
+    "careerMeaning": "專案圓滿成功、達成長期目標、名利雙收；逆位專注於把最後細節處理妥當。",
+    "financeMeaning": "財務達成理想目標，整體資產佈局完整穩健；逆位注意完成最後結算手續。"
+  },
+  "wands_01": {
+    "nameZh": "權杖一",
+    "nameEn": "Ace of Wands",
+    "arcana": "minor",
+    "suit": "wands",
+    "element": "fire",
+    "astrology": "",
+    "uprightKeywords": [
+      "權杖能量",
+      "專注",
+      "發展",
+      "行動",
+      "意志",
+      "熱情"
+    ],
+    "reversedKeywords": [
+      "阻礙",
+      "失衡",
+      "需調整"
+    ],
+    "symbols": [
+      "雲中神手",
+      "發芽權杖",
+      "遠方城堡"
+    ],
+    "uprightMeaning": "靈感的火花與新計畫的啟動，充滿強大行動力與熱情。",
+    "reversedMeaning": "缺乏方向、熱情消退或時機尚未成熟。",
+    "loveMeaning": "感情中展現行動與和諧互動，彼此真誠相待。",
+    "careerMeaning": "在工作事業上運用專業與熱情，推動計畫平穩前行。",
+    "financeMeaning": "財務狀況需注重穩健與理性規劃，依循正確方向前進。"
+  },
+  "wands_02": {
+    "nameZh": "權杖二",
+    "nameEn": "Two of Wands",
+    "arcana": "minor",
+    "suit": "wands",
+    "element": "fire",
+    "astrology": "",
+    "uprightKeywords": [
+      "權杖能量",
+      "專注",
+      "發展",
+      "行動",
+      "意志",
+      "熱情"
+    ],
+    "reversedKeywords": [
+      "阻礙",
+      "失衡",
+      "需調整"
+    ],
+    "symbols": [
+      "城堡領主",
+      "地球儀",
+      "遠眺海港"
+    ],
+    "uprightMeaning": "站在穩固基礎上放眼未來，進行宏觀規劃與關鍵決策。",
+    "reversedMeaning": "猶豫不決、害怕跨出舒適圈或過度擔憂未來。",
+    "loveMeaning": "感情中展現行動與和諧互動，彼此真誠相待。",
+    "careerMeaning": "在工作事業上運用專業與熱情，推動計畫平穩前行。",
+    "financeMeaning": "財務狀況需注重穩健與理性規劃，依循正確方向前進。"
+  },
+  "wands_03": {
+    "nameZh": "權杖三",
+    "nameEn": "Three of Wands",
+    "arcana": "minor",
+    "suit": "wands",
+    "element": "fire",
+    "astrology": "",
+    "uprightKeywords": [
+      "權杖能量",
+      "專注",
+      "發展",
+      "行動",
+      "意志",
+      "熱情"
+    ],
+    "reversedKeywords": [
+      "阻礙",
+      "失衡",
+      "需調整"
+    ],
+    "symbols": [
+      "山崖背影",
+      "三根權杖",
+      "商船出海"
+    ],
+    "uprightMeaning": "努力開始展現成果，版圖持續擴張，開拓更廣闊視野。",
+    "reversedMeaning": "進展受阻、合作不如預期或延遲回報。",
+    "loveMeaning": "感情中展現行動與和諧互動，彼此真誠相待。",
+    "careerMeaning": "在工作事業上運用專業與熱情，推動計畫平穩前行。",
+    "financeMeaning": "財務狀況需注重穩健與理性規劃，依循正確方向前進。"
+  },
+  "wands_04": {
+    "nameZh": "權杖四",
+    "nameEn": "Four of Wands",
+    "arcana": "minor",
+    "suit": "wands",
+    "element": "fire",
+    "astrology": "",
+    "uprightKeywords": [
+      "權杖能量",
+      "專注",
+      "發展",
+      "行動",
+      "意志",
+      "熱情"
+    ],
+    "reversedKeywords": [
+      "阻礙",
+      "失衡",
+      "需調整"
+    ],
+    "symbols": [
+      "花環四柱拱門",
+      "歡慶人群",
+      "宏偉城堡"
+    ],
+    "uprightMeaning": "穩固的基石、家庭和諧、階段性成就與盛大慶祝。",
+    "reversedMeaning": "短暫的家庭磨擦或慶典延期，但根基依然穩固。",
+    "loveMeaning": "感情中展現行動與和諧互動，彼此真誠相待。",
+    "careerMeaning": "在工作事業上運用專業與熱情，推動計畫平穩前行。",
+    "financeMeaning": "財務狀況需注重穩健與理性規劃，依循正確方向前進。"
+  },
+  "wands_05": {
+    "nameZh": "權杖五",
+    "nameEn": "Five of Wands",
+    "arcana": "minor",
+    "suit": "wands",
+    "element": "fire",
+    "astrology": "",
+    "uprightKeywords": [
+      "權杖能量",
+      "專注",
+      "發展",
+      "行動",
+      "意志",
+      "熱情"
+    ],
+    "reversedKeywords": [
+      "阻礙",
+      "失衡",
+      "需調整"
+    ],
+    "symbols": [
+      "五位青年",
+      "持杖比試",
+      "良性競爭"
+    ],
+    "uprightMeaning": "意見分歧與競爭挑戰，在磨合碰撞中激發潛能。",
+    "reversedMeaning": "衝突升級、內耗或避免正面交鋒逃避問題。",
+    "loveMeaning": "感情中展現行動與和諧互動，彼此真誠相待。",
+    "careerMeaning": "在工作事業上運用專業與熱情，推動計畫平穩前行。",
+    "financeMeaning": "財務狀況需注重穩健與理性規劃，依循正確方向前進。"
+  },
+  "wands_06": {
+    "nameZh": "權杖六",
+    "nameEn": "Six of Wands",
+    "arcana": "minor",
+    "suit": "wands",
+    "element": "fire",
+    "astrology": "",
+    "uprightKeywords": [
+      "權杖能量",
+      "專注",
+      "發展",
+      "行動",
+      "意志",
+      "熱情"
+    ],
+    "reversedKeywords": [
+      "阻礙",
+      "失衡",
+      "需調整"
+    ],
+    "symbols": [
+      "桂冠騎士",
+      "凱旋而歸",
+      "歡呼群眾"
+    ],
+    "uprightMeaning": "取得顯著勝利、獲得公眾認可與讚譽，自信前行。",
+    "reversedMeaning": "自負傲慢、虛名浮誇或勝利果實遭到忽視。",
+    "loveMeaning": "感情中展現行動與和諧互動，彼此真誠相待。",
+    "careerMeaning": "在工作事業上運用專業與熱情，推動計畫平穩前行。",
+    "financeMeaning": "財務狀況需注重穩健與理性規劃，依循正確方向前進。"
+  },
+  "wands_07": {
+    "nameZh": "權杖七",
+    "nameEn": "Seven of Wands",
+    "arcana": "minor",
+    "suit": "wands",
+    "element": "fire",
+    "astrology": "",
+    "uprightKeywords": [
+      "權杖能量",
+      "專注",
+      "發展",
+      "行動",
+      "意志",
+      "熱情"
+    ],
+    "reversedKeywords": [
+      "阻礙",
+      "失衡",
+      "需調整"
+    ],
+    "symbols": [
+      "高處勇士",
+      "持杖防守",
+      "面對眾敵"
+    ],
+    "uprightMeaning": "堅守自己的立場與原則，勇敢抵擋外界挑戰與壓力。",
+    "reversedMeaning": "寡不敵眾感到精疲力竭，或過度防禦產生孤立。",
+    "loveMeaning": "感情中展現行動與和諧互動，彼此真誠相待。",
+    "careerMeaning": "在工作事業上運用專業與熱情，推動計畫平穩前行。",
+    "financeMeaning": "財務狀況需注重穩健與理性規劃，依循正確方向前進。"
+  },
+  "wands_08": {
+    "nameZh": "權杖八",
+    "nameEn": "Eight of Wands",
+    "arcana": "minor",
+    "suit": "wands",
+    "element": "fire",
+    "astrology": "",
+    "uprightKeywords": [
+      "權杖能量",
+      "專注",
+      "發展",
+      "行動",
+      "意志",
+      "熱情"
+    ],
+    "reversedKeywords": [
+      "阻礙",
+      "失衡",
+      "需調整"
+    ],
+    "symbols": [
+      "八杖長空飛行",
+      "迅速前進",
+      "晴空萬里"
+    ],
+    "uprightMeaning": "進展神速、消息迅速傳遞、旅行或突如其來的良機。",
+    "reversedMeaning": "急躁莽撞、訊息混亂延誤或行動受阻。",
+    "loveMeaning": "感情中展現行動與和諧互動，彼此真誠相待。",
+    "careerMeaning": "在工作事業上運用專業與熱情，推動計畫平穩前行。",
+    "financeMeaning": "財務狀況需注重穩健與理性規劃，依循正確方向前進。"
+  },
+  "wands_09": {
+    "nameZh": "權杖九",
+    "nameEn": "Nine of Wands",
+    "arcana": "minor",
+    "suit": "wands",
+    "element": "fire",
+    "astrology": "",
+    "uprightKeywords": [
+      "權杖能量",
+      "專注",
+      "發展",
+      "行動",
+      "意志",
+      "熱情"
+    ],
+    "reversedKeywords": [
+      "阻礙",
+      "失衡",
+      "需調整"
+    ],
+    "symbols": [
+      "受傷守衛",
+      "八杖圍籬",
+      "警惕防範"
+    ],
+    "uprightMeaning": "歷經考驗仍堅毅不拔，保持警戒守護最後防線。",
+    "reversedMeaning": "防衛過當、草木皆兵，過度消耗內在能量。",
+    "loveMeaning": "感情中展現行動與和諧互動，彼此真誠相待。",
+    "careerMeaning": "在工作事業上運用專業與熱情，推動計畫平穩前行。",
+    "financeMeaning": "財務狀況需注重穩健與理性規劃，依循正確方向前進。"
+  },
+  "wands_10": {
+    "nameZh": "權杖十",
+    "nameEn": "Ten of Wands",
+    "arcana": "minor",
+    "suit": "wands",
+    "element": "fire",
+    "astrology": "",
+    "uprightKeywords": [
+      "權杖能量",
+      "專注",
+      "發展",
+      "行動",
+      "意志",
+      "熱情"
+    ],
+    "reversedKeywords": [
+      "阻礙",
+      "失衡",
+      "需調整"
+    ],
+    "symbols": [
+      "負重十杖",
+      "艱難前行",
+      "城鎮在望"
+    ],
+    "uprightMeaning": "責任沉重、承擔過多壓力，需學會分工與釋放負擔。",
+    "reversedMeaning": "不堪重負、崩潰邊緣，必須學會放手與求助。",
+    "loveMeaning": "感情中展現行動與和諧互動，彼此真誠相待。",
+    "careerMeaning": "在工作事業上運用專業與熱情，推動計畫平穩前行。",
+    "financeMeaning": "財務狀況需注重穩健與理性規劃，依循正確方向前進。"
+  },
+  "wands_page": {
+    "nameZh": "權杖侍從",
+    "nameEn": "Page of Wands",
+    "arcana": "minor",
+    "suit": "wands",
+    "element": "fire",
+    "astrology": "",
+    "uprightKeywords": [
+      "權杖能量",
+      "專注",
+      "發展",
+      "行動",
+      "意志",
+      "熱情"
+    ],
+    "reversedKeywords": [
+      "阻礙",
+      "失衡",
+      "需調整"
+    ],
+    "symbols": [
+      "熱情青年",
+      "凝視權杖",
+      "沙漠綠洲"
+    ],
+    "uprightMeaning": "充滿好奇心與冒險精神，帶來令人振奮的新消息與創意。",
+    "reversedMeaning": "三分鐘熱度、浮躁不實或不可靠的訊息。",
+    "loveMeaning": "感情中展現行動與和諧互動，彼此真誠相待。",
+    "careerMeaning": "在工作事業上運用專業與熱情，推動計畫平穩前行。",
+    "financeMeaning": "財務狀況需注重穩健與理性規劃，依循正確方向前進。"
+  },
+  "wands_knight": {
+    "nameZh": "權杖騎士",
+    "nameEn": "Knight of Wands",
+    "arcana": "minor",
+    "suit": "wands",
+    "element": "fire",
+    "astrology": "",
+    "uprightKeywords": [
+      "權杖能量",
+      "專注",
+      "發展",
+      "行動",
+      "意志",
+      "熱情"
+    ],
+    "reversedKeywords": [
+      "阻礙",
+      "失衡",
+      "需調整"
+    ],
+    "symbols": [
+      "火蜥蜴戰袍",
+      "奔騰戰馬",
+      "衝鋒前進"
+    ],
+    "uprightMeaning": "充滿激情與衝勁，勇往直前追求目標，充滿自信。",
+    "reversedMeaning": "魯莽衝動、脾氣暴躁或虎頭蛇尾。",
+    "loveMeaning": "感情中展現行動與和諧互動，彼此真誠相待。",
+    "careerMeaning": "在工作事業上運用專業與熱情，推動計畫平穩前行。",
+    "financeMeaning": "財務狀況需注重穩健與理性規劃，依循正確方向前進。"
+  },
+  "wands_queen": {
+    "nameZh": "權杖皇后",
+    "nameEn": "Queen of Wands",
+    "arcana": "minor",
+    "suit": "wands",
+    "element": "fire",
+    "astrology": "",
+    "uprightKeywords": [
+      "權杖能量",
+      "專注",
+      "發展",
+      "行動",
+      "意志",
+      "熱情"
+    ],
+    "reversedKeywords": [
+      "阻礙",
+      "失衡",
+      "需調整"
+    ],
+    "symbols": [
+      "向日葵",
+      "黑貓",
+      "獅王寶座"
+    ],
+    "uprightMeaning": "自信熱情、獨立溫暖、極具個人魅力與領導風采。",
+    "reversedMeaning": "情緒起伏大、嫉妒心強或強勢霸道。",
+    "loveMeaning": "感情中展現行動與和諧互動，彼此真誠相待。",
+    "careerMeaning": "在工作事業上運用專業與熱情，推動計畫平穩前行。",
+    "financeMeaning": "財務狀況需注重穩健與理性規劃，依循正確方向前進。"
+  },
+  "wands_king": {
+    "nameZh": "權杖國王",
+    "nameEn": "King of Wands",
+    "arcana": "minor",
+    "suit": "wands",
+    "element": "fire",
+    "astrology": "",
+    "uprightKeywords": [
+      "權杖能量",
+      "專注",
+      "發展",
+      "行動",
+      "意志",
+      "熱情"
+    ],
+    "reversedKeywords": [
+      "阻礙",
+      "失衡",
+      "需調整"
+    ],
+    "symbols": [
+      "火龍王冠",
+      "火焰王座",
+      "遠見卓識"
+    ],
+    "uprightMeaning": "成熟的開拓者與領袖，具備遠見、勇氣與激勵他人的力量。",
+    "reversedMeaning": "獨斷專行、專橫霸道或設定過高不切實際的目標。",
+    "loveMeaning": "感情中展現行動與和諧互動，彼此真誠相待。",
+    "careerMeaning": "在工作事業上運用專業與熱情，推動計畫平穩前行。",
+    "financeMeaning": "財務狀況需注重穩健與理性規劃，依循正確方向前進。"
+  },
+  "cups_01": {
+    "nameZh": "聖杯一",
+    "nameEn": "Ace of Cups",
+    "arcana": "minor",
+    "suit": "cups",
+    "element": "water",
+    "astrology": "",
+    "uprightKeywords": [
+      "聖杯能量",
+      "專注",
+      "發展",
+      "情感",
+      "直覺",
+      "人際關係"
+    ],
+    "reversedKeywords": [
+      "阻礙",
+      "失衡",
+      "需調整"
+    ],
+    "symbols": [
+      "神手托金杯",
+      "五道甘泉",
+      "含聖餅和平鴿"
+    ],
+    "uprightMeaning": "充沛的情感、心靈滋潤與靈性覺醒，愛與喜悅的新起點。",
+    "reversedMeaning": "情感壓抑、靈感阻滯或感到內在空虛。",
+    "loveMeaning": "感情中展現情感與和諧互動，彼此真誠相待。",
+    "careerMeaning": "在工作事業上運用專業與熱情，推動計畫平穩前行。",
+    "financeMeaning": "財務狀況需注重穩健與理性規劃，依循正確方向前進。"
+  },
+  "cups_02": {
+    "nameZh": "聖杯二",
+    "nameEn": "Two of Cups",
+    "arcana": "minor",
+    "suit": "cups",
+    "element": "water",
+    "astrology": "",
+    "uprightKeywords": [
+      "聖杯能量",
+      "專注",
+      "發展",
+      "情感",
+      "直覺",
+      "人際關係"
+    ],
+    "reversedKeywords": [
+      "阻礙",
+      "失衡",
+      "需調整"
+    ],
+    "symbols": [
+      "男女互敬",
+      "雙蛇杖Caduceus",
+      "帶翼獅頭"
+    ],
+    "uprightMeaning": "平等真摯的愛戀、深刻夥伴連結與相互吸引的和諧。",
+    "reversedMeaning": "關係失衡、溝通誤會或短暫的分歧。",
+    "loveMeaning": "感情中展現情感與和諧互動，彼此真誠相待。",
+    "careerMeaning": "在工作事業上運用專業與熱情，推動計畫平穩前行。",
+    "financeMeaning": "財務狀況需注重穩健與理性規劃，依循正確方向前進。"
+  },
+  "cups_03": {
+    "nameZh": "聖杯三",
+    "nameEn": "Three of Cups",
+    "arcana": "minor",
+    "suit": "cups",
+    "element": "water",
+    "astrology": "",
+    "uprightKeywords": [
+      "聖杯能量",
+      "專注",
+      "發展",
+      "情感",
+      "直覺",
+      "人際關係"
+    ],
+    "reversedKeywords": [
+      "阻礙",
+      "失衡",
+      "需調整"
+    ],
+    "symbols": [
+      "三位少女",
+      "高舉聖杯",
+      "豐收花果"
+    ],
+    "uprightMeaning": "友誼的歡慶、團隊協作成功、社交聚會與共同喜悅。",
+    "reversedMeaning": "過度放縱、小圈子排擠或社交疲勞。",
+    "loveMeaning": "感情中展現情感與和諧互動，彼此真誠相待。",
+    "careerMeaning": "在工作事業上運用專業與熱情，推動計畫平穩前行。",
+    "financeMeaning": "財務狀況需注重穩健與理性規劃，依循正確方向前進。"
+  },
+  "cups_04": {
+    "nameZh": "聖杯四",
+    "nameEn": "Four of Cups",
+    "arcana": "minor",
+    "suit": "cups",
+    "element": "water",
+    "astrology": "",
+    "uprightKeywords": [
+      "聖杯能量",
+      "專注",
+      "發展",
+      "情感",
+      "直覺",
+      "人際關係"
+    ],
+    "reversedKeywords": [
+      "阻礙",
+      "失衡",
+      "需調整"
+    ],
+    "symbols": [
+      "樹下青年",
+      "抱胸沉思",
+      "雲中第四杯"
+    ],
+    "uprightMeaning": "冷淡倦怠、過度內省而忽略眼前的機會與關懷。",
+    "reversedMeaning": "打破冷漠、重拾熱情，重新接納外界新機會。",
+    "loveMeaning": "感情中展現情感與和諧互動，彼此真誠相待。",
+    "careerMeaning": "在工作事業上運用專業與熱情，推動計畫平穩前行。",
+    "financeMeaning": "財務狀況需注重穩健與理性規劃，依循正確方向前進。"
+  },
+  "cups_05": {
+    "nameZh": "聖杯五",
+    "nameEn": "Five of Cups",
+    "arcana": "minor",
+    "suit": "cups",
+    "element": "water",
+    "astrology": "",
+    "uprightKeywords": [
+      "聖杯能量",
+      "專注",
+      "發展",
+      "情感",
+      "直覺",
+      "人際關係"
+    ],
+    "reversedKeywords": [
+      "阻礙",
+      "失衡",
+      "需調整"
+    ],
+    "symbols": [
+      "黑袍背影",
+      "傾倒三杯",
+      "背後兩杯依然佇立"
+    ],
+    "uprightMeaning": "沈溺於失落與悲傷，提醒你轉過身，希望與美好仍在。",
+    "reversedMeaning": "走出傷痛、接納遺憾，重新發現身邊擁有的價值。",
+    "loveMeaning": "感情中展現情感與和諧互動，彼此真誠相待。",
+    "careerMeaning": "在工作事業上運用專業與熱情，推動計畫平穩前行。",
+    "financeMeaning": "財務狀況需注重穩健與理性規劃，依循正確方向前進。"
+  },
+  "cups_06": {
+    "nameZh": "聖杯六",
+    "nameEn": "Six of Cups",
+    "arcana": "minor",
+    "suit": "cups",
+    "element": "water",
+    "astrology": "",
+    "uprightKeywords": [
+      "聖杯能量",
+      "專注",
+      "發展",
+      "情感",
+      "直覺",
+      "人際關係"
+    ],
+    "reversedKeywords": [
+      "阻礙",
+      "失衡",
+      "需調整"
+    ],
+    "symbols": [
+      "古堡庭院",
+      "贈花孩童",
+      "純真回憶"
+    ],
+    "uprightMeaning": "溫暖的回憶、童年純真、舊友重逢與無私的分享饋贈。",
+    "reversedMeaning": "沉溺過去、抗拒長大或受困於童年陰影。",
+    "loveMeaning": "感情中展現情感與和諧互動，彼此真誠相待。",
+    "careerMeaning": "在工作事業上運用專業與熱情，推動計畫平穩前行。",
+    "financeMeaning": "財務狀況需注重穩健與理性規劃，依循正確方向前進。"
+  },
+  "cups_07": {
+    "nameZh": "聖杯七",
+    "nameEn": "Seven of Cups",
+    "arcana": "minor",
+    "suit": "cups",
+    "element": "water",
+    "astrology": "",
+    "uprightKeywords": [
+      "聖杯能量",
+      "專注",
+      "發展",
+      "情感",
+      "直覺",
+      "人際關係"
+    ],
+    "reversedKeywords": [
+      "阻礙",
+      "失衡",
+      "需調整"
+    ],
+    "symbols": [
+      "雲中七杯",
+      "浮現幻象",
+      "面臨誘惑"
+    ],
+    "uprightMeaning": "選擇繁多但真假難辨，需分辨幻想與現實，跟隨真心。",
+    "reversedMeaning": "看破幻象、目標清晰，做出切實可行的選擇。",
+    "loveMeaning": "感情中展現情感與和諧互動，彼此真誠相待。",
+    "careerMeaning": "在工作事業上運用專業與熱情，推動計畫平穩前行。",
+    "financeMeaning": "財務狀況需注重穩健與理性規劃，依循正確方向前進。"
+  },
+  "cups_08": {
+    "nameZh": "聖杯八",
+    "nameEn": "Eight of Cups",
+    "arcana": "minor",
+    "suit": "cups",
+    "element": "water",
+    "astrology": "",
+    "uprightKeywords": [
+      "聖杯能量",
+      "專注",
+      "發展",
+      "情感",
+      "直覺",
+      "人際關係"
+    ],
+    "reversedKeywords": [
+      "阻礙",
+      "失衡",
+      "需調整"
+    ],
+    "symbols": [
+      "月夜旅人",
+      "八杯佇立",
+      "背向走向山峰"
+    ],
+    "uprightMeaning": "勇敢告別不再滋養心靈的現狀，踏上尋求更高意義的旅程。",
+    "reversedMeaning": "害怕離開舒適圈、猶豫不決或流浪無依。",
+    "loveMeaning": "感情中展現情感與和諧互動，彼此真誠相待。",
+    "careerMeaning": "在工作事業上運用專業與熱情，推動計畫平穩前行。",
+    "financeMeaning": "財務狀況需注重穩健與理性規劃，依循正確方向前進。"
+  },
+  "cups_09": {
+    "nameZh": "聖杯九",
+    "nameEn": "Nine of Cups",
+    "arcana": "minor",
+    "suit": "cups",
+    "element": "water",
+    "astrology": "",
+    "uprightKeywords": [
+      "聖杯能量",
+      "專注",
+      "發展",
+      "情感",
+      "直覺",
+      "人際關係"
+    ],
+    "reversedKeywords": [
+      "阻礙",
+      "失衡",
+      "需調整"
+    ],
+    "symbols": [
+      "富足男子",
+      "九杯排列",
+      "滿足微笑"
+    ],
+    "uprightMeaning": "願望成真、自我實現、精神與物質皆感到極大滿足。",
+    "reversedMeaning": "自滿傲慢、過度物質享受或內心仍感空虛。",
+    "loveMeaning": "感情中展現情感與和諧互動，彼此真誠相待。",
+    "careerMeaning": "在工作事業上運用專業與熱情，推動計畫平穩前行。",
+    "financeMeaning": "財務狀況需注重穩健與理性規劃，依循正確方向前進。"
+  },
+  "cups_10": {
+    "nameZh": "聖杯十",
+    "nameEn": "Ten of Cups",
+    "arcana": "minor",
+    "suit": "cups",
+    "element": "water",
+    "astrology": "",
+    "uprightKeywords": [
+      "聖杯能量",
+      "專注",
+      "發展",
+      "情感",
+      "直覺",
+      "人際關係"
+    ],
+    "reversedKeywords": [
+      "阻礙",
+      "失衡",
+      "需調整"
+    ],
+    "symbols": [
+      "彩虹十杯",
+      "幸福家庭",
+      "綠意家園"
+    ],
+    "uprightMeaning": "情感的終極圓滿、家庭幸福美滿、和諧長久的愛。",
+    "reversedMeaning": "家庭溝通摩擦或表面和諧但暗藏矛盾。",
+    "loveMeaning": "感情中展現情感與和諧互動，彼此真誠相待。",
+    "careerMeaning": "在工作事業上運用專業與熱情，推動計畫平穩前行。",
+    "financeMeaning": "財務狀況需注重穩健與理性規劃，依循正確方向前進。"
+  },
+  "cups_page": {
+    "nameZh": "聖杯侍從",
+    "nameEn": "Page of Cups",
+    "arcana": "minor",
+    "suit": "cups",
+    "element": "water",
+    "astrology": "",
+    "uprightKeywords": [
+      "聖杯能量",
+      "專注",
+      "發展",
+      "情感",
+      "直覺",
+      "人際關係"
+    ],
+    "reversedKeywords": [
+      "阻礙",
+      "失衡",
+      "需調整"
+    ],
+    "symbols": [
+      "溫柔侍從",
+      "杯中金魚",
+      "粉藍長袍"
+    ],
+    "uprightMeaning": "富有想像力、直覺敏銳、帶來溫馨的情感或藝術好消息。",
+    "reversedMeaning": "過度敏感脆弱、情緒化或不切實際的幻想。",
+    "loveMeaning": "感情中展現情感與和諧互動，彼此真誠相待。",
+    "careerMeaning": "在工作事業上運用專業與熱情，推動計畫平穩前行。",
+    "financeMeaning": "財務狀況需注重穩健與理性規劃，依循正確方向前進。"
+  },
+  "cups_knight": {
+    "nameZh": "聖杯騎士",
+    "nameEn": "Knight of Cups",
+    "arcana": "minor",
+    "suit": "cups",
+    "element": "water",
+    "astrology": "",
+    "uprightKeywords": [
+      "聖杯能量",
+      "專注",
+      "發展",
+      "情感",
+      "直覺",
+      "人際關係"
+    ],
+    "reversedKeywords": [
+      "阻礙",
+      "失衡",
+      "需調整"
+    ],
+    "symbols": [
+      "優雅騎士",
+      "白馬漫步",
+      "高捧聖杯"
+    ],
+    "uprightMeaning": "浪漫熱情、理想主義、跟隨內心追求美與真愛。",
+    "reversedMeaning": "不切實際、情緒多變或花言巧語缺乏責任感。",
+    "loveMeaning": "感情中展現情感與和諧互動，彼此真誠相待。",
+    "careerMeaning": "在工作事業上運用專業與熱情，推動計畫平穩前行。",
+    "financeMeaning": "財務狀況需注重穩健與理性規劃，依循正確方向前進。"
+  },
+  "cups_queen": {
+    "nameZh": "聖杯皇后",
+    "nameEn": "Queen of Cups",
+    "arcana": "minor",
+    "suit": "cups",
+    "element": "water",
+    "astrology": "",
+    "uprightKeywords": [
+      "聖杯能量",
+      "專注",
+      "發展",
+      "情感",
+      "直覺",
+      "人際關係"
+    ],
+    "reversedKeywords": [
+      "阻礙",
+      "失衡",
+      "需調整"
+    ],
+    "symbols": [
+      "海邊王座",
+      "華麗密閉聖杯",
+      "慈愛溫柔"
+    ],
+    "uprightMeaning": "同理心強大、情感深邃、能深刻滋養與理解他人。",
+    "reversedMeaning": "情緒勒索、過度依賴或容易受外界情緒感染失衡。",
+    "loveMeaning": "感情中展現情感與和諧互動，彼此真誠相待。",
+    "careerMeaning": "在工作事業上運用專業與熱情，推動計畫平穩前行。",
+    "financeMeaning": "財務狀況需注重穩健與理性規劃，依循正確方向前進。"
+  },
+  "cups_king": {
+    "nameZh": "聖杯國王",
+    "nameEn": "King of Cups",
+    "arcana": "minor",
+    "suit": "cups",
+    "element": "water",
+    "astrology": "",
+    "uprightKeywords": [
+      "聖杯能量",
+      "專注",
+      "發展",
+      "情感",
+      "直覺",
+      "人際關係"
+    ],
+    "reversedKeywords": [
+      "阻礙",
+      "失衡",
+      "需調整"
+    ],
+    "symbols": [
+      "海中石座",
+      "聖杯權杖",
+      "波浪起伏"
+    ],
+    "uprightMeaning": "情感成熟、智慧沉穩、能在狂瀾中保持平衡的引導者。",
+    "reversedMeaning": "冷酷壓抑、情緒操控或表面平靜內在焦慮。",
+    "loveMeaning": "感情中展現情感與和諧互動，彼此真誠相待。",
+    "careerMeaning": "在工作事業上運用專業與熱情，推動計畫平穩前行。",
+    "financeMeaning": "財務狀況需注重穩健與理性規劃，依循正確方向前進。"
+  },
+  "swords_01": {
+    "nameZh": "寶劍一",
+    "nameEn": "Ace of Swords",
+    "arcana": "minor",
+    "suit": "swords",
+    "element": "air",
+    "astrology": "",
+    "uprightKeywords": [
+      "寶劍能量",
+      "專注",
+      "發展",
+      "思維",
+      "理智",
+      "挑戰"
+    ],
+    "reversedKeywords": [
+      "阻礙",
+      "失衡",
+      "需調整"
+    ],
+    "symbols": [
+      "神手擎劍",
+      "橄欖與棕櫚桂冠",
+      "山巔破雲"
+    ],
+    "uprightMeaning": "思想的重大突破、真理與洞察力，用清晰理智開創新局。",
+    "reversedMeaning": "思緒混亂、濫用言語傷人或判斷失誤。",
+    "loveMeaning": "感情中展現思維與和諧互動，彼此真誠相待。",
+    "careerMeaning": "在工作事業上運用專業與熱情，推動計畫平穩前行。",
+    "financeMeaning": "財務狀況需注重穩健與理性規劃，依循正確方向前進。"
+  },
+  "swords_02": {
+    "nameZh": "寶劍二",
+    "nameEn": "Two of Swords",
+    "arcana": "minor",
+    "suit": "swords",
+    "element": "air",
+    "astrology": "",
+    "uprightKeywords": [
+      "寶劍能量",
+      "專注",
+      "發展",
+      "思維",
+      "理智",
+      "挑戰"
+    ],
+    "reversedKeywords": [
+      "阻礙",
+      "失衡",
+      "需調整"
+    ],
+    "symbols": [
+      "蒙眼女子",
+      "雙劍交叉",
+      "平靜海面"
+    ],
+    "uprightMeaning": "面臨兩難抉擇、暫時維持內外平衡，需打破盲點做出決定。",
+    "reversedMeaning": "資訊揭露、打破僵局，被逼做出抉擇。",
+    "loveMeaning": "感情中展現思維與和諧互動，彼此真誠相待。",
+    "careerMeaning": "在工作事業上運用專業與熱情，推動計畫平穩前行。",
+    "financeMeaning": "財務狀況需注重穩健與理性規劃，依循正確方向前進。"
+  },
+  "swords_03": {
+    "nameZh": "寶劍三",
+    "nameEn": "Three of Swords",
+    "arcana": "minor",
+    "suit": "swords",
+    "element": "air",
+    "astrology": "",
+    "uprightKeywords": [
+      "寶劍能量",
+      "專注",
+      "發展",
+      "思維",
+      "理智",
+      "挑戰"
+    ],
+    "reversedKeywords": [
+      "阻礙",
+      "失衡",
+      "需調整"
+    ],
+    "symbols": [
+      "三劍穿心",
+      "風雨暴雲",
+      "心碎療癒"
+    ],
+    "uprightMeaning": "經歷心碎、悲傷與背叛的痛苦，接納悲傷是療癒的起點。",
+    "reversedMeaning": "傷痛逐漸平復、走出陰霾，迎向心靈復原。",
+    "loveMeaning": "感情中展現思維與和諧互動，彼此真誠相待。",
+    "careerMeaning": "在工作事業上運用專業與熱情，推動計畫平穩前行。",
+    "financeMeaning": "財務狀況需注重穩健與理性規劃，依循正確方向前進。"
+  },
+  "swords_04": {
+    "nameZh": "寶劍四",
+    "nameEn": "Four of Swords",
+    "arcana": "minor",
+    "suit": "swords",
+    "element": "air",
+    "astrology": "",
+    "uprightKeywords": [
+      "寶劍能量",
+      "專注",
+      "發展",
+      "思維",
+      "理智",
+      "挑戰"
+    ],
+    "reversedKeywords": [
+      "阻礙",
+      "失衡",
+      "需調整"
+    ],
+    "symbols": [
+      "教堂騎士雕像",
+      "三劍懸牆一劍在側",
+      "彩繪玻璃窗"
+    ],
+    "uprightMeaning": "暫時退避休養、冥想沉澱、為即將到來的挑戰積蓄能量。",
+    "reversedMeaning": "被迫休養結束、重回戰場，或過度孤立。",
+    "loveMeaning": "感情中展現思維與和諧互動，彼此真誠相待。",
+    "careerMeaning": "在工作事業上運用專業與熱情，推動計畫平穩前行。",
+    "financeMeaning": "財務狀況需注重穩健與理性規劃，依循正確方向前進。"
+  },
+  "swords_05": {
+    "nameZh": "寶劍五",
+    "nameEn": "Five of Swords",
+    "arcana": "minor",
+    "suit": "swords",
+    "element": "air",
+    "astrology": "",
+    "uprightKeywords": [
+      "寶劍能量",
+      "專注",
+      "發展",
+      "思維",
+      "理智",
+      "挑戰"
+    ],
+    "reversedKeywords": [
+      "阻礙",
+      "失衡",
+      "需調整"
+    ],
+    "symbols": [
+      "狡黠男子",
+      "手攬三劍",
+      "敗者遠去"
+    ],
+    "uprightMeaning": "贏得表面勝利但輸掉關係，自私爭鬥帶來的代價。",
+    "reversedMeaning": "渴望和解、放下爭端，從失敗中記取教訓。",
+    "loveMeaning": "感情中展現思維與和諧互動，彼此真誠相待。",
+    "careerMeaning": "在工作事業上運用專業與熱情，推動計畫平穩前行。",
+    "financeMeaning": "財務狀況需注重穩健與理性規劃，依循正確方向前進。"
+  },
+  "swords_06": {
+    "nameZh": "寶劍六",
+    "nameEn": "Six of Swords",
+    "arcana": "minor",
+    "suit": "swords",
+    "element": "air",
+    "astrology": "",
+    "uprightKeywords": [
+      "寶劍能量",
+      "專注",
+      "發展",
+      "思維",
+      "理智",
+      "挑戰"
+    ],
+    "reversedKeywords": [
+      "阻礙",
+      "失衡",
+      "需調整"
+    ],
+    "symbols": [
+      "擺渡舟子",
+      "載運六劍母子",
+      "航向平靜水域"
+    ],
+    "uprightMeaning": "渡過難關、漸入佳境、在療癒之旅中航向平靜彼岸。",
+    "reversedMeaning": "進展緩慢、背負沉重包袱、難以擺脫困境。",
+    "loveMeaning": "感情中展現思維與和諧互動，彼此真誠相待。",
+    "careerMeaning": "在工作事業上運用專業與熱情，推動計畫平穩前行。",
+    "financeMeaning": "財務狀況需注重穩健與理性規劃，依循正確方向前進。"
+  },
+  "swords_07": {
+    "nameZh": "寶劍七",
+    "nameEn": "Seven of Swords",
+    "arcana": "minor",
+    "suit": "swords",
+    "element": "air",
+    "astrology": "",
+    "uprightKeywords": [
+      "寶劍能量",
+      "專注",
+      "發展",
+      "思維",
+      "理智",
+      "挑戰"
+    ],
+    "reversedKeywords": [
+      "阻礙",
+      "失衡",
+      "需調整"
+    ],
+    "symbols": [
+      "躡足男子",
+      "偷抱五劍",
+      "回望敵營"
+    ],
+    "uprightMeaning": "運用策略智慧謀略，或警惕暗處的欺瞞與投機行為。",
+    "reversedMeaning": "計謀敗露、坦誠面對，或改採光明正大途徑。",
+    "loveMeaning": "感情中展現思維與和諧互動，彼此真誠相待。",
+    "careerMeaning": "在工作事業上運用專業與熱情，推動計畫平穩前行。",
+    "financeMeaning": "財務狀況需注重穩健與理性規劃，依循正確方向前進。"
+  },
+  "swords_08": {
+    "nameZh": "寶劍八",
+    "nameEn": "Eight of Swords",
+    "arcana": "minor",
+    "suit": "swords",
+    "element": "air",
+    "astrology": "",
+    "uprightKeywords": [
+      "寶劍能量",
+      "專注",
+      "發展",
+      "思維",
+      "理智",
+      "挑戰"
+    ],
+    "reversedKeywords": [
+      "阻礙",
+      "失衡",
+      "需調整"
+    ],
+    "symbols": [
+      "蒙眼綁縛女子",
+      "八劍圍繞",
+      "泥濘水窪"
+    ],
+    "uprightMeaning": "受限於自我設限的思維牢籠，其實隨時可以掙脫束縛。",
+    "reversedMeaning": "看清限制本質、解除自我束縛，重獲自由行動力。",
+    "loveMeaning": "感情中展現思維與和諧互動，彼此真誠相待。",
+    "careerMeaning": "在工作事業上運用專業與熱情，推動計畫平穩前行。",
+    "financeMeaning": "財務狀況需注重穩健與理性規劃，依循正確方向前進。"
+  },
+  "swords_09": {
+    "nameZh": "寶劍九",
+    "nameEn": "Nine of Swords",
+    "arcana": "minor",
+    "suit": "swords",
+    "element": "air",
+    "astrology": "",
+    "uprightKeywords": [
+      "寶劍能量",
+      "專注",
+      "發展",
+      "思維",
+      "理智",
+      "挑戰"
+    ],
+    "reversedKeywords": [
+      "阻礙",
+      "失衡",
+      "需調整"
+    ],
+    "symbols": [
+      "深夜掩面",
+      "九劍橫空",
+      "惡夢焦慮"
+    ],
+    "uprightMeaning": "被擔憂、焦慮與失眠困擾，恐懼往往大於現實本身。",
+    "reversedMeaning": "走出惡夢、找到出口，焦慮逐漸消退重拾信心。",
+    "loveMeaning": "感情中展現思維與和諧互動，彼此真誠相待。",
+    "careerMeaning": "在工作事業上運用專業與熱情，推動計畫平穩前行。",
+    "financeMeaning": "財務狀況需注重穩健與理性規劃，依循正確方向前進。"
+  },
+  "swords_10": {
+    "nameZh": "寶劍十",
+    "nameEn": "Ten of Swords",
+    "arcana": "minor",
+    "suit": "swords",
+    "element": "air",
+    "astrology": "",
+    "uprightKeywords": [
+      "寶劍能量",
+      "專注",
+      "發展",
+      "思維",
+      "理智",
+      "挑戰"
+    ],
+    "reversedKeywords": [
+      "阻礙",
+      "失衡",
+      "需調整"
+    ],
+    "symbols": [
+      "倒臥十劍",
+      "黑雲壓境",
+      "遠方晨曦"
+    ],
+    "uprightMeaning": "徹底的結束與低谷，最壞的時刻已過，黎明就在眼前。",
+    "reversedMeaning": "絕處逢生、痛苦過去，開始緩慢復原。",
+    "loveMeaning": "感情中展現思維與和諧互動，彼此真誠相待。",
+    "careerMeaning": "在工作事業上運用專業與熱情，推動計畫平穩前行。",
+    "financeMeaning": "財務狀況需注重穩健與理性規劃，依循正確方向前進。"
+  },
+  "swords_page": {
+    "nameZh": "寶劍侍從",
+    "nameEn": "Page of Swords",
+    "arcana": "minor",
+    "suit": "swords",
+    "element": "air",
+    "astrology": "",
+    "uprightKeywords": [
+      "寶劍能量",
+      "專注",
+      "發展",
+      "思維",
+      "理智",
+      "挑戰"
+    ],
+    "reversedKeywords": [
+      "阻礙",
+      "失衡",
+      "需調整"
+    ],
+    "symbols": [
+      "機敏青年",
+      "持劍回望",
+      "狂風綠原"
+    ],
+    "uprightMeaning": "思維敏銳、好奇心旺盛、具備洞察力但需防言多必失。",
+    "reversedMeaning": "暗中窺探、搬弄是非、言語刻薄或缺乏耐心。",
+    "loveMeaning": "感情中展現思維與和諧互動，彼此真誠相待。",
+    "careerMeaning": "在工作事業上運用專業與熱情，推動計畫平穩前行。",
+    "financeMeaning": "財務狀況需注重穩健與理性規劃，依循正確方向前進。"
+  },
+  "swords_knight": {
+    "nameZh": "寶劍騎士",
+    "nameEn": "Knight of Swords",
+    "arcana": "minor",
+    "suit": "swords",
+    "element": "air",
+    "astrology": "",
+    "uprightKeywords": [
+      "寶劍能量",
+      "專注",
+      "發展",
+      "思維",
+      "理智",
+      "挑戰"
+    ],
+    "reversedKeywords": [
+      "阻礙",
+      "失衡",
+      "需調整"
+    ],
+    "symbols": [
+      "衝鋒騎士",
+      "拔劍策馬",
+      "狂風驟雨"
+    ],
+    "uprightMeaning": "果斷勇敢、行動迅速、為了目標不顧一切衝鋒陷陣。",
+    "reversedMeaning": "盲目魯莽、言語傷人、缺乏深思熟慮。",
+    "loveMeaning": "感情中展現思維與和諧互動，彼此真誠相待。",
+    "careerMeaning": "在工作事業上運用專業與熱情，推動計畫平穩前行。",
+    "financeMeaning": "財務狀況需注重穩健與理性規劃，依循正確方向前進。"
+  },
+  "swords_queen": {
+    "nameZh": "寶劍皇后",
+    "nameEn": "Queen of Swords",
+    "arcana": "minor",
+    "suit": "swords",
+    "element": "air",
+    "astrology": "",
+    "uprightKeywords": [
+      "寶劍能量",
+      "專注",
+      "發展",
+      "思維",
+      "理智",
+      "挑戰"
+    ],
+    "reversedKeywords": [
+      "阻礙",
+      "失衡",
+      "需調整"
+    ],
+    "symbols": [
+      "肅穆女王",
+      "手持利劍",
+      "雲端石座"
+    ],
+    "uprightMeaning": "理智清醒、獨立正直、能洞悉真相並做出客觀公正判斷。",
+    "reversedMeaning": "過於嚴苛冷酷、尖酸刻薄或封閉情感。",
+    "loveMeaning": "感情中展現思維與和諧互動，彼此真誠相待。",
+    "careerMeaning": "在工作事業上運用專業與熱情，推動計畫平穩前行。",
+    "financeMeaning": "財務狀況需注重穩健與理性規劃，依循正確方向前進。"
+  },
+  "swords_king": {
+    "nameZh": "寶劍國王",
+    "nameEn": "King of Swords",
+    "arcana": "minor",
+    "suit": "swords",
+    "element": "air",
+    "astrology": "",
+    "uprightKeywords": [
+      "寶劍能量",
+      "專注",
+      "發展",
+      "思維",
+      "理智",
+      "挑戰"
+    ],
+    "reversedKeywords": [
+      "阻礙",
+      "失衡",
+      "需調整"
+    ],
+    "symbols": [
+      "嚴肅國王",
+      "裁決之劍",
+      "天使雕飾王座"
+    ],
+    "uprightMeaning": "權威理智、邏輯清晰、具備卓越的戰略智慧與判斷力。",
+    "reversedMeaning": "冷酷專斷、濫用權力、偏執冷血。",
+    "loveMeaning": "感情中展現思維與和諧互動，彼此真誠相待。",
+    "careerMeaning": "在工作事業上運用專業與熱情，推動計畫平穩前行。",
+    "financeMeaning": "財務狀況需注重穩健與理性規劃，依循正確方向前進。"
+  },
+  "pentacles_01": {
+    "nameZh": "錢幣一",
+    "nameEn": "Ace of Pentacles",
+    "arcana": "minor",
+    "suit": "pentacles",
+    "element": "earth",
+    "astrology": "",
+    "uprightKeywords": [
+      "錢幣能量",
+      "專注",
+      "發展",
+      "物質",
+      "財富",
+      "工作實踐"
+    ],
+    "reversedKeywords": [
+      "阻礙",
+      "失衡",
+      "需調整"
+    ],
+    "symbols": [
+      "神手托金幣",
+      "花園拱門",
+      "百合通道"
+    ],
+    "uprightMeaning": "物質與事業的新機遇、實質的財富種子與穩固開端。",
+    "reversedMeaning": "錯失財務良機、預算不足或基礎不穩固。",
+    "loveMeaning": "感情中展現物質與和諧互動，彼此真誠相待。",
+    "careerMeaning": "在工作事業上運用專業與熱情，推動計畫平穩前行。",
+    "financeMeaning": "財務狀況需注重穩健與理性規劃，依循正確方向前進。"
+  },
+  "pentacles_02": {
+    "nameZh": "錢幣二",
+    "nameEn": "Two of Pentacles",
+    "arcana": "minor",
+    "suit": "pentacles",
+    "element": "earth",
+    "astrology": "",
+    "uprightKeywords": [
+      "錢幣能量",
+      "專注",
+      "發展",
+      "物質",
+      "財富",
+      "工作實踐"
+    ],
+    "reversedKeywords": [
+      "阻礙",
+      "失衡",
+      "需調整"
+    ],
+    "symbols": [
+      "雜耍青年",
+      "無限雙幣",
+      "巨浪起伏"
+    ],
+    "uprightMeaning": "在多重任務與資源間靈活調度平衡，隨機應變。",
+    "reversedMeaning": "財務失衡、分身乏術、感到難以兼顧。",
+    "loveMeaning": "感情中展現物質與和諧互動，彼此真誠相待。",
+    "careerMeaning": "在工作事業上運用專業與熱情，推動計畫平穩前行。",
+    "financeMeaning": "財務狀況需注重穩健與理性規劃，依循正確方向前進。"
+  },
+  "pentacles_03": {
+    "nameZh": "錢幣三",
+    "nameEn": "Three of Pentacles",
+    "arcana": "minor",
+    "suit": "pentacles",
+    "element": "earth",
+    "astrology": "",
+    "uprightKeywords": [
+      "錢幣能量",
+      "專注",
+      "發展",
+      "物質",
+      "財富",
+      "工作實踐"
+    ],
+    "reversedKeywords": [
+      "阻礙",
+      "失衡",
+      "需調整"
+    ],
+    "symbols": [
+      "雕刻工匠",
+      "建築師修士",
+      "教堂拱頂"
+    ],
+    "uprightMeaning": "專業技能展現、團隊通力協作、精益求精共創成果。",
+    "reversedMeaning": "缺乏合作精神、技術不足或溝通產生歧見。",
+    "loveMeaning": "感情中展現物質與和諧互動，彼此真誠相待。",
+    "careerMeaning": "在工作事業上運用專業與熱情，推動計畫平穩前行。",
+    "financeMeaning": "財務狀況需注重穩健與理性規劃，依循正確方向前進。"
+  },
+  "pentacles_04": {
+    "nameZh": "錢幣四",
+    "nameEn": "Four of Pentacles",
+    "arcana": "minor",
+    "suit": "pentacles",
+    "element": "earth",
+    "astrology": "",
+    "uprightKeywords": [
+      "錢幣能量",
+      "專注",
+      "發展",
+      "物質",
+      "財富",
+      "工作實踐"
+    ],
+    "reversedKeywords": [
+      "阻礙",
+      "失衡",
+      "需調整"
+    ],
+    "symbols": [
+      "緊抱金幣",
+      "頭頂足踩",
+      "背後城市"
+    ],
+    "uprightMeaning": "注重安全感與資源守護，但需防過度守財與掌控慾。",
+    "reversedMeaning": "過度吝嗇導致人際疏離，或開始學會適度分享。",
+    "loveMeaning": "感情中展現物質與和諧互動，彼此真誠相待。",
+    "careerMeaning": "在工作事業上運用專業與熱情，推動計畫平穩前行。",
+    "financeMeaning": "財務狀況需注重穩健與理性規劃，依循正確方向前進。"
+  },
+  "pentacles_05": {
+    "nameZh": "錢幣五",
+    "nameEn": "Five of Pentacles",
+    "arcana": "minor",
+    "suit": "pentacles",
+    "element": "earth",
+    "astrology": "",
+    "uprightKeywords": [
+      "錢幣能量",
+      "專注",
+      "發展",
+      "物質",
+      "財富",
+      "工作實踐"
+    ],
+    "reversedKeywords": [
+      "阻礙",
+      "失衡",
+      "需調整"
+    ],
+    "symbols": [
+      "風雪跛行",
+      "彩繪玻璃窗",
+      "貧寒相依"
+    ],
+    "uprightMeaning": "暫時的物質困窘或孤立無援，記得身旁始終有溫暖支持。",
+    "reversedMeaning": "度過財務寒冬、重獲生機與援助。",
+    "loveMeaning": "感情中展現物質與和諧互動，彼此真誠相待。",
+    "careerMeaning": "在工作事業上運用專業與熱情，推動計畫平穩前行。",
+    "financeMeaning": "財務狀況需注重穩健與理性規劃，依循正確方向前進。"
+  },
+  "pentacles_06": {
+    "nameZh": "錢幣六",
+    "nameEn": "Six of Pentacles",
+    "arcana": "minor",
+    "suit": "pentacles",
+    "element": "earth",
+    "astrology": "",
+    "uprightKeywords": [
+      "錢幣能量",
+      "專注",
+      "發展",
+      "物質",
+      "財富",
+      "工作實踐"
+    ],
+    "reversedKeywords": [
+      "阻礙",
+      "失衡",
+      "需調整"
+    ],
+    "symbols": [
+      "富商施捨",
+      "公平天平",
+      "跪拜貧民"
+    ],
+    "uprightMeaning": "慷慨施予、資源共享，在付出與接受間維持平衡。",
+    "reversedMeaning": "施捨帶有條件、自高自大或財務分配不均。",
+    "loveMeaning": "感情中展現物質與和諧互動，彼此真誠相待。",
+    "careerMeaning": "在工作事業上運用專業與熱情，推動計畫平穩前行。",
+    "financeMeaning": "財務狀況需注重穩健與理性規劃，依循正確方向前進。"
+  },
+  "pentacles_07": {
+    "nameZh": "錢幣七",
+    "nameEn": "Seven of Pentacles",
+    "arcana": "minor",
+    "suit": "pentacles",
+    "element": "earth",
+    "astrology": "",
+    "uprightKeywords": [
+      "錢幣能量",
+      "專注",
+      "發展",
+      "物質",
+      "財富",
+      "工作實踐"
+    ],
+    "reversedKeywords": [
+      "阻礙",
+      "失衡",
+      "需調整"
+    ],
+    "symbols": [
+      "倚鋤農夫",
+      "審視七幣",
+      "葡萄藤蔓"
+    ],
+    "uprightMeaning": "耐心等待成果收穫、階段性評估進度與長遠規劃。",
+    "reversedMeaning": "急功近利、焦躁不耐或投資效益低落。",
+    "loveMeaning": "感情中展現物質與和諧互動，彼此真誠相待。",
+    "careerMeaning": "在工作事業上運用專業與熱情，推動計畫平穩前行。",
+    "financeMeaning": "財務狀況需注重穩健與理性規劃，依循正確方向前進。"
+  },
+  "pentacles_08": {
+    "nameZh": "錢幣八",
+    "nameEn": "Eight of Pentacles",
+    "arcana": "minor",
+    "suit": "pentacles",
+    "element": "earth",
+    "astrology": "",
+    "uprightKeywords": [
+      "錢幣能量",
+      "專注",
+      "發展",
+      "物質",
+      "財富",
+      "工作實踐"
+    ],
+    "reversedKeywords": [
+      "阻礙",
+      "失衡",
+      "需調整"
+    ],
+    "symbols": [
+      "專注工匠",
+      "刻製八幣",
+      "勤勉不懈"
+    ],
+    "uprightMeaning": "專注於技藝磨練、踏實工作、精益求精必有回報。",
+    "reversedMeaning": "缺乏熱情、機械式重複或投機取巧。",
+    "loveMeaning": "感情中展現物質與和諧互動，彼此真誠相待。",
+    "careerMeaning": "在工作事業上運用專業與熱情，推動計畫平穩前行。",
+    "financeMeaning": "財務狀況需注重穩健與理性規劃，依循正確方向前進。"
+  },
+  "pentacles_09": {
+    "nameZh": "錢幣九",
+    "nameEn": "Nine of Pentacles",
+    "arcana": "minor",
+    "suit": "pentacles",
+    "element": "earth",
+    "astrology": "",
+    "uprightKeywords": [
+      "錢幣能量",
+      "專注",
+      "發展",
+      "物質",
+      "財富",
+      "工作實踐"
+    ],
+    "reversedKeywords": [
+      "阻礙",
+      "失衡",
+      "需調整"
+    ],
+    "symbols": [
+      "葡萄園貴婦",
+      "金幣滿藤",
+      "臂上獵鷹"
+    ],
+    "uprightMeaning": "自給自足、獨立優雅、享受辛勤耕耘換來的豐盛成果。",
+    "reversedMeaning": "過度炫耀、物質空虛或過度重視外在評價。",
+    "loveMeaning": "感情中展現物質與和諧互動，彼此真誠相待。",
+    "careerMeaning": "在工作事業上運用專業與熱情，推動計畫平穩前行。",
+    "financeMeaning": "財務狀況需注重穩健與理性規劃，依循正確方向前進。"
+  },
+  "pentacles_10": {
+    "nameZh": "錢幣十",
+    "nameEn": "Ten of Pentacles",
+    "arcana": "minor",
+    "suit": "pentacles",
+    "element": "earth",
+    "astrology": "",
+    "uprightKeywords": [
+      "錢幣能量",
+      "專注",
+      "發展",
+      "物質",
+      "財富",
+      "工作實踐"
+    ],
+    "reversedKeywords": [
+      "阻礙",
+      "失衡",
+      "需調整"
+    ],
+    "symbols": [
+      "三代同堂",
+      "家徽拱門",
+      "忠犬安居"
+    ],
+    "uprightMeaning": "家族繁榮、世代傳承、物質與精神皆無比富足。",
+    "reversedMeaning": "家族爭產、傳統觀念束縛或財務糾紛。",
+    "loveMeaning": "感情中展現物質與和諧互動，彼此真誠相待。",
+    "careerMeaning": "在工作事業上運用專業與熱情，推動計畫平穩前行。",
+    "financeMeaning": "財務狀況需注重穩健與理性規劃，依循正確方向前進。"
+  },
+  "pentacles_page": {
+    "nameZh": "錢幣侍從",
+    "nameEn": "Page of Pentacles",
+    "arcana": "minor",
+    "suit": "pentacles",
+    "element": "earth",
+    "astrology": "",
+    "uprightKeywords": [
+      "錢幣能量",
+      "專注",
+      "發展",
+      "物質",
+      "財富",
+      "工作實踐"
+    ],
+    "reversedKeywords": [
+      "阻礙",
+      "失衡",
+      "需調整"
+    ],
+    "symbols": [
+      "踏實青年",
+      "雙手捧幣",
+      "繁茂田野"
+    ],
+    "uprightMeaning": "求知若渴、腳踏實地、帶來實用可行的學習與商業機會。",
+    "reversedMeaning": "缺乏進取心、短視近利或浪費機會。",
+    "loveMeaning": "感情中展現物質與和諧互動，彼此真誠相待。",
+    "careerMeaning": "在工作事業上運用專業與熱情，推動計畫平穩前行。",
+    "financeMeaning": "財務狀況需注重穩健與理性規劃，依循正確方向前進。"
+  },
+  "pentacles_knight": {
+    "nameZh": "錢幣騎士",
+    "nameEn": "Knight of Pentacles",
+    "arcana": "minor",
+    "suit": "pentacles",
+    "element": "earth",
+    "astrology": "",
+    "uprightKeywords": [
+      "錢幣能量",
+      "專注",
+      "發展",
+      "物質",
+      "財富",
+      "工作實踐"
+    ],
+    "reversedKeywords": [
+      "阻礙",
+      "失衡",
+      "需調整"
+    ],
+    "symbols": [
+      "黑馬騎士",
+      "手捧金幣",
+      "耕耘田野"
+    ],
+    "uprightMeaning": "勤勉負責、沉著穩重、一步一腳印實現長期目標。",
+    "reversedMeaning": "固執不知變通、缺乏熱情進度緩慢。",
+    "loveMeaning": "感情中展現物質與和諧互動，彼此真誠相待。",
+    "careerMeaning": "在工作事業上運用專業與熱情，推動計畫平穩前行。",
+    "financeMeaning": "財務狀況需注重穩健與理性規劃，依循正確方向前進。"
+  },
+  "pentacles_queen": {
+    "nameZh": "錢幣皇后",
+    "nameEn": "Queen of Pentacles",
+    "arcana": "minor",
+    "suit": "pentacles",
+    "element": "earth",
+    "astrology": "",
+    "uprightKeywords": [
+      "錢幣能量",
+      "專注",
+      "發展",
+      "物質",
+      "財富",
+      "工作實踐"
+    ],
+    "reversedKeywords": [
+      "阻礙",
+      "失衡",
+      "需調整"
+    ],
+    "symbols": [
+      "森林女王",
+      "膝抱金幣",
+      "繁盛果實"
+    ],
+    "uprightMeaning": "務實溫暖、擅長理財與照料家庭，充滿母性慈愛。",
+    "reversedMeaning": "過度物質主義、過度操勞或忽略心靈滋養。",
+    "loveMeaning": "感情中展現物質與和諧互動，彼此真誠相待。",
+    "careerMeaning": "在工作事業上運用專業與熱情，推動計畫平穩前行。",
+    "financeMeaning": "財務狀況需注重穩健與理性規劃，依循正確方向前進。"
+  },
+  "pentacles_king": {
+    "nameZh": "錢幣國王",
+    "nameEn": "King of Pentacles",
+    "arcana": "minor",
+    "suit": "pentacles",
+    "element": "earth",
+    "astrology": "",
+    "uprightKeywords": [
+      "錢幣能量",
+      "專注",
+      "發展",
+      "物質",
+      "財富",
+      "工作實踐"
+    ],
+    "reversedKeywords": [
+      "阻礙",
+      "失衡",
+      "需調整"
+    ],
+    "symbols": [
+      "葡萄藤袍國王",
+      "手握金幣權杖",
+      "公牛浮雕王座"
+    ],
+    "uprightMeaning": "事業有成、富甲一方、穩健可靠且具備卓越商業智慧。",
+    "reversedMeaning": "唯利是圖、剛愎自用或貪圖安逸享受。",
+    "loveMeaning": "感情中展現物質與和諧互動，彼此真誠相待。",
+    "careerMeaning": "在工作事業上運用專業與熱情，推動計畫平穩前行。",
+    "financeMeaning": "財務狀況需注重穩健與理性規劃，依循正確方向前進。"
+  }
+}

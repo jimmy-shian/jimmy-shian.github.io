@@ -1,18 +1,108 @@
+/* ==========================================================================
+   THE TAROT (Soft-Gray Minimalist / OpenDesign)
+   ========================================================================== */
+
 header {
     text-align: center;
+    margin-bottom: 24px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--border-subtle, #dde2ea);
+}
+
+header h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--text-primary, #1e242d);
+    letter-spacing: -0.01em;
+}
+
+header p, main > p {
+    color: var(--text-secondary, #4a5568);
+    font-size: 0.95rem;
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto 24px auto;
+}
+
+/* 分類切換按鈕區 */
+.category-menu {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 0 auto 36px auto;
+    max-width: 900px;
+    padding: 0 10px;
+}
+
+.category-btn {
+    background: var(--bg-surface, #f8f9fb);
+    color: var(--text-secondary, #4a5568);
+    border: 1px solid var(--border-primary, #cbd2dc);
+    padding: 7px 16px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    border-radius: var(--radius-full, 9999px);
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.25, 0.8, 0.25, 1);
+    box-shadow: var(--shadow-sm);
+    outline: none;
+}
+
+.category-btn:hover {
+    background: var(--bg-subtle, #e4e7ee);
+    color: var(--text-primary, #1e242d);
+    border-color: #b0b9c6;
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-md);
+}
+
+.category-btn.active {
+    background: var(--accent, #4f6b8f);
+    color: #f8f9fb;
+    border-color: var(--accent, #4f6b8f);
+    box-shadow: 0 2px 8px rgba(79, 107, 143, 0.25);
+}
+
+/* 分類區塊樣式 */
+.tarot-section {
+    max-width: 1160px;
+    margin: 0 auto 40px auto;
+    background: var(--bg-surface, #f8f9fb);
+    border-radius: var(--radius-lg, 12px);
+    padding: 24px 20px;
+    border: 1px solid var(--border-subtle, #dde2ea);
+    box-shadow: var(--shadow-sm);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.tarot-section:hover {
+    border-color: var(--border-primary, #cbd2dc);
+    box-shadow: var(--shadow-md);
+}
+
+.tarot-section h2 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--text-primary, #1e242d);
+    margin-top: 0;
     margin-bottom: 20px;
+    border-bottom: 2px solid var(--accent, #4f6b8f);
+    padding-bottom: 6px;
+    display: inline-block;
 }
 
 /* 塔羅牌展示區 */
 .tarot-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
     gap: 20px;
-    padding: 20px;
+    justify-items: center;
+    padding: 10px 0;
 }
 
 .tarot-card {
-    width: 180px;
+    width: 170px;
     height: auto;
     perspective: 1000px;
     cursor: pointer;
@@ -24,52 +114,44 @@ header {
 .card-inner {
     position: relative;
     width: 100%;
-    height: 300px;
+    height: 280px;
     text-align: center;
     transform-style: preserve-3d;
+    transition: transform 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
 .card-title-label {
-    margin-top: 12px;
+    margin-top: 10px;
     text-align: center;
-    letter-spacing: 0.5px;
     display: flex;
     flex-direction: column;
-    gap: 4px;
+    gap: 3px;
+    width: 100%;
 }
 
 .card-name-text {
-    font-size: 15px;
+    font-size: 0.92rem;
     font-weight: 600;
-    color: #ffd700;
-    transition: color 0.3s ease;
+    color: var(--text-primary, #1e242d);
+    transition: color 0.2s ease;
 }
 
 .card-meaning-text {
-    font-size: 12px;
-    color: #a0aec0;
+    font-size: 0.78rem;
+    color: var(--text-muted, #718096);
     font-weight: 400;
-    transition: color 0.5s ease;
+    line-height: 1.4;
+    transition: color 0.2s ease;
 }
 
 .tarot-card:hover .card-name-text {
-    color: #3d4e0e;
+    color: var(--accent, #4f6b8f);
 }
 
-.tarot-card:hover .card-meaning-text {
-    color: #66a8ff;
-}
-
-/* 桌面版懸停翻轉 */
-.tarot-card:hover .card-inner {
-    transform: rotateY(180deg);
-    transition: transform 0.8s;
-}
-
-/* 手機版點擊翻轉 */
+/* 懸停與點擊翻轉 */
+.tarot-card:hover .card-inner,
 .card-inner.is-flipped {
     transform: rotateY(180deg);
-    transition: transform 0.8s;
 }
 
 .card-front, .card-back {
@@ -77,41 +159,52 @@ header {
     width: 100%;
     height: 100%;
     backface-visibility: hidden;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    -webkit-backface-visibility: hidden;
+    border-radius: var(--radius-md, 8px);
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--border-primary, #cbd2dc);
+    overflow: hidden;
+    transition: box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.tarot-card:hover .card-front,
+.tarot-card:hover .card-back {
+    box-shadow: var(--shadow-md);
+    border-color: var(--accent, #4f6b8f);
 }
 
 .card-front {
-    background-color: #fff;
+    background-color: var(--bg-surface, #f8f9fb);
+}
+
+.card-front img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
 }
 
 .card-back {
-    position: relative; /* 讓偽元素定位正確 */
-    background-color: #ffffff; /* 背景色（不透明） */
+    background-color: var(--bg-surface, #f8f9fb);
     transform: rotateY(180deg);
     display: flex;
     flex-direction: column;
     justify-content: center;
-    font-size: 14px;
-    line-height: 1.4;
-    color: #000000; /* 確保文字清晰 */
-    overflow: hidden; /* 防止偽元素超出邊界 */
+    padding: 14px;
+    font-size: 0.82rem;
+    line-height: 1.5;
+    color: var(--text-primary, #1e242d);
 }
 
-/* 背景圖片（單獨控制透明度） */
 .card-back::before {
     content: "";
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: url(../../images/card_back.webp) center / cover no-repeat;
-    opacity: 0.15; /* 圖片透明度 50% */
-    z-index: 0; /* 確保在背景色下方 */
+    inset: 0;
+    background: url(../../images/tarot/web/card_back.webp) center / cover no-repeat;
+    opacity: 0.12;
+    z-index: 0;
 }
 
-/* 確保文字在圖片上方 */
 .card-back > * {
     position: relative;
     z-index: 1;
@@ -125,136 +218,78 @@ header {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
-    z-index: 1000;
+    background-color: rgba(30, 41, 59, 0.45);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    z-index: 10000;
     overflow-y: auto;
 }
 
 .modal-content {
-    background-color: #fff;
-    margin: 20px auto;
-    padding: 25px;
-    width: 600px;
-    max-width: 80%;
-    border-radius: 12px;
+    background-color: var(--bg-surface, #f8f9fb);
+    margin: 60px auto;
+    padding: 30px;
+    width: 540px;
+    max-width: 90%;
+    border-radius: var(--radius-lg, 12px);
+    border: 1px solid var(--border-primary, #cbd2dc);
+    box-shadow: var(--shadow-lg, 0 16px 40px rgba(30, 41, 59, 0.15));
     position: relative;
-    max-height: 90vh;
+    animation: modalFadeIn 0.25s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+@keyframes modalFadeIn {
+    from { opacity: 0; transform: translateY(14px) scale(0.98); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+#card-name {
+    color: var(--text-primary, #1e242d);
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+    border-bottom: 1px solid var(--border-subtle, #dde2ea);
+    padding-bottom: 8px;
+}
+
+#card-meaning {
+    line-height: 1.7;
+    font-size: 0.95rem;
+    color: var(--text-secondary, #4a5568);
 }
 
 .close {
     position: absolute;
-    right: 15px;
-    top: 10px;
-    font-size: 28px;
+    right: 18px;
+    top: 16px;
+    font-size: 1.4rem;
     cursor: pointer;
-    color: #666;
-    transition: color 0.3s;
+    color: var(--text-muted, #718096);
+    line-height: 1;
+    transition: color 0.15s;
 }
 
 .close:hover {
-    color: #333;
+    color: var(--text-primary, #1e242d);
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
     .tarot-grid {
-        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+        gap: 14px;
     }
     
     .tarot-card {
-        width: 150px;
-        height: auto;
+        width: 140px;
     }
     
     .card-inner {
-        height: 250px;
+        height: 230px;
     }
-}
-
-/* 分類切換按鈕區 */
-.category-menu {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 12px;
-    margin: 24px 0 32px 0;
-    padding: 0 10px;
-}
-
-.category-btn {
-    background: #1a1924;
-    color: #ffd700;
-    border: 1px solid rgba(255, 215, 0, 0.4);
-    padding: 10px 20px;
-    font-size: 15px;
-    font-weight: 600;
-    border-radius: 30px;
-    cursor: pointer;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-    outline: none;
-}
-
-.category-btn:hover {
-    background: linear-gradient(135deg, #d4af37 0%, #aa7c11 100%);
-    color: #fff;
-    border-color: #ffd700;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 15px rgba(212, 175, 55, 0.4);
-}
-
-.category-btn.active {
-    background: linear-gradient(135deg, #d4af37 0%, #aa7c11 100%);
-    color: #fff;
-    border-color: #ffd700;
-    box-shadow: 0 6px 20px rgba(212, 175, 55, 0.5), 0 0 15px rgba(255, 215, 0, 0.5);
-}
-
-/* 分類區塊樣式 */
-.tarot-section {
-    max-width: 1200px;
-    margin: 0 auto 40px auto;
-    background: rgba(255, 255, 255, 0.02);
-    border-radius: 16px;
-    padding: 24px;
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-    transition: opacity 0.3s ease, transform 0.3s ease;
-}
-
-.tarot-section h2 {
-    font-size: 1.8rem;
-    color: #9f7aea; /* 紫色標題 */
-    margin-top: 0;
-    margin-bottom: 20px;
-    border-bottom: 2px solid rgba(159, 122, 234, 0.2);
-    padding-bottom: 8px;
-    display: inline-block;
-}
-
-/* Premium Modal styling */
-.modal-content {
-    background: radial-gradient(circle at 50% 0%, #1a172e 0%, #0f0d19 100%) !important;
-    border: 1px solid rgba(255, 255, 255, 0.1) !important;
-    color: #e5e7eb !important;
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6) !important;
-}
-
-#card-name {
-    color: #ffd700;
-    text-shadow: 0 0 8px rgba(139, 92, 246, 0.4);
-    margin-bottom: 16px;
-}
-
-#card-meaning {
-    line-height: 1.7;
-    font-size: 1.1rem;
-}
-
-.close {
-    color: #a0aec0 !important;
-}
-
-.close:hover {
-    color: #fff !important;
-}
+    
+    .modal-content {
+        margin: 30px auto;
+        padding: 20px;
+    }
+}

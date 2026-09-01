@@ -1,0 +1,134 @@
+[
+  {
+    "id": "major_00",
+    "nameZh": "愚者",
+    "nameEn": "The Fool",
+    "prompt": "The Fool tarot card, a carefree young traveler in colorful medieval tunic standing near cliff edge with a small bundle on a staff, joyous white dog leaping beside him, bright sun shining, glowing cathedral stained glass window style, vibrant jewel tones, intricate black lead lines, ornate gold pointed arch border, majestic gothic holy light."
+  },
+  {
+    "id": "major_01",
+    "nameZh": "魔術師",
+    "nameEn": "The Magician",
+    "prompt": "The Magician tarot card, a charismatic sorcerer with one hand holding glowing wand pointing to the heavens and other hand pointing to earth, infinity symbol above head, table with wand cup sword pentacle, cathedral stained glass style, glowing sapphire and ruby glass, intricate black leaded lines, gothic gold arch frame."
+  },
+  {
+    "id": "major_02",
+    "nameZh": "女祭司",
+    "nameEn": "The High Priestess",
+    "prompt": "The High Priestess tarot card, a serene mystical priestess seated between black and white temple pillars B and J, holding sacred scroll, crescent moon at her feet, pomegranate veil behind, luminous cathedral stained glass art, deep cobalt blue and silver tones, intricate leaded outlines, gothic golden pointed arch."
+  },
+  {
+    "id": "major_03",
+    "nameZh": "皇后",
+    "nameEn": "The Empress",
+    "prompt": "The Empress tarot card, a regal maternal queen crowned with twelve stars reclining gracefully in ripe golden wheat fields and lush nature, Venus heart shield, flowing forest waterfall, stained glass cathedral aesthetic, rich emerald green and gold glass panels, glowing medieval halo, gothic ornate arch."
+  },
+  {
+    "id": "major_04",
+    "nameZh": "皇帝",
+    "nameEn": "The Emperor",
+    "prompt": "The Emperor tarot card, a stern bearded sovereign on a massive stone throne carved with ram heads, crimson robes over iron armor, holding ankh sceptre and golden orb, stained glass cathedral window art, vibrant fiery crimson and amber glass, sharp black lead outlines, gothic gilded arch."
+  },
+  {
+    "id": "major_05",
+    "nameZh": "教皇",
+    "nameEn": "The Hierophant",
+    "prompt": "The Hierophant tarot card, a holy patriarch in ornate papal robes and triple tiara seated between cathedral pillars, holding triple cross staff, two kneeling acolytes, crossed golden keys at feet, stained glass gothic window design, rich purple and gold hues, dark lead borders."
+  },
+  {
+    "id": "major_06",
+    "nameZh": "戀人",
+    "nameEn": "The Lovers",
+    "prompt": "The Lovers tarot card, an angelic guardian angel blessing a man and woman in lush paradise garden with Tree of Life and Tree of Knowledge, stained glass cathedral style, luminous rose pink violet and golden amber glass panels, intricate black lead work, gothic golden frame."
+  },
+  {
+    "id": "major_07",
+    "nameZh": "戰車",
+    "nameEn": "The Chariot",
+    "prompt": "The Chariot tarot card, a triumphant armoured warrior riding a starry-canopied chariot guided by two sphinxes one black one white, gothic city walls behind, stained glass cathedral artwork, vibrant royal blue gold and silver tones, intricate lead lines, ornate pointed arch."
+  },
+  {
+    "id": "major_08",
+    "nameZh": "力量",
+    "nameEn": "The Strength",
+    "prompt": "The Strength tarot card, a serene graceful maiden in white robes gently taming a majestic golden lion with love, infinity symbol glowing above her head, floral garland, stained glass cathedral window style, warm gold amber and emerald glass, intricate leaded outlines, gothic golden arch."
+  },
+  {
+    "id": "major_09",
+    "nameZh": "隱者",
+    "nameEn": "The Hermit",
+    "prompt": "The Hermit tarot card, an aged wise sage in grey hooded cloak standing on snowy mountain peak holding glowing lantern with six-pointed star, wooden walking staff, stained glass cathedral art, deep midnight blue frosty silver and golden light, intricate gothic arch frame."
+  },
+  {
+    "id": "major_10",
+    "nameZh": "命運之輪",
+    "nameEn": "Wheel of Fortune",
+    "prompt": "Wheel of Fortune tarot card, a grand mystical rotating wheel inscribed with sacred letters, flanked by sphinx anubis and serpent, four winged creatures in clouds, stained glass cathedral style, vivid lapis lazuli emerald and solar gold panels, intricate leaded outlines, gothic arch."
+  },
+  {
+    "id": "major_11",
+    "nameZh": "正義",
+    "nameEn": "The Justice",
+    "prompt": "The Justice tarot card, a solemn crowned figure seated between stone pillars, holding upright double-edged sword and golden balancing scales, purple mantle, stained glass cathedral window aesthetic, vibrant amethyst scarlet and golden hues, intricate lead work, gothic frame."
+  },
+  {
+    "id": "major_12",
+    "nameZh": "倒吊人",
+    "nameEn": "The Hanged Man",
+    "prompt": "The Hanged Man tarot card, a peaceful figure hanging upside down by one ankle from a living wooden T-cross, golden halo of enlightenment glowing around his head, stained glass cathedral style, luminous turquoise blue amber and green glass panels, intricate leaded outlines, gothic arch."
+  },
+  {
+    "id": "major_13",
+    "nameZh": "死神",
+    "nameEn": "Death",
+    "prompt": "Death tarot card, an ominous black-armored knight on a white warhorse carrying a mystical white rose flag, golden sunrise rising between distant twin towers, river of life, stained glass cathedral artwork, obsidian black crimson and dawn gold glass, intricate lead lines, gothic arch."
+  },
+  {
+    "id": "major_14",
+    "nameZh": "節制",
+    "nameEn": "The Temperance",
+    "prompt": "The Temperance tarot card, a majestic winged angel with glowing aura pouring liquid light seamlessly between two golden cups, one foot in water one on land, distant path leading to radiant sunrise, stained glass cathedral style, iridescent sapphire violet and amber glass, gothic arch."
+  },
+  {
+    "id": "major_15",
+    "nameZh": "惡魔",
+    "nameEn": "The Devil",
+    "prompt": "The Devil tarot card, a horned goat demon perched on a black pedestal holding a fiery torch upside down, chained silhouetted man and woman below, inverted pentagram, stained glass cathedral style, dramatic crimson charcoal and sulfur gold glass panels, gothic arch."
+  },
+  {
+    "id": "major_16",
+    "nameZh": "高塔",
+    "nameEn": "The Tower",
+    "prompt": "The Tower tarot card, a tall stone tower struck by a bolt of divine lightning, fiery explosion blowing off the golden crown, figures falling into stormy abyss, dark clouds, stained glass cathedral aesthetic, vivid lightning gold crimson and stormy indigo glass, gothic arch."
+  },
+  {
+    "id": "major_17",
+    "nameZh": "星星",
+    "nameEn": "The Star",
+    "prompt": "The Star tarot card, a luminous nude maiden pouring crystalline water from two pitchers onto earth and shimmering pool under a vast radiant eight-pointed gold star and seven lesser stars, sacred ibis bird, stained glass cathedral style, azure teal and starlight silver glass, gothic arch."
+  },
+  {
+    "id": "major_18",
+    "nameZh": "月亮",
+    "nameEn": "The Moon",
+    "prompt": "The Moon tarot card, a mysterious crescent moon with weeping drops shining over twin stone towers, a howling dog and wolf, a crayfish emerging from deep water, winding path, stained glass cathedral window style, deep midnight indigo sea green and silver glass, gothic arch."
+  },
+  {
+    "id": "major_19",
+    "nameZh": "太陽",
+    "nameEn": "The Sun",
+    "prompt": "The Sun tarot card, a radiant smiling golden sun beaming down on a joyous naked child on a calm white horse holding a red banner, vibrant wall of sunflowers behind, stained glass cathedral art, brilliant golden yellow amber and rich red glass panels, ornate gothic arch."
+  },
+  {
+    "id": "major_20",
+    "nameZh": "審判",
+    "nameEn": "Judgement",
+    "prompt": "The Judgement tarot card, archangel Gabriel blowing a golden herald trumpet with cross banner from the heavens, resurrected souls rising joyfully with open arms from stone tombs below, stained glass cathedral style, vivid celestial blue crimson and radiant gold glass, gothic arch."
+  },
+  {
+    "id": "major_21",
+    "nameZh": "世界",
+    "nameEn": "The World",
+    "prompt": "The World tarot card, a triumphant divine dancer draped in purple cloth holding twin wands inside an oval green laurel wreath tied with red ribbons, flanked by four cosmic beasts in corners, stained glass cathedral style, lush emerald violet and celestial gold glass, gothic arch."
+  }
+]

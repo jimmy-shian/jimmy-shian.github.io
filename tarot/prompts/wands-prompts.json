@@ -1,0 +1,86 @@
+[
+  {
+    "id": "wands_01",
+    "nameZh": "權杖一",
+    "nameEn": "Ace of Wands",
+    "prompt": "Ace of Wands tarot card, showing 雲中神手, 發芽權杖, 遠方城堡, stained glass cathedral style, Fiery crimson, amber, solar gold, intricate black leaded lines, gothic golden arch frame."
+  },
+  {
+    "id": "wands_02",
+    "nameZh": "權杖二",
+    "nameEn": "Two of Wands",
+    "prompt": "Two of Wands tarot card, showing 城堡領主, 地球儀, 遠眺海港, stained glass cathedral style, Fiery crimson, amber, solar gold, intricate black leaded lines, gothic golden arch frame."
+  },
+  {
+    "id": "wands_03",
+    "nameZh": "權杖三",
+    "nameEn": "Three of Wands",
+    "prompt": "Three of Wands tarot card, showing 山崖背影, 三根權杖, 商船出海, stained glass cathedral style, Fiery crimson, amber, solar gold, intricate black leaded lines, gothic golden arch frame."
+  },
+  {
+    "id": "wands_04",
+    "nameZh": "權杖四",
+    "nameEn": "Four of Wands",
+    "prompt": "Four of Wands tarot card, showing 花環四柱拱門, 歡慶人群, 宏偉城堡, stained glass cathedral style, Fiery crimson, amber, solar gold, intricate black leaded lines, gothic golden arch frame."
+  },
+  {
+    "id": "wands_05",
+    "nameZh": "權杖五",
+    "nameEn": "Five of Wands",
+    "prompt": "Five of Wands tarot card, showing 五位青年, 持杖比試, 良性競爭, stained glass cathedral style, Fiery crimson, amber, solar gold, intricate black leaded lines, gothic golden arch frame."
+  },
+  {
+    "id": "wands_06",
+    "nameZh": "權杖六",
+    "nameEn": "Six of Wands",
+    "prompt": "Six of Wands tarot card, showing 桂冠騎士, 凱旋而歸, 歡呼群眾, stained glass cathedral style, Fiery crimson, amber, solar gold, intricate black leaded lines, gothic golden arch frame."
+  },
+  {
+    "id": "wands_07",
+    "nameZh": "權杖七",
+    "nameEn": "Seven of Wands",
+    "prompt": "Seven of Wands tarot card, showing 高處勇士, 持杖防守, 面對眾敵, stained glass cathedral style, Fiery crimson, amber, solar gold, intricate black leaded lines, gothic golden arch frame."
+  },
+  {
+    "id": "wands_08",
+    "nameZh": "權杖八",
+    "nameEn": "Eight of Wands",
+    "prompt": "Eight of Wands tarot card, showing 八杖長空飛行, 迅速前進, 晴空萬里, stained glass cathedral style, Fiery crimson, amber, solar gold, intricate black leaded lines, gothic golden arch frame."
+  },
+  {
+    "id": "wands_09",
+    "nameZh": "權杖九",
+    "nameEn": "Nine of Wands",
+    "prompt": "Nine of Wands tarot card, showing 受傷守衛, 八杖圍籬, 警惕防範, stained glass cathedral style, Fiery crimson, amber, solar gold, intricate black leaded lines, gothic golden arch frame."
+  },
+  {
+    "id": "wands_10",
+    "nameZh": "權杖十",
+    "nameEn": "Ten of Wands",
+    "prompt": "Ten of Wands tarot card, showing 負重十杖, 艱難前行, 城鎮在望, stained glass cathedral style, Fiery crimson, amber, solar gold, intricate black leaded lines, gothic golden arch frame."
+  },
+  {
+    "id": "wands_page",
+    "nameZh": "權杖侍從",
+    "nameEn": "Page of Wands",
+    "prompt": "Page of Wands tarot card, showing 熱情青年, 凝視權杖, 沙漠綠洲, stained glass cathedral style, Fiery crimson, amber, solar gold, intricate black leaded lines, gothic golden arch frame."
+  },
+  {
+    "id": "wands_knight",
+    "nameZh": "權杖騎士",
+    "nameEn": "Knight of Wands",
+    "prompt": "Knight of Wands tarot card, showing 火蜥蜴戰袍, 奔騰戰馬, 衝鋒前進, stained glass cathedral style, Fiery crimson, amber, solar gold, intricate black leaded lines, gothic golden arch frame."
+  },
+  {
+    "id": "wands_queen",
+    "nameZh": "權杖皇后",
+    "nameEn": "Queen of Wands",
+    "prompt": "Queen of Wands tarot card, showing 向日葵, 黑貓, 獅王寶座, stained glass cathedral style, Fiery crimson, amber, solar gold, intricate black leaded lines, gothic golden arch frame."
+  },
+  {
+    "id": "wands_king",
+    "nameZh": "權杖國王",
+    "nameEn": "King of Wands",
+    "prompt": "King of Wands tarot card, showing 火龍王冠, 火焰王座, 遠見卓識, stained glass cathedral style, Fiery crimson, amber, solar gold, intricate black leaded lines, gothic golden arch frame."
+  }
+]

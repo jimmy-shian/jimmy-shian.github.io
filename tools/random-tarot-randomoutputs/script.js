@@ -427,41 +427,102 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function getCardImageFileName(name) {
         const mapping = {
-            '愚者I': 'Fool_I',
-            '魔術師II': 'Magician_II',
-            '女祭司III': 'High_Priestess_III',
-            '皇后IV': 'Empress_IV',
-            '皇帝V': 'Emperor_V',
-            '教皇VI': 'Hierophant_VI',
-            '戀人VII': 'Lovers_VII',
-            '戰車VIII': 'Chariot_VIII',
-            '力量IX': 'Strength_IX',
-            '隱者X': 'Hermit_X',
-            '命運之輪XI': 'Wheel_of_Fortune_XI',
-            '正義XII': 'Justice_XII',
-            '倒吊人XIII': 'Hanged_Man_XIII',
-            '死神XIV': 'Death_XIV',
-            '節制XV': 'Temperance_XV',
-            '惡魔XVI': 'Devil_XVI',
-            '高塔XVII': 'Tower_XVII',
-            '星星XVIII': 'Star_XVIII',
-            '月亮XIX': 'Moon_XIX',
-            '太陽XX': 'Sun_XX',
-            '審判XXI': 'Judgement_XXI',
-            '世界': 'World',
+            '愚者I': 'major_00',
+            '魔術師II': 'major_01',
+            '女祭司III': 'major_02',
+            '皇后IV': 'major_03',
+            '皇帝V': 'major_04',
+            '教皇VI': 'major_05',
+            '戀人VII': 'major_06',
+            '戰車VIII': 'major_07',
+            '力量IX': 'major_08',
+            '隱者X': 'major_09',
+            '命運之輪XI': 'major_10',
+            '正義XII': 'major_11',
+            '倒吊人XIII': 'major_12',
+            '死神XIV': 'major_13',
+            '節制XV': 'major_14',
+            '惡魔XVI': 'major_15',
+            '高塔XVII': 'major_16',
+            '星星XVIII': 'major_17',
+            '月亮XIX': 'major_18',
+            '太陽XX': 'major_19',
+            '審判XXI': 'major_20',
+            '世界': 'major_21',
             
             // Wands
-            '權杖一': 'Wand_1',
-            '權杖二': 'Wand_2',
-            '權杖三': 'Wand_3',
-            '權杖四': 'Wand_4',
-            '權杖五': 'Wand_5',
-            '權杖六': 'Wand_6',
-            '權杖七': 'Wand_7',
-            '權杖八': 'Wand_8',
-            '權杖九': 'Wand_9'
+            '權杖一': 'wands_01',
+            '權杖二': 'wands_02',
+            '權杖三': 'wands_03',
+            '權杖四': 'wands_04',
+            '權杖五': 'wands_05',
+            '權杖六': 'wands_06',
+            '權杖七': 'wands_07',
+            '權杖八': 'wands_08',
+            '權杖九': 'wands_09',
+            '權杖十': 'wands_10',
+            '權杖侍者': 'wands_page',
+            '權杖侍從': 'wands_page',
+            '權杖騎士': 'wands_knight',
+            '權杖皇后': 'wands_queen',
+            '權杖王后': 'wands_queen',
+            '權杖國王': 'wands_king',
+
+            // Cups
+            '聖杯一': 'cups_01',
+            '聖杯二': 'cups_02',
+            '聖杯三': 'cups_03',
+            '聖杯四': 'cups_04',
+            '聖杯五': 'cups_05',
+            '聖杯六': 'cups_06',
+            '聖杯七': 'cups_07',
+            '聖杯八': 'cups_08',
+            '聖杯九': 'cups_09',
+            '聖杯十': 'cups_10',
+            '聖杯侍者': 'cups_page',
+            '聖杯侍從': 'cups_page',
+            '聖杯騎士': 'cups_knight',
+            '聖杯皇后': 'cups_queen',
+            '聖杯王后': 'cups_queen',
+            '聖杯國王': 'cups_king',
+
+            // Swords
+            '寶劍一': 'swords_01',
+            '寶劍二': 'swords_02',
+            '寶劍三': 'swords_03',
+            '寶劍四': 'swords_04',
+            '寶劍五': 'swords_05',
+            '寶劍六': 'swords_06',
+            '寶劍七': 'swords_07',
+            '寶劍八': 'swords_08',
+            '寶劍九': 'swords_09',
+            '寶劍十': 'swords_10',
+            '寶劍侍者': 'swords_page',
+            '寶劍侍從': 'swords_page',
+            '寶劍騎士': 'swords_knight',
+            '寶劍皇后': 'swords_queen',
+            '寶劍王后': 'swords_queen',
+            '寶劍國王': 'swords_king',
+
+            // Pentacles
+            '錢幣一': 'pentacles_01',
+            '錢幣二': 'pentacles_02',
+            '錢幣三': 'pentacles_03',
+            '錢幣四': 'pentacles_04',
+            '錢幣五': 'pentacles_05',
+            '錢幣六': 'pentacles_06',
+            '錢幣七': 'pentacles_07',
+            '錢幣八': 'pentacles_08',
+            '錢幣九': 'pentacles_09',
+            '錢幣十': 'pentacles_10',
+            '錢幣侍者': 'pentacles_page',
+            '錢幣侍從': 'pentacles_page',
+            '錢幣騎士': 'pentacles_knight',
+            '錢幣皇后': 'pentacles_queen',
+            '錢幣王后': 'pentacles_queen',
+            '錢幣國王': 'pentacles_king'
         };
-        return mapping[name] || null;
+        return mapping[name] || 'major_00';
     }
 
     function showCard(card) {
@@ -473,12 +534,11 @@ document.addEventListener('DOMContentLoaded', () => {
         if (cardMeaning) cardMeaning.textContent = card.meaning;
         
         if (cardImage) {
-            const imgName = getCardImageFileName(card.name);
-            if (imgName) {
-                cardImage.style.backgroundImage = `url('../../images/${imgName}.webp')`;
-            } else {
-                cardImage.style.backgroundImage = `url('../../images/card_frame.webp')`;
-            }
+            const imgId = getCardImageFileName(card.name);
+            cardImage.style.backgroundImage = `url('../../images/tarot/web/${imgId}.webp')`;
+            cardImage.style.backgroundSize = 'contain';
+            cardImage.style.backgroundPosition = 'center';
+            cardImage.style.backgroundRepeat = 'no-repeat';
         }
         
         // AI 解讀 (打字機效果)

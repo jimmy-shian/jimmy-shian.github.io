@@ -149,7 +149,7 @@ document.addEventListener('DOMContentLoaded', () => {
         
         // 產生三張牌各自的說明
         const explanations = generateFakeAIExplanations(cards);
-        let explanationText = explanations.map((exp, idx) => `【第${idx+1}張】${cards[idx].name.split('_')[0]}\n${exp}\n`).join('\n');
+        let explanationText = explanations.map((exp, idx) => `【第${idx+1}張】${getCardFullName(cards[idx].name)}\n${exp}\n`).join('\n');
         gptPrompt.value = explanationText;
         
         // 僅console記錄組合（如需可再擴充）
@@ -190,6 +190,65 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
+// 卡牌名稱中英對照轉換
+function getCardFullName(rawName) {
+    if (!rawName) return '';
+    const suitZhMap = {
+        'Wand': '權杖',
+        'Cup': '聖杯',
+        'Sword': '寶劍',
+        'Pentacle': '錢幣'
+    };
+    const rankZhMap = {
+        '1': '一',
+        '2': '二',
+        '3': '三',
+        '4': '四',
+        '5': '五',
+        '6': '六',
+        '7': '七',
+        '8': '八',
+        '9': '九',
+        '10': '十',
+        'Page': '侍者',
+        'Knight': '騎士',
+        'Queen': '王后',
+        'King': '國王'
+    };
+    const majorMap = {
+        'Fool_I': '愚者 I',
+        'Magician_II': '魔術師 II',
+        'High_Priestess_III': '女祭司 III',
+        'Empress_IV': '女皇 IV',
+        'Emperor_V': '皇帝 V',
+        'Hierophant_VI': '教皇 VI',
+        'Lovers_VII': '戀人 VII',
+        'Chariot_VIII': '戰車 VIII',
+        'Strength_IX': '力量 IX',
+        'Hermit_X': '隱者 X',
+        'Wheel_of_Fortune_XI': '命運之輪 XI',
+        'Justice_XII': '正義 XII',
+        'Hanged_Man_XIII': '倒吊人 XIII',
+        'Death_XIV': '死神 XIV',
+        'Temperance_XV': '節制 XV',
+        'Devil_XVI': '惡魔 XVI',
+        'Tower_XVII': '高塔 XVII',
+        'Star_XVIII': '星星 XVIII',
+        'Moon_XIX': '月亮 XIX',
+        'Sun_XX': '太陽 XX',
+        'Judgement_XXI': '審判 XXI',
+        'World': '世界'
+    };
+    if (majorMap[rawName]) return majorMap[rawName];
+    if (rawName.includes('_')) {
+        const [suit, rank] = rawName.split('_');
+        const sZh = suitZhMap[suit] || suit;
+        const rZh = rankZhMap[rank] || rank;
+        return `${sZh}${rZh}`;
+    }
+    return rawName;
+}
+
 // 生成三張牌的函數
 function generateThreeCards() {
     const allCards = [...tarotCards.major, ...tarotCards.minor];
@@ -209,6 +268,34 @@ function generateThreeCards() {
 }
 
 // 更新牌陣顯示，支援滑鼠懸停翻轉
+function getCardId(rawName) {
+    const majorMap = {
+        'Fool_I': 'major_00', 'Magician_II': 'major_01', 'High_Priestess_III': 'major_02',
+        'Empress_IV': 'major_03', 'Emperor_V': 'major_04', 'Hierophant_VI': 'major_05',
+        'Lovers_VII': 'major_06', 'Chariot_VIII': 'major_07', 'Strength_IX': 'major_08',
+        'Hermit_X': 'major_09', 'Wheel_of_Fortune_XI': 'major_10', 'Justice_XII': 'major_11',
+        'Hanged_Man_XIII': 'major_12', 'Death_XIV': 'major_13', 'Temperance_XV': 'major_14',
+        'Devil_XVI': 'major_15', 'Tower_XVII': 'major_16', 'Star_XVIII': 'major_17',
+        'Moon_XIX': 'major_18', 'Sun_XX': 'major_19', 'Judgement_XXI': 'major_20',
+        'World': 'major_21'
+    };
+    if (majorMap[rawName]) return majorMap[rawName];
+
+    if (rawName.includes('_')) {
+        const [suit, rank] = rawName.split('_');
+        const suitPrefix = {
+            'Wand': 'wands', 'Cup': 'cups', 'Sword': 'swords', 'Pentacle': 'pentacles'
+        }[suit] || suit.toLowerCase();
+        
+        let rankStr = rank.toLowerCase();
+        if (!isNaN(parseInt(rank))) {
+            rankStr = parseInt(rank).toString().padStart(2, '0');
+        }
+        return `${suitPrefix}_${rankStr}`;
+    }
+    return rawName.toLowerCase();
+}
+
 // 更新單張牌的顯示
 function updateSingleCardDisplay(card, index) {
     const cardElement = document.getElementById(`card${index + 1}`);
@@ -216,22 +303,17 @@ function updateSingleCardDisplay(card, index) {
     const cardTitle = cardElement.querySelector('.card-title');
     const cardMeaning = cardElement.querySelector('.card-meaning');
     
-    // 設置卡牌資訊
-    const cardName = card.name.split('_')[0]; // 獲取卡牌名稱（去掉後綴）
-    cardTitle.textContent = cardName;
+    // 設置完整卡牌資訊（包含花色與數字）
+    const cardDisplayName = getCardFullName(card.name);
+    cardTitle.textContent = cardDisplayName;
     cardMeaning.textContent = card.meaning;
     
-    // 設置卡牌圖片
-    const imgNum = parseInt(card.name.split('_')[1]);
-    const hasImg = (card.name === 'World') || 
-                   (card.name.startsWith('Wand_') && !isNaN(imgNum) && imgNum <= 9) || 
-                   ['Fool_I', 'Magician_II', 'High_Priestess_III', 'Empress_IV', 'Emperor_V', 'Hierophant_VI', 'Lovers_VII', 'Chariot_VIII', 'Strength_IX', 'Hermit_X', 'Wheel_of_Fortune_XI', 'Justice_XII', 'Hanged_Man_XIII', 'Death_XIV', 'Temperance_XV', 'Devil_XVI', 'Tower_XVII', 'Star_XVIII', 'Moon_XIX', 'Sun_XX', 'Judgement_XXI'].includes(card.name);
-    
-    if (hasImg) {
-        cardImage.style.backgroundImage = `url('../../images/${card.name}.webp')`;
-    } else {
-        cardImage.style.backgroundImage = `url('../../images/card_frame.webp')`;
-    }
+    // 設置卡牌圖片 (全部 78 張均有高品質 WebP 圖片)
+    const cardId = getCardId(card.name);
+    cardImage.style.backgroundImage = `url('../../images/tarot/web/${cardId}.webp')`;
+    cardImage.style.backgroundSize = 'contain';
+    cardImage.style.backgroundPosition = 'center';
+    cardImage.style.backgroundRepeat = 'no-repeat';
 }
 
 // 每張卡牌三種說明（積極、消極、中立）

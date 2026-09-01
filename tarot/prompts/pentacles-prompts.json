@@ -1,0 +1,86 @@
+[
+  {
+    "id": "pentacles_01",
+    "nameZh": "錢幣一",
+    "nameEn": "Ace of Pentacles",
+    "prompt": "Ace of Pentacles tarot card, showing 神手托金幣, 花園拱門, 百合通道, stained glass cathedral style, Lush emerald green, rich ochre earth, antique gold, intricate black leaded lines, gothic golden arch frame."
+  },
+  {
+    "id": "pentacles_02",
+    "nameZh": "錢幣二",
+    "nameEn": "Two of Pentacles",
+    "prompt": "Two of Pentacles tarot card, showing 雜耍青年, 無限雙幣, 巨浪起伏, stained glass cathedral style, Lush emerald green, rich ochre earth, antique gold, intricate black leaded lines, gothic golden arch frame."
+  },
+  {
+    "id": "pentacles_03",
+    "nameZh": "錢幣三",
+    "nameEn": "Three of Pentacles",
+    "prompt": "Three of Pentacles tarot card, showing 雕刻工匠, 建築師修士, 教堂拱頂, stained glass cathedral style, Lush emerald green, rich ochre earth, antique gold, intricate black leaded lines, gothic golden arch frame."
+  },
+  {
+    "id": "pentacles_04",
+    "nameZh": "錢幣四",
+    "nameEn": "Four of Pentacles",
+    "prompt": "Four of Pentacles tarot card, showing 緊抱金幣, 頭頂足踩, 背後城市, stained glass cathedral style, Lush emerald green, rich ochre earth, antique gold, intricate black leaded lines, gothic golden arch frame."
+  },
+  {
+    "id": "pentacles_05",
+    "nameZh": "錢幣五",
+    "nameEn": "Five of Pentacles",
+    "prompt": "Five of Pentacles tarot card, showing 風雪跛行, 彩繪玻璃窗, 貧寒相依, stained glass cathedral style, Lush emerald green, rich ochre earth, antique gold, intricate black leaded lines, gothic golden arch frame."
+  },
+  {
+    "id": "pentacles_06",
+    "nameZh": "錢幣六",
+    "nameEn": "Six of Pentacles",
+    "prompt": "Six of Pentacles tarot card, showing 富商施捨, 公平天平, 跪拜貧民, stained glass cathedral style, Lush emerald green, rich ochre earth, antique gold, intricate black leaded lines, gothic golden arch frame."
+  },
+  {
+    "id": "pentacles_07",
+    "nameZh": "錢幣七",
+    "nameEn": "Seven of Pentacles",
+    "prompt": "Seven of Pentacles tarot card, showing 倚鋤農夫, 審視七幣, 葡萄藤蔓, stained glass cathedral style, Lush emerald green, rich ochre earth, antique gold, intricate black leaded lines, gothic golden arch frame."
+  },
+  {
+    "id": "pentacles_08",
+    "nameZh": "錢幣八",
+    "nameEn": "Eight of Pentacles",
+    "prompt": "Eight of Pentacles tarot card, showing 專注工匠, 刻製八幣, 勤勉不懈, stained glass cathedral style, Lush emerald green, rich ochre earth, antique gold, intricate black leaded lines, gothic golden arch frame."
+  },
+  {
+    "id": "pentacles_09",
+    "nameZh": "錢幣九",
+    "nameEn": "Nine of Pentacles",
+    "prompt": "Nine of Pentacles tarot card, showing 葡萄園貴婦, 金幣滿藤, 臂上獵鷹, stained glass cathedral style, Lush emerald green, rich ochre earth, antique gold, intricate black leaded lines, gothic golden arch frame."
+  },
+  {
+    "id": "pentacles_10",
+    "nameZh": "錢幣十",
+    "nameEn": "Ten of Pentacles",
+    "prompt": "Ten of Pentacles tarot card, showing 三代同堂, 家徽拱門, 忠犬安居, stained glass cathedral style, Lush emerald green, rich ochre earth, antique gold, intricate black leaded lines, gothic golden arch frame."
+  },
+  {
+    "id": "pentacles_page",
+    "nameZh": "錢幣侍從",
+    "nameEn": "Page of Pentacles",
+    "prompt": "Page of Pentacles tarot card, showing 踏實青年, 雙手捧幣, 繁茂田野, stained glass cathedral style, Lush emerald green, rich ochre earth, antique gold, intricate black leaded lines, gothic golden arch frame."
+  },
+  {
+    "id": "pentacles_knight",
+    "nameZh": "錢幣騎士",
+    "nameEn": "Knight of Pentacles",
+    "prompt": "Knight of Pentacles tarot card, showing 黑馬騎士, 手捧金幣, 耕耘田野, stained glass cathedral style, Lush emerald green, rich ochre earth, antique gold, intricate black leaded lines, gothic golden arch frame."
+  },
+  {
+    "id": "pentacles_queen",
+    "nameZh": "錢幣皇后",
+    "nameEn": "Queen of Pentacles",
+    "prompt": "Queen of Pentacles tarot card, showing 森林女王, 膝抱金幣, 繁盛果實, stained glass cathedral style, Lush emerald green, rich ochre earth, antique gold, intricate black leaded lines, gothic golden arch frame."
+  },
+  {
+    "id": "pentacles_king",
+    "nameZh": "錢幣國王",
+    "nameEn": "King of Pentacles",
+    "prompt": "King of Pentacles tarot card, showing 葡萄藤袍國王, 手握金幣權杖, 公牛浮雕王座, stained glass cathedral style, Lush emerald green, rich ochre earth, antique gold, intricate black leaded lines, gothic golden arch frame."
+  }
+]

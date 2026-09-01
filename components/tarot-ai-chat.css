@@ -1,118 +1,134 @@
-/* components/tarot-ai-chat.css */
+/* ==========================================================================
+   TAROT AI CHAT (Soft-Gray Minimalist / OpenDesign)
+   ========================================================================== */
 
-/* Floating Chat Bubble Button */
+/* Floating Chat Trigger Button */
 .tarot-chat-bubble {
   position: fixed;
-  bottom: 24px;
+  bottom: 20px;
   right: 24px;
-  width: 56px;
-  height: 56px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, #2e2a47 0%, #110e1c 100%);
-  color: #fff;
-  border: 1px solid rgba(255, 215, 0, 0.3);
-  font-size: 26px;
+  padding: 8px 16px;
+  border-radius: var(--radius-full, 9999px);
+  background: rgba(248, 249, 251, 0.94);
+  color: var(--text-primary, #1e242d);
+  border: 1px solid var(--border-primary, #cbd2dc);
+  font-family: var(--font-sans, sans-serif);
+  font-size: 0.84rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
   cursor: pointer;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 4px 16px -2px rgba(30, 41, 59, 0.12);
   z-index: 10000;
   display: flex;
   align-items: center;
-  justify-content: center;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  gap: 8px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transition: all 0.25s cubic-bezier(0.25, 0.8, 0.25, 1);
   outline: none;
-  animation: bubblePulse 2s infinite;
+}
+
+.tarot-chat-bubble .status-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: var(--color-success, #387b6a);
+  box-shadow: 0 0 0 2px rgba(56, 123, 106, 0.2);
 }
 
 .tarot-chat-bubble:hover {
-  transform: scale(1.1) rotate(5deg);
-  box-shadow: 0 6px 24px rgba(212, 175, 55, 0.5), 0 0 15px rgba(255, 215, 0, 0.4);
-  background: linear-gradient(135deg, #d4af37 0%, #aa7c11 100%);
+  transform: translateY(-2px);
+  border-color: var(--accent, #4f6b8f);
+  background-color: var(--bg-surface, #f8f9fb);
+  box-shadow: 0 8px 24px -4px rgba(30, 41, 59, 0.18);
+  color: var(--accent, #4f6b8f);
 }
 
 .tarot-chat-bubble:active {
-  transform: scale(0.95);
-}
-
-@keyframes bubblePulse {
-  0% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.5); }
-  70% { box-shadow: 0 0 0 12px rgba(212, 175, 55, 0); }
-  100% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0); }
+  transform: translateY(0) scale(0.98);
 }
 
 /* Chat Panel Container */
 .tarot-chat-panel {
   position: fixed;
-  bottom: 96px;
+  bottom: 68px;
   right: 24px;
   width: 360px;
-  height: 540px;
-  background: rgba(20, 18, 33, 0.95);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 16px;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+  max-width: calc(100vw - 32px);
+  height: 480px;
+  max-height: calc(100vh - 90px);
+  background: rgba(248, 249, 251, 0.98);
+  border: 1px solid var(--border-primary, #cbd2dc);
+  border-radius: var(--radius-lg, 12px);
+  box-shadow: 0 16px 40px -6px rgba(30, 41, 59, 0.18);
   z-index: 9999;
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  color: #e5e7eb;
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  animation: panelSlideUp 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  font-family: var(--font-sans, sans-serif);
+  color: var(--text-primary, #1e242d);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  animation: panelSlideUp 0.25s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
 @keyframes panelSlideUp {
-  from { opacity: 0; transform: translateY(20px) scale(0.95); }
+  from { opacity: 0; transform: translateY(16px) scale(0.98); }
   to { opacity: 1; transform: translateY(0) scale(1); }
 }
 
 /* Header */
 .tarot-chat-header {
-  background: rgba(139, 92, 246, 0.15);
-  padding: 14px 18px;
+  background: var(--bg-subtle, #e4e7ee);
+  padding: 12px 18px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid var(--border-subtle, #dde2ea);
 }
 
 .tarot-chat-title {
-  font-weight: 700;
-  font-size: 1.05rem;
-  letter-spacing: 0.5px;
-  color: #fff;
-  text-shadow: 0 0 8px rgba(139, 92, 246, 0.4);
-}
-
-.tarot-chat-header-actions {
+  font-weight: 600;
+  font-size: 0.92rem;
+  letter-spacing: 0.02em;
+  color: var(--text-primary, #1e242d);
   display: flex;
   align-items: center;
   gap: 8px;
 }
 
-.tarot-chat-header-actions button {
-  background: none;
-  border: none;
-  color: #b0afb8;
-  font-size: 1.1rem;
-  cursor: pointer;
-  width: 32px;
-  height: 32px;
+.tarot-chat-title .badge {
+  font-size: 0.7rem;
+  padding: 2px 6px;
+  background: var(--bg-surface, #f8f9fb);
+  border: 1px solid var(--border-primary, #cbd2dc);
+  color: var(--accent, #4f6b8f);
+}
+
+.tarot-chat-header-actions {
   display: flex;
   align-items: center;
-  justify-content: center;
-  border-radius: 4px;
-  transition: all 0.2s ease;
-  min-height: 32px;
+  gap: 6px;
+}
+
+.tarot-chat-header-actions button {
+  background: var(--bg-surface, #f8f9fb);
+  border: 1px solid var(--border-subtle, #dde2ea);
+  color: var(--text-secondary, #4a5568);
+  font-size: 0.78rem;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: var(--radius-sm, 4px);
+  transition: all 0.15s ease;
+  min-height: unset;
+  box-shadow: none;
 }
 
 .tarot-chat-header-actions button:hover {
-  background: rgba(255, 255, 255, 0.08);
-  color: #fff;
-}
-
-#tarot-chat-close-btn {
-  font-size: 1.5rem;
+  background: var(--bg-hover, #dbe0e8);
+  color: var(--text-primary, #1e242d);
+  border-color: var(--border-primary, #cbd2dc);
 }
 
 /* Body */
@@ -122,29 +138,30 @@
   flex-direction: column;
   position: relative;
   overflow: hidden;
-  background: radial-gradient(circle at 50% 0%, #151322 0%, #0d0b14 100%);
+  background: var(--bg-base, #eef1f5);
 }
 
 /* API Settings Panel */
 .tarot-chat-settings-panel {
-  background: rgba(0, 0, 0, 0.6);
-  padding: 12px 16px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  background: var(--bg-surface, #f8f9fb);
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--border-subtle, #dde2ea);
   font-size: 0.85rem;
-  animation: settingsSlideDown 0.25s ease-out;
+  animation: settingsSlideDown 0.2s ease-out;
   z-index: 10;
 }
 
 @keyframes settingsSlideDown {
-  from { transform: translateY(-100%); }
-  to { transform: translateY(0); }
+  from { transform: translateY(-100%); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
 }
 
 .tarot-chat-settings-panel label {
   display: block;
-  color: #ffeb3b;
+  color: var(--text-secondary, #4a5568);
   margin-bottom: 6px;
   font-weight: 600;
+  font-size: 0.82rem;
 }
 
 .apikey-input-group {
@@ -154,35 +171,34 @@
 
 .tarot-chat-settings-panel input {
   flex: 1;
-  background: #111;
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  color: #fff;
+  background: #fdfdfe;
+  border: 1px solid var(--border-primary, #cbd2dc);
+  color: var(--text-primary, #1e242d);
   padding: 6px 10px;
-  border-radius: 4px;
+  border-radius: var(--radius-sm, 4px);
   font-size: 0.85rem;
 }
 
 .tarot-chat-settings-panel button {
-  background: #1a1924;
-  color: #ffd700;
-  border: 1px solid rgba(255, 215, 0, 0.4);
+  background: var(--accent, #4f6b8f);
+  color: #f8f9fb;
+  border: 1px solid var(--accent, #4f6b8f);
   padding: 6px 12px;
-  border-radius: 4px;
+  border-radius: var(--radius-sm, 4px);
   cursor: pointer;
-  font-weight: bold;
-  transition: all 0.2s ease;
+  font-weight: 500;
+  font-size: 0.82rem;
+  transition: background-color 0.2s ease;
 }
 
 .tarot-chat-settings-panel button:hover {
-  background: linear-gradient(135deg, #d4af37 0%, #aa7c11 100%);
-  color: #fff;
-  border-color: #ffd700;
+  background: var(--accent-hover, #3b5372);
 }
 
 .apikey-hint {
   display: block;
-  margin-top: 4px;
-  color: #9ca3af;
+  margin-top: 6px;
+  color: var(--text-muted, #718096);
   font-size: 0.75rem;
 }
 
@@ -198,23 +214,20 @@
 
 /* Custom Scrollbar for Messages */
 .tarot-chat-messages::-webkit-scrollbar {
-  width: 6px;
+  width: 5px;
 }
 .tarot-chat-messages::-webkit-scrollbar-track {
   background: transparent;
 }
 .tarot-chat-messages::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.1);
+  background: var(--border-primary, #cbd2dc);
   border-radius: 3px;
-}
-.tarot-chat-messages::-webkit-scrollbar-thumb:hover {
-  background: rgba(255, 255, 255, 0.2);
 }
 
 .chat-msg {
   display: flex;
   flex-direction: column;
-  max-width: 85%;
+  max-width: 88%;
 }
 
 .chat-msg.user {
@@ -227,57 +240,145 @@
 
 .msg-content {
   padding: 10px 14px;
-  border-radius: 12px;
-  font-size: 0.9rem;
-  line-height: 1.45;
+  border-radius: 10px;
+  font-size: 0.88rem;
+  line-height: 1.5;
   word-wrap: break-word;
 }
 
+/* Markdown Content Styling */
+.msg-content h1, .msg-content h2, .msg-content h3, .msg-content h4 {
+  margin: 12px 0 6px 0;
+  font-weight: 700;
+  color: var(--text-primary, #1e242d);
+  line-height: 1.35;
+}
+
+.msg-content h1 { font-size: 1.05rem; }
+.msg-content h2 { 
+  font-size: 0.96rem; 
+  border-bottom: 1px solid var(--border-subtle, #dde2ea); 
+  padding-bottom: 4px; 
+}
+.msg-content h3 { font-size: 0.90rem; }
+.msg-content h4 { font-size: 0.85rem; }
+
+.msg-content p {
+  margin: 0 0 8px 0;
+  line-height: 1.55;
+}
+
+.msg-content p:last-child {
+  margin-bottom: 0;
+}
+
+.msg-content hr {
+  border: none;
+  border-top: 1px solid var(--border-subtle, #dde2ea);
+  margin: 10px 0;
+}
+
+.msg-content ul, .msg-content ol {
+  margin: 4px 0 8px 18px;
+  padding: 0;
+}
+
+.msg-content li {
+  margin-bottom: 4px;
+  line-height: 1.5;
+}
+
+.msg-content blockquote {
+  margin: 6px 0;
+  padding: 4px 10px;
+  border-left: 3px solid var(--accent, #4f6b8f);
+  background: var(--bg-subtle, #e4e7ee);
+  border-radius: 0 var(--radius-sm, 4px) var(--radius-sm, 4px) 0;
+  font-size: 0.84rem;
+  color: var(--text-secondary, #4a5568);
+}
+
+.msg-content code {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.82rem;
+  background: var(--bg-subtle, #e4e7ee);
+  padding: 2px 4px;
+  border-radius: 3px;
+  color: var(--accent, #4f6b8f);
+}
+
+.msg-content pre {
+  margin: 6px 0;
+  padding: 8px;
+  background: var(--bg-subtle, #e4e7ee);
+  border-radius: var(--radius-sm, 4px);
+  overflow-x: auto;
+}
+
+.msg-content pre code {
+  padding: 0;
+  background: none;
+}
+
+.msg-content strong {
+  font-weight: 700;
+}
+
+.msg-content em {
+  font-style: italic;
+}
+
 .chat-msg.user .msg-content {
-  background: #8b5cf6;
-  color: #fff;
+  background: var(--accent, #4f6b8f);
+  color: #f8f9fb;
   border-bottom-right-radius: 2px;
-  box-shadow: 0 2px 8px rgba(139, 92, 246, 0.25);
+  box-shadow: 0 2px 6px rgba(79, 107, 143, 0.2);
+}
+
+.chat-msg.user .msg-content * {
+  color: #f8f9fb;
 }
 
 .chat-msg.ai .msg-content {
-  background: rgba(255, 255, 255, 0.05);
-  color: #f3f4f6;
-  border: 1px solid rgba(255, 255, 255, 0.04);
+  background: var(--bg-surface, #f8f9fb);
+  color: var(--text-primary, #1e242d);
+  border: 1px solid var(--border-subtle, #dde2ea);
   border-bottom-left-radius: 2px;
+  box-shadow: 0 1px 3px rgba(30, 41, 59, 0.04);
 }
 
 .msg-content.error {
-  background: rgba(239, 68, 68, 0.1) !important;
-  border-color: rgba(239, 68, 68, 0.3) !important;
-  color: #f87171 !important;
+  background: rgba(184, 71, 71, 0.08) !important;
+  border-color: var(--color-danger, #b84747) !important;
+  color: var(--color-danger, #b84747) !important;
 }
 
 /* Reasoning Details in chat */
 .chat-reasoning {
-  background: rgba(0, 0, 0, 0.2);
-  border: 1px solid rgba(255, 255, 255, 0.04);
-  border-radius: 8px;
+  background: var(--bg-subtle, #e4e7ee);
+  border: 1px solid var(--border-subtle, #dde2ea);
+  border-radius: var(--radius-md, 8px);
   margin-bottom: 8px;
-  padding: 8px;
+  padding: 8px 10px;
   max-width: 100%;
 }
 
 .chat-reasoning summary {
   cursor: pointer;
-  font-size: 0.8rem;
-  color: #3b82f6;
-  font-weight: bold;
+  font-size: 0.78rem;
+  color: var(--accent, #4f6b8f);
+  font-weight: 600;
   outline: none;
+  letter-spacing: 0.02em;
 }
 
 .reasoning-body {
   margin-top: 6px;
-  font-family: monospace;
-  font-size: 0.8rem;
-  color: #9ca3af;
+  font-family: var(--font-mono, monospace);
+  font-size: 0.78rem;
+  color: var(--text-secondary, #4a5568);
   white-space: pre-wrap;
-  line-height: 1.4;
+  line-height: 1.45;
   max-height: 120px;
   overflow-y: auto;
 }
@@ -286,14 +387,14 @@
 .msg-content.loading {
   display: flex;
   align-items: center;
-  gap: 4px;
+  gap: 5px;
   padding: 12px 16px;
 }
 
 .msg-content.loading .dot {
   width: 6px;
   height: 6px;
-  background-color: #ffd700;
+  background-color: var(--accent, #4f6b8f);
   border-radius: 50%;
   display: inline-block;
   animation: loadingDot 1.4s infinite ease-in-out both;
@@ -303,90 +404,98 @@
 .msg-content.loading .dot:nth-child(2) { animation-delay: -0.16s; }
 
 @keyframes loadingDot {
-  0%, 80%, 100% { transform: scale(0); }
-  40% { transform: scale(1.0); }
+  0%, 80%, 100% { transform: scale(0.4); opacity: 0.3; }
+  40% { transform: scale(1.0); opacity: 1; }
 }
 
 /* Action bar */
 .tarot-chat-actions {
-  padding: 6px 12px;
+  padding: 8px 12px;
   display: flex;
-  background: rgba(0, 0, 0, 0.2);
-  border-top: 1px solid rgba(255, 255, 255, 0.04);
+  background: var(--bg-surface, #f8f9fb);
+  border-top: 1px solid var(--border-subtle, #dde2ea);
 }
 
 #tarot-chat-load-reading {
-  background: rgba(139, 92, 246, 0.12);
-  border: 1px dashed rgba(139, 92, 246, 0.4);
-  color: #d8b4fe;
+  background: var(--bg-subtle, #e4e7ee);
+  border: 1px dashed var(--border-primary, #cbd2dc);
+  color: var(--text-secondary, #4a5568);
   width: 100%;
   padding: 8px;
   font-size: 0.82rem;
-  font-weight: bold;
-  border-radius: 6px;
+  font-weight: 500;
+  border-radius: var(--radius-sm, 4px);
   cursor: pointer;
   transition: all 0.2s ease;
-  min-height: 36px;
+  min-height: unset;
+  box-shadow: none;
 }
 
 #tarot-chat-load-reading:hover {
-  background: rgba(139, 92, 246, 0.22);
-  color: #fff;
+  background: var(--bg-hover, #dbe0e8);
+  border-color: var(--accent, #4f6b8f);
+  color: var(--accent, #4f6b8f);
 }
 
 /* Footer / Input box */
 .tarot-chat-footer {
   display: flex;
-  background: rgba(20, 18, 33, 1);
-  padding: 10px 12px;
-  gap: 8px;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
-  align-items: center;
+  background: var(--bg-surface, #f8f9fb);
+  padding: 8px 10px;
+  gap: 6px;
+  border-top: 1px solid var(--border-subtle, #dde2ea);
+  align-items: flex-end;
 }
 
 #tarot-chat-input {
   flex: 1;
-  background: #111;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 8px;
-  padding: 10px 14px;
-  color: #fff;
-  font-size: 0.9rem;
+  background: #fdfdfe;
+  border: 1px solid var(--border-primary, #cbd2dc);
+  border-radius: var(--radius-md, 8px);
+  padding: 6px 10px;
+  color: var(--text-primary, #1e242d);
+  font-size: 0.85rem;
   outline: none;
-  min-height: 80px;
-  max-height: 150px;
+  min-height: 38px;
+  max-height: 90px;
   resize: none;
   font-family: inherit;
   overflow-y: auto;
-  transition: border-color 0.3s cubic-bezier(0.4, 0, 0.2, 1), 
-              box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 #tarot-chat-input:focus {
-  border-color: #ffd700;
-  box-shadow: 0 0 10px rgba(255, 215, 0, 0.4);
+  border-color: var(--border-focus, #4f6b8f);
+  box-shadow: 0 0 0 2px var(--accent-focus-ring, rgba(79, 107, 143, 0.2));
 }
 
 #tarot-chat-send-btn {
-  background: #1a1924;
-  color: #ffd700;
-  border: 1px solid rgba(255, 215, 0, 0.4);
-  padding: 0 16px;
-  border-radius: 8px;
-  font-weight: bold;
+  background: var(--accent, #4f6b8f);
+  color: #f8f9fb;
+  border: 1px solid var(--accent, #4f6b8f);
+  padding: 6px 12px;
+  border-radius: var(--radius-md, 8px);
+  font-weight: 500;
+  font-size: 0.85rem;
   cursor: pointer;
-  min-height: 40px;
-  transition: all 0.2s ease;
+  min-height: 38px;
+  transition: background-color 0.2s ease;
+  box-shadow: var(--shadow-sm);
 }
 
 #tarot-chat-send-btn:hover {
-  background: linear-gradient(135deg, #d4af37 0%, #aa7c11 100%);
-  color: #fff;
-  border-color: #ffd700;
+  background: var(--accent-hover, #3b5372);
+  border-color: var(--accent-hover, #3b5372);
 }
 
 /* Mobile Responsive */
 @media (max-width: 480px) {
+  .tarot-chat-bubble {
+    bottom: 20px;
+    right: 20px;
+    padding: 8px 14px;
+  }
+  
   .tarot-chat-panel {
     bottom: 0 !important;
     right: 0 !important;
@@ -396,3 +505,4 @@
     z-index: 10001;
   }
 }
+

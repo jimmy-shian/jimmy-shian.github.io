@@ -163,6 +163,34 @@ function getCardDisplayName(name) {
     return name;
 }
 
+function getCardId(rawName) {
+    const majorMap = {
+        'Fool_I': 'major_00', 'Magician_II': 'major_01', 'High_Priestess_III': 'major_02',
+        'Empress_IV': 'major_03', 'Emperor_V': 'major_04', 'Hierophant_VI': 'major_05',
+        'Lovers_VII': 'major_06', 'Chariot_VIII': 'major_07', 'Strength_IX': 'major_08',
+        'Hermit_X': 'major_09', 'Wheel_of_Fortune_XI': 'major_10', 'Justice_XII': 'major_11',
+        'Hanged_Man_XIII': 'major_12', 'Death_XIV': 'major_13', 'Temperance_XV': 'major_14',
+        'Devil_XVI': 'major_15', 'Tower_XVII': 'major_16', 'Star_XVIII': 'major_17',
+        'Moon_XIX': 'major_18', 'Sun_XX': 'major_19', 'Judgement_XXI': 'major_20',
+        'World': 'major_21'
+    };
+    if (majorMap[rawName]) return majorMap[rawName];
+
+    if (rawName.includes('_')) {
+        const [suit, rank] = rawName.split('_');
+        const suitPrefix = {
+            'Wand': 'wands', 'Cup': 'cups', 'Sword': 'swords', 'Pentacle': 'pentacles'
+        }[suit] || suit.toLowerCase();
+        
+        let rankStr = rank.toLowerCase();
+        if (!isNaN(parseInt(rank))) {
+            rankStr = parseInt(rank).toString().padStart(2, '0');
+        }
+        return `${suitPrefix}_${rankStr}`;
+    }
+    return rawName.toLowerCase();
+}
+
 // 初始化頁面
 document.addEventListener('DOMContentLoaded', () => {
     const gridMajor = document.getElementById('grid-major');
@@ -189,29 +217,9 @@ document.addEventListener('DOMContentLoaded', () => {
         const cardFront = document.createElement('div');
         cardFront.className = 'card-front';
         
-        const imgNum = parseInt(card.name.split('_')[1]);
-        const hasImg = (card.name === 'World') || 
-                       (card.name.startsWith('Wand_') && !isNaN(imgNum) && imgNum <= 9) || 
-                       ['Fool_I', 'Magician_II', 'High_Priestess_III', 'Empress_IV', 'Emperor_V', 'Hierophant_VI', 'Lovers_VII', 'Chariot_VIII', 'Strength_IX', 'Hermit_X', 'Wheel_of_Fortune_XI', 'Justice_XII', 'Hanged_Man_XIII', 'Death_XIV', 'Temperance_XV', 'Devil_XVI', 'Tower_XVII', 'Star_XVIII', 'Moon_XIX', 'Sun_XX', 'Judgement_XXI'].includes(card.name);
-        
-        if (hasImg) {
-            cardFront.style.backgroundImage = `url('../../images/${card.name}.webp')`;
-        } else {
-            cardFront.style.backgroundImage = `url('../../images/card_frame.webp')`;
-            const textOverlay = document.createElement('div');
-            textOverlay.style.position = 'absolute';
-            textOverlay.style.top = '50%';
-            textOverlay.style.left = '50%';
-            textOverlay.style.transform = 'translate(-50%, -50%)';
-            textOverlay.style.fontSize = '14px';
-            textOverlay.style.fontWeight = 'bold';
-            textOverlay.style.color = '#555';
-            textOverlay.style.textAlign = 'center';
-            textOverlay.style.padding = '10px';
-            textOverlay.textContent = card.name.replace('_', ' ');
-            cardFront.appendChild(textOverlay);
-        }
-        cardFront.style.backgroundSize = 'contain';
+        const cardId = getCardId(card.name);
+        cardFront.style.backgroundImage = `url('../../images/tarot/web/${cardId}.webp')`;
+        cardFront.style.backgroundSize = 'cover';
         cardFront.style.backgroundRepeat = 'no-repeat';
         cardFront.style.backgroundPosition = 'center';
         

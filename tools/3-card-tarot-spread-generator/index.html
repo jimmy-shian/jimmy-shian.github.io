@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>3-Card Tarot Spread Generator</title>
+    <title>三張牌陣塔羅占卜 - 工具庫</title>
+    <link rel="icon" type="image/x-icon" href="../../favicon.ico">
     <link rel="stylesheet" href="../../components/global.css">
     <link rel="stylesheet" href="../../components/navigation.css">
     <link rel="stylesheet" href="../../components/footer.css">
@@ -13,67 +14,82 @@
     <script src="../../components/navigation.js"></script>
 
     <main>
-        <p>生成三張塔羅牌的牌陣，適合用於過去、現在、未來的占卜。</p>
-        <div class="input-section">
-            <h2>選擇占卜方式</h2>
-            <div class="input-group">
-                <label for="birthday">生日（選填）：</label>
-                <input type="date" id="birthday" placeholder="YYYY-MM-DD">
+        <header class="tool-header">
+            <div class="header-badge">TAROT SPREAD</div>
+            <h1>三張牌陣塔羅占卜</h1>
+            <p>生成三張塔羅牌的經典牌陣，深入剖析「過去」、「現在」與「未來」的時間脈絡。</p>
+        </header>
+
+        <div class="spread-container">
+            <div class="input-section card">
+                <h2>占卜設定</h2>
+                <div class="input-group">
+                    <label for="birthday">出生日期（選填）</label>
+                    <input type="date" id="birthday" placeholder="YYYY-MM-DD">
+                </div>
+                <div class="input-group">
+                    <label for="id">身分代號（選填）</label>
+                    <input type="text" id="id" placeholder="例如：A123456789">
+                </div>
+                <div class="input-group">
+                    <label for="question">心中的問題（選填）</label>
+                    <input type="text" id="question" placeholder="例如：近期工作轉換發展如何？">
+                </div>
+                <div style="margin-top: 8px;">
+                    <button id="generateButton" class="btn primary" style="width: 100%;">進行抽牌占卜</button>
+                </div>
             </div>
-            <div class="input-group">
-                <label for="id">身分證字號（選填）：</label>
-                <input type="text" id="id" placeholder="A123456789">
-            </div>
-            <div class="input-group">
-                <label for="question">問題（選填）：</label>
-                <input type="text" id="question" placeholder="你想問什麼？">
-            </div>
-            <button id="generateButton" class="tarot-btn">🔮 抽牌</button>
-        </div>
-        <div class="result-section" style="display: none;">
-            <h2>你的牌陣</h2>
-            <div class="card-spread">
-                <div class="card" id="card1">
-                    <h3>過去</h3>
-                    <div class="card-inner">
-                        <div class="card-front"></div>
-                        <div class="card-back">
-                            <div class="card-image"></div>
-                            <div class="card-title"></div>
-                            <div class="card-meaning"></div>
+
+            <div class="result-section" style="display: none;">
+                <h2 style="text-align: center; margin-bottom: 24px;">占卜牌陣結果</h2>
+                <div class="card-spread">
+                    <div class="spread-card-wrapper" id="card1">
+                        <div class="position-label">過去 PAST</div>
+                        <div class="card-inner">
+                            <div class="card-front"></div>
+                            <div class="card-back">
+                                <div class="card-image"></div>
+                                <div class="card-title"></div>
+                                <div class="card-meaning"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="spread-card-wrapper" id="card2">
+                        <div class="position-label">現在 PRESENT</div>
+                        <div class="card-inner">
+                            <div class="card-front"></div>
+                            <div class="card-back">
+                                <div class="card-image"></div>
+                                <div class="card-title"></div>
+                                <div class="card-meaning"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="spread-card-wrapper" id="card3">
+                        <div class="position-label">未來 FUTURE</div>
+                        <div class="card-inner">
+                            <div class="card-front"></div>
+                            <div class="card-back">
+                                <div class="card-image"></div>
+                                <div class="card-title"></div>
+                                <div class="card-meaning"></div>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="card" id="card2">
-                    <h3>現在</h3>
-                    <div class="card-inner">
-                        <div class="card-front"></div>
-                        <div class="card-back">
-                            <div class="card-image"></div>
-                            <div class="card-title"></div>
-                            <div class="card-meaning"></div>
-                        </div>
+
+                <div class="ai-explanation card">
+                    <h3>AI 解讀提示詞 (GPT Prompt)</h3>
+                    <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 10px;">可點擊右下角「AI 諮詢」自動帶入解讀，或複製下方提示詞至 ChatGPT / Claude 使用：</p>
+                    <textarea id="gptPrompt" readonly rows="8"></textarea>
+                    <div style="margin-top: 12px; display: flex; justify-content: flex-end;">
+                        <button id="copyPrompt" class="btn">複製提示詞</button>
                     </div>
                 </div>
-                <div class="card" id="card3">
-                    <h3>未來</h3>
-                    <div class="card-inner">
-                        <div class="card-front"></div>
-                        <div class="card-back">
-                            <div class="card-image"></div>
-                            <div class="card-title"></div>
-                            <div class="card-meaning"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="ai-explanation">
-                <h3>GPT 解釋</h3>
-                <textarea id="gptPrompt" readonly rows="10"></textarea>
-                <button id="copyPrompt" class="tarot-btn">📋 複製到剪貼簿</button>
             </div>
         </div>
     </main>
+
     <script src="script.js"></script>
     <script src="../../components/footer.js"></script>
 </body>
