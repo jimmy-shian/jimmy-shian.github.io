@@ -569,7 +569,7 @@ document.addEventListener('DOMContentLoaded', function() {
         row.innerHTML = `
             <input type="text" class="input-x" placeholder="X 值" data-row="${rowCount}">
             <input type="text" class="input-y" placeholder="Y 值" data-row="${rowCount}">
-            <button class="btn-remove" data-row="${rowCount}"><i class="fas fa-times"></i></button>
+            <button class="btn-remove" data-row="${rowCount}">×</button>
         `;
         inputGrid.appendChild(row);
     }
@@ -675,7 +675,7 @@ document.addEventListener('DOMContentLoaded', function() {
             row.innerHTML = `
                 <input type="text" class="input-x" value="${item.x}" data-row="${index}">
                 <input type="text" class="input-y" value="${item.y}" data-row="${index}">
-                <button class="btn-remove" data-row="${index}"><i class="fas fa-times"></i></button>
+                <button class="btn-remove" data-row="${index}">×</button>
             `;
             inputGrid.appendChild(row);
         });

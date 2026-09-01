@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>輪盤抽獎工具</title>
+    <title>輪盤抽獎工具 - 工具庫</title>
+    <link rel="icon" type="image/x-icon" href="../../favicon.ico">
     <link rel="stylesheet" href="../../components/global.css">
     <link rel="stylesheet" href="../../components/navigation.css">
     <link rel="stylesheet" href="../../components/footer.css">
@@ -14,14 +15,18 @@
     <script src="../../components/navigation.js"></script>
 
     <main>
-        <div class="container">
+        <header class="tool-header">
+            <div class="header-badge">LUCKY DRAW</div>
             <h1>輪盤抽獎工具</h1>
-            
-            <div class="setup-section">
+            <p>自訂獎項、數量與參與者名單，支援多色系切換與公平旋轉抽獎。</p>
+        </header>
+
+        <div class="wheel-app-grid">
+            <div class="setup-section card">
                 <div class="input-group">
                     <h3>獎項設置</h3>
                     <div class="color-scheme">
-                        <h4>色系選擇</h4>
+                        <h4>色系風格</h4>
                         <div class="color-options">
                             <label class="color-option">
                                 <input type="radio" name="color-scheme" value="default" checked>
@@ -49,14 +54,14 @@
                         <div class="prize-item">
                             <input type="text" placeholder="例如：頭獎" class="prize-name" value="" onchange="resetDraw()" >
                             <input type="number" placeholder="1" min="1" value="1" class="prize-quantity" onchange="resetDraw()">
-                            <button class="remove-prize">刪除</button>
+                            <button class="remove-prize btn">刪除</button>
                         </div>
                     </div>
-                    <button id="add-prize" class="btn">+ 添加獎項</button>
+                    <button id="add-prize" class="btn" style="margin-top: 10px;">+ 新增獎項</button>
                 </div>
 
-                <div class="input-group">
-                    <h3>參與者設定</h3>
+                <div class="input-group" style="margin-top: 20px;">
+                    <h3>參與者名單</h3>
                     <div class="input-option">
                         <label>
                             <input type="radio" name="participant-type" value="auto" checked>
@@ -69,55 +74,58 @@
                     </div>
                     
                     <div id="manual-participants">
-                        <h4>參與者名單</h4>
-                        <textarea id="participants" placeholder="每行輸入一個名字"></textarea>
+                        <textarea id="participants" placeholder="每行輸入一位參與者姓名"></textarea>
                     </div>
                     
                     <div id="auto-participants" style="display: none;">
                         <div class="auto-options">
                             <div>
-                                <label for="start-number">起始編號：</label>
+                                <label for="start-number">起始編號</label>
                                 <input type="number" id="start-number" min="1" value="1" class="small-input">
                             </div>
                             <div>
-                                <label for="participant-count">參與者數量：</label>
+                                <label for="participant-count">人數數量</label>
                                 <input type="number" id="participant-count" min="1" value="10" class="small-input">
                             </div>
                             <div>
-                                <label for="prefix">前綴（選填）：</label>
+                                <label for="prefix">前綴字（選填）</label>
                                 <input type="text" id="prefix" placeholder="例如：員工" class="small-input">
                             </div>
                         </div>
                     </div>
                 </div>
-                <div style="margin: 1em 0;">
-                    <label style="font-weight:normal;">
-                        <input type="checkbox" id="allow-repeat-winner" style="margin-right:4px;">
-                        允許重複中獎
+
+                <div style="margin: 14px 0;">
+                    <label style="font-weight: normal; cursor: pointer; display: inline-flex; align-items: center; gap: 6px;">
+                        <input type="checkbox" id="allow-repeat-winner">
+                        <span>允許重複中獎</span>
                     </label>
                 </div>
-                <div style="display:flex;gap:10px;">
-                    <button id="start-draw" class="btn primary">開始抽獎</button>
-                    <button id="reset-draw" class="btn">重設抽獎</button>
+
+                <div class="draw-actions">
+                    <button id="start-draw" class="btn primary" style="flex: 2;">開始抽獎</button>
+                    <button id="reset-draw" class="btn" style="flex: 1;">重設</button>
                 </div>
             </div>
 
-            <div class="wheel-container">
-                <canvas id="wheel"></canvas>
-                <div class="wheel-center"></div>
-                <div class="pointer"></div>
-            </div>
+            <div class="wheel-stage card">
+                <div class="wheel-container">
+                    <canvas id="wheel"></canvas>
+                    <div class="wheel-center"></div>
+                    <div class="pointer"></div>
+                </div>
 
-            <div id="result" class="result-section">
-                <h2>抽獎結果</h2>
-                <div id="winners"></div>
+                <div id="result" class="result-section">
+                    <h3>中獎結果</h3>
+                    <div id="winners"></div>
+                </div>
             </div>
         </div>
     </main>
-
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="script.js"></script>
     <script src="../../components/footer.js"></script>
 </body>
 </html>
+

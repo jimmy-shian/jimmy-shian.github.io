@@ -362,13 +362,13 @@ function updateLapsList() {
         
         const copyButton = document.createElement('button');
         copyButton.className = 'lap-button copy';
-        copyButton.innerHTML = '📋';
+        copyButton.textContent = '複製';
         copyButton.title = '複製時間';
         copyButton.onclick = () => copyToClipboard(formatLapTime(lap.time));
         
         const deleteButton = document.createElement('button');
         deleteButton.className = 'lap-button delete';
-        deleteButton.innerHTML = '🗑️';
+        deleteButton.textContent = '刪除';
         deleteButton.title = '刪除記錄';
         deleteButton.onclick = () => deleteLap(index);
         

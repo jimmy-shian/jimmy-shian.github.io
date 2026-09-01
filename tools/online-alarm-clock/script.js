@@ -120,17 +120,17 @@ document.addEventListener('DOMContentLoaded', () => {
             alarmTime.setDate(alarmTime.getDate() + 1);
         }
 
-
+        const formatted = formatTime(hour, minute, second);
         const alarm = {
             id: Date.now(),
             time: alarmTime,
-            timeString: formatTime(hour, minute, second),
+            timeString: formatted,
             triggered: false
         };
 
         alarms.push(alarm);
         updateAlarmsList();
-        showNotification(`鬧鐘已設置為: ${alarmTime.toLocaleTimeString()}`, 'success');
+        showNotification(`鬧鐘已設置為: ${formatted}`, 'success');
         
         // 如果定時器未啟動，則啟動定時器
         if (!alarmInterval) {
@@ -157,27 +157,37 @@ document.addEventListener('DOMContentLoaded', () => {
         setTimeout(() => {
             notification.classList.remove('show');
             setTimeout(() => {
-                document.body.removeChild(notification);
+                if (notification.parentNode) {
+                    notification.parentNode.removeChild(notification);
+                }
             }, 300);
         }, 3000);
     }
     
-    // 更新鬧鐘列表
+    // 更新鬧鐘列表與頂部鬧鐘時間顯示
     function updateAlarmsList() {
         if (alarms.length === 0) {
             alarmsContainer.innerHTML = '<div class="empty-message">尚未設定任何鬧鐘</div>';
+            if (alarmTimeDisplay) {
+                alarmTimeDisplay.textContent = '未設定';
+            }
             return;
         }
         
         // 按時間排序
         alarms.sort((a, b) => a.time - b.time);
         
+        // 更新頂部「設定鬧鐘時間」為最近一組即將觸發的鬧鐘時間
+        if (alarmTimeDisplay && alarms[0]) {
+            alarmTimeDisplay.textContent = alarms[0].timeString || formatTime(alarms[0].time.getHours(), alarms[0].time.getMinutes(), alarms[0].time.getSeconds());
+        }
+        
         const alarmsHtml = alarms.map(alarm => `
             <div class="alarm-item ${alarm.triggered ? 'ringing' : ''}" data-id="${alarm.id}">
-                <div class="time">${alarm.time.toLocaleTimeString()}</div>
+                <div class="time">${alarm.timeString || formatTime(alarm.time.getHours(), alarm.time.getMinutes(), alarm.time.getSeconds())}</div>
                 <div class="alarm-actions">
-                    <button class="delete-alarm" data-id="${alarm.id}" title="刪除鬧鐘">
-                        <span>🗑️</span>
+                    <button class="delete-alarm btn" data-id="${alarm.id}" title="刪除鬧鐘">
+                        刪除
                     </button>
                 </div>
             </div>
@@ -198,9 +208,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function addTime(type) {
         const now = new Date();
-        let hours = parseInt(hourInput.value) || now.getHours();
-        let minutes = parseInt(minuteInput.value) || now.getMinutes();
-        let seconds = parseInt(secondInput.value) || now.getSeconds();
+        let hours = parseInt(hourInput.value);
+        if (isNaN(hours)) hours = now.getHours();
+        let minutes = parseInt(minuteInput.value);
+        if (isNaN(minutes)) minutes = now.getMinutes();
+        let seconds = parseInt(secondInput.value);
+        if (isNaN(seconds)) seconds = now.getSeconds();
 
         switch(type) {
             case 'hour':
@@ -212,7 +225,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 break;
             case 'second':
                 seconds = (seconds + 30) % 60;
-                if (seconds < 30) minutes = (minutes + 1) % 60;
+                if (seconds < 30) {
+                    minutes = (minutes + 1) % 60;
+                    if (minutes === 0) hours = (hours + 1) % 24;
+                }
                 break;
         }
 
@@ -220,6 +236,20 @@ document.addEventListener('DOMContentLoaded', () => {
         minuteInput.value = minutes.toString().padStart(2, '0');
         secondInput.value = seconds.toString().padStart(2, '0');
     }
+
+    // 格式化輸入欄位
+    [hourInput, minuteInput, secondInput].forEach(input => {
+        if (!input) return;
+        input.addEventListener('change', () => {
+            if (input.value !== '') {
+                const max = parseInt(input.max) || 59;
+                const min = parseInt(input.min) || 0;
+                let val = parseInt(input.value) || 0;
+                val = Math.max(min, Math.min(max, val));
+                input.value = val.toString().padStart(2, '0');
+            }
+        });
+    });
 
     // 初始化
     updateCurrentTime();

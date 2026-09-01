@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Universal Timer - 工具庫</title>
+    <title>通用計時器 - 工具庫</title>
     <link rel="stylesheet" href="../../components/global.css">
     <link rel="stylesheet" href="../../components/navigation.css">
     <link rel="stylesheet" href="../../components/footer.css">
@@ -14,35 +14,32 @@
 
     <main>
         <header class="tool-header">
-            <h1>Universal Timer</h1>
-            <p>提供多種計時功能，包括倒數計時、計時器和秒錶。</p>
+            <div class="header-badge">TIME CONTROL</div>
+            <h1>通用計時器</h1>
+            <p>整合高精度毫秒秒錶、自訂計時器與倒數計時，支援圈數記錄與一鍵複製。</p>
         </header>
 
         <div class="timer-switcher">
-            <button class="timer-mode active" data-mode="stopwatch">秒錶</button>
-            <button class="timer-mode" data-mode="timer-mode">計時器</button>
-            <button class="timer-mode" data-mode="countdown">倒數計時</button>
+            <button class="timer-mode active" data-mode="stopwatch">秒錶 (Stopwatch)</button>
+            <button class="timer-mode" data-mode="timer-mode">計時器 (Timer)</button>
+            <button class="timer-mode" data-mode="countdown">倒數計時 (Countdown)</button>
         </div>
 
-        <div class="timer-container">
+        <div class="timer-container card">
             <!-- 秒錶模式 -->
             <div class="timer-section stopwatch-section active">
                 <div class="timer-display" id="stopwatch-display">00:00:00.000</div>
                 <div class="timer-controls">
-                    <button id="start-stopwatch" class="timer-button">開始</button>
-                    <button id="pause-stopwatch" class="timer-button" disabled>暫停</button>
-                    <button id="lap-stopwatch" class="timer-button" disabled>記錄圈數</button>
-                    <button id="reset-stopwatch" class="timer-button" disabled>重置</button>
+                    <button id="start-stopwatch" class="btn primary">開始</button>
+                    <button id="pause-stopwatch" class="btn" disabled>暫停</button>
+                    <button id="lap-stopwatch" class="btn" disabled>記錄圈數</button>
+                    <button id="reset-stopwatch" class="btn" disabled>重設</button>
                 </div>
                 <div class="laps-container">
                     <h3>圈數記錄</h3>
                     <div id="laps-list" class="laps-list">
-                        <!-- 圈數記錄將在這裡動態添加 -->
+                        <!-- 圈數記錄動態添加 -->
                     </div>
-                </div>
-                <div class="timer-description">
-                    <p>適合用於記錄時間，精確到毫秒。</p>
-                    <p>常用於運動訓練、工作計時等。</p>
                 </div>
             </div>
 
@@ -50,13 +47,9 @@
             <div class="timer-section timer-mode-section">
                 <div class="timer-display" id="timer-display">00:00:00</div>
                 <div class="timer-controls">
-                    <button id="start-timer" class="timer-button">開始</button>
-                    <button id="pause-timer" class="timer-button" disabled>暫停</button>
-                    <button id="reset-timer" class="timer-button" disabled>重置</button>
-                </div>
-                <div class="timer-description">
-                    <p>提供簡單的計時功能，無上限。</p>
-                    <p>適合用於學習、工作等需要持續計時的場合。</p>
+                    <button id="start-timer" class="btn primary">開始</button>
+                    <button id="pause-timer" class="btn" disabled>暫停</button>
+                    <button id="reset-timer" class="btn" disabled>重設</button>
                 </div>
             </div>
 
@@ -65,24 +58,29 @@
                 <div class="timer-display" id="countdown-display">00:00:00</div>
                 <div class="timer-controls">
                     <div class="time-inputs">
-                        <input type="number" id="hours" min="0" placeholder="小時">
-                        <input type="number" id="minutes" min="0" max="59" placeholder="分鐘">
-                        <input type="number" id="seconds" min="0" max="59" placeholder="秒">
+                        <div class="input-group">
+                            <label for="hours">小時</label>
+                            <input type="number" id="hours" min="0" placeholder="0">
+                        </div>
+                        <div class="input-group">
+                            <label for="minutes">分鐘</label>
+                            <input type="number" id="minutes" min="0" max="59" placeholder="0">
+                        </div>
+                        <div class="input-group">
+                            <label for="seconds">秒數</label>
+                            <input type="number" id="seconds" min="0" max="59" placeholder="0">
+                        </div>
                     </div>
                     <div class="quick-add-buttons">
-                        <button class="quick-add" data-type="hour">+1小時</button>
-                        <button class="quick-add" data-type="minute">+10分鐘</button>
-                        <button class="quick-add" data-type="second">+30秒</button>
+                        <button class="quick-add btn" data-type="hour">+1 小時</button>
+                        <button class="quick-add btn" data-type="minute">+10 分鐘</button>
+                        <button class="quick-add btn" data-type="second">+30 秒</button>
                     </div>
                     <div class="timer-buttons">
-                        <button id="start-countdown" class="timer-button">開始</button>
-                        <button id="pause-countdown" class="timer-button" disabled>暫停</button>
-                        <button id="reset-countdown" class="timer-button" disabled>重置</button>
+                        <button id="start-countdown" class="btn primary">開始倒數</button>
+                        <button id="pause-countdown" class="btn" disabled>暫停</button>
+                        <button id="reset-countdown" class="btn" disabled>重設</button>
                     </div>
-                </div>
-                <div class="timer-description">
-                    <p>提供精確的倒數計時功能。</p>
-                    <p>適合用於考試、活動倒計時等。</p>
                 </div>
             </div>
         </div>

@@ -1,329 +1,284 @@
-/* Timer Header */
+/* ==========================================================================
+   UNIVERSAL TIMER (Soft-Gray Minimalist / OpenDesign)
+   ========================================================================== */
+
 .tool-header {
     text-align: center;
-    margin-bottom: 2rem;
+    margin-bottom: 28px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--border-subtle, #dde2ea);
 }
 
 .tool-header h1 {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-    color: var(--primary-color);
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--text-primary, #1e242d);
+    letter-spacing: -0.01em;
+    margin-bottom: 8px;
 }
 
 .tool-header p {
-    color: var(--text-color);
-    font-size: 1.1rem;
+    color: var(--text-secondary, #4a5568);
+    font-size: 0.95rem;
+    max-width: 600px;
+    margin: 0 auto;
 }
 
-/* Timer Switcher */
+/* 模式切換按鈕組 */
 .timer-switcher {
     display: flex;
     justify-content: center;
-    gap: 1rem;
-    margin-bottom: 2rem;
+    gap: 8px;
+    margin-bottom: 24px;
 }
 
 .timer-mode {
-    padding: 0.8rem 1.5rem;
-    font-size: 1.1rem;
-    background-color: #f0f0f0;
-    color: #333;
-    border: 2px solid var(--primary-color);
-    border-radius: 8px;
-    cursor: pointer;
-    transition: all 0.3s;
+    background: var(--bg-surface, #f8f9fb);
+    color: var(--text-secondary, #4a5568);
+    border: 1px solid var(--border-primary, #cbd2dc);
+    padding: 8px 18px;
+    font-size: 0.88rem;
     font-weight: 500;
+    border-radius: var(--radius-full, 9999px);
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.25, 0.8, 0.25, 1);
+    box-shadow: var(--shadow-sm);
+    outline: none;
 }
 
 .timer-mode:hover {
-    background-color: #e0e0e0;
+    background: var(--bg-subtle, #e4e7ee);
+    color: var(--text-primary, #1e242d);
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-md);
 }
 
 .timer-mode.active {
-    background-color: var(--primary-color);
-    color: white;
-    border-color: var(--primary-color);
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    transform: translateY(-2px);
+    background: var(--accent, #4f6b8f);
+    color: #f8f9fb;
+    border-color: var(--accent, #4f6b8f);
+    box-shadow: 0 2px 8px rgba(79, 107, 143, 0.25);
 }
 
-/* Timer Container */
 .timer-container {
-    max-width: 800px;
+    max-width: 720px;
     margin: 0 auto;
+    padding: 32px;
+    background: var(--bg-surface, #f8f9fb);
+    border: 1px solid var(--border-subtle, #dde2ea);
+    border-radius: var(--radius-lg, 12px);
+    box-shadow: var(--shadow-sm);
 }
 
 .timer-section {
     display: none;
-    padding: 2rem;
-    background-color: var(--card-bg);
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    border: 2px solid transparent;
-    transition: border-color 0.3s;
+    flex-direction: column;
+    align-items: center;
 }
 
 .timer-section.active {
-    display: block;
-    border-color: var(--primary-color);
-    animation: fadeIn 0.3s ease-in-out;
+    display: flex;
 }
 
-@keyframes fadeIn {
-    from { opacity: 0.7; transform: translateY(5px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-/* Timer Display */
+/* 時間顯示 */
 .timer-display {
-    text-align: center;
-    font-size: 3rem;
-    font-family: monospace;
-    margin-bottom: 2rem;
-    color: var(--primary-color);
-}
-
-/* Timer Controls */
-.timer-controls {
-    text-align: center;
-    margin-bottom: 2rem;
-}
-
-.timer-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-    margin-top: 1rem;
-}
-
-.timer-button {
-    padding: 0.8rem 2rem;
-    font-size: 1.1rem;
-    background-color: var(--primary-color);
-    color: white;
-    border: 2px solid var(--primary-color);
-    border-radius: 8px;
-    cursor: pointer;
-    transition: all 0.3s;
-    font-weight: 500;
-}
-
-.timer-button:hover:not(:disabled) {
-    background-color: var(--primary-dark);
-    border-color: var(--primary-dark);
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.timer-button:active:not(:disabled) {
-    transform: translateY(1px);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.timer-button:disabled {
-    background-color: #e0e0e0;
-    border-color: #ccc;
-    color: #999;
-    cursor: not-allowed;
-    transform: none;
-    box-shadow: none;
-}
-
-/* Time Inputs */
-.time-inputs {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-    margin-bottom: 1.5rem;
-}
-
-.time-inputs input {
-    width: 80px;
-    padding: 0.5rem;
-    font-size: 1rem;
-    border: 1px solid #ddd;
-    border-radius: 4px;
+    font-size: 3.2rem;
+    font-weight: 700;
+    font-family: var(--font-mono, monospace);
+    color: var(--text-primary, #1e242d);
+    letter-spacing: 0.04em;
+    margin: 16px 0 24px 0;
     text-align: center;
 }
 
-/* Quick Add Buttons */
-.quick-add-buttons {
+/* 控制按鈕組 */
+.timer-controls, .timer-buttons {
     display: flex;
     justify-content: center;
-    gap: 1rem;
-    margin-bottom: 1.5rem;
+    gap: 12px;
+    flex-wrap: wrap;
+    width: 100%;
 }
 
-.quick-add {
-    padding: 0.5rem 1rem;
-    background-color: #f0f0f0;
-    color: #333;
-    border: 2px solid var(--primary-color);
-    border-radius: 6px;
-    cursor: pointer;
-    transition: all 0.2s;
-    font-weight: 500;
+.timer-controls button, .timer-buttons button {
+    min-width: 110px;
 }
 
-.quick-add:hover {
-    background-color: var(--primary-color);
-    color: white;
-    transform: translateY(-2px);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.quick-add:active {
-    transform: translateY(1px);
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-}
-
-/* Laps Container */
+/* 圈數記錄區塊 */
 .laps-container {
-    margin: 2rem 0;
-    padding: 1rem;
-    background-color: #f9f9f9;
-    border-radius: 8px;
-    max-height: 300px;
-    overflow-y: auto;
+    width: 100%;
+    margin-top: 28px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border-subtle, #dde2ea);
 }
 
 .laps-container h3 {
-    margin: 0 0 1rem 0;
-    color: var(--primary-color);
-    border-bottom: 2px solid #eee;
-    padding-bottom: 0.5rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin-bottom: 12px;
+    color: var(--text-secondary, #4a5568);
 }
 
 .laps-list {
+    max-height: 240px;
+    overflow-y: auto;
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
+    gap: 8px;
 }
 
 .lap-item {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0.75rem 1rem;
-    background-color: white;
-    border-radius: 6px;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-    transition: all 0.2s;
-}
-
-.lap-item:hover {
-    transform: translateX(4px);
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    padding: 10px 14px;
+    background: var(--bg-subtle, #e4e7ee);
+    border-radius: var(--radius-sm, 4px);
+    border: 1px solid var(--border-subtle, #dde2ea);
+    font-family: var(--font-mono, monospace);
+    font-size: 0.88rem;
 }
 
 .lap-info {
     display: flex;
-    flex-direction: column;
+    gap: 20px;
+    align-items: baseline;
 }
 
 .lap-number {
-    font-weight: bold;
-    color: #333;
-    margin-right: 1rem;
-    min-width: 2rem;
+    font-weight: 600;
+    color: var(--accent, #4f6b8f);
 }
 
 .lap-time {
-    font-family: monospace;
-    font-size: 1.1rem;
-    color: var(--primary-color);
+    color: var(--text-primary, #1e242d);
+    font-weight: 500;
 }
 
 .lap-total {
-    font-size: 0.9rem;
-    color: #666;
+    color: var(--text-muted, #718096);
+    font-size: 0.8rem;
 }
 
 .lap-actions {
     display: flex;
-    gap: 0.5rem;
+    gap: 6px;
 }
 
 .lap-button {
     background: none;
-    border: none;
-    color: #666;
+    border: 1px solid transparent;
+    padding: 4px 8px;
+    border-radius: var(--radius-sm, 4px);
     cursor: pointer;
-    padding: 0.25rem 0.5rem;
-    border-radius: 4px;
-    transition: all 0.2s;
-}
-
-.lap-button:hover {
-    background-color: #f0f0f0;
-    color: var(--primary-color);
+    font-size: 0.8rem;
+    transition: all 0.15s ease;
 }
 
 .lap-button.copy {
-    color: #4CAF50;
+    color: var(--accent, #4f6b8f);
+}
+
+.lap-button.copy:hover {
+    background: rgba(79, 107, 143, 0.1);
+    border-color: var(--border-primary, #cbd2dc);
 }
 
 .lap-button.delete {
-    color: #f44336;
+    color: var(--color-danger, #b84747);
 }
 
-/* 複製通知 */
+.lap-button.delete:hover {
+    background: rgba(184, 71, 71, 0.08);
+    border-color: rgba(184, 71, 71, 0.3);
+}
+
+/* 倒數時間輸入區 */
+.time-inputs {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin-bottom: 18px;
+    width: 100%;
+}
+
+.time-inputs .input-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+}
+
+.time-inputs label {
+    font-size: 0.78rem;
+    color: var(--text-muted, #718096);
+}
+
+.time-inputs input {
+    width: 90px;
+    text-align: center;
+    font-family: var(--font-mono, monospace);
+    font-size: 1.4rem;
+    font-weight: 600;
+    padding: 8px;
+}
+
+.quick-add-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 22px;
+    flex-wrap: wrap;
+}
+
 .copy-notification {
     position: fixed;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%) translateY(100%);
-    background-color: #4CAF50;
-    color: white;
-    padding: 12px 24px;
-    border-radius: 4px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-    z-index: 1000;
+    top: 24px;
+    right: 24px;
+    background: var(--bg-surface, #f8f9fb);
+    color: var(--text-primary, #1e242d);
+    border: 1px solid var(--border-primary, #cbd2dc);
+    border-left: 4px solid var(--accent, #4f6b8f);
+    padding: 12px 20px;
+    border-radius: var(--radius-md, 8px);
+    box-shadow: var(--shadow-lg);
+    font-size: 0.88rem;
+    font-weight: 500;
     opacity: 0;
-    transition: all 0.3s ease;
-    pointer-events: none;
+    transform: translateY(-10px);
+    transition: opacity 0.25s ease, transform 0.25s ease;
+    z-index: 10000;
 }
 
 .copy-notification.show {
-    transform: translateX(-50%) translateY(0);
     opacity: 1;
+    transform: translateY(0);
 }
 
-/* 空狀態提示 */
 .empty-message {
-    color: #666;
     text-align: center;
-    padding: 1rem;
-    font-style: italic;
+    color: var(--text-muted, #718096);
+    padding: 12px;
+    font-size: 0.85rem;
 }
 
-/* Timer Description */
-.timer-description {
-    text-align: center;
-    color: var(--text-color);
-    font-size: 0.9rem;
-    margin-top: 2rem;
-}
-
-.timer-description p {
-    margin-bottom: 0.5rem;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .tool-header h1 {
-        font-size: 2rem;
+@media (max-width: 640px) {
+    .timer-container {
+        padding: 20px;
     }
-
+    
     .timer-display {
-        font-size: 2.5rem;
+        font-size: 2.4rem;
     }
-
-    .timer-switcher {
-        flex-wrap: wrap;
+    
+    .time-inputs input {
+        width: 70px;
+        font-size: 1.1rem;
     }
-
-    .timer-button {
-        padding: 0.6rem 1.5rem;
+    
+    .lap-info {
+        flex-direction: column;
+        gap: 2px;
     }
 }
+

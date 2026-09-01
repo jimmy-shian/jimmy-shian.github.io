@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>密碼產生器</title>
+    <title>安全密碼產生器 - 工具庫</title>
+    <link rel="icon" type="image/x-icon" href="../../favicon.ico">
     <link rel="stylesheet" href="../../components/global.css">
     <link rel="stylesheet" href="../../components/navigation.css">
     <link rel="stylesheet" href="../../components/footer.css">
@@ -12,43 +13,54 @@
 <body>
     <script src="../../components/navigation.js"></script>
 
-    <main class="password-generator">
-        <h1>🔐 密碼產生器</h1>
-        
-        <div class="password-display">
-            <input type="text" id="password" readonly>
-            <button id="copy-btn" title="複製密碼">📋</button>
-            <button id="generate-btn">產生密碼</button>
-        </div>
-        
-        
-        <div class="controls">
-            <div class="control-group">
-                <label for="length">密碼長度: <span id="length-value">12</span></label>
-                <input type="range" id="length" min="4" max="50" value="12">
-            </div>
-            <div id="warning-message" class="warning-message"></div>
+    <main>
+        <header class="tool-header">
+            <div class="header-badge">SECURITY</div>
+            <h1>安全密碼產生器</h1>
+            <p>即時生成高強度密碼，可自訂長度與字元組成，保護您的帳號安全。</p>
+        </header>
 
-            <div class="control-group">
-                <label><input type="checkbox" id="uppercase" checked> 大寫字母 (A-Z)</label>
-                <label><input type="checkbox" id="lowercase" checked> 小寫字母 (a-z)</label>
-                <label><input type="checkbox" id="numbers" checked> 數字 (0-9)</label>
-                <label><input type="checkbox" id="symbols" checked> 特殊符號 (!@#$#.*)</label>
+        <div class="password-generator-container card">
+            <div class="password-display">
+                <input type="text" id="password" readonly placeholder="點擊產生密碼">
+                <button id="copy-btn" class="btn" title="複製密碼">複製</button>
+                <button id="generate-btn" class="btn primary">產生新密碼</button>
             </div>
+            
+            <div class="controls">
+                <div class="control-group">
+                    <div class="control-label-row">
+                        <label for="length">密碼長度</label>
+                        <span id="length-value" class="badge">12</span>
+                    </div>
+                    <input type="range" id="length" min="4" max="50" value="12">
+                </div>
+                <div id="warning-message" class="warning-message"></div>
 
-            <div class="control-group">
-                <label for="custom-chars">自訂字元：</label>
-                <input type="text" id="custom-chars" placeholder="輸入想要包含的特殊字元">
-            </div>
+                <div class="control-group">
+                    <label class="control-group-title">字元規則</label>
+                    <div class="checkbox-grid">
+                        <label><input type="checkbox" id="uppercase" checked> 大寫字母 (A-Z)</label>
+                        <label><input type="checkbox" id="lowercase" checked> 小寫字母 (a-z)</label>
+                        <label><input type="checkbox" id="numbers" checked> 數字 (0-9)</label>
+                        <label><input type="checkbox" id="symbols" checked> 特殊符號 (!@#$%^&*)</label>
+                    </div>
+                </div>
 
-            <div class="control-group">
-                <button id="save-prefs">儲存設定</button>
+                <div class="control-group">
+                    <label for="custom-chars">自訂包含字元（選填）</label>
+                    <input type="text" id="custom-chars" placeholder="輸入想要額外包含的特殊字元">
+                </div>
+
+                <div class="action-footer">
+                    <button id="save-prefs" class="btn">儲存偏好設定</button>
+                </div>
             </div>
         </div>
     </main>
-
 
     <script src="script.js"></script>
     <script src="../../components/footer.js"></script>
 </body>
 </html>
+
