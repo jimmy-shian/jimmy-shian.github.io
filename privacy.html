@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+
+
+<html lang="zh-Hant-TW">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="light dark" name="color-scheme"/>
+<meta content="Yesolve Studio Android 應用程式隱私權政策與使用條款，說明各 App 的資料處理方式、第三方服務、資料保存及使用者權利。" name="description"/>
+<meta content="index, follow" name="robots"/>
+<title>隱私權政策與使用條款｜Yesolve Studio</title>
+<link href="./YESOLVE_Vector_DevKit_v1/google-play/yesolve_google_play_512.png" rel="alternate icon"/>
+<style>
+    :root {
+      color-scheme: light dark;
+      --bg: #f8fafc;
+      --surface: #ffffff;
+      --surface-subtle: #f1f5f9;
+      --border-subtle: #cbd5e1;
+      --ink: #0f172a;
+      --muted: #475569;
+      --primary: #2563eb;
+      --primary-dark: #1d4ed8;
+      --line: #e2e8f0;
+      --soft: #f1f5f9;
+      --warning-bg: #fff8e9;
+      --warning-line: #e9cb84;
+      --focus: #d97706;
+      --masthead-bg: #f0f8fc;
+      --masthead-ink: #142a4b;
+      --masthead-divider: rgba(20, 42, 75, .3);
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #09090b;
+        --surface: #121215;
+        --surface-subtle: #18181b;
+        --border-subtle: #3f3f46;
+        --ink: #f4f4f5;
+        --muted: #a1a1aa;
+        --primary: #60a5fa;
+        --primary-dark: #93c5fd;
+        --line: #27272a;
+        --soft: #18181b;
+        --warning-bg: #21190d;
+        --warning-line: #6b4b17;
+        --focus: #fbbf24;
+        --masthead-bg: #060b18;
+        --masthead-ink: #f8fafc;
+        --masthead-divider: rgba(248, 250, 252, .3);
+      }
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    ::-webkit-scrollbar { width: 7px; height: 7px; }
+    ::-webkit-scrollbar-track { background: var(--surface-subtle); border-radius: 4px; }
+    ::-webkit-scrollbar-thumb { background: var(--border-subtle); border: 1px solid transparent; border-radius: 4px; transition: background .2s ease; }
+    ::-webkit-scrollbar-thumb:hover { background: var(--muted); }
+    * { scrollbar-color: var(--border-subtle) var(--surface-subtle); scrollbar-width: thin; }
+    html { scroll-behavior: smooth; scroll-padding-top: 88px; }
+    body { margin: 0; background: var(--bg); color: var(--ink); font: 16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans TC", sans-serif; }
+    a { color: var(--primary); text-underline-offset: 3px; }
+    a:hover { color: var(--primary-dark); }
+    a:focus-visible { outline: 3px solid var(--focus); outline-offset: 3px; border-radius: 2px; }
+    .skip { position: absolute; left: -9999px; top: 6px; padding: 8px 12px; background: var(--surface); color: var(--ink); z-index: 20; }
+    .skip:focus { left: 8px; }
+    .masthead { background: var(--masthead-bg); color: var(--masthead-ink); }
+    .wrap { width: min(100% - 36px, 980px); margin-inline: auto; }
+    .hero { display: flex; align-items: center; gap: 24px; padding: 40px 0; }
+    .brand-banner { display: block; width: min(100%, 320px); flex: none; }
+    .brand-banner img { display: block; width: 100%; height: auto; }
+    .hero h1 { margin: 0; padding-left: 24px; border-left: 1px solid var(--masthead-divider); font-size: clamp(1.7rem, 5vw, 2.6rem); line-height: 1.3; letter-spacing: 0.01em; }
+    .nav { position: sticky; top: 0; z-index: 10; background: var(--surface); border-bottom: 1px solid var(--line); }
+    .nav-inner { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; min-height: 64px; }
+    .nav a { display: inline-block; padding: 9px 14px; text-decoration: none; border-radius: 9px; font-size: .94rem; font-weight: 650; }
+    .nav a:hover { background: var(--soft); }
+    main { padding: 26px 0 54px; }
+    .panel { background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: clamp(22px, 4vw, 40px); margin-bottom: 20px; }
+    .panel h2 { font-size: clamp(1.5rem, 3vw, 2rem); margin: 0 0 18px; color: var(--primary-dark); line-height: 1.4; }
+    .panel h3 { font-size: 1.13rem; margin: 32px 0 10px; color: var(--primary-dark); line-height: 1.55; }
+    .panel h3:first-of-type { margin-top: 14px; }
+    .panel p { margin: 10px 0; }
+    .panel ul, .panel ol { margin: 10px 0; padding-left: 1.5em; }
+    .panel li { margin: 4px 0; }
+    .muted { color: var(--muted); }
+    .meta { display: flex; gap: 8px 20px; flex-wrap: wrap; color: var(--muted); font-size: .91rem; padding-bottom: 16px; border-bottom: 1px solid var(--line); }
+    .app-grid { display: grid; grid-template-columns: 1fr; gap: 0; margin-top: 22px; }
+    .app-card { display: grid; grid-template-columns: 54px minmax(0, 1fr); gap: 0 16px; min-width: 0; padding: 18px 0; border: 0; border-bottom: 1px solid var(--line); background: transparent; }
+    .app-icon-link { grid-column: 1; grid-row: 1; display: block; width: 54px; height: 54px; border-radius: 12px; }
+    .app-icon { display: block; width: 100%; height: 100%; border: 1px solid var(--line); border-radius: 12px; object-fit: cover; }
+    .app-content { grid-column: 2; min-width: 0; }
+    .panel .app-content h3 { margin: 0 0 10px; font-size: 1.17rem; color: var(--ink); }
+    .app-card h3 a { color: inherit; text-decoration: none; }
+    .app-card h3 a:hover { color: var(--primary); text-decoration: underline; }
+    .app-facts { display: grid; gap: 7px; margin: 0; }
+    .app-facts div { display: grid; grid-template-columns: 54px minmax(0, 1fr); gap: 8px; }
+    .app-facts dt { color: var(--muted); font-weight: 700; }
+    .app-facts dd { margin: 0; }
+    .app-content p { margin: 0 0 10px; }
+    .app-content p:last-child { margin-bottom: 0; }
+    .sdk-note { margin-top: 20px !important; padding-top: 16px; border-top: 1px solid var(--line); }
+    .fine { font-size: .89rem; color: var(--muted); }
+    footer { border-top: 1px solid var(--line); padding: 24px 0 38px; font-size: .9rem; color: var(--muted); }
+    footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 10px; }
+    @media (max-width: 600px) {
+      .wrap { width: min(100% - 24px, 980px); }
+      .hero { align-items: flex-start; flex-direction: column; gap: 16px; padding: 30px 0; }
+      .brand-banner { width: min(100%, 240px); }
+      .hero h1 { padding-left: 0; border-left: 0; }
+      .nav-inner { gap: 2px; padding: 5px 0; }
+      .nav a { font-size: .84rem; padding: 8px 9px; }
+      .panel { border-radius: 13px; }
+      .app-card { grid-template-columns: 42px minmax(0, 1fr); gap: 0 12px; padding: 16px 0; }
+      .app-icon-link { width: 42px; height: 42px; border-radius: 10px; }
+      .app-icon { border-radius: 10px; }
+      .app-facts div { grid-template-columns: 44px minmax(0, 1fr); gap: 6px; }
+    }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+    @media print {
+      html { scroll-padding-top: 0; }
+      body { background: white; color: black; font-size: 11pt; }
+      .masthead { color: black; background: white; }
+      .nav { display: none; }
+      .panel { border: 0; box-shadow: none; padding: 0; break-inside: auto; }
+      a { color: black; }
+    }
+  </style>
+</head>
+<body>
+<a class="skip" href="#main">跳到主要內容</a>
+<header class="masthead">
+<div class="wrap hero">
+<picture class="brand-banner">
+<source media="(prefers-color-scheme: light)" srcset="./YESOLVE_Vector_DevKit_v1/svg/yesolve_brand_horizontal_light.svg"/>
+<img alt="YESOLVE Studio" decoding="async" height="500" src="./YESOLVE_Vector_DevKit_v1/svg/yesolve_brand_horizontal_dark.svg" width="1600"/>
+</picture>
+<h1>隱私權政策與使用條款</h1>
+</div>
+</header>
+<nav aria-label="頁面導覽" class="nav">
+<div class="wrap nav-inner">
+<a href="#privacy">隱私權政策</a>
+<a href="#apps">各 App 資料處理</a>
+<a href="#terms">使用條款</a>
+<a href="#contact">聯絡我們</a>
+</div>
+</nav>
+<main class="wrap" id="main">
+<section aria-labelledby="privacy-title" class="panel" id="privacy">
+<h2 id="privacy-title">隱私權政策</h2>
+<div class="meta">
+<span>提供者：<strong>Yesolve Studio</strong></span>
+<span>生效日期：<time datetime="2026-10-29">2026 年 10 月 29 日</time></span>
+<span>最後更新：<time datetime="2026-10-29">2026 年 10 月 29 日</time></span>
+</div>
+<p>Yesolve Studio（以下稱「我們」）重視使用者的個人資料及隱私。本政策適用於本頁列出的六款 Android 應用程式（以下稱「App」），說明資料如何依各 App 功能被存取、處理、傳輸、保存與刪除。不同 App 的資料處理情形不盡相同，詳見<a href="#apps">各 App 資料處理</a>。</p>
+<h3>1. 蒐集及處理的資料</h3>
+<p>依使用者實際使用的功能，可能涉及下列資料；並非每款 App 都會處理全部類型：</p>
+<ul>
+<li><strong>使用者內容：</strong>在 App 中建立或選取的貼文、留言、相片、影片、錄音、文字提示、腳本、筆記、遊戲進度及匯入檔案。</li>
+<li><strong>設定及授權資料：</strong>App 偏好、分類與操作紀錄、使用者自行設定的 API Key，以及付費功能所需的啟用或交易狀態。</li>
+<li><strong>裝置及廣告資料：</strong>透過整合的廣告服務，可能處理 IP 位址、App 互動資訊、診斷資訊，以及裝置或廣告識別碼。</li>
+<li><strong>聯絡資料：</strong>使用者主動寄送客服或資料權利申請時提供的電子郵件地址與來信內容。</li>
+</ul>
+<p>我們以提供 App 功能、保存使用者設定、完成使用者指定的對外請求、確認購買權益、處理客服，以及提供廣告、維護安全為處理目的。不會因安裝某款 App，就推定使用者同意其他 App 的資料處理。</p>
+<h3>2. 本機資料及系統權限</h3>
+<p>各 App 可能在裝置上儲存其執行所需的資料。使用者選取的照片、影片、錄音及其他檔案，依對應功能在裝置上處理；存取裝置資料本身不代表會上傳至我們的伺服器。涉及麥克風、相片、影片或 Android 無障礙服務等功能時，將依系統機制要求相應授權。使用者可在 Android 設定中管理可撤銷的權限，但撤銷權限可能影響對應功能。</p>
+<p>OmniClick Designer 使用無障礙服務執行使用者設定的點擊與滑動。該服務可能接觸 Android 向無障礙服務提供的畫面介面資訊，僅應用於使用者指定的自動化操作；相關使用方式須在 App 內依 Google Play 規定另行告知並取得必要同意。</p>
+<h3>3. 對外傳輸及第三方服務</h3>
+<p>僅在使用者操作相關功能，或 App 提供廣告及購買服務所必需時，資料才可能由裝置傳送至下列服務或其供應商：</p>
+<ul>
+<li><strong>Google Mobile Ads：</strong>六款 App 依目前產品配置整合廣告 SDK。Google 說明該 SDK 可能自動蒐集及分享 IP 位址、使用者互動、診斷資訊、裝置／帳戶識別碼，用於廣告投放、分析及防詐。資料傳輸採用 TLS。詳見 <a href="https://developers.google.com/admob/android/privacy/play-data-disclosure?hl=zh-tw" rel="noopener noreferrer" target="_blank">Google Mobile Ads 資料揭露</a>。</li>
+<li><strong>Google Play：</strong>Reater 的應用程式內購買由 Google Play 處理。我們可能取得判斷購買狀態及提供售後支援所需的資訊，不會因該交易而取得完整付款卡號。</li>
+<li><strong>外部內容與 AI 服務：</strong>Reater 可能連線 Threads 取得使用者指定內容，並依使用者操作將選取內容傳送至其設定的 AI 端點；NvidiaPatch 會依操作將提示內容傳送至選用的模型服務，啟用搜尋代理時亦會與設定的 Cloudflare Worker 交換搜尋內容；SingStudio 的搜尋及歌詞查詢會向 YouTube、LRCLIB 提供必要查詢資訊。</li>
+</ul>
+<p>上述第三方依其各自政策處理其收到的資料；相關服務可能位於台灣以外的國家或地區。除使用者主動要求的分享或外部功能、必要服務供應商及法律要求外，我們不會出售使用者個人或私密資料。</p>
+<h3>4. 資料利用範圍與安全</h3>
+<p>個人資料利用期間以完成該功能、提供服務、處理請求及依法必要的保存期間為限；利用地區包括使用者裝置所在地，以及 Google、內容平台、AI 服務和其他功能供應商實際提供服務的地區，可能涉及跨境傳輸；利用對象以本工作室、使用者選用的服務及前述必要供應商為限；利用方式包括裝置本機處理、使用者指示的網路請求及服務維護。</p>
+<p>我們依資料性質採取適當保護措施，包括限制不必要的權限、對 App 可控制的敏感設定採取適當保護，以及使用安全的網路傳輸機制。第三方 SDK 與服務的安全措施由各供應商依其政策執行。任何網路或儲存機制均無法保證完全沒有風險。</p>
+<h3>5. 資料保存與刪除</h3>
+<p>儲存在裝置上的資料通常保留至使用者在 App 中刪除、清除 App 資料或解除安裝為止；實際可刪除範圍依各 App 功能而定。匯出至裝置其他位置或外部儲存空間的備份、音檔與檔案，須由使用者另行刪除。刪除 App 並不會自動撤回或刪除已傳送至外部服務的資料。</p>
+<p>使用者主動提供的客服或資料權利申請資料，僅於處理請求、必要的後續聯繫、合法權益維護或依法應保存的期間內保留；目的消失且無法定保留事由時，將刪除或依法停止利用。Google Play 交易資訊及第三方服務資料，分別依適用法律、平台規則及該服務政策處理。各 App 的本機資料刪除方式列於<a href="#apps">下方</a>。</p>
+<h3 id="account-deletion">6. 使用者權利</h3>
+<p>依台灣《個人資料保護法》及其他適用法律，使用者得就我們實際持有的個人資料，請求查詢、閱覽、複製、更正、補充、停止蒐集／處理／利用或刪除。請透過 <a href="mailto:yesolve.studio@gmail.com">yesolve.studio@gmail.com</a> 聯絡，註明 App 名稱與請求內容。為保護資料安全，我們可能合理核對申請人身分，並依法處理；對於僅儲存在使用者裝置、我們無法存取的資料，請依 App 或 Android 的刪除方式操作。</p>
+<p>使用者可不提供非必要資料；但若拒絕某項功能必要的資料或權限，該功能可能無法正常運作。若未來某款 App 開放建立線上帳號，我們將依適用規定提供相應的帳號及關聯資料刪除途徑。</p>
+<h3>7. 未成年人與政策更新</h3>
+<p>各 App 的適用年齡及內容分級以其 Google Play 商店頁面為準。若某款 App 涉及針對兒童的設計或資料處理，我們將依適用法律及 Google Play 相關規定處理。</p>
+<p>如 App 功能、資料處理方式或第三方服務有重大變動，我們會修訂本政策並更新頁首日期；依法須另行告知或取得同意時，將依相關規定辦理。</p>
+</section>
+<section aria-labelledby="apps-title" class="panel" id="apps"><h2 id="apps-title">各 App 資料處理</h2><div class="app-grid"><article class="app-card"><a aria-label="在 Google Play 安裝Reater" class="app-icon-link" href="https://play.google.com/store/apps/details?id=com.reater.app" rel="noopener noreferrer" target="_blank">
+<img alt="" class="app-icon" decoding="async" loading="lazy" src="https://raw.githubusercontent.com/jimmy-shian/jimmy-shian.github.io/main/assets/app-icons/reater.png"/>
+</a><div class="app-content"><h3>Reater</h3><p>貼文、留言、媒體、筆記、分類及偏好設定儲存在裝置。使用者設定的 API Key 會加密保存在本機；Pro 啟用信箱與啟用碼在裝置上離線驗證及保存。使用者自行匯出的備份存放於其選擇的位置。</p><p>擷取內容時連線 Threads；執行 AI 分類或摘要時，選取的內容會送至使用者設定的 AI 服務。一次性購買透過 Google Play 處理。使用者可在 App 刪除收藏資料或清除 App 資料；匯出備份須自行刪除。</p></div></article><article class="app-card"><a aria-label="在 Google Play 安裝OmniClick Designer" class="app-icon-link" href="https://play.google.com/store/apps/details?id=com.jimmyshian.click" rel="noopener noreferrer" target="_blank">
+<img alt="" class="app-icon" decoding="async" loading="lazy" src="https://raw.githubusercontent.com/jimmy-shian/jimmy-shian.github.io/main/assets/app-icons/omniclick-designer.png"/>
+</a><div class="app-content"><h3>OmniClick Designer</h3><p>自動點擊腳本、偏好設定及匯入資料在裝置上處理及保存；JSON 匯入與匯出檔案由使用者選擇。啟用 Android 無障礙服務後，App 依使用者設定的腳本執行點擊與滑動，並可能存取執行所需的畫面介面資訊。</p><p>腳本與匯入檔案不會傳送至本工作室。使用者可在 App 內刪除腳本或清除 App 資料；已匯出的 JSON 檔案須自行刪除。</p></div></article><article class="app-card"><a aria-label="在 Google Play 安裝NvidiaPatch" class="app-icon-link" href="https://play.google.com/store/apps/details?id=com.jimmy.nvidiapatch.mobile" rel="noopener noreferrer" target="_blank">
+<img alt="" class="app-icon" decoding="async" loading="lazy" src="https://raw.githubusercontent.com/jimmy-shian/jimmy-shian.github.io/main/assets/app-icons/nvidia-patch.png"/>
+</a><div class="app-content"><h3>NvidiaPatch</h3><p>API Key 透過 Android 安全儲存機制加密保存在裝置，設定及對話紀錄保存在 App 內。使用者送出問題時，提示內容會傳送至其選用的模型服務（例如 NVIDIA NIM）；啟用搜尋代理時，搜尋內容也會傳送至設定的 Cloudflare Worker。</p><p>清除 App 資料可移除本機金鑰、設定與紀錄；已傳給外部服務的內容依其資料保存與刪除規則處理。</p></div></article><article class="app-card"><a aria-label="在 Google Play 安裝揀影 PicSorter" class="app-icon-link" href="https://play.google.com/store/apps/details?id=com.picsorter.app" rel="noopener noreferrer" target="_blank">
+<img alt="" class="app-icon" decoding="async" loading="lazy" src="https://raw.githubusercontent.com/jimmy-shian/jimmy-shian.github.io/main/assets/app-icons/pic-sorter.png"/>
+</a><div class="app-content"><h3>揀影 PicSorter</h3><p>經使用者授權後讀取選取的照片與影片，在裝置上完成瀏覽、分類與整理，並保存整理進度、分類決定和偏好設定。照片與影片不會因整理功能而上傳至本工作室。</p><p>使用者可清除 App 資料或解除安裝以移除本機整理紀錄；對相簿原始檔案進行的變更，依使用者在 App 中確認的操作執行，並不會因移除 App 自動復原。</p></div></article><article class="app-card"><a aria-label="在 Google Play 安裝Runic" class="app-icon-link" href="https://play.google.com/store/apps/details?id=io.github.jimmyshian.runic" rel="noopener noreferrer" target="_blank">
+<img alt="" class="app-icon" decoding="async" loading="lazy" src="https://raw.githubusercontent.com/jimmy-shian/jimmy-shian.github.io/main/assets/app-icons/runic.webp"/>
+</a><div class="app-content"><h3>Runic</h3><p>遊戲進度及相關遊戲資料在裝置處理；音效與廣告相關偏好設定保存在 App。本 App 不要求建立使用者帳號，遊戲資料不會傳至本工作室伺服器。</p><p>使用者可透過清除 App 資料或解除安裝移除裝置內的遊戲設定與進度。</p></div></article><article class="app-card"><a aria-label="在 Google Play 安裝SingStudio" class="app-icon-link" href="https://play.google.com/store/apps/details?id=com.singstudio.app" rel="noopener noreferrer" target="_blank">
+<img alt="" class="app-icon" decoding="async" loading="lazy" src="https://raw.githubusercontent.com/jimmy-shian/jimmy-shian.github.io/main/assets/app-icons/singstudio.png"/>
+</a><div class="app-content"><h3>SingStudio</h3><p>使用者授權麥克風後，可在裝置錄音；錄音、作品與設定儲存在裝置的 IndexedDB，匯出音檔由使用者自行選擇保存位置。錄音不會傳送至本工作室。</p><p>使用 YouTube 搜尋時會傳送搜尋字詞；透過 LRCLIB 查詢歌詞時會傳送歌曲或演出者名稱。使用者可在 App 內刪除作品或清除 App 資料；已匯出的音檔須自行刪除。</p></div></article></div></section>
+<section aria-labelledby="terms-title" class="panel" id="terms">
+<h2 id="terms-title">使用條款</h2>
+<p>本條款適用於 Yesolve Studio 發布並引用本頁的 Android App。使用 App 時，使用者應遵守適用法律及相關平台規定。本條款不排除依法不得限制的消費者權利。</p>
+<h3>使用授權與智慧財產權</h3>
+<p>我們在各 App 所適用的授權條件及法律範圍內提供使用權。由我們擁有權利的程式、圖像、文字、品牌及其他原創內容受法律保護；第三方素材及開源元件依其各自授權條款使用。任何本條款內容均不限制開源授權、合理使用及其他法律明文保障的權利。</p>
+<h3>使用者內容</h3>
+<p>使用者選取、建立、錄製或匯入的內容，相關權利仍由合法權利人享有。使用者應確認自己有權使用相關內容；App 的本機處理不代表我們取得該內容著作權。</p>
+<h3>付費功能與第三方服務</h3>
+<p>如 App 提供付費功能，實際售價、付款、取消與退款依購買時揭露的條件、Google Play 規則及適用法律處理。外部 AI、內容及搜尋服務可能有其獨立條款、使用限制與費用，使用者應於啟用前確認。</p>
+<h3>安全與合法使用</h3>
+<p>使用者不得透過 App 從事違法侵害他人權利、未經授權存取、散布惡意程式或破壞服務的行為。對 App 進行合法安全研究、依法允許的互通性行為及依開源授權行使權利，不因本條款而受額外限制。</p>
+<h3>服務變更及責任</h3>
+<p>我們可能因維護、安全、相容性或法規要求更新功能；個別 App 的服務可能受裝置、系統或第三方服務影響。對依法不得排除或限制的責任，我們仍依適用法律負責。本條款原則上依中華民國（台灣）法律解釋，法律另有強制規定者從其規定。</p>
+</section>
+<section aria-labelledby="contact-title" class="panel" id="contact">
+<h2 id="contact-title">聯絡我們</h2>
+<p>如需洽詢隱私權、資料查詢或刪除、App 使用問題及權利相關事項，請透過下列方式聯絡：</p>
+<p><strong>Yesolve Studio</strong>（台灣）</p>
+<p><a href="mailto:yesolve.studio@gmail.com">yesolve.studio@gmail.com</a></p>
+<p class="fine">來信請提供 App 名稱、問題內容與回覆方式；不需提供密碼、完整付款資訊或其他無關的敏感資料。</p>
+</section>
+</main>
+<footer>
+<div class="wrap">
+<span>© <time datetime="2026">2026</time> Yesolve Studio. All rights reserved, except where otherwise stated.</span>
+</div>
+</footer>
+</body>
+</html>

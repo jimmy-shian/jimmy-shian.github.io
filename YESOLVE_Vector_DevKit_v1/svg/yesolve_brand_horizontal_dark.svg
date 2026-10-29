@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="500" viewBox="0 0 1600 500" role="img">
+<defs>
+<linearGradient id="silverWhite" x1="0%" y1="0%" x2="85%" y2="100%" objectBoundingBox="true"><stop offset="0%" stop-color="#FFFFFF"/><stop offset="57%" stop-color="#F9FCFF"/><stop offset="100%" stop-color="#A8DCFF"/></linearGradient>
+<linearGradient id="silverTop" x1="0%" y1="0%" x2="85%" y2="100%"><stop offset="0%" stop-color="#FFFFFF"/><stop offset="100%" stop-color="#F5FAFF"/></linearGradient>
+<linearGradient id="upperLeft" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#0864F4"/><stop offset="100%" stop-color="#009FE8"/></linearGradient>
+<linearGradient id="lowerBase" x1="0%" y1="1" x2="85%" y2="0"><stop offset="0%" stop-color="#8CFEFC"/><stop offset="100%" stop-color="#00A9F4"/></linearGradient>
+<linearGradient id="lowerFace" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#04DDFC"/><stop offset="100%" stop-color="#0750F5"/></linearGradient>
+<linearGradient id="upperNavy" x1="0%" y1="0%" x2="100%" y2="0"><stop offset="0%" stop-color="#030917"/><stop offset="100%" stop-color="#092C66"/></linearGradient>
+<linearGradient id="upperFace" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#0BEEFF"/><stop offset="65%" stop-color="#03B2F5"/><stop offset="100%" stop-color="#1657EF"/></linearGradient>
+</defs>
+<rect width="1600" height="500" fill="#060B18"/>
+<g id="symbol" transform="translate(22 22) scale(0.45)"><path id="lower_base" d="M 143,798 L 337,536 Q 344,526 352,538 L 472,682 L 472,811 L 154,811 Q 138,811 143,798 Z" fill="url(#lowerBase)"/>
+<path id="lower_faceted" d="M 254,649 L 337,536 Q 344,526 352,538 L 472,682 L 472,811 Z" fill="url(#lowerFace)"/>
+<path id="upper_shadow" d="M 310,288 L 678,288 L 551,396 Q 545,401 552,408 L 645,475 L 618,499 L 339,333 Q 307,315 310,288 Z" fill="url(#upperNavy)"/>
+<path id="upper_cyan" d="M 674,291 L 778,291 L 649,467 Q 644,473 638,467 L 551,409 Q 545,403 552,397 Z" fill="url(#upperFace)"/>
+<path id="s_ribbon" d="M 287,158 C 243,195 201,240 183,287 C 162,346 169,409 251,453 L 524,605 C 544,616 551,628 551,646 L 551,812 H 676 C 757,812 826,747 826,666 C 826,614 803,583 745,551 L 342,334 C 316,320 306,302 309,278 C 313,231 303,189 287,158 Z" fill="url(#silverWhite)"/>
+<path id="top_arm" d="M 287,158 L 849,158 Q 865,158 862,171 L 779,291 H 391 Q 380,291 373,283 Z" fill="url(#silverTop)"/>
+<path id="upper_left_blue" d="M 308,205 L 380,288 Q 383,291 391,291 H 309 C 312,260 311,228 308,205 Z" fill="url(#upperLeft)"/></g>
+<g id="YESOLVE_wordmark"><path data-letter="Y" d="M568 0H748V614L1296 1490H1089L791 1008C746 934 702 860 659 787C616 860 573 934 527 1008L228 1490H20L568 614Z" fill="#EAF7FF" transform="translate(624.000 324.000) scale(0.057129 -0.057129)"/>
+<path data-letter="E" d="M148 0H1117V160H328V683H1059V843H328V1330H1117V1490H148Z" fill="#EAF7FF" transform="translate(714.182 324.000) scale(0.057129 -0.057129)"/>
+<path data-letter="S" d="M640 -24C964 -24 1180 151 1180 410C1180 618 1044 746 754 818L585 860C369 914 286 981 286 1097C286 1245 423 1349 616 1349C818 1349 949 1236 960 1050H1138C1130 1336 932 1514 622 1514C311 1514 108 1345 108 1088C108 885 234 767 538 692L705 651C920 598 1000 526 1000 402C1000 242 857 140 640 140C401 140 262 267 262 480H78C78 170 296 -24 640 -24Z" fill="#16C9F7" transform="translate(796.994 324.000) scale(0.057129 -0.057129)"/>
+<path data-letter="O" d="M767 -24C1162 -24 1444 297 1444 744C1444 1193 1162 1514 767 1514C372 1514 90 1193 90 744C90 297 372 -24 767 -24ZM767 144C496 144 270 358 270 744C270 1132 496 1346 767 1346C1037 1346 1264 1132 1264 744C1264 358 1037 144 767 144Z" fill="#EAF7FF" transform="translate(883.862 324.000) scale(0.057129 -0.057129)"/>
+<path data-letter="L" d="M148 0H1046V160H328V1490H148Z" fill="#EAF7FF" transform="translate(986.498 324.000) scale(0.057129 -0.057129)"/>
+<path data-letter="V" d="M570 0H774L1318 1490H1130L816 592C786 505 740 369 675 165C608 369 563 505 532 592L210 1490H20Z" fill="#EAF7FF" transform="translate(1064.111 324.000) scale(0.057129 -0.057129)"/>
+<path data-letter="E" d="M148 0H1117V160H328V683H1059V843H328V1330H1117V1490H148Z" fill="#EAF7FF" transform="translate(1155.549 324.000) scale(0.057129 -0.057129)"/></g>
+</svg>
